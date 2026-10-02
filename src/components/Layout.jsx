@@ -55,11 +55,11 @@ export default function Layout() {
 
       <nav className="flex-1 overflow-y-auto px-3 py-4 space-y-6">
         <Link
-          to="/"
+          to="/dashboard"
           onClick={() => setMobileOpen(false)}
           className={cn(
             "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-            isActive("/")
+            isActive("/dashboard")
               ? "bg-indigo-500/15 text-white ring-1 ring-inset ring-indigo-400/30"
               : "text-slate-400 hover:bg-white/5 hover:text-white"
           )}

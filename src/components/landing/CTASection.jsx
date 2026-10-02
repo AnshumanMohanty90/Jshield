@@ -1,0 +1,41 @@
+import { Link } from "react-router-dom";
+import { ArrowRight, Play } from "lucide-react";
+import { Reveal } from "./primitives";
+
+export default function CTASection() {
+  return (
+    <section className="bg-white py-20 sm:py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <Reveal className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-indigo-600 to-sky-500 px-6 py-16 text-center shadow-2xl shadow-indigo-200 sm:px-12">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-20"
+            style={{
+              backgroundImage: "radial-gradient(circle at 20% 20%, white 1px, transparent 1px)",
+              backgroundSize: "28px 28px",
+            }}
+          />
+          <div className="relative">
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Ready to operationalize DPDP?</h2>
+            <p className="mx-auto mt-4 max-w-xl text-lg text-indigo-100">
+              Start your free trial today and get your compliance score within an hour.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Link
+                to="/register"
+                className="group inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
+              >
+                Start free trial <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/30 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                <Play className="h-4 w-4" /> Book a demo
+              </Link>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
