@@ -7,12 +7,12 @@ const STEPS = [
   {
     icon: ClipboardList,
     title: "Assess",
-    desc: "We evaluate your current DPDP readiness through gap assessments, privacy control reviews, regulatory mapping and risk prioritization.",
+    desc: "We evaluate your current DPDP readiness through gap assessments, privacy control reviews, regulatory mapping and risk prioritisation.",
   },
   {
     icon: Search,
     title: "Discover",
-    desc: "Discover and classify personal data, map data flows, build a centralized inventory and surface shadow data across systems.",
+    desc: "Discover and classify personal data, map data flows, build a centralised inventory and surface shadow data across systems.",
   },
   {
     icon: Wrench,
@@ -32,9 +32,9 @@ export default function HowItWorks() {
   const Icon = step.icon;
 
   return (
-    <section className="bg-white py-20 sm:py-24">
+    <section className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <Reveal className="mx-auto max-w-2xl text-center">
+        <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">How we help</span>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             From assessment to continuous governance
@@ -42,8 +42,8 @@ export default function HowItWorks() {
           <p className="mt-4 text-lg text-slate-600">A guided path through the full DPDP compliance journey.</p>
         </Reveal>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-2">
-          <div className="space-y-3">
+        <div className="mt-14 grid gap-8 lg:grid-cols-2 lg:gap-12">
+          <div className="divide-y divide-slate-200">
             {STEPS.map((s, i) => {
               const SIcon = s.icon;
               const on = i === active;
@@ -51,12 +51,10 @@ export default function HowItWorks() {
                 <button
                   key={s.title}
                   onClick={() => setActive(i)}
-                  className={`flex w-full items-start gap-4 rounded-2xl border p-5 text-left transition ${
-                    on ? "border-indigo-300 bg-indigo-50/60" : "border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50"
-                  }`}
+                  className="flex w-full items-start gap-4 py-5 text-left"
                 >
                   <span
-                    className={`flex h-11 w-11 flex-none items-center justify-center rounded-xl ${
+                    className={`flex h-11 w-11 flex-none items-center justify-center rounded-xl transition ${
                       on ? "bg-gradient-to-br from-indigo-500 to-sky-500 text-white" : "bg-slate-100 text-slate-500"
                     }`}
                   >

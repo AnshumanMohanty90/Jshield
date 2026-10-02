@@ -4,7 +4,7 @@ import { Reveal } from "./primitives";
 
 export default function CTASection() {
   return (
-    <section className="bg-white py-20 sm:py-24">
+    <section className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-indigo-600 to-sky-500 px-6 py-16 text-center shadow-2xl shadow-indigo-200 sm:px-12">
           <div
@@ -17,7 +17,7 @@ export default function CTASection() {
           <div className="relative">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Ready to operationalize DPDP?</h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-indigo-100">
-              Start your free trial today and get your compliance score within an hour.
+              Start your free trial today and see your compliance score within the first hour.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link

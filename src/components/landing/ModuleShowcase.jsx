@@ -1,18 +1,19 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, AlertTriangle, FileText, Check } from "lucide-react";
+import { Reveal } from "./primitives";
 
 const TABS = [
   {
     key: "consent",
     icon: ShieldCheck,
     title: "Consent Management",
-    blurb: "Capture, prove and withdraw consent — with cryptographic artifacts for every record.",
+    blurb: "Capture, prove and withdraw consent with cryptographic artifacts on every record.",
     points: [
       "Purpose-based consent catalogs",
       "Tamper-proof consent hashes",
-      "One-click withdrawal + audit trail",
-      "Multi-channel capture (web, app, offline)",
+      "One-click withdrawal with full audit trail",
+      "Multi-channel capture across web, app and offline",
     ],
     mock: { metric: "1,284", label: "Active consents", trend: "+12% this month", bars: [62, 78, 71, 88, 95, 82, 90] },
   },
@@ -20,12 +21,12 @@ const TABS = [
     key: "breach",
     icon: AlertTriangle,
     title: "Breach Response",
-    blurb: "Run the entire incident lifecycle inside the 72-hour DPB notification window.",
+    blurb: "Run the full incident lifecycle inside the 72-hour notification window.",
     points: [
       "Severity-based incident routing",
-      "Root-cause & affected record tracking",
+      "Root-cause and affected record tracking",
       "One-click regulator notification",
-      "Containment → resolution playbook",
+      "Containment through resolution playbook",
     ],
     mock: { metric: "71h", label: "to DPB notification", trend: "SLA on track", bars: [30, 45, 60, 72, 55, 40, 35] },
   },
@@ -33,11 +34,11 @@ const TABS = [
     key: "ropa",
     icon: FileText,
     title: "Records of Processing",
-    blurb: "Keep your ROPA audit-ready with legal basis, retention and ownership for every activity.",
+    blurb: "Keep records of processing audit-ready with legal basis, retention and ownership on every activity.",
     points: [
       "Auto-generated processing inventory",
-      "Legal basis & retention tagging",
-      "Owner assignment & review cycles",
+      "Legal basis and retention tagging",
+      "Owner assignment and review cycles",
       "Export-ready for audits",
     ],
     mock: { metric: "47", label: "processing activities", trend: "3 due for review", bars: [40, 52, 48, 60, 64, 58, 66] },
@@ -49,17 +50,15 @@ export default function ModuleShowcase() {
   const tab = TABS.find((t) => t.key === active);
 
   return (
-    <section className="bg-slate-50 py-20 sm:py-24">
+    <section className="bg-slate-50 py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Built for the moments that matter
-          </h2>
-          <p className="mt-4 text-lg text-slate-600">
-            Three workflows that decide whether you're compliant — or exposed.
-          </p>
-        </div>
-        <div className="mt-10 flex flex-wrap justify-center gap-2">
+        <Reveal className="max-w-2xl">
+          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Product</span>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Built for the moments that matter</h2>
+          <p className="mt-4 text-lg text-slate-600">Three workflows that decide whether you are compliant or exposed.</p>
+        </Reveal>
+
+        <div className="mt-10 flex flex-wrap gap-2">
           {TABS.map((t) => {
             const Icon = t.icon;
             return (
@@ -83,7 +82,7 @@ export default function ModuleShowcase() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
-          className="mt-10 grid gap-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm lg:grid-cols-2 lg:p-10"
+          className="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-12"
         >
           <div>
             <h3 className="text-xl font-semibold text-slate-900">{tab.title}</h3>
@@ -99,7 +98,7 @@ export default function ModuleShowcase() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-slate-950 p-6">
+          <div className="rounded-2xl bg-slate-950 p-6 shadow-lg shadow-slate-300/50">
             <div className="flex items-end justify-between">
               <div>
                 <div className="text-[11px] uppercase tracking-widest text-slate-500">{tab.mock.label}</div>

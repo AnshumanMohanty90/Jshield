@@ -4,21 +4,21 @@ import { motion } from "framer-motion";
 import { Check, ArrowRight, RotateCcw } from "lucide-react";
 
 const ITEMS = [
-  "We maintain a living Record of Processing Activities (ROPA).",
+  "We maintain a living record of processing activities (ROPA).",
   "We capture and store verifiable consent records with timestamps.",
   "We fulfil data principal rights requests within statutory timelines.",
   "We have a documented 72-hour breach notification process.",
-  "We've classified personal data across all systems and data flows.",
-  "We have signed Data Processing Agreements with every processor.",
+  "We have classified personal data across all systems and data flows.",
+  "We have signed data processing agreements with every processor.",
   "We run a grievance redressal mechanism with SLA tracking.",
-  "We've appointed, or have on-demand access to, a Data Protection Officer.",
+  "We have appointed, or have on-demand access to, a data protection officer.",
 ];
 
 const VERDICTS = [
-  { min: 75, tone: "emerald", label: "Audit-ready", desc: "You're ahead of most peers. JagoAI keeps you there — automatically." },
+  { min: 75, tone: "emerald", label: "Audit-ready", desc: "You are ahead of most peers. JagoAI keeps you there, automatically." },
   { min: 50, tone: "sky", label: "On the right track", desc: "A few critical gaps remain. JagoAI closes them in weeks, not quarters." },
-  { min: 25, tone: "amber", label: "Early stage", desc: "Prioritize consent, ROPA and breach response first." },
-  { min: 0, tone: "rose", label: "Significant exposure", desc: "Let's build your DPDP roadmap together — start with a free assessment." },
+  { min: 25, tone: "amber", label: "Early stage", desc: "Prioritise consent, ROPA and breach response first." },
+  { min: 0, tone: "rose", label: "Significant exposure", desc: "Build your DPDP roadmap with us, starting with a free assessment." },
 ];
 
 const TONES = {
@@ -46,28 +46,28 @@ export default function ReadinessQuiz() {
   const reset = () => setChecked(new Array(ITEMS.length).fill(false));
 
   return (
-    <section className="bg-white py-20 sm:py-24">
+    <section className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Interactive</span>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             How DPDP-ready are you, really?
           </h2>
           <p className="mt-4 text-lg text-slate-600">
-            Check the statements that are true today. Your readiness score updates live — no email required.
+            Check the statements that hold true today. Your score updates live, with no email required.
           </p>
         </div>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-5">
-          <div className="space-y-2.5 lg:col-span-3">
+          <div className="divide-y divide-slate-200 overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-100 lg:col-span-3">
             {ITEMS.map((item, i) => {
               const on = checked[i];
               return (
                 <button
                   key={i}
                   onClick={() => toggle(i)}
-                  className={`flex w-full items-start gap-3 rounded-xl border p-4 text-left transition ${
-                    on ? "border-indigo-300 bg-indigo-50/60" : "border-slate-200 bg-white hover:border-slate-300"
+                  className={`flex w-full items-start gap-3 px-5 py-4 text-left transition ${
+                    on ? "bg-indigo-50/60" : "hover:bg-slate-50"
                   }`}
                 >
                   <span
@@ -84,7 +84,7 @@ export default function ReadinessQuiz() {
           </div>
 
           <div className="lg:col-span-2">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm ring-1 ring-slate-100 lg:sticky lg:top-24">
+            <div className="rounded-xl bg-slate-50 p-6 shadow-sm ring-1 ring-slate-100 lg:sticky lg:top-24">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">
                   Your readiness score
@@ -107,7 +107,7 @@ export default function ReadinessQuiz() {
                 </motion.span>
                 <span className="mb-1.5 text-sm text-slate-400">/ 100</span>
               </div>
-              <div className="mt-3 h-2.5 w-full overflow-hidden rounded-full bg-slate-100">
+              <div className="mt-3 h-2.5 w-full overflow-hidden rounded-full bg-slate-200">
                 <motion.div
                   className={`h-full rounded-full bg-gradient-to-r ${tone.bar}`}
                   animate={{ width: `${score}%` }}
