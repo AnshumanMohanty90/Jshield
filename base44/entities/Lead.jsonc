@@ -1,0 +1,35 @@
+{
+  "name": "Lead",
+  "type": "object",
+  "properties": {
+    "work_email": {
+      "type": "string",
+      "title": "Work Email"
+    },
+    "company_name": {
+      "type": "string",
+      "title": "Company Name"
+    },
+    "designation": {
+      "type": "string",
+      "title": "Designation"
+    },
+    "score": {
+      "type": "number",
+      "title": "Assessment Score"
+    },
+    "tier": {
+      "type": "string",
+      "title": "Readiness Tier"
+    },
+    "summary": {
+      "type": "string",
+      "title": "Recommendation Summary"
+    }
+  },
+  "required": [
+    "work_email",
+    "company_name",
+    "designation"
+  ]
+}

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Play, ShieldCheck, Database, AlertTriangle, Cookie, FileText } from "lucide-react";
+import { ArrowRight, ClipboardCheck, ShieldCheck, Database, AlertTriangle, Cookie, FileText } from "lucide-react";
 
 function Gauge() {
   const score = 92;
@@ -113,10 +113,10 @@ export default function Hero() {
                 Start free trial <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </Link>
               <Link
-                to="/contact"
+                to="/assessment"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                <Play className="h-4 w-4" /> Book a demo
+                <ClipboardCheck className="h-4 w-4" /> Take the 2-minute assessment
               </Link>
             </motion.div>
             <motion.p

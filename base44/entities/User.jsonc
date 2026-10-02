@@ -7,6 +7,14 @@
         "admin",
         "user"
       ]
+    },
+    "company_name": {
+      "type": "string",
+      "title": "Company Name"
+    },
+    "designation": {
+      "type": "string",
+      "title": "Designation"
     }
   },
   "required": [
