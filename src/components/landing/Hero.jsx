@@ -97,7 +97,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.12 }}
               className="mt-5 max-w-xl text-lg leading-relaxed text-slate-300"
             >
-              JagoAI unifies data discovery, consent, vendor risk, breach response and records of processing in one
+              Jaguard unifies data discovery, consent, vendor risk, breach response and records of processing in one
               workspace, so your privacy program keeps pace with the business and stays ready for the regulator.
             </motion.p>
             <motion.div
@@ -125,7 +125,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-5 text-xs text-slate-500"
             >
-              No credit card required. 14-day trial. Set up in under an hour.
+              No credit card required. 10-day trial. Set up in under an hour.
             </motion.p>
           </div>
 
@@ -140,7 +140,7 @@ export default function Hero() {
                 <span className="h-2.5 w-2.5 rounded-full bg-rose-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-amber-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
-                <span className="ml-3 text-[11px] text-slate-500">jagoai.app/dashboard</span>
+                <span className="ml-3 text-[11px] text-slate-500">jaguard.app/dashboard</span>
               </div>
               <div className="grid grid-cols-3 overflow-hidden rounded-xl bg-slate-950/60">
                 <div className="col-span-1 divide-y divide-white/5 border-r border-white/5">

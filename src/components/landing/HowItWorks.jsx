@@ -66,7 +66,7 @@ export default function HowItWorks() {
                       {s.title}
                     </h3>
                     <p className="mt-1 text-sm leading-relaxed text-slate-600">
-                      {on ? s.desc : "Tap to see how JagoAI runs this stage."}
+                      {on ? s.desc : "Tap to see how Jaguard runs this stage."}
                     </p>
                   </div>
                 </button>

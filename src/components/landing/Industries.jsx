@@ -114,7 +114,7 @@ export default function Industries() {
             </div>
             <h3 className="mt-4 text-xl font-semibold text-slate-900">{ind.headline}</h3>
             <p className="mt-2 text-sm text-slate-600">
-              {ind.label} teams use JagoAI to operationalise DPDP without slowing the business.
+              {ind.label} teams use Jaguard to operationalise DPDP without slowing the business.
             </p>
           </div>
           <div className="grid gap-0 sm:grid-cols-2">

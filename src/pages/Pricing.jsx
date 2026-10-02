@@ -16,10 +16,10 @@ const INCLUDED = [
 ];
 
 const FAQ = [
-  { q: "Is JagoAI aligned with the DPDP Act 2023?", a: "Yes. Every module maps to a DPDP obligation, from consent and ROPA to breach notification and data principal rights." },
+  { q: "Is Jaguard aligned with the DPDP Act 2023?", a: "Yes. Every module maps to a DPDP obligation, from consent and ROPA to breach notification and data principal rights." },
   { q: "What is included in the trial?", a: "Everything. The full platform, all nine modules and every feature, with no limits, for ten days." },
-  { q: "Do I need a credit card to start?", a: "No. The trial needs no credit card. We only talk about payment if you choose to renew." },
-  { q: "What happens after the ten-day trial?", a: "Your workspace stays intact. Renew on a flat annual plan to keep access, or let the trial end with no charge and no follow-up obligation." },
+  { q: "Do I need a credit card to start?", a: "No. The trial needs no credit card and there is nothing to pay during the trial." },
+  { q: "What happens after the ten-day trial?", a: "The trial is the complete platform. When you are ready to roll it out across your organisation, contact sales about enterprise adoption." },
   { q: "Can we export records for audits?", a: "Yes. ROPA, consent records and breach logs export as audit-ready documents in a single click." },
 ];
 
@@ -33,7 +33,7 @@ export default function Pricing() {
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-300">Pricing</span>
           <h1 className="mt-3 text-4xl font-bold tracking-tight text-white sm:text-5xl">Everything. Free for ten days.</h1>
           <p className="mt-4 text-lg text-slate-300">
-            The full platform, every module, no credit card. If it works for you, renew. If not, walk away.
+            The full platform, every module, no credit card. Use it for ten days, then talk to sales about enterprise adoption.
           </p>
         </div>
       </section>
@@ -79,14 +79,14 @@ export default function Pricing() {
               <div>
                 <h3 className="text-base font-semibold text-slate-900">After your trial</h3>
                 <p className="mt-1 text-sm text-slate-600">
-                  Continue on one flat annual plan. We confirm your price when your trial begins, with no surprises.
+                  The trial is the full product. To adopt it across your organisation, talk to sales about enterprise rollout.
                 </p>
               </div>
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-700"
               >
-                Talk to us <ArrowRight className="h-4 w-4" />
+                Talk to sales <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>

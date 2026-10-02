@@ -15,8 +15,8 @@ const ITEMS = [
 ];
 
 const VERDICTS = [
-  { min: 75, tone: "emerald", label: "Audit-ready", desc: "You are ahead of most peers. JagoAI keeps you there, automatically." },
-  { min: 50, tone: "sky", label: "On the right track", desc: "A few critical gaps remain. JagoAI closes them in weeks, not quarters." },
+  { min: 75, tone: "emerald", label: "Audit-ready", desc: "You are ahead of most peers. Jaguard keeps you there, automatically." },
+  { min: 50, tone: "sky", label: "On the right track", desc: "A few critical gaps remain. Jaguard closes them in weeks, not quarters." },
   { min: 25, tone: "amber", label: "Early stage", desc: "Prioritise consent, ROPA and breach response first." },
   { min: 0, tone: "rose", label: "Significant exposure", desc: "Build your DPDP roadmap with us, starting with a free assessment." },
 ];
@@ -122,7 +122,7 @@ export default function ReadinessQuiz() {
                 to="/register"
                 className="group mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-200 transition hover:shadow-indigo-300"
               >
-                See how JagoAI closes your gaps <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                See how Jaguard closes your gaps <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </Link>
               <p className="mt-3 text-center text-xs text-slate-400">
                 {checked.filter(Boolean).length} of {ITEMS.length} obligations covered

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Shield, Menu, X, ArrowRight } from "lucide-react";
+import { Shield, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const LINKS = [
@@ -39,7 +39,10 @@ export default function Nav() {
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-sky-500 shadow-lg shadow-indigo-500/20">
             <Shield className="h-5 w-5 text-white" />
           </span>
-          <span className="text-lg font-semibold text-white tracking-tight">JagoAI</span>
+          <span className="leading-tight">
+            <span className="block text-lg font-semibold text-white tracking-tight">Jaguard</span>
+            <span className="block text-[10px] uppercase tracking-widest text-indigo-300/70">by Jago AI</span>
+          </span>
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -48,19 +51,6 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
-        </div>
-
-        <div className="hidden items-center gap-3 md:flex">
-          <Link to="/login" className="text-sm font-medium text-slate-200 hover:text-white">
-            Sign in
-          </Link>
-          <Link
-            to="/register"
-            className="group inline-flex items-center gap-1.5 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
-          >
-            Get started
-            <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
-          </Link>
         </div>
 
         <button className="text-white md:hidden" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
@@ -81,14 +71,7 @@ export default function Nav() {
               </Link>
             ))}
           </div>
-          <div className="mt-3 flex gap-3">
-            <Link to="/login" className="flex-1 rounded-lg border border-white/15 px-4 py-2.5 text-center text-sm font-medium text-white">
-              Sign in
-            </Link>
-            <Link to="/register" className="flex-1 rounded-lg bg-white px-4 py-2.5 text-center text-sm font-semibold text-slate-900">
-              Get started
-            </Link>
-          </div>
+
         </div>
       )}
     </header>

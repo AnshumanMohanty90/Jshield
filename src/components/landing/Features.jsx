@@ -32,7 +32,7 @@ export default function Features() {
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Platform</span>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">One platform. Nine workflows.</h2>
           <p className="mt-4 text-lg text-slate-600">
-            Stop stitching spreadsheets together. JagoAI covers the full DPDP lifecycle across connected modules.
+            Stop stitching spreadsheets together. Jaguard covers the full DPDP lifecycle across connected modules.
           </p>
         </Reveal>
 

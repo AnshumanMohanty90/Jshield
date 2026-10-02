@@ -57,8 +57,8 @@ const QUESTIONS = [
 ];
 
 const TIERS = [
-  { min: 75, label: "Audit-ready", desc: "You are ahead of most peers. JagoAI keeps you there, automatically.", tone: "text-emerald-600", chip: "bg-emerald-50 text-emerald-700" },
-  { min: 50, label: "On the right track", desc: "A few critical gaps remain. JagoAI closes them in weeks, not quarters.", tone: "text-sky-600", chip: "bg-sky-50 text-sky-700" },
+  { min: 75, label: "Audit-ready", desc: "You are ahead of most peers. Jaguard keeps you there, automatically.", tone: "text-emerald-600", chip: "bg-emerald-50 text-emerald-700" },
+  { min: 50, label: "On the right track", desc: "A few critical gaps remain. Jaguard closes them in weeks, not quarters.", tone: "text-sky-600", chip: "bg-sky-50 text-sky-700" },
   { min: 25, label: "Early stage", desc: "Prioritise the fundamentals first. We will show you where to start.", tone: "text-amber-600", chip: "bg-amber-50 text-amber-700" },
   { min: 0, label: "Significant exposure", desc: "Let us build your DPDP roadmap together, starting with a free assessment call.", tone: "text-rose-600", chip: "bg-rose-50 text-rose-700" },
 ];
@@ -326,7 +326,7 @@ export default function Assessment() {
                       </h3>
                       {gaps.length === 0 ? (
                         <p className="mt-3 text-sm text-slate-600">
-                          You have no critical gaps. JagoAI will keep your program audit-ready as obligations evolve.
+                          You have no critical gaps. Jaguard will keep your program audit-ready as obligations evolve.
                         </p>
                       ) : (
                         <ol className="mt-4 space-y-3">
