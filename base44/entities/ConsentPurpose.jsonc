@@ -1,0 +1,48 @@
+{
+  "name": "ConsentPurpose",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Purpose Name"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "legal_basis": {
+      "type": "string",
+      "title": "Legal Basis",
+      "enum": [
+        "Consent",
+        "Legitimate Use",
+        "Legal Obligation",
+        "Vital Interest"
+      ]
+    },
+    "retention_period": {
+      "type": "string",
+      "title": "Retention Period"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Active",
+        "Pending",
+        "Draft",
+        "Expired"
+      ],
+      "default": "Active"
+    },
+    "consents_count": {
+      "type": "number",
+      "title": "Active Consents",
+      "default": 0
+    }
+  },
+  "required": [
+    "name",
+    "status"
+  ]
+}

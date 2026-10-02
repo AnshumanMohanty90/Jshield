@@ -1,0 +1,75 @@
+{
+  "name": "DataAsset",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Asset Name"
+    },
+    "system": {
+      "type": "string",
+      "title": "System / Source"
+    },
+    "data_category": {
+      "type": "string",
+      "title": "Data Category",
+      "enum": [
+        "Identity",
+        "Financial",
+        "Behavioural",
+        "Health",
+        "Contact",
+        "Biometric",
+        "Usage Data",
+        "Employment"
+      ]
+    },
+    "pii_types": {
+      "type": "string",
+      "title": "PII Types"
+    },
+    "risk_score": {
+      "type": "number",
+      "title": "Risk Score"
+    },
+    "risk_level": {
+      "type": "string",
+      "title": "Risk Level",
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ]
+    },
+    "owner": {
+      "type": "string",
+      "title": "Data Owner"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Scanning",
+        "Mapped",
+        "Classified",
+        "Review"
+      ],
+      "default": "Mapped"
+    },
+    "location": {
+      "type": "string",
+      "title": "Storage Location"
+    },
+    "last_scan": {
+      "type": "string",
+      "format": "date",
+      "title": "Last Scanned"
+    }
+  },
+  "required": [
+    "name",
+    "system",
+    "risk_level"
+  ]
+}

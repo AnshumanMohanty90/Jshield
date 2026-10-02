@@ -1,0 +1,72 @@
+{
+  "name": "Grievance",
+  "type": "object",
+  "properties": {
+    "ticket_id": {
+      "type": "string",
+      "title": "Ticket ID"
+    },
+    "principal_name": {
+      "type": "string",
+      "title": "Data Principal Name"
+    },
+    "principal_email": {
+      "type": "string",
+      "title": "Principal Email"
+    },
+    "grievance_type": {
+      "type": "string",
+      "title": "Grievance Type",
+      "enum": [
+        "Data Deletion Request",
+        "Access to Personal Data",
+        "Consent Withdrawal",
+        "Incorrect Data Correction",
+        "Grievance Redressal",
+        "Data Portability"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Open",
+        "Acknowledged",
+        "In Progress",
+        "Escalated",
+        "Resolved"
+      ],
+      "default": "Open"
+    },
+    "priority": {
+      "type": "string",
+      "title": "Priority",
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ],
+      "default": "Medium"
+    },
+    "sla_deadline": {
+      "type": "string",
+      "format": "date-time",
+      "title": "SLA Deadline"
+    },
+    "resolution": {
+      "type": "string",
+      "title": "Resolution Notes"
+    }
+  },
+  "required": [
+    "ticket_id",
+    "principal_name",
+    "grievance_type",
+    "status"
+  ]
+}

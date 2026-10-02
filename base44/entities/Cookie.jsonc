@@ -1,0 +1,53 @@
+{
+  "name": "Cookie",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Cookie Name"
+    },
+    "category": {
+      "type": "string",
+      "title": "Category",
+      "enum": [
+        "Strictly Necessary",
+        "Functional",
+        "Analytics",
+        "Marketing",
+        "Third-Party"
+      ]
+    },
+    "purpose": {
+      "type": "string",
+      "title": "Purpose"
+    },
+    "provider": {
+      "type": "string",
+      "title": "Provider / Domain"
+    },
+    "consent_required": {
+      "type": "boolean",
+      "title": "Consent Required",
+      "default": true
+    },
+    "retention": {
+      "type": "string",
+      "title": "Retention Duration"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Active",
+        "Blocked",
+        "Review"
+      ],
+      "default": "Active"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "status"
+  ]
+}

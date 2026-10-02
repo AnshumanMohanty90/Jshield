@@ -1,0 +1,66 @@
+{
+  "name": "ROPAEntry",
+  "type": "object",
+  "properties": {
+    "activity_name": {
+      "type": "string",
+      "title": "Processing Activity"
+    },
+    "purpose": {
+      "type": "string",
+      "title": "Purpose"
+    },
+    "data_category": {
+      "type": "string",
+      "title": "Data Category",
+      "enum": [
+        "Identity",
+        "Financial",
+        "Behavioural",
+        "Health",
+        "Contact",
+        "Biometric",
+        "Usage Data",
+        "Employment"
+      ]
+    },
+    "data_subjects": {
+      "type": "string",
+      "title": "Data Subjects"
+    },
+    "retention_period": {
+      "type": "string",
+      "title": "Retention Period"
+    },
+    "legal_basis": {
+      "type": "string",
+      "title": "Legal Basis",
+      "enum": [
+        "Consent",
+        "Legitimate Use",
+        "Legal Obligation",
+        "Vital Interest"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Active",
+        "Review",
+        "Draft",
+        "Archived"
+      ],
+      "default": "Active"
+    },
+    "owner": {
+      "type": "string",
+      "title": "Activity Owner"
+    }
+  },
+  "required": [
+    "activity_name",
+    "purpose",
+    "status"
+  ]
+}

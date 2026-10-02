@@ -1,0 +1,63 @@
+{
+  "name": "BreachIncident",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Incident Title"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "severity": {
+      "type": "string",
+      "title": "Severity",
+      "enum": [
+        "Critical",
+        "High",
+        "Medium",
+        "Low"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Detected",
+        "Investigating",
+        "Contained",
+        "Notified",
+        "Resolved"
+      ],
+      "default": "Detected"
+    },
+    "detected_date": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Detected Date"
+    },
+    "affected_records": {
+      "type": "number",
+      "title": "Affected Records"
+    },
+    "root_cause": {
+      "type": "string",
+      "title": "Root Cause"
+    },
+    "assigned_to": {
+      "type": "string",
+      "title": "Assigned To"
+    },
+    "regulator_notified": {
+      "type": "boolean",
+      "title": "Regulator Notified (DPB)",
+      "default": false
+    }
+  },
+  "required": [
+    "title",
+    "severity",
+    "status"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "name": "ConsentRecord",
+  "type": "object",
+  "properties": {
+    "principal_name": {
+      "type": "string",
+      "title": "Data Principal Name"
+    },
+    "principal_email": {
+      "type": "string",
+      "title": "Data Principal Email"
+    },
+    "purpose": {
+      "type": "string",
+      "title": "Purpose"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Granted",
+        "Withdrawn",
+        "Pending",
+        "Expired"
+      ],
+      "default": "Granted"
+    },
+    "channel": {
+      "type": "string",
+      "title": "Collection Channel",
+      "enum": [
+        "Web",
+        "Mobile App",
+        "Offline",
+        "API",
+        "Email"
+      ]
+    },
+    "artifact_id": {
+      "type": "string",
+      "title": "Artifact ID"
+    },
+    "hash": {
+      "type": "string",
+      "title": "Consent Hash"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Timestamp"
+    }
+  },
+  "required": [
+    "principal_name",
+    "purpose",
+    "status"
+  ]
+}

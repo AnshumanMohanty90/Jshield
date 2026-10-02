@@ -1,0 +1,63 @@
+{
+  "name": "Vendor",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Vendor Name"
+    },
+    "type": {
+      "type": "string",
+      "title": "Service Type"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Active",
+        "Review",
+        "Onboarding",
+        "Offboarded"
+      ],
+      "default": "Active"
+    },
+    "risk_level": {
+      "type": "string",
+      "title": "Risk Level",
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ]
+    },
+    "risk_score": {
+      "type": "number",
+      "title": "Risk Score"
+    },
+    "data_access": {
+      "type": "string",
+      "title": "Data Access Scope"
+    },
+    "contract_expiry": {
+      "type": "string",
+      "format": "date",
+      "title": "Contract Expiry"
+    },
+    "last_audit": {
+      "type": "string",
+      "format": "date",
+      "title": "Last Audit Date"
+    },
+    "dpa_signed": {
+      "type": "boolean",
+      "title": "DPA Signed",
+      "default": false
+    }
+  },
+  "required": [
+    "name",
+    "status",
+    "risk_level"
+  ]
+}
