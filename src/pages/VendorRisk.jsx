@@ -24,6 +24,8 @@ export default function VendorRisk() {
         { key: "data_access", label: "Data Access", className: "max-w-xs truncate" },
         { key: "risk_level", label: "Risk", badge: true },
         { key: "dpa_signed", label: "DPA", type: "boolean" },
+        { key: "data_localised", label: "Localised", type: "boolean" },
+        { key: "transfer_destination", label: "Transfer To" },
         { key: "contract_expiry", label: "Contract Expiry", type: "date" },
         { key: "status", label: "Status", badge: true },
       ]}
@@ -35,6 +37,8 @@ export default function VendorRisk() {
         { key: "risk_score", label: "Risk Score (0-100)", type: "number" },
         { key: "data_access", label: "Data Access Scope", placeholder: "What data they can access" },
         { key: "dpa_signed", label: "DPA Signed", type: "boolean", default: false },
+        { key: "data_localised", label: "Data Localised in India", type: "boolean", default: false },
+        { key: "transfer_destination", label: "Cross-Border Transfer Destination", placeholder: "e.g. None, EU, US" },
         { key: "contract_expiry", label: "Contract Expiry", type: "date" },
         { key: "last_audit", label: "Last Audit Date", type: "date" },
       ]}

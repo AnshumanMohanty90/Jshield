@@ -1,0 +1,56 @@
+{
+  "name": "SecurityControl",
+  "type": "object",
+  "properties": {
+    "control_name": {
+      "type": "string",
+      "title": "Control Name"
+    },
+    "control_id": {
+      "type": "string",
+      "title": "Rule 6 Control",
+      "enum": [
+        "Encryption",
+        "Access Control",
+        "Data Masking",
+        "Monitoring",
+        "Log Retention",
+        "Incident Response",
+        "DPA Safeguards"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "title": "Implementation Status",
+      "enum": [
+        "Implemented",
+        "Partial",
+        "Planned",
+        "Gap"
+      ],
+      "default": "Planned"
+    },
+    "evidence": {
+      "type": "string",
+      "title": "Evidence / Artifact"
+    },
+    "owner": {
+      "type": "string",
+      "title": "Control Owner"
+    },
+    "last_reviewed": {
+      "type": "string",
+      "format": "date",
+      "title": "Last Reviewed"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "control_name",
+    "control_id",
+    "status"
+  ]
+}

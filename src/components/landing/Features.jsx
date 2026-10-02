@@ -9,6 +9,8 @@ import {
   FileText,
   MessageSquareWarning,
   UserCog,
+  FileSearch,
+  Lock,
 } from "lucide-react";
 import { Reveal } from "./primitives";
 
@@ -22,6 +24,8 @@ const ITEMS = [
   { icon: FileText, title: "ROPA", desc: "Maintain records of processing with legal basis and retention built in." },
   { icon: MessageSquareWarning, title: "Grievances", desc: "Resolve data principal grievances with SLA-aware routing and escalation." },
   { icon: UserCog, title: "Data Principal Rights", desc: "Fulfil access, correction, erasure and portability requests on deadline." },
+  { icon: FileSearch, title: "DPIA", desc: "Run Data Protection Impact Assessments for high-risk and SDF processing with residual risk tracking." },
+  { icon: Lock, title: "Security Safeguards", desc: "Track all seven Rule 6 controls — encryption, access, masking, monitoring, logs, response and DPAs." },
 ];
 
 export default function Features() {
@@ -30,7 +34,7 @@ export default function Features() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Platform</span>
-          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">One platform. Nine workflows.</h2>
+          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">One platform. Eleven workflows.</h2>
           <p className="mt-3 text-lg text-slate-600">
             Stop stitching spreadsheets together. Jaguard covers the full DPDP lifecycle across connected modules.
           </p>

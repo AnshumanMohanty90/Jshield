@@ -1,7 +1,7 @@
 import { AnimatedNumber, Reveal } from "./primitives";
 
 const STATS = [
-  { value: 9, suffix: "", label: "Connected compliance modules" },
+  { value: 11, suffix: "", label: "Connected compliance modules" },
   { value: 100, suffix: "%", label: "ROPA coverage target" },
   { value: 72, suffix: "h", label: "Breach notification window" },
   { value: 30, suffix: " days", label: "To audit-ready posture" },

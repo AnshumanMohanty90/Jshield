@@ -12,6 +12,12 @@ const ITEMS = [
   "We have signed data processing agreements with every processor.",
   "We run a grievance redressal mechanism with SLA tracking.",
   "We have appointed, or have on-demand access to, a data protection officer.",
+  "We ensure every consent is free, specific and informed — never bundled or pre-ticked.",
+  "We handle children's personal data with verifiable parental consent.",
+  "We run DPIAs for high-risk and significant data fiduciary processing.",
+  "We implement all seven DPDP Rule 6 security safeguards.",
+  "We track cross-border transfers and their destinations.",
+  "We enforce retention periods and delete personal data on schedule.",
 ];
 
 const VERDICTS = [

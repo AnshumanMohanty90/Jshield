@@ -10,7 +10,7 @@ export default function BreachManagement() {
     <EntityModule
       entityName="BreachIncident"
       title="Breach & Incident Management"
-      subtitle="Detect, monitor, and respond to unauthorized data activities. Track the 72-hour regulator notification window mandated under DPDP."
+      subtitle="Detect, monitor, and respond to unauthorized data activities. Track both stages of DPDP breach notification — the Data Protection Board within 72 hours, and affected Data Principals thereafter."
       icon={AlertTriangle}
       extraStats={(items) => [
         { label: "Total Incidents", value: items.length, icon: Activity, tone: "rose" },
@@ -25,6 +25,9 @@ export default function BreachManagement() {
         { key: "assigned_to", label: "Assigned" },
         { key: "detected_date", label: "Detected", type: "datetime" },
         { key: "regulator_notified", label: "DPB Notified", type: "boolean" },
+        { key: "board_notified_date", label: "Board Notified", type: "datetime" },
+        { key: "principals_notified_date", label: "Principals Notified", type: "datetime" },
+        { key: "notification_stage", label: "Stage" },
         { key: "status", label: "Status", badge: true },
       ]}
       formFields={[
@@ -37,6 +40,9 @@ export default function BreachManagement() {
         { key: "assigned_to", label: "Assigned To", placeholder: "e.g. Security Ops" },
         { key: "detected_date", label: "Detected Date", type: "datetime" },
         { key: "regulator_notified", label: "Regulator Notified (DPB)", type: "boolean", default: false },
+        { key: "board_notified_date", label: "Board Notified Date", type: "datetime" },
+        { key: "principals_notified_date", label: "Principals Notified Date", type: "datetime" },
+        { key: "notification_stage", label: "Notification Stage", type: "select", options: ["Not Started", "Board Notified", "Principals Notified", "Complete"], default: "Not Started" },
       ]}
     />
   );

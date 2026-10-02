@@ -43,6 +43,16 @@ const STATUS_TONES = {
   Rejected: "bg-rose-50 text-rose-700 ring-rose-600/20",
   Blocked: "bg-rose-50 text-rose-700 ring-rose-600/20",
   Archived: "bg-slate-100 text-slate-500 ring-slate-400/20",
+  Implemented: "bg-emerald-50 text-emerald-700 ring-emerald-600/20",
+  Partial: "bg-amber-50 text-amber-700 ring-amber-600/20",
+  Planned: "bg-slate-100 text-slate-600 ring-slate-500/20",
+  Gap: "bg-rose-50 text-rose-700 ring-rose-600/20",
+  Approved: "bg-emerald-50 text-emerald-700 ring-emerald-600/20",
+  Overdue: "bg-rose-50 text-rose-700 ring-rose-600/20",
+  Complete: "bg-emerald-50 text-emerald-700 ring-emerald-600/20",
+  "Not Started": "bg-slate-100 text-slate-600 ring-slate-500/20",
+  "Board Notified": "bg-indigo-50 text-indigo-700 ring-indigo-600/20",
+  "Principals Notified": "bg-sky-50 text-sky-700 ring-sky-600/20",
 };
 
 export function RiskBadge({ level, score }) {

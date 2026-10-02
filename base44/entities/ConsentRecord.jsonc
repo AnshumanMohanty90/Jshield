@@ -48,6 +48,16 @@
       "type": "string",
       "format": "date-time",
       "title": "Timestamp"
+    },
+    "involves_children": {
+      "type": "boolean",
+      "title": "Involves Children's Data",
+      "default": false
+    },
+    "parental_consent_verified": {
+      "type": "boolean",
+      "title": "Parental Consent Verified",
+      "default": false
     }
   },
   "required": [

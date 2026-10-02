@@ -14,46 +14,20 @@ import LandingLayout from "@/components/landing/LandingLayout";
 import { base44 } from "@/api/base44Client";
 
 const QUESTIONS = [
-  {
-    q: "Have you mapped personal data across all systems and data flows?",
-    opts: [{ l: "Not yet", s: 0 }, { l: "Partially", s: 1 }, { l: "Yes, fully", s: 2 }],
-    rec: "Map and classify personal data across every system. Start in Data Discovery.",
-  },
-  {
-    q: "Do you capture and store verifiable consent records with timestamps?",
-    opts: [{ l: "No", s: 0 }, { l: "Some channels", s: 1 }, { l: "Yes, everywhere", s: 2 }],
-    rec: "Stand up purpose-based consent capture with tamper-proof records in Consent Management.",
-  },
-  {
-    q: "Can you fulfil data principal rights requests within statutory timelines?",
-    opts: [{ l: "No process", s: 0 }, { l: "Manual", s: 1 }, { l: "Automated", s: 2 }],
-    rec: "Automate access, correction and erasure workflows in Data Principal Rights.",
-  },
-  {
-    q: "Do you have a documented 72-hour breach notification process?",
-    opts: [{ l: "No", s: 0 }, { l: "Draft", s: 1 }, { l: "Yes, tested", s: 2 }],
-    rec: "Codify your breach response and DPB notification in Breach Response.",
-  },
-  {
-    q: "Do you maintain a living Record of Processing Activities (ROPA)?",
-    opts: [{ l: "No", s: 0 }, { l: "Outdated", s: 1 }, { l: "Yes, current", s: 2 }],
-    rec: "Keep your ROPA audit-ready with legal basis and retention in ROPA.",
-  },
-  {
-    q: "Have you signed DPAs with all third-party processors?",
-    opts: [{ l: "No", s: 0 }, { l: "Some", s: 1 }, { l: "All", s: 2 }],
-    rec: "Track DPAs and processor risk in Vendor Risk.",
-  },
-  {
-    q: "Do you run a grievance redressal mechanism with SLA tracking?",
-    opts: [{ l: "No", s: 0 }, { l: "Informal", s: 1 }, { l: "Yes, tracked", s: 2 }],
-    rec: "Route and track grievances with SLAs in Grievances.",
-  },
-  {
-    q: "Do you have access to a Data Protection Officer?",
-    opts: [{ l: "No", s: 0 }, { l: "Part-time", s: 1 }, { l: "Yes", s: 2 }],
-    rec: "Appoint or source a DPO and centralise governance in the Command Center.",
-  },
+  { w: 2, q: "Have you mapped personal data across all systems and data flows?", opts: [{ l: "Not yet", s: 0 }, { l: "Partially", s: 1 }, { l: "Yes, fully", s: 2 }], rec: "Map and classify personal data across every system. Start in Data Discovery." },
+  { w: 3, q: "Do you capture and store verifiable consent records with timestamps?", opts: [{ l: "No", s: 0 }, { l: "Some channels", s: 1 }, { l: "Yes, everywhere", s: 2 }], rec: "Stand up purpose-based consent capture with tamper-proof records in Consent Management." },
+  { w: 3, q: "Can you fulfil data principal rights requests within statutory timelines?", opts: [{ l: "No process", s: 0 }, { l: "Manual", s: 1 }, { l: "Automated", s: 2 }], rec: "Automate access, correction and erasure workflows in Data Principal Rights." },
+  { w: 3, q: "Do you have a documented 72-hour breach notification process?", opts: [{ l: "No", s: 0 }, { l: "Draft", s: 1 }, { l: "Yes, tested", s: 2 }], rec: "Codify your breach response and both-stage DPB + principal notification in Breach Response." },
+  { w: 2, q: "Do you maintain a living Record of Processing Activities (ROPA)?", opts: [{ l: "No", s: 0 }, { l: "Outdated", s: 1 }, { l: "Yes, current", s: 2 }], rec: "Keep your ROPA audit-ready with legal basis, retention and transfer scope in ROPA." },
+  { w: 2, q: "Have you signed DPAs with all third-party processors?", opts: [{ l: "No", s: 0 }, { l: "Some", s: 1 }, { l: "All", s: 2 }], rec: "Track DPAs, localisation and processor risk in Vendor Risk." },
+  { w: 2, q: "Do you run a grievance redressal mechanism with SLA tracking?", opts: [{ l: "No", s: 0 }, { l: "Informal", s: 1 }, { l: "Yes, tracked", s: 2 }], rec: "Route and track grievances within the 90-day SLA in Grievances." },
+  { w: 1, q: "Do you have access to a Data Protection Officer?", opts: [{ l: "No", s: 0 }, { l: "Part-time", s: 1 }, { l: "Yes", s: 2 }], rec: "Appoint or source a DPO and centralise governance in the Command Center." },
+  { w: 3, q: "Is every consent free, specific and informed (never bundled or pre-ticked)?", opts: [{ l: "Unsure", s: 0 }, { l: "Mostly", s: 1 }, { l: "Always", s: 2 }], rec: "Enforce granular, unbundled consent with clear notices in Consent Management." },
+  { w: 2, q: "Do you handle children's data with verifiable parental consent?", opts: [{ l: "No", s: 0 }, { l: "Partially", s: 1 }, { l: "Yes", s: 2 }], rec: "Flag minors' data and verify parental consent before processing in Consent Management." },
+  { w: 2, q: "Do you run DPIAs for high-risk or SDF processing?", opts: [{ l: "No", s: 0 }, { l: "Ad hoc", s: 1 }, { l: "Annually", s: 2 }], rec: "Run and review Data Protection Impact Assessments in the DPIA module." },
+  { w: 3, q: "Are all seven DPDP Rule 6 security safeguards implemented?", opts: [{ l: "Few", s: 0 }, { l: "Most", s: 1 }, { l: "All", s: 2 }], rec: "Close control gaps in the Security Safeguards register — encryption, access, masking, monitoring, logs, IR and DPAs." },
+  { w: 2, q: "Do you track cross-border transfers and their destinations?", opts: [{ l: "No", s: 0 }, { l: "Partially", s: 1 }, { l: "Yes", s: 2 }], rec: "Record transfer destinations on ROPA and vendor records to meet Section 16." },
+  { w: 2, q: "Do you enforce retention periods and delete data on schedule?", opts: [{ l: "No", s: 0 }, { l: "Manual", s: 1 }, { l: "Automated", s: 2 }], rec: "Bind retention to erasure workflows so expired personal data is removed on schedule." },
 ];
 
 const TIERS = [
@@ -77,8 +51,11 @@ export default function Assessment() {
   const [score, setScore] = useState(0);
 
   const total = QUESTIONS.length;
-  const calcScore = (arr) =>
-    Math.round((arr.reduce((a, b) => a + b, 0) / (total * 2)) * 100);
+  const calcScore = (arr) => {
+    const totalW = QUESTIONS.reduce((s, q) => s + q.w, 0);
+    const got = QUESTIONS.reduce((s, q, i) => s + q.w * ((arr[i] ?? 0) / 2), 0);
+    return Math.round((got / totalW) * 100);
+  };
 
   const start = () => {
     setStage("questions");
@@ -148,10 +125,10 @@ export default function Assessment() {
                 <Sparkles className="h-3.5 w-3.5" /> Free DPDP readiness assessment
               </span>
               <h1 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">
-                Find out where you stand on DPDP, in two minutes.
+                Find out where you stand on DPDP, in three minutes.
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-slate-300">
-                Answer eight questions across the DPDP obligations. Get a readiness score, a prioritised action list,
+                Answer fourteen questions across every DPDP obligation. Get a readiness score, a prioritised action list,
                 and the exact modules that close your gaps. No signup, no credit card.
               </p>
               <button
@@ -160,7 +137,7 @@ export default function Assessment() {
               >
                 Start the assessment <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </button>
-              <p className="mt-4 text-xs text-slate-500">8 questions · 2 minutes · instant report</p>
+              <p className="mt-4 text-xs text-slate-500">14 questions · 3 minutes · instant report</p>
             </div>
           </motion.section>
         )}

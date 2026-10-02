@@ -53,6 +53,15 @@
       "type": "boolean",
       "title": "DPA Signed",
       "default": false
+    },
+    "data_localised": {
+      "type": "boolean",
+      "title": "Data Localised in India",
+      "default": false
+    },
+    "transfer_destination": {
+      "type": "string",
+      "title": "Cross-Border Transfer Destination"
     }
   },
   "required": [

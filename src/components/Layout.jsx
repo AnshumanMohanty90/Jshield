@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import {
   LayoutDashboard, Database, ShieldCheck, Cookie, Building2,
   AlertTriangle, FileText, MessageSquareWarning, UserCog,
-  Shield, ChevronLeft, Menu,
+  Shield, ChevronLeft, Menu, FileSearch, Lock,
 } from "lucide-react";
 
 const NAV = [
@@ -15,11 +15,13 @@ const NAV = [
       { label: "Data Discovery", to: "/data-discovery", icon: Database },
       { label: "Consent Management", to: "/consents", icon: ShieldCheck },
       { label: "Cookie Manager", to: "/cookies", icon: Cookie },
+      { label: "DPIA", to: "/dpia", icon: FileSearch },
     ],
   },
   {
     group: "Risk & Compliance",
     items: [
+      { label: "Security Safeguards", to: "/security-safeguards", icon: Lock },
       { label: "Vendor Risk", to: "/vendors", icon: Building2 },
       { label: "Breach & Incidents", to: "/breaches", icon: AlertTriangle },
     ],

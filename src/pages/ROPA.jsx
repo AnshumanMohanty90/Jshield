@@ -26,6 +26,7 @@ export default function ROPA() {
         { key: "data_subjects", label: "Subjects" },
         { key: "retention_period", label: "Retention" },
         { key: "legal_basis", label: "Legal Basis" },
+        { key: "transfer_destination", label: "Cross-Border" },
         { key: "owner", label: "Owner" },
         { key: "status", label: "Status", badge: true },
       ]}
@@ -36,6 +37,7 @@ export default function ROPA() {
         { key: "data_subjects", label: "Data Subjects", placeholder: "e.g. Customers, Employees" },
         { key: "retention_period", label: "Retention Period", placeholder: "e.g. 7 years" },
         { key: "legal_basis", label: "Legal Basis", type: "select", options: LEGAL_BASIS },
+        { key: "transfer_destination", label: "Cross-Border Transfer Destination", placeholder: "e.g. None, EU, US, Singapore" },
         { key: "owner", label: "Activity Owner", placeholder: "e.g. Onboarding Team" },
         { key: "status", label: "Status", type: "select", options: STATUSES, default: "Active" },
       ]}

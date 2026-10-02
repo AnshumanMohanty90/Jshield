@@ -29,6 +29,8 @@ import BreachManagement from '@/pages/BreachManagement';
 import ROPA from '@/pages/ROPA';
 import GrievanceManagement from '@/pages/GrievanceManagement';
 import RightsRequests from '@/pages/RightsRequests';
+import DPIA from '@/pages/DPIA';
+import SecuritySafeguards from '@/pages/SecuritySafeguards';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -72,6 +74,8 @@ const AuthenticatedApp = () => {
           <Route path="/ropa" element={<ROPA />} />
           <Route path="/grievances" element={<GrievanceManagement />} />
           <Route path="/rights" element={<RightsRequests />} />
+          <Route path="/dpia" element={<DPIA />} />
+          <Route path="/security-safeguards" element={<SecuritySafeguards />} />
         </Route>
       </Route>
       <Route path="*" element={<PageNotFound />} />

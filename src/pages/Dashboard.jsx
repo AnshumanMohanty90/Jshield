@@ -5,7 +5,7 @@ import { PageHeader, StatCard } from "@/components/dpdp/Shell";
 import { RiskBadge, SeverityBadge, StatusBadge, PriorityBadge } from "@/components/dpdp/Badges";
 import {
   ShieldCheck, Database, Building2, AlertTriangle, MessageSquareWarning,
-  UserCog, Cookie, FileText, ArrowRight, Activity,
+  UserCog, Cookie, FileText, ArrowRight, Activity, FileSearch, Lock,
 } from "lucide-react";
 import {
   PieChart, Pie, Cell, ResponsiveContainer, RadialBarChart, RadialBar, PolarAngleAxis,
@@ -20,6 +20,8 @@ const MODULES = [
   { label: "ROPA", to: "/ropa", icon: FileText, tone: "text-emerald-600 bg-emerald-50" },
   { label: "Grievances", to: "/grievances", icon: MessageSquareWarning, tone: "text-orange-600 bg-orange-50" },
   { label: "Data Principal Rights", to: "/rights", icon: UserCog, tone: "text-cyan-600 bg-cyan-50" },
+  { label: "DPIA", to: "/dpia", icon: FileSearch, tone: "text-indigo-600 bg-indigo-50" },
+  { label: "Security Safeguards", to: "/security-safeguards", icon: Lock, tone: "text-emerald-600 bg-emerald-50" },
 ];
 
 const RISK_COLORS = { Critical: "#e11d48", High: "#f97316", Medium: "#f59e0b", Low: "#10b981" };
@@ -36,14 +38,14 @@ function timeLeft(deadline) {
 export default function Dashboard() {
   const [data, setData] = useState({
     assets: [], consents: [], purposes: [], vendors: [], breaches: [],
-    grievances: [], rights: [], cookies: [],
+    grievances: [], rights: [], cookies: [], dpias: [], controls: [],
   });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let unsub = [];
     const load = async () => {
-      const [assets, consents, purposes, vendors, breaches, grievances, rights, cookies] =
+      const [assets, consents, purposes, vendors, breaches, grievances, rights, cookies, dpias, controls] =
         await Promise.all([
           base44.entities.DataAsset.list("-updated_date", 200),
           base44.entities.ConsentRecord.list("-updated_date", 200),
@@ -53,12 +55,14 @@ export default function Dashboard() {
           base44.entities.Grievance.list("-updated_date", 200),
           base44.entities.RightsRequest.list("-updated_date", 200),
           base44.entities.Cookie.list("-updated_date", 200),
+          base44.entities.DPIA.list("-updated_date", 200),
+          base44.entities.SecurityControl.list("-updated_date", 200),
         ]);
-      setData({ assets, consents, purposes, vendors, breaches, grievances, rights, cookies });
+      setData({ assets, consents, purposes, vendors, breaches, grievances, rights, cookies, dpias, controls });
       setLoading(false);
     };
     load();
-    Object.keys({ DataAsset: 1, ConsentRecord: 1, Vendor: 1, BreachIncident: 1, Grievance: 1, RightsRequest: 1 }).forEach((e) => {
+    Object.keys({ DataAsset: 1, ConsentRecord: 1, Vendor: 1, BreachIncident: 1, Grievance: 1, RightsRequest: 1, DPIA: 1, SecurityControl: 1 }).forEach((e) => {
       unsub.push(base44.entities[e].subscribe(load));
     });
     return () => unsub.forEach((u) => u && u());
@@ -72,8 +76,10 @@ export default function Dashboard() {
     const activeIncidents = data.breaches.filter((b) => b.status !== "Resolved").length;
     const openRights = data.rights.filter((r) => r.status !== "Fulfilled" && r.status !== "Rejected").length;
     const highRiskAssets = data.assets.filter((a) => a.risk_level === "High" || a.risk_level === "Critical").length;
-    const complianceScore = Math.max(0, Math.round(100 - (activeIncidents * 6 + vendorsAtRisk * 4 + openGrievances * 3 + highRiskAssets * 2)));
-    return { granted, openGrievances, mappedAssets, vendorsAtRisk, activeIncidents, openRights, highRiskAssets, complianceScore };
+    const controlGaps = data.controls.filter((c) => c.status === "Gap" || c.status === "Planned").length;
+    const dpiasOverdue = data.dpias.filter((d) => d.status === "Overdue").length;
+    const complianceScore = Math.max(0, Math.round(100 - (activeIncidents * 6 + vendorsAtRisk * 4 + openGrievances * 3 + highRiskAssets * 2 + controlGaps * 3 + dpiasOverdue * 4)));
+    return { granted, openGrievances, mappedAssets, vendorsAtRisk, activeIncidents, openRights, highRiskAssets, controlGaps, dpiasOverdue, complianceScore };
   }, [data]);
 
   const riskDistribution = useMemo(() => {
@@ -109,7 +115,7 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-xs font-medium uppercase tracking-widest text-indigo-300/80">Compliance Score</p>
-              <p className="mt-1 text-sm text-slate-400">Real-time posture across 9 modules</p>
+              <p className="mt-1 text-sm text-slate-400">Real-time posture across 11 modules</p>
             </div>
             <Activity className="h-5 w-5 text-indigo-400" />
           </div>

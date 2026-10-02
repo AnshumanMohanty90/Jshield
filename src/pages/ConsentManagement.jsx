@@ -71,6 +71,8 @@ export default function ConsentManagement() {
             { key: "channel", label: "Channel" },
             { key: "hash", label: "Hash", render: (r) => <span className="font-mono text-xs text-slate-400">{r.hash}</span> },
             { key: "timestamp", label: "Timestamp", type: "datetime" },
+            { key: "involves_children", label: "Children", type: "boolean" },
+            { key: "parental_consent_verified", label: "Parental Consent", type: "boolean" },
             { key: "status", label: "Status", badge: true },
           ]}
           formFields={[
@@ -82,6 +84,8 @@ export default function ConsentManagement() {
             { key: "artifact_id", label: "Artifact ID", placeholder: "Auto-generated if blank", default: genId() },
             { key: "hash", label: "Consent Hash", placeholder: "Auto-generated if blank", default: genHash() },
             { key: "timestamp", label: "Timestamp", type: "datetime", default: new Date().toISOString() },
+            { key: "involves_children", label: "Involves Children's Data", type: "boolean", default: false },
+            { key: "parental_consent_verified", label: "Parental Consent Verified", type: "boolean", default: false },
           ]}
         />
       </TabsContent>

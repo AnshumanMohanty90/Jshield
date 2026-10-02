@@ -1,0 +1,78 @@
+{
+  "name": "DPIA",
+  "type": "object",
+  "properties": {
+    "activity_name": {
+      "type": "string",
+      "title": "Processing Activity"
+    },
+    "description": {
+      "type": "string",
+      "title": "Assessment Description"
+    },
+    "risk_level": {
+      "type": "string",
+      "title": "Inherent Risk Level",
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ]
+    },
+    "risk_score": {
+      "type": "number",
+      "title": "Risk Score"
+    },
+    "residual_risk": {
+      "type": "string",
+      "title": "Residual Risk",
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ]
+    },
+    "mitigations": {
+      "type": "string",
+      "title": "Mitigation Measures"
+    },
+    "is_sdf": {
+      "type": "boolean",
+      "title": "Significant Data Fiduciary",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "Draft",
+        "In Progress",
+        "Under Review",
+        "Approved",
+        "Overdue"
+      ],
+      "default": "Draft"
+    },
+    "assessment_date": {
+      "type": "string",
+      "format": "date",
+      "title": "Assessment Date"
+    },
+    "next_review_date": {
+      "type": "string",
+      "format": "date",
+      "title": "Next Review Date"
+    },
+    "owner": {
+      "type": "string",
+      "title": "Assessment Owner"
+    }
+  },
+  "required": [
+    "activity_name",
+    "risk_level",
+    "status"
+  ]
+}

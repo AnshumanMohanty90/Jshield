@@ -53,6 +53,27 @@
       "type": "boolean",
       "title": "Regulator Notified (DPB)",
       "default": false
+    },
+    "board_notified_date": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Board Notified Date"
+    },
+    "principals_notified_date": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Principals Notified Date"
+    },
+    "notification_stage": {
+      "type": "string",
+      "title": "Notification Stage",
+      "enum": [
+        "Not Started",
+        "Board Notified",
+        "Principals Notified",
+        "Complete"
+      ],
+      "default": "Not Started"
     }
   },
   "required": [

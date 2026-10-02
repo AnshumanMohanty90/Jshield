@@ -42,6 +42,10 @@
         "Vital Interest"
       ]
     },
+    "transfer_destination": {
+      "type": "string",
+      "title": "Cross-Border Transfer Destination"
+    },
     "status": {
       "type": "string",
       "title": "Status",
