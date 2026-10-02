@@ -3,7 +3,7 @@ import { Star } from "lucide-react";
 
 const QUOTES = [
   {
-    quote: "We replaced three spreadsheets and a shared drive with PrivGuard. Our ROPA is finally living documentation.",
+    quote: "We replaced three spreadsheets and a shared drive with JagoAI. Our ROPA is finally living documentation.",
     name: "Anita Rao",
     role: "DPO, VeriFintech",
     initials: "AR",
@@ -28,7 +28,7 @@ export default function Testimonials() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Privacy teams sleep better with PrivGuard
+            Privacy teams sleep better with JagoAI
           </h2>
         </Reveal>
         <div className="mt-14 grid gap-6 md:grid-cols-3">

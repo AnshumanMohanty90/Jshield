@@ -4,7 +4,7 @@ import { Reveal } from "@/components/landing/primitives";
 import { Mail, Phone, Clock, MapPin, Check, ArrowRight } from "lucide-react";
 
 const CHANNELS = [
-  { icon: Mail, label: "Email", value: "hello@privguard.app" },
+  { icon: Mail, label: "Email", value: "hello@jagoai.com" },
   { icon: Phone, label: "Sales", value: "+91 80 4000 0000" },
   { icon: Clock, label: "Hours", value: "Mon–Fri, 9am–6pm IST" },
   { icon: MapPin, label: "Office", value: "Bengaluru, India" },

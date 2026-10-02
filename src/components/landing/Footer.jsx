@@ -41,7 +41,7 @@ export default function Footer() {
               <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-sky-500">
                 <Shield className="h-5 w-5 text-white" />
               </span>
-              <span className="text-lg font-semibold text-white">PrivGuard</span>
+              <span className="text-lg font-semibold text-white">JagoAI</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
               The privacy ops platform that operationalizes India's DPDP Act — from data discovery to breach response.
@@ -66,7 +66,7 @@ export default function Footer() {
           ))}
         </div>
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center">
-          <p className="text-xs text-slate-500">© {new Date().getFullYear()} PrivGuard. All rights reserved.</p>
+          <p className="text-xs text-slate-500">© {new Date().getFullYear()} JagoAI. All rights reserved.</p>
           <p className="text-xs text-slate-500">Built for data protection teams in India.</p>
         </div>
       </div>

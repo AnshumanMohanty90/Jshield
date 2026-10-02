@@ -48,7 +48,7 @@ const TIERS = [
 ];
 
 const FAQ = [
-  { q: "Is PrivGuard aligned with the DPDP Act 2023?", a: "Yes. Every module maps to a DPDP obligation — from consent and ROPA to breach notification and data principal rights." },
+  { q: "Is JagoAI aligned with the DPDP Act 2023?", a: "Yes. Every module maps to a DPDP obligation — from consent and ROPA to breach notification and data principal rights." },
   { q: "How long does setup take?", a: "Most teams are live within an hour. Connect your data sources, classify assets, and your compliance score is generated automatically." },
   { q: "Can we export records for audits?", a: "Yes. ROPA, consent records and breach logs can be exported as audit-ready documents in a single click." },
   { q: "Do you support multi-entity organizations?", a: "Enterprise plans include multi-entity support with separate ROPA and ownership per entity." },

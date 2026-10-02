@@ -33,7 +33,7 @@ export default function Features() {
             One platform. Nine workflows.
           </h2>
           <p className="mt-4 text-lg text-slate-600">
-            Stop stitching together spreadsheets. PrivGuard covers the full DPDP lifecycle in connected modules.
+            Stop stitching together spreadsheets. JagoAI covers the full DPDP lifecycle in connected modules.
           </p>
         </Reveal>
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

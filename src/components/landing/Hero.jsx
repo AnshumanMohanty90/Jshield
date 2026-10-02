@@ -95,7 +95,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.12 }}
               className="mt-5 max-w-xl text-lg leading-relaxed text-slate-300"
             >
-              PrivGuard unifies data discovery, consent, vendor risk, breach response and ROPA into one command
+              JagoAI unifies data discovery, consent, vendor risk, breach response and ROPA into one command
               center — so your team stays audit-ready, every day.
             </motion.p>
             <motion.div
@@ -138,7 +138,7 @@ export default function Hero() {
                 <span className="h-2.5 w-2.5 rounded-full bg-rose-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-amber-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
-                <span className="ml-3 text-[11px] text-slate-500">privguard.app/dashboard</span>
+                <span className="ml-3 text-[11px] text-slate-500">jagoai.app/dashboard</span>
               </div>
               <div className="grid grid-cols-3 gap-3 rounded-xl bg-slate-950/60 p-4">
                 <div className="col-span-1 space-y-2">

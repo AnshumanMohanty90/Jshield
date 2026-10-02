@@ -38,7 +38,7 @@ export default function Nav() {
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-sky-500 shadow-lg shadow-indigo-500/20">
             <Shield className="h-5 w-5 text-white" />
           </span>
-          <span className="text-lg font-semibold text-white tracking-tight">PrivGuard</span>
+          <span className="text-lg font-semibold text-white tracking-tight">JagoAI</span>
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">

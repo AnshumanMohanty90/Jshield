@@ -1,35 +1,94 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ClipboardList, Search, Wrench, Compass } from "lucide-react";
 import { Reveal } from "./primitives";
-import { Network, Workflow, FileCheck } from "lucide-react";
 
 const STEPS = [
-  { icon: Network, title: "Connect your data", desc: "Map systems and data flows. PrivGuard classifies personal data and scores risk automatically." },
-  { icon: Workflow, title: "Automate workflows", desc: "Consent, ROPA, vendor risk and grievance SLAs run on connected pipelines — not spreadsheets." },
-  { icon: FileCheck, title: "Stay audit-ready", desc: "Every action is logged with artifacts. Generate regulator-ready exports in a click." },
+  {
+    icon: ClipboardList,
+    title: "Assess",
+    desc: "We evaluate your current DPDP readiness through gap assessments, privacy control reviews, regulatory mapping and risk prioritization.",
+  },
+  {
+    icon: Search,
+    title: "Discover",
+    desc: "Discover and classify personal data, map data flows, build a centralized inventory and surface shadow data across systems.",
+  },
+  {
+    icon: Wrench,
+    title: "Implement",
+    desc: "Stand up consent and notice management, DSAR workflows, governance controls and policy frameworks aligned to DPDP obligations.",
+  },
+  {
+    icon: Compass,
+    title: "Govern",
+    desc: "Continuous monitoring, audit reporting, breach readiness and governance oversight keep you compliant as obligations evolve.",
+  },
 ];
 
 export default function HowItWorks() {
+  const [active, setActive] = useState(0);
+  const step = STEPS[active];
+  const Icon = step.icon;
+
   return (
     <section className="bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            From scattered to operational in three steps
+          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">How we help</span>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            From assessment to continuous governance
           </h2>
+          <p className="mt-4 text-lg text-slate-600">A guided path through the full DPDP compliance journey.</p>
         </Reveal>
-        <div className="mt-14 grid gap-8 md:grid-cols-3">
-          {STEPS.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <Reveal key={s.title} delay={i * 0.1} className="relative">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-sky-500 text-white shadow-lg shadow-indigo-200">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <div className="mt-4 text-xs font-semibold uppercase tracking-widest text-indigo-600">Step {i + 1}</div>
-                <h3 className="mt-1 text-lg font-semibold text-slate-900">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{s.desc}</p>
-              </Reveal>
-            );
-          })}
+
+        <div className="mt-14 grid gap-8 lg:grid-cols-2">
+          <div className="space-y-3">
+            {STEPS.map((s, i) => {
+              const SIcon = s.icon;
+              const on = i === active;
+              return (
+                <button
+                  key={s.title}
+                  onClick={() => setActive(i)}
+                  className={`flex w-full items-start gap-4 rounded-2xl border p-5 text-left transition ${
+                    on ? "border-indigo-300 bg-indigo-50/60" : "border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50"
+                  }`}
+                >
+                  <span
+                    className={`flex h-11 w-11 flex-none items-center justify-center rounded-xl ${
+                      on ? "bg-gradient-to-br from-indigo-500 to-sky-500 text-white" : "bg-slate-100 text-slate-500"
+                    }`}
+                  >
+                    <SIcon className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Step {i + 1}</span>
+                    <h3 className={`mt-0.5 text-base font-semibold ${on ? "text-slate-900" : "text-slate-700"}`}>
+                      {s.title}
+                    </h3>
+                    <p className="mt-1 text-sm leading-relaxed text-slate-600">
+                      {on ? s.desc : "Tap to see how JagoAI runs this stage."}
+                    </p>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          <motion.div
+            key={active}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="flex flex-col justify-center rounded-3xl bg-gradient-to-br from-indigo-600 via-indigo-600 to-sky-500 p-8 text-white shadow-xl shadow-indigo-200"
+          >
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 backdrop-blur">
+              <Icon className="h-7 w-7" />
+            </div>
+            <h3 className="mt-5 text-2xl font-semibold">{step.title}</h3>
+            <p className="mt-3 leading-relaxed text-indigo-100">{step.desc}</p>
+          </motion.div>
         </div>
       </div>
     </section>
