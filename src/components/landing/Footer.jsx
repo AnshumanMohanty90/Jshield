@@ -34,8 +34,8 @@ const COLS = [
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-slate-950 text-slate-400">
-      <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
-        <div className="grid gap-10 md:grid-cols-5">
+      <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8">
+        <div className="grid gap-8 md:grid-cols-5">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2.5">
               <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-sky-500">

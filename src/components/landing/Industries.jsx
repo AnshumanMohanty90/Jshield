@@ -72,14 +72,14 @@ export default function Industries() {
   const Icon = ind.icon;
 
   return (
-    <section className="bg-slate-50 py-24">
+    <section className="bg-slate-50 py-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">By industry</span>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
             DPDP controls, tailored to how you process data
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-3 text-lg text-slate-600">
             Different industries process personal data differently, and need different privacy controls.
           </p>
         </Reveal>
@@ -106,7 +106,7 @@ export default function Industries() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-12"
+          className="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-10"
         >
           <div>
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-sky-500 text-white">

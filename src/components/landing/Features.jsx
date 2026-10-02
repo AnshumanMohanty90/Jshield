@@ -26,17 +26,17 @@ const ITEMS = [
 
 export default function Features() {
   return (
-    <section id="features" className="bg-white py-24">
+    <section id="features" className="bg-white py-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Platform</span>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">One platform. Nine workflows.</h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">One platform. Nine workflows.</h2>
+          <p className="mt-3 text-lg text-slate-600">
             Stop stitching spreadsheets together. Jaguard covers the full DPDP lifecycle across connected modules.
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {ITEMS.map((it, i) => {
             const Icon = it.icon;
             return (

@@ -46,19 +46,19 @@ export default function ReadinessQuiz() {
   const reset = () => setChecked(new Array(ITEMS.length).fill(false));
 
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Interactive</span>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
             How DPDP-ready are you, really?
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-3 text-lg text-slate-600">
             Check the statements that hold true today. Your score updates live, with no email required.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-5">
+        <div className="mt-10 grid gap-8 lg:grid-cols-5">
           <div className="divide-y divide-slate-200 overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-100 lg:col-span-3">
             {ITEMS.map((item, i) => {
               const on = checked[i];

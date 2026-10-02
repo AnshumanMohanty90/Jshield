@@ -28,19 +28,19 @@ const CARDS = [
 
 export default function WhyMatters() {
   return (
-    <section className="bg-slate-50 py-24">
+    <section className="bg-slate-50 py-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Why it matters now</span>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
             DPDP compliance is now an operational business requirement
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-3 text-lg text-slate-600">
             The Act has changed how Indian organisations manage personal data, and who answers when they do not.
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-10 sm:grid-cols-3 sm:gap-0">
+        <div className="mt-10 grid gap-8 sm:grid-cols-3 sm:gap-0">
           {CARDS.map((c, i) => (
             <motion.div
               key={c.title}

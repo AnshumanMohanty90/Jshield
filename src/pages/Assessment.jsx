@@ -141,13 +141,13 @@ export default function Assessment() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="bg-slate-950 pb-24 pt-28"
+            className="bg-slate-950 pb-16 pt-24"
           >
             <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-indigo-200">
                 <Sparkles className="h-3.5 w-3.5" /> Free DPDP readiness assessment
               </span>
-              <h1 className="mt-5 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+              <h1 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">
                 Find out where you stand on DPDP, in two minutes.
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-slate-300">
@@ -171,7 +171,7 @@ export default function Assessment() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
-            className="bg-white py-20"
+            className="bg-white py-16"
           >
             <div className="mx-auto max-w-2xl px-5 sm:px-8">
               <div className="flex items-center justify-between text-xs text-slate-500">
@@ -223,7 +223,7 @@ export default function Assessment() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
-            className="bg-white py-20"
+            className="bg-white py-16"
           >
             <div className="mx-auto max-w-md px-5 sm:px-8">
               <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">
@@ -303,7 +303,7 @@ export default function Assessment() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
-            className="bg-slate-50 py-20"
+            className="bg-slate-50 py-16"
           >
             <div className="mx-auto max-w-3xl px-5 sm:px-8">
               {(() => {

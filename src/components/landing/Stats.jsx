@@ -9,7 +9,7 @@ const STATS = [
 
 export default function Stats() {
   return (
-    <section className="bg-slate-950 py-16">
+    <section className="bg-slate-950 py-12">
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-5 sm:px-8 lg:grid-cols-4">
         {STATS.map((s) => (
           <Reveal key={s.label} className="text-center">

@@ -43,18 +43,18 @@ export default function Contact() {
 
   return (
     <LandingLayout>
-      <section className="bg-slate-950 pb-16 pt-28">
+      <section className="bg-slate-950 pb-14 pt-24">
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Let's get you audit-ready</h1>
+          <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">Let's get you audit-ready</h1>
           <p className="mt-4 text-lg text-slate-300">
             Book a personalized demo or talk to our privacy team — we typically reply within one business day.
           </p>
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      <section className="bg-white py-14">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="grid gap-10 lg:grid-cols-5">
+          <div className="grid gap-8 lg:grid-cols-5">
             <div className="space-y-4 lg:col-span-2">
               {CHANNELS.map((c) => {
                 const Icon = c.icon;

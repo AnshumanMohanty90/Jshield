@@ -22,12 +22,12 @@ const BADGES = [
 export default function Security() {
   return (
     <LandingLayout>
-      <section className="bg-slate-950 pb-16 pt-28">
+      <section className="bg-slate-950 pb-14 pt-24">
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-emerald-300">
             <ShieldCheck className="h-3.5 w-3.5" /> Security & trust
           </div>
-          <h1 className="mt-5 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+          <h1 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">
             Compliance for the platform that keeps you compliant
           </h1>
           <p className="mt-4 text-lg text-slate-300">
@@ -36,7 +36,7 @@ export default function Security() {
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      <section className="bg-white py-14">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {PILLARS.map((p, i) => {
@@ -55,7 +55,7 @@ export default function Security() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-16">
+      <section className="bg-slate-50 py-14">
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">Standards & commitments</h2>
           <div className="mt-8 flex flex-wrap justify-center gap-3">

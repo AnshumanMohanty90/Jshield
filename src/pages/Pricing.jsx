@@ -28,19 +28,19 @@ export default function Pricing() {
 
   return (
     <LandingLayout>
-      <section className="bg-slate-950 pb-16 pt-28">
+      <section className="bg-slate-950 pb-14 pt-24">
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-300">Pricing</span>
-          <h1 className="mt-3 text-4xl font-bold tracking-tight text-white sm:text-5xl">Everything. Free for ten days.</h1>
+          <h1 className="mt-3 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">Everything. Free for ten days.</h1>
           <p className="mt-4 text-lg text-slate-300">
             The full platform, every module, no credit card. Use it for ten days, then talk to sales about enterprise adoption.
           </p>
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white py-16">
         <div className="mx-auto max-w-4xl px-5 sm:px-8">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
               <span className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">
                 10-day full trial
@@ -74,7 +74,7 @@ export default function Pricing() {
             </div>
           </div>
 
-          <div className="mt-12 border-t border-slate-200 pt-8">
+          <div className="mt-10 border-t border-slate-200 pt-8">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h3 className="text-base font-semibold text-slate-900">After your trial</h3>
@@ -93,7 +93,7 @@ export default function Pricing() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-20">
+      <section className="bg-slate-50 py-16">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <h2 className="text-center text-2xl font-bold tracking-tight text-slate-900">Frequently asked questions</h2>
           <div className="mt-8 space-y-3">

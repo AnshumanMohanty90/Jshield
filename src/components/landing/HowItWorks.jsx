@@ -32,17 +32,17 @@ export default function HowItWorks() {
   const Icon = step.icon;
 
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">How we help</span>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
             From assessment to continuous governance
           </h2>
-          <p className="mt-4 text-lg text-slate-600">A guided path through the full DPDP compliance journey.</p>
+          <p className="mt-3 text-lg text-slate-600">A guided path through the full DPDP compliance journey.</p>
         </Reveal>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-10">
           <div className="divide-y divide-slate-200">
             {STEPS.map((s, i) => {
               const SIcon = s.icon;
