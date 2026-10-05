@@ -97,7 +97,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.12 }}
               className="mt-3 max-w-xl text-lg leading-relaxed text-slate-300"
             >
-              One workspace runs your entire DPDP program — discovery, consent, breach response and records,
+              One workspace for the complete DPDP program: discovery, consent, breach response and records,
               audit-ready by default.
             </motion.p>
             <motion.div

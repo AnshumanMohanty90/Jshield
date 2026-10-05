@@ -12,7 +12,7 @@ const ITEMS = [
   "We have signed data processing agreements with every processor.",
   "We run a grievance redressal mechanism with SLA tracking.",
   "We have appointed, or have on-demand access to, a data protection officer.",
-  "We ensure every consent is free, specific and informed — never bundled or pre-ticked.",
+  "We ensure every consent is free, specific and informed, never bundled or pre-ticked.",
   "We handle children's personal data with verifiable parental consent.",
   "We run DPIAs for high-risk and significant data fiduciary processing.",
   "We implement all seven DPDP Rule 6 security safeguards.",
@@ -57,7 +57,7 @@ export default function ReadinessQuiz() {
         <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Interactive</span>
           <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
-            How DPDP-ready are you, really?
+            Where does your DPDP program stand?
           </h2>
           <p className="mt-3 text-lg text-slate-600">
             Check the statements that hold true today. Your score updates live, with no email required.

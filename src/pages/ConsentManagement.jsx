@@ -62,7 +62,7 @@ export default function ConsentManagement() {
         <EntityModule
           entityName="ConsentRecord"
           title="Consent Records & Artifacts"
-          subtitle="Every consent is cryptographically stamped with a unique ID and timestamp — tamper-proof proof of consent, retrievable by the data subject anytime."
+          subtitle="Every consent is cryptographically stamped with a unique ID and timestamp, giving tamper-proof proof of consent that the data subject can retrieve anytime."
           icon={FileKey}
           columns={[
             { key: "artifact_id", label: "Artifact ID", className: "font-mono text-xs text-indigo-600" },

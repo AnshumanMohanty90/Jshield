@@ -106,7 +106,7 @@ export default function Dashboard() {
     <div className="mx-auto max-w-7xl px-5 py-8 sm:px-8 space-y-8">
       <PageHeader
         title="DPDP Command Center"
-        subtitle="A unified 360° view of privacy operations across consent, governance, and risk — aligned with the Digital Personal Data Protection Act, 2023."
+        subtitle="A unified 360° view of privacy operations across consent, governance, and risk, aligned with the Digital Personal Data Protection Act, 2023."
       />
 
       {/* Top row: compliance score + stat cards */}
@@ -230,7 +230,7 @@ export default function Dashboard() {
       <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="text-sm font-semibold text-slate-900">Grievances — SLA Watch</h3>
+            <h3 className="text-sm font-semibold text-slate-900">Grievances: SLA Watch</h3>
             <p className="text-xs text-slate-500">DPDP-mandated response timelines</p>
           </div>
           <Link to="/grievances" className="text-xs font-medium text-indigo-600 hover:text-indigo-700">Manage</Link>

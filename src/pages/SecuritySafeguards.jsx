@@ -18,7 +18,7 @@ export default function SecuritySafeguards() {
     <EntityModule
       entityName="SecurityControl"
       title="Security Safeguards Register"
-      subtitle="Track the seven mandatory technical and organisational controls under DPDP Rule 6 — encryption, access control, masking, monitoring, 1-year log retention, incident response, and processor DPA safeguards."
+      subtitle="Track the seven mandatory technical and organisational controls under DPDP Rule 6: encryption, access control, masking, monitoring, 1-year log retention, incident response, and processor safeguards."
       icon={Lock}
       extraStats={(items) => [
         { label: "Total Controls", value: items.length, icon: Lock, tone: "indigo" },

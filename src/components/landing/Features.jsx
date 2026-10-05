@@ -25,7 +25,7 @@ const ITEMS = [
   { icon: MessageSquareWarning, title: "Grievances", desc: "Resolve data principal grievances with SLA-aware routing and escalation." },
   { icon: UserCog, title: "Data Principal Rights", desc: "Fulfil access, correction, erasure and portability requests on deadline." },
   { icon: FileSearch, title: "DPIA", desc: "Run Data Protection Impact Assessments for high-risk and SDF processing with residual risk tracking." },
-  { icon: Lock, title: "Security Safeguards", desc: "Track all seven Rule 6 controls — encryption, access, masking, monitoring, logs, response and DPAs." },
+  { icon: Lock, title: "Security Safeguards", desc: "Track all seven Rule 6 controls: encryption, access control, masking, monitoring, log retention, incident response and processor safeguards." },
 ];
 
 export default function Features() {
@@ -36,7 +36,7 @@ export default function Features() {
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Platform</span>
           <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">One platform. Eleven workflows.</h2>
           <p className="mt-3 text-lg text-slate-600">
-            Stop stitching spreadsheets together. Jaguard covers the full DPDP lifecycle across connected modules.
+            Jaguard covers the complete DPDP lifecycle across eleven connected modules.
           </p>
         </Reveal>
 

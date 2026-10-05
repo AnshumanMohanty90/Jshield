@@ -47,7 +47,7 @@ export default function Contact() {
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
           <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">Let's get you audit-ready</h1>
           <p className="mt-4 text-lg text-slate-300">
-            Book a personalized demo or talk to our privacy team — we typically reply within one business day.
+            Book a personalized demo or talk to our privacy team. We typically reply within one business day.
           </p>
         </div>
       </section>

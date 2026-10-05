@@ -10,7 +10,7 @@ export default function BreachManagement() {
     <EntityModule
       entityName="BreachIncident"
       title="Breach & Incident Management"
-      subtitle="Detect, monitor, and respond to unauthorized data activities. Track both stages of DPDP breach notification — the Data Protection Board within 72 hours, and affected Data Principals thereafter."
+      subtitle="Detect, monitor, and respond to unauthorized data activities. Track both stages of DPDP breach notification: the Data Protection Board within 72 hours, and affected Data Principals thereafter."
       icon={AlertTriangle}
       extraStats={(items) => [
         { label: "Total Incidents", value: items.length, icon: Activity, tone: "rose" },
