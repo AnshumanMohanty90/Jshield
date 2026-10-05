@@ -75,15 +75,12 @@ export default function Security() {
             >
               Start free trial
             </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
-            >
+          </div>
+          <p className="mt-4 text-xs text-slate-500">
+            Ten-day trial. No credit card required.{" "}
+            <Link to="/contact" className="text-slate-400 underline-offset-2 hover:text-slate-600 hover:underline">
               Talk to sales
             </Link>
-          </div>
-          <p className="mt-4 text-xs text-slate-400">
-            Ten-day trial. No credit card required.
           </p>
         </div>
       </section>
