@@ -28,7 +28,7 @@ const CARDS = [
 
 export default function WhyMatters() {
   return (
-    <section className="bg-slate-50 py-16">
+    <section className="bg-slate-50 py-12">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Why it matters now</span>
@@ -40,7 +40,7 @@ export default function WhyMatters() {
           </p>
         </Reveal>
 
-        <div className="mt-10 grid gap-8 sm:grid-cols-3 sm:gap-0">
+        <div className="mt-8 grid gap-8 sm:grid-cols-3 sm:gap-0">
           {CARDS.map((c, i) => (
             <motion.div
               key={c.title}

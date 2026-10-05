@@ -32,7 +32,7 @@ export default function HowItWorks() {
   const Icon = step.icon;
 
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white py-12">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">How we help</span>
@@ -42,7 +42,7 @@ export default function HowItWorks() {
           <p className="mt-3 text-lg text-slate-600">A guided path through the full DPDP compliance journey.</p>
         </Reveal>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-10">
+        <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10">
           <div className="divide-y divide-slate-200">
             {STEPS.map((s, i) => {
               const SIcon = s.icon;

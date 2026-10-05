@@ -50,7 +50,7 @@ export default function ModuleShowcase() {
   const tab = TABS.find((t) => t.key === active);
 
   return (
-    <section className="bg-slate-50 py-16">
+    <section className="bg-slate-50 py-12">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Product</span>
@@ -58,7 +58,7 @@ export default function ModuleShowcase() {
           <p className="mt-3 text-lg text-slate-600">Three workflows that decide whether you are compliant or exposed.</p>
         </Reveal>
 
-        <div className="mt-10 flex flex-wrap gap-2">
+        <div className="mt-8 flex flex-wrap gap-2">
           {TABS.map((t) => {
             const Icon = t.icon;
             return (
@@ -82,7 +82,7 @@ export default function ModuleShowcase() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
-          className="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-10"
+          className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10"
         >
           <div>
             <h3 className="text-xl font-semibold text-slate-900">{tab.title}</h3>

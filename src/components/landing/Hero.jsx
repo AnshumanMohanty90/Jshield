@@ -54,7 +54,7 @@ const STATUS_ROWS = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-slate-950 pb-16 pt-24">
+    <section className="relative overflow-hidden bg-slate-950 pb-12 pt-20">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-40 left-1/2 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-indigo-600/25 blur-[120px]" />
         <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-sky-500/20 blur-[120px]" />
@@ -95,10 +95,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.12 }}
-              className="mt-4 max-w-xl text-lg leading-relaxed text-slate-300"
+              className="mt-3 max-w-xl text-lg leading-relaxed text-slate-300"
             >
-              Jaguard unifies data discovery, consent, vendor risk, breach response and records of processing in one
-              workspace, so your privacy program keeps pace with the business and stays ready for the regulator.
+              One workspace runs your entire DPDP program — discovery, consent, breach response and records,
+              audit-ready by default.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -116,16 +116,16 @@ export default function Hero() {
                 to="/assessment"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                <ClipboardCheck className="h-4 w-4" /> Take the 2-minute assessment
+                <ClipboardCheck className="h-4 w-4" /> Take the DPDP assessment
               </Link>
             </motion.div>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-4 text-xs text-slate-500"
+              className="mt-3 text-xs text-slate-500"
             >
-              No credit card required. 10-day trial. Set up in under an hour.
+              10-day free trial. No credit card. Live in an hour.
             </motion.p>
           </div>
 

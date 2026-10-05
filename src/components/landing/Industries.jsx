@@ -72,7 +72,7 @@ export default function Industries() {
   const Icon = ind.icon;
 
   return (
-    <section className="bg-slate-50 py-16">
+    <section className="bg-slate-50 py-12">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">By industry</span>
@@ -84,7 +84,7 @@ export default function Industries() {
           </p>
         </Reveal>
 
-        <div className="mt-10 flex flex-wrap gap-2">
+        <div className="mt-8 flex flex-wrap gap-2">
           {INDUSTRIES.map((i) => {
             const IIcon = i.icon;
             return (
@@ -106,7 +106,7 @@ export default function Industries() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="mt-10 grid gap-8 lg:grid-cols-2 lg:gap-10"
+          className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10"
         >
           <div>
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-sky-500 text-white">

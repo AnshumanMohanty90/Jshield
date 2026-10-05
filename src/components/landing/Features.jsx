@@ -30,7 +30,7 @@ const ITEMS = [
 
 export default function Features() {
   return (
-    <section id="features" className="bg-white py-16">
+    <section id="features" className="bg-white py-12">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Platform</span>
@@ -40,7 +40,7 @@ export default function Features() {
           </p>
         </Reveal>
 
-        <div className="mt-10 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {ITEMS.map((it, i) => {
             const Icon = it.icon;
             return (

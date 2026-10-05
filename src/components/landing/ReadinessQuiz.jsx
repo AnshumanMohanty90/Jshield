@@ -52,7 +52,7 @@ export default function ReadinessQuiz() {
   const reset = () => setChecked(new Array(ITEMS.length).fill(false));
 
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white py-12">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Interactive</span>
@@ -64,7 +64,7 @@ export default function ReadinessQuiz() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-5">
+        <div className="mt-8 grid gap-8 lg:grid-cols-5">
           <div className="divide-y divide-slate-200 overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-100 lg:col-span-3">
             {ITEMS.map((item, i) => {
               const on = checked[i];
