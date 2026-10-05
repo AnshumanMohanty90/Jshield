@@ -68,12 +68,22 @@ export default function Security() {
               </span>
             ))}
           </div>
-          <p className="mt-8 text-sm text-slate-500">
-            Need our sub-processor list or a security questionnaire response?{" "}
-            <Link to="/contact" className="font-medium text-indigo-600 hover:underline">
-              Contact our security team
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              to="/register"
+              className="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700"
+            >
+              Start free trial
             </Link>
-            .
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
+            >
+              Talk to sales
+            </Link>
+          </div>
+          <p className="mt-4 text-xs text-slate-400">
+            Ten-day trial. No credit card required.
           </p>
         </div>
       </section>
