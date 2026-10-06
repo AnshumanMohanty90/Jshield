@@ -7,11 +7,11 @@ import {
   Check,
   ClipboardCheck,
   Loader2,
-  ShieldCheck,
   Sparkles,
 } from "lucide-react";
 import LandingLayout from "@/components/landing/LandingLayout";
 import { base44 } from "@/api/base44Client";
+import { workEmailError } from "@/lib/workEmail";
 
 const QUESTIONS = [
   { w: 2, q: "Have you mapped personal data across all systems and data flows?", opts: [{ l: "Not yet", s: 0 }, { l: "Partially", s: 1 }, { l: "Yes, fully", s: 2 }], rec: "Map and classify personal data across every system. Start in Data Discovery." },
@@ -48,6 +48,7 @@ export default function Assessment() {
   const [form, setForm] = useState({ work_email: "", company_name: "", designation: "" });
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [emailHint, setEmailHint] = useState("");
   const [score, setScore] = useState(0);
 
   const total = QUESTIONS.length;
@@ -82,8 +83,11 @@ export default function Assessment() {
   const submit = async (e) => {
     e.preventDefault();
     setError("");
-    if (!form.work_email.trim() || !form.company_name.trim() || !form.designation.trim()) {
-      setError("Please fill in all fields to receive your report.");
+    const missing = !form.work_email.trim() || !form.company_name.trim() || !form.designation.trim();
+    const emailProblem = form.work_email.trim() ? workEmailError(form.work_email) : "Enter your work email.";
+    setEmailHint(emailProblem || "");
+    if (missing || emailProblem) {
+      if (missing) setError("Please fill in all fields to receive your report.");
       return;
     }
     setSubmitting(true);
@@ -98,11 +102,18 @@ export default function Assessment() {
         tier: t.label,
         summary,
       });
+      setStage("report");
     } catch (err) {
-      // The report is shown regardless; lead capture is best-effort.
+      const message =
+        err?.response?.data?.error || err?.data?.error || err?.message || "";
+      if (/work email|personal/i.test(message)) {
+        setEmailHint(message);
+      } else {
+        setError(message || "Something went wrong. Please try again.");
+      }
+    } finally {
+      setSubmitting(false);
     }
-    setSubmitting(false);
-    setStage("report");
   };
 
   const gaps = QUESTIONS.map((q, i) => ({ q, score: answers[i] }))
@@ -223,11 +234,26 @@ export default function Assessment() {
                   <input
                     type="email"
                     value={form.work_email}
-                    onChange={(e) => setForm({ ...form, work_email: e.target.value })}
+                    onChange={(e) => {
+                      setForm({ ...form, work_email: e.target.value });
+                      if (emailHint) setEmailHint(workEmailError(e.target.value) || "");
+                    }}
+                    onBlur={() =>
+                      setEmailHint(form.work_email.trim() ? (workEmailError(form.work_email) || "") : "")
+                    }
                     placeholder="you@company.com"
-                    className="h-11 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+                    className={`h-11 w-full rounded-lg border px-3 text-sm outline-none transition ${
+                      emailHint
+                        ? "border-rose-300 bg-rose-50/40 focus:border-rose-400 focus:ring-2 focus:ring-rose-100"
+                        : "border-slate-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+                    }`}
                     required
                   />
+                  {emailHint ? (
+                    <p className="text-xs text-rose-600">{emailHint}</p>
+                  ) : (
+                    <p className="text-xs text-slate-400">Use your work email. Personal addresses are not accepted.</p>
+                  )}
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-slate-700">Company name</label>
@@ -329,13 +355,13 @@ export default function Assessment() {
                       >
                         Start your 10-day trial <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
                       </Link>
-                      <Link
-                        to="/contact"
-                        className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
-                      >
-                        <ShieldCheck className="h-4 w-4" /> Book a demo
-                      </Link>
                     </div>
+                    <p className="mt-5 text-xs text-slate-500">
+                      Prefer a guided walkthrough?{" "}
+                      <Link to="/contact" className="text-slate-400 underline-offset-2 hover:text-slate-600 hover:underline">
+                        Book a demo
+                      </Link>
+                    </p>
                   </div>
                 );
               })()}
