@@ -22,7 +22,7 @@ const BADGES = [
 export default function Security() {
   return (
     <LandingLayout>
-      <section className="bg-slate-950 pb-14 pt-24">
+      <section className="bg-slate-950 pb-14 pt-28">
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-emerald-300">
             <ShieldCheck className="h-3.5 w-3.5" /> Security & trust

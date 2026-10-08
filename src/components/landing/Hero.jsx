@@ -54,42 +54,17 @@ const STATUS_ROWS = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-slate-950 pb-12 pt-20">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-40 left-1/2 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-indigo-600/25 blur-[120px]" />
-        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-sky-500/20 blur-[120px]" />
-        <div
-          className="absolute inset-0 opacity-[0.06]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
-            backgroundSize: "44px 44px",
-          }}
-        />
-      </div>
-
+    <section className="relative overflow-hidden bg-slate-950 pb-12 pt-28">
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-indigo-200"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> DPDP Act 2023, operationalized
-            </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.05 }}
-              className="mt-5 text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl"
+              className="text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl"
             >
-              DPDP compliance,{" "}
-              <span className="bg-gradient-to-r from-indigo-400 via-sky-400 to-indigo-400 bg-clip-text text-transparent">
-                made operational
-              </span>
-              .
+              DPDP compliance, made operational.
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -116,17 +91,9 @@ export default function Hero() {
                 to="/assessment"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                <ClipboardCheck className="h-4 w-4" /> Take the DPDP assessment
+                <ClipboardCheck className="h-4 w-4" /> Take the DPDP readiness assessment
               </Link>
             </motion.div>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-3 text-xs text-slate-500"
-            >
-              10-day free trial. No credit card. Live in an hour.
-            </motion.p>
           </div>
 
           <motion.div
@@ -179,9 +146,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="absolute -bottom-4 -right-4 hidden rounded-xl bg-slate-900 px-4 py-3 shadow-xl ring-1 ring-white/10 sm:block">
-              <div className="flex items-center gap-2 text-xs text-slate-300">
-                <AlertTriangle className="h-4 w-4 text-amber-400" /> Breach SLA: 71h remaining
-              </div>
+              <div className="text-xs text-slate-300">Breach SLA: 71h remaining</div>
             </div>
           </motion.div>
         </div>

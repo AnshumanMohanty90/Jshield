@@ -28,7 +28,7 @@ export default function Pricing() {
 
   return (
     <LandingLayout>
-      <section className="bg-slate-950 pb-14 pt-24">
+      <section className="bg-slate-950 pb-14 pt-28">
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-300">Pricing</span>
           <h1 className="mt-3 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">Everything. Free for ten days.</h1>

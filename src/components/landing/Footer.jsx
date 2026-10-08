@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
-import { Shield } from "lucide-react";
+import { Image } from "@/components/ui/image";
+
+const LOGO_URL =
+  "https://media.base44.com/images/public/6abfe638fec4c87c5794805b/310448946_generated_df1a9fe9.png";
 
 const COLS = [
   {
-    title: "Platform",
+    title: "Solution",
     links: [
-      ["Data Discovery", "/#features"],
-      ["Consent Management", "/#features"],
-      ["Breach Response", "/#features"],
-      ["ROPA", "/#features"],
+      ["Solution overview", "/#solution"],
+      ["DPDP Act", "/dpdp-act"],
+      ["Partner program", "/partners"],
+      ["Readiness assessment", "/assessment"],
     ],
   },
   {
@@ -37,14 +40,8 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8">
         <div className="grid gap-8 md:grid-cols-5">
           <div className="md:col-span-2">
-            <Link to="/" className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-sky-500">
-                <Shield className="h-5 w-5 text-white" />
-              </span>
-              <span className="leading-tight">
-                <span className="block text-lg font-semibold text-white">Jaguard</span>
-                <span className="block text-[10px] uppercase tracking-widest text-indigo-300/70">by Jago AI</span>
-              </span>
+            <Link to="/" aria-label="Jaguard home">
+              <Image src={LOGO_URL} alt="Jaguard" fittingType="fit" className="h-12 w-12 rounded-lg" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
               The privacy operations platform that operationalizes India's DPDP Act, from data discovery to breach response.

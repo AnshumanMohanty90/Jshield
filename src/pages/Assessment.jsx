@@ -129,7 +129,7 @@ export default function Assessment() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="bg-slate-950 pb-16 pt-24"
+            className="bg-slate-950 pb-16 pt-28"
           >
             <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-indigo-200">

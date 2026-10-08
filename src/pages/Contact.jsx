@@ -43,7 +43,7 @@ export default function Contact() {
 
   return (
     <LandingLayout>
-      <section className="bg-slate-950 pb-14 pt-24">
+      <section className="bg-slate-950 pb-14 pt-28">
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
           <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">Let's get you audit-ready</h1>
           <p className="mt-4 text-lg text-slate-300">

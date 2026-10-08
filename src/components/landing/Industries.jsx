@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Landmark, Cloud, HeartPulse, ShoppingCart, GraduationCap, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { Reveal } from "./primitives";
 
 const INDUSTRIES = [
   {
     key: "bfsi",
-    icon: Landmark,
     label: "BFSI & NBFC",
     headline: "Protect financial and customer data",
     points: [
@@ -18,7 +17,6 @@ const INDUSTRIES = [
   },
   {
     key: "saas",
-    icon: Cloud,
     label: "SaaS & Technology",
     headline: "Scale privacy across cloud-native apps",
     points: [
@@ -30,7 +28,6 @@ const INDUSTRIES = [
   },
   {
     key: "health",
-    icon: HeartPulse,
     label: "Healthcare & Pharma",
     headline: "Govern sensitive health data",
     points: [
@@ -42,7 +39,6 @@ const INDUSTRIES = [
   },
   {
     key: "retail",
-    icon: ShoppingCart,
     label: "E-Commerce & Retail",
     headline: "Track consent across commerce",
     points: [
@@ -54,7 +50,6 @@ const INDUSTRIES = [
   },
   {
     key: "edtech",
-    icon: GraduationCap,
     label: "EdTech & Education",
     headline: "Protect student and institutional data",
     points: [
@@ -69,7 +64,6 @@ const INDUSTRIES = [
 export default function Industries() {
   const [active, setActive] = useState("bfsi");
   const ind = INDUSTRIES.find((i) => i.key === active);
-  const Icon = ind.icon;
 
   return (
     <section className="bg-slate-50 py-12">
@@ -80,25 +74,23 @@ export default function Industries() {
             DPDP controls, tailored to how you process data
           </h2>
           <p className="mt-3 text-lg text-slate-600">
-            Different industries process personal data differently, and need different privacy controls.
+            Different industries process personal data differently, and need different privacy controls. Whatever your
+            sector, Jaguard's guided sequence takes you from first data scan to an audit-ready posture in 30 days.
           </p>
         </Reveal>
 
         <div className="mt-8 flex flex-wrap gap-2">
-          {INDUSTRIES.map((i) => {
-            const IIcon = i.icon;
-            return (
-              <button
-                key={i.key}
-                onClick={() => setActive(i.key)}
-                className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition ${
-                  active === i.key ? "bg-slate-900 text-white" : "bg-white text-slate-600 ring-1 ring-slate-200 hover:bg-slate-100"
-                }`}
-              >
-                <IIcon className="h-4 w-4" /> {i.label}
-              </button>
-            );
-          })}
+          {INDUSTRIES.map((i) => (
+            <button
+              key={i.key}
+              onClick={() => setActive(i.key)}
+              className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                active === i.key ? "bg-slate-900 text-white" : "bg-white text-slate-600 ring-1 ring-slate-200 hover:bg-slate-100"
+              }`}
+            >
+              {i.label}
+            </button>
+          ))}
         </div>
 
         <motion.div
@@ -109,10 +101,7 @@ export default function Industries() {
           className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10"
         >
           <div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-sky-500 text-white">
-              <Icon className="h-6 w-6" />
-            </div>
-            <h3 className="mt-4 text-xl font-semibold text-slate-900">{ind.headline}</h3>
+            <h3 className="text-xl font-semibold text-slate-900">{ind.headline}</h3>
             <p className="mt-2 text-sm text-slate-600">
               {ind.label} teams use Jaguard to operationalise DPDP without slowing the business.
             </p>

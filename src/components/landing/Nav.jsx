@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Shield, Menu, X } from "lucide-react";
+import { Menu, X, ClipboardCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
+import DeadlineStrip from "./DeadlineStrip";
+import { Image } from "@/components/ui/image";
+
+const LOGO_URL =
+  "https://media.base44.com/images/public/6abfe638fec4c87c5794805b/310448946_generated_df1a9fe9.png";
 
 const LINKS = [
-  { label: "Platform", to: "/#features" },
-  { label: "Assessment", to: "/assessment" },
+  { label: "Solution", to: "/#solution" },
+  { label: "DPDP Act", to: "/dpdp-act" },
+  { label: "Partner program", to: "/partners" },
   { label: "Pricing", to: "/pricing" },
   { label: "Security", to: "/security" },
   { label: "Contact", to: "/contact" },
@@ -28,38 +34,51 @@ export default function Nav() {
   }, [pathname]);
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled ? "bg-slate-950/80 backdrop-blur-xl border-b border-white/10" : "bg-transparent"
-      )}
-    >
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <Link to="/" className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-sky-500 shadow-lg shadow-indigo-500/20">
-            <Shield className="h-5 w-5 text-white" />
-          </span>
-          <span className="leading-tight">
-            <span className="block text-lg font-semibold text-white tracking-tight">Jaguard</span>
-            <span className="block text-[10px] uppercase tracking-widest text-indigo-300/70">by Jago AI</span>
-          </span>
-        </Link>
+    <header className="fixed inset-x-0 top-0 z-50">
+      <DeadlineStrip />
+      <div
+        className={cn(
+          "transition-all duration-300",
+          scrolled ? "bg-slate-950/80 backdrop-blur-xl border-b border-white/10" : "bg-transparent"
+        )}
+      >
+        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
+          <Link to="/" aria-label="Jaguard home">
+            <Image
+              src={LOGO_URL}
+              alt="Jaguard"
+              fittingType="fit"
+              className="h-11 w-11 rounded-lg"
+            />
+          </Link>
 
-        <div className="hidden items-center gap-8 md:flex">
-          {LINKS.map((l) => (
-            <Link key={l.label} to={l.to} className="text-sm font-medium text-slate-300 transition-colors hover:text-white">
-              {l.label}
+          <div className="hidden items-center gap-6 lg:flex">
+            {LINKS.map((l) => (
+              <Link
+                key={l.label}
+                to={l.to}
+                className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
+              >
+                {l.label}
+              </Link>
+            ))}
+            <Link
+              to="/assessment"
+              className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
+            >
+              <ClipboardCheck className="h-4 w-4" />
+              Take the DPDP readiness assessment
             </Link>
-          ))}
-        </div>
+          </div>
 
-        <button className="text-white md:hidden" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </nav>
+          <button className="text-white lg:hidden" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </nav>
+      </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-slate-950/95 px-5 py-4 backdrop-blur-xl md:hidden">
+        <div className="border-t border-white/10 bg-slate-950/95 px-5 py-4 backdrop-blur-xl lg:hidden">
           <div className="space-y-1">
             {LINKS.map((l) => (
               <Link
@@ -70,8 +89,14 @@ export default function Nav() {
                 {l.label}
               </Link>
             ))}
+            <Link
+              to="/assessment"
+              className="mt-2 flex items-center gap-2 rounded-lg bg-white px-3 py-2.5 text-sm font-semibold text-slate-900"
+            >
+              <ClipboardCheck className="h-4 w-4" />
+              Take the DPDP readiness assessment
+            </Link>
           </div>
-
         </div>
       )}
     </header>

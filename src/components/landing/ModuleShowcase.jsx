@@ -8,12 +8,13 @@ const TABS = [
     key: "consent",
     icon: ShieldCheck,
     title: "Consent Management",
-    blurb: "Capture, prove and withdraw consent with cryptographic artifacts on every record.",
+    blurb:
+      "Solves consent governance end to end: every permission captured against a declared purpose, proven with a tamper-evident record, and withdrawable in a single action.",
     points: [
-      "Purpose-based consent catalogs",
-      "Tamper-proof consent hashes",
-      "One-click withdrawal with full audit trail",
-      "Multi-channel capture across web, app and offline",
+      "A central catalog of purposes every channel captures consent against",
+      "Tamper-proof hashes that prove each consent in an audit",
+      "Withdrawal handled in one action, with the full trail preserved",
+      "Capture across web, app, API and offline channels",
     ],
     mock: { metric: "1,284", label: "Active consents", trend: "+12% this month", bars: [62, 78, 71, 88, 95, 82, 90] },
   },
@@ -21,12 +22,13 @@ const TABS = [
     key: "breach",
     icon: AlertTriangle,
     title: "Breach Response",
-    blurb: "Run the full incident lifecycle inside the 72-hour notification window.",
+    blurb:
+      "Solves the 72-hour problem: detection, investigation, containment and Board notification run as one workflow, so nothing is improvised under pressure.",
     points: [
-      "Severity-based incident routing",
-      "Root-cause and affected record tracking",
-      "One-click regulator notification",
-      "Containment through resolution playbook",
+      "Incident intake with severity-based routing",
+      "Affected records and root cause tracked in one place",
+      "Board notification prepared inside the 72-hour window",
+      "Containment through resolution as a single workflow",
     ],
     mock: { metric: "71h", label: "to DPB notification", trend: "SLA on track", bars: [30, 45, 60, 72, 55, 40, 35] },
   },
@@ -34,12 +36,13 @@ const TABS = [
     key: "ropa",
     icon: FileText,
     title: "Records of Processing",
-    blurb: "Keep records of processing audit-ready with legal basis, retention and ownership on every activity.",
+    blurb:
+      "Solves the audit question: every processing activity documented with legal basis, retention and ownership, maintained continuously instead of rebuilt annually.",
     points: [
-      "Auto-generated processing inventory",
-      "Legal basis and retention tagging",
-      "Owner assignment and review cycles",
-      "Export-ready for audits",
+      "A processing inventory that keeps itself current",
+      "Legal basis and retention attached to every activity",
+      "Owners and review cycles so records never go stale",
+      "Exports shaped for regulator and auditor requests",
     ],
     mock: { metric: "47", label: "processing activities", trend: "3 due for review", bars: [40, 52, 48, 60, 64, 58, 66] },
   },
@@ -50,12 +53,16 @@ export default function ModuleShowcase() {
   const tab = TABS.find((t) => t.key === active);
 
   return (
-    <section className="bg-slate-50 py-12">
+    <section id="solution" className="bg-slate-50 py-12">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
-          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Product</span>
-          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">Built for the moments that matter</h2>
-          <p className="mt-3 text-lg text-slate-600">Three workflows that decide whether you are compliant or exposed.</p>
+          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Solution</span>
+          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
+            Solutions for the obligations that decide your exposure
+          </h2>
+          <p className="mt-3 text-lg text-slate-600">
+            Three workflows where proof matters most, solved as product rather than paperwork.
+          </p>
         </Reveal>
 
         <div className="mt-8 flex flex-wrap gap-2">
