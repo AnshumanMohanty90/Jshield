@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import { Reveal } from "./primitives";
 
 const STEPS = [
@@ -23,57 +20,29 @@ const STEPS = [
 ];
 
 export default function HowItWorks() {
-  const [open, setOpen] = useState(0);
-
   return (
     <section id="how-we-help" className="bg-slate-950 py-12">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <Reveal className="max-w-2xl">
+        <Reveal>
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">How we help</span>
-          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
+          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white text-pretty sm:text-4xl lg:whitespace-nowrap">
             From assessment to continuous governance
           </h2>
-          <p className="mt-3 text-lg text-slate-400">
-            A guided path through the full DPDP compliance journey. Select a stage to see what happens inside it.
+          <p className="mt-3 max-w-2xl text-lg text-slate-400">
+            A guided path through the full DPDP compliance journey, with every stage visible at a glance.
           </p>
         </Reveal>
 
         <Reveal delay={0.08}>
           <div className="how-card">
             <div className="how-rail">
-              {STEPS.map((s, i) => {
-                const isOpen = open === i;
-                return (
-                  <button
-                    key={s.title}
-                    type="button"
-                    aria-expanded={isOpen}
-                    aria-controls={`how-panel-${i}`}
-                    onClick={() => setOpen(isOpen ? -1 : i)}
-                    className={`how-step ${isOpen ? "is-open" : ""}`}
-                  >
-                    <span className="how-marker">{i + 1}</span>
-                    <span className="how-stephead">
-                      <span className="how-steptitle">{s.title}</span>
-                      <ChevronDown className={`how-chevron ${isOpen ? "is-open" : ""}`} />
-                    </span>
-                    <AnimatePresence initial={false}>
-                      {isOpen && (
-                        <motion.span
-                          id={`how-panel-${i}`}
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: "easeOut" }}
-                          className="how-panel"
-                        >
-                          <span className="how-desc">{s.desc}</span>
-                        </motion.span>
-                      )}
-                    </AnimatePresence>
-                  </button>
-                );
-              })}
+              {STEPS.map((s, i) => (
+                <div key={s.title} className="how-step">
+                  <span className="how-marker">{i + 1}</span>
+                  <span className="how-steptitle">{s.title}</span>
+                  <p className="how-desc">{s.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </Reveal>

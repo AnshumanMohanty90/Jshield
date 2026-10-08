@@ -69,8 +69,8 @@ export default function Industries() {
     <section className="bg-slate-900/50 py-12">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
-          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">By industry</span>
-          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
+          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Built for your sector</span>
+          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
             DPDP controls, tailored to how you process data
           </h2>
           <p className="mt-3 text-lg text-slate-400">

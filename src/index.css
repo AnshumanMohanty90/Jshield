@@ -134,11 +134,8 @@
   flex-direction: column;
   gap: 10px;
   text-align: left;
-  cursor: pointer;
   border-radius: 16px;
-  padding: 6px 8px 10px;
-  background: transparent;
-  transition: background-color 0.2s ease;
+  padding: 6px 8px 8px 8px;
   animation: how-rise 0.55s cubic-bezier(0.2, 0.75, 0.25, 1) both;
 }
 .how-step:nth-child(2) {
@@ -149,13 +146,6 @@
 }
 .how-step:nth-child(4) {
   animation-delay: 0.24s;
-}
-.how-step:hover {
-  background: rgba(255, 255, 255, 0.04);
-}
-.how-step:focus-visible {
-  outline: 2px solid #6366f1;
-  outline-offset: 2px;
 }
 .how-marker {
   width: 50px;
@@ -171,18 +161,6 @@
   font-weight: 800;
   z-index: 1;
 }
-.how-step.is-open .how-marker {
-  background: linear-gradient(135deg, #6366f1, #0ea5e9);
-  border-color: transparent;
-  color: #ffffff;
-  animation: how-pulse 2.8s ease-in-out infinite;
-}
-.how-stephead {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
 .how-steptitle {
   font-size: 22px;
   line-height: 1.15;
@@ -190,36 +168,12 @@
   letter-spacing: -0.3px;
   color: #f1f5f9;
 }
-.how-chevron {
-  width: 18px;
-  height: 18px;
-  flex: none;
-  color: #64748b;
-  transition: transform 0.3s ease, color 0.2s ease;
-}
-.how-chevron.is-open {
-  transform: rotate(180deg);
-  color: #818cf8;
-}
-.how-panel {
-  display: block;
-  overflow: hidden;
-}
 .how-desc {
   display: block;
   font-size: 15px;
   line-height: 1.5;
   color: #94a3b8;
   overflow-wrap: anywhere;
-}
-@keyframes how-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.25);
-  }
-  50% {
-    box-shadow: 0 0 0 8px rgba(99, 102, 241, 0.1);
-  }
 }
 @keyframes how-rise {
   from {

@@ -2,11 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ClipboardCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Image } from "@/components/ui/image";
 import DeadlineTracker from "./DeadlineTracker";
-
-const LOGO_URL =
-  "https://media.base44.com/images/public/6abfe638fec4c87c5794805b/310448946_generated_df1a9fe9.png";
+import BrandLockup from "./BrandLockup";
 
 const LINKS = [
   { label: "Solution", to: "/#solution" },
@@ -42,12 +39,7 @@ export default function Nav() {
       >
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
           <Link to="/" aria-label="Jaguard home">
-            <Image
-              src={LOGO_URL}
-              alt="Jaguard"
-              fittingType="fit"
-              className="h-11 w-11 rounded-lg"
-            />
+            <BrandLockup className="h-11 w-11" />
           </Link>
 
           <div className="hidden items-center gap-6 lg:flex">

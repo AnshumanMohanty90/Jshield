@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Timer } from "lucide-react";
 
 const DEADLINE = new Date("2027-05-13T00:00:00");
 const WEEK = 604800000;
@@ -14,19 +15,22 @@ export default function DeadlineTracker() {
 
   const weeks = Math.max(0, Math.floor(ms / WEEK));
   const days = Math.max(0, Math.floor((ms % WEEK) / DAY));
-  const left = ms > 0 ? `${weeks} week${weeks === 1 ? "" : "s"}, ${days} day${days === 1 ? "" : "s"} left` : "Deadline reached";
+  const left =
+    ms > 0
+      ? `${weeks} ${weeks === 1 ? "week" : "weeks"}, ${days} ${days === 1 ? "day" : "days"} left`
+      : "Deadline reached";
 
   return (
     <div className="border-b border-white/10 bg-slate-950">
-      <div className="mx-auto flex h-9 max-w-7xl items-center justify-between gap-3 px-5 sm:px-8">
-        <p className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-widest text-slate-400">
-          <span className="relative flex h-1.5 w-1.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-indigo-400 opacity-60" />
-            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-indigo-400" />
+      <div className="mx-auto flex h-9 max-w-7xl items-center justify-center px-5 sm:px-8">
+        <p className="flex items-center gap-2.5 text-[11px] uppercase tracking-widest">
+          <Timer className="h-3.5 w-3.5 text-indigo-400" />
+          <span className="hidden font-medium text-slate-400 sm:inline">DPDP readiness deadline</span>
+          <span className="font-bold text-white">13 May 2027</span>
+          <span className="animate-pulse rounded-full bg-indigo-500/20 px-2 py-0.5 font-bold text-indigo-200 ring-1 ring-indigo-400/30">
+            {left}
           </span>
-          DPDP readiness deadline · 13 May 2027
         </p>
-        <p className="text-[11px] font-semibold uppercase tracking-widest text-white">{left}</p>
       </div>
     </div>
   );

@@ -31,7 +31,7 @@ export default function Pricing() {
       <section className="bg-slate-950 pb-14 pt-28">
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Pricing</span>
-          <h1 className="mt-3 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">Everything. Free for ten days.</h1>
+          <h1 className="mt-3 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-pretty">Everything. Free for ten days.</h1>
           <p className="mt-4 text-lg text-slate-300">
             The full platform, every module, no credit card. Use it for ten days, then talk to sales about enterprise adoption.
           </p>

@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
-import { Image } from "@/components/ui/image";
-
-const LOGO_URL =
-  "https://media.base44.com/images/public/6abfe638fec4c87c5794805b/310448946_generated_df1a9fe9.png";
+import BrandLockup from "./BrandLockup";
 
 const COLS = [
   {
@@ -41,7 +38,7 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-5">
           <div className="md:col-span-2">
             <Link to="/" aria-label="Jaguard home">
-              <Image src={LOGO_URL} alt="Jaguard" fittingType="fit" className="h-12 w-12 rounded-lg" />
+              <BrandLockup className="h-12 w-12" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
               The privacy operations platform that operationalizes India's DPDP Act, from data discovery to breach response.

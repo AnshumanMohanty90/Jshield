@@ -6,7 +6,7 @@ export default function CtaBand({ title, subtitle, primary, secondary }) {
     <section className="bg-slate-950 py-12">
       <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
         <Reveal>
-          <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
+          <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
             {title}
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-lg text-slate-400">{subtitle}</p>

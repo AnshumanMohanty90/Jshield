@@ -14,7 +14,7 @@ export default function PageHero({ eyebrow, title, subtitle, primary, secondary 
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mt-3 max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance"
+          className="mt-3 max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-pretty"
         >
           {title}
         </motion.h1>

@@ -60,7 +60,7 @@ export default function DPDPAct() {
       <section className="bg-slate-950 py-12">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
               Does it apply to you?
             </h2>
             <p className="mt-3 text-lg text-slate-400">
@@ -102,7 +102,7 @@ export default function DPDPAct() {
       <section className="bg-slate-900/50 py-12">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
               Who is who under the Act
             </h2>
             <p className="mt-3 text-lg text-slate-400">Six roles carry the entire law. Every obligation maps to one of them.</p>
@@ -121,7 +121,7 @@ export default function DPDPAct() {
       <section className="bg-slate-950 py-12">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
               What the Act expects of you
             </h2>
             <p className="mt-3 text-lg text-slate-400">
@@ -145,7 +145,7 @@ export default function DPDPAct() {
       <section className="bg-slate-900/50 py-12">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
               The timeline that matters
             </h2>
             <p className="mt-3 text-lg text-slate-400">
@@ -167,7 +167,7 @@ export default function DPDPAct() {
       <section className="bg-slate-950 py-12">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
               What non-compliance costs
             </h2>
             <p className="mt-3 text-lg text-slate-400">

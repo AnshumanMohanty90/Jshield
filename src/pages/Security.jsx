@@ -27,7 +27,7 @@ export default function Security() {
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-emerald-300">
             <ShieldCheck className="h-3.5 w-3.5" /> Security & trust
           </div>
-          <h1 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">
+          <h1 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-pretty">
             Compliance for the platform that keeps you compliant
           </h1>
           <p className="mt-4 text-lg text-slate-300">
