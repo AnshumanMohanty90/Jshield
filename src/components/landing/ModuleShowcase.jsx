@@ -8,8 +8,14 @@ const TABS = [
     key: "consent",
     icon: ShieldCheck,
     title: "Consent Management",
-    blurb:
-      "Solves consent governance end to end: every permission captured against a declared purpose, proven with a tamper-evident record, and withdrawable in a single action.",
+    blurb: (
+      <>
+        Solves consent governance <strong className="font-semibold text-slate-200">end to end</strong>: every
+        permission captured against a declared purpose, proven with a{" "}
+        <strong className="font-semibold text-slate-200">tamper-evident record</strong>, and withdrawable in a
+        single action.
+      </>
+    ),
     points: [
       "A central catalog of purposes every channel captures consent against",
       "Tamper-proof hashes that prove each consent in an audit",
@@ -22,8 +28,13 @@ const TABS = [
     key: "breach",
     icon: AlertTriangle,
     title: "Breach Response",
-    blurb:
-      "Solves the 72-hour problem: detection, investigation, containment and Board notification run as one workflow, so nothing is improvised under pressure.",
+    blurb: (
+      <>
+        Solves the <strong className="font-semibold text-slate-200">72-hour problem</strong>: detection,
+        investigation, containment and Board notification run as one workflow, so nothing is improvised under
+        pressure.
+      </>
+    ),
     points: [
       "Incident intake with severity-based routing",
       "Affected records and root cause tracked in one place",
@@ -36,8 +47,13 @@ const TABS = [
     key: "ropa",
     icon: FileText,
     title: "Records of Processing",
-    blurb:
-      "Solves the audit question: every processing activity documented with legal basis, retention and ownership, maintained continuously instead of rebuilt annually.",
+    blurb: (
+      <>
+        Solves the audit question: every processing activity documented with legal basis, retention and
+        ownership, <strong className="font-semibold text-slate-200">maintained continuously</strong> instead of
+        rebuilt annually.
+      </>
+    ),
     points: [
       "A processing inventory that keeps itself current",
       "Legal basis and retention attached to every activity",
@@ -58,10 +74,12 @@ export default function ModuleShowcase() {
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Proof over paperwork</span>
           <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
-            Solutions for the obligations that decide your exposure
+            Solutions for the obligations that{" "}
+            <span className="italic text-indigo-300">decide your exposure</span>
           </h2>
           <p className="mt-3 text-lg text-slate-400">
-            Three workflows where proof matters most, solved as product rather than paperwork.
+            Three workflows where <em className="text-slate-200">proof</em> matters most, solved as{" "}
+            <strong className="font-semibold text-slate-200">product</strong> rather than paperwork.
           </p>
         </Reveal>
 

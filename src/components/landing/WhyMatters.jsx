@@ -8,21 +8,21 @@ const CARDS = [
     suffix: " Cr",
     statLabel: "maximum penalty under DPDP",
     title: "Rising regulatory risk",
-    desc: "The DPDP Act sets penalties as high as ₹250 crore and raises scrutiny across consent, data principal rights and breach handling.",
+    desc: <>The DPDP Act sets penalties as high as <strong className="font-semibold text-slate-200">₹250 crore</strong> and raises scrutiny across consent, data principal rights and breach handling.</>,
   },
   {
     stat: 8,
     suffix: "",
     statLabel: "core DPDP obligations",
     title: "Mandatory privacy operations",
-    desc: "Consent, rights requests, significant data fiduciary duties, breach response and grievance redressal are operational duties now, not legal footnotes.",
+    desc: <>Consent, rights requests, significant data fiduciary duties, breach response and grievance redressal are <strong className="font-semibold text-slate-200">operational duties now</strong>, not legal footnotes.</>,
   },
   {
     stat: 72,
     suffix: "h",
     statLabel: "breach notification window",
     title: "Continuous readiness",
-    desc: "Centralised visibility, governance workflows and audit readiness are what keep an enterprise aligned as the rules evolve.",
+    desc: <>Centralised visibility, governance workflows and <strong className="font-semibold text-slate-200">audit readiness</strong> are what keep an enterprise aligned as the rules evolve.</>,
   },
 ];
 
@@ -33,10 +33,12 @@ export default function WhyMatters() {
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Why it matters now</span>
           <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
-            DPDP compliance is now an operational business requirement
+            DPDP compliance is now an{" "}
+            <span className="italic text-indigo-300">operational</span> business requirement
           </h2>
           <p className="mt-3 text-lg text-slate-400">
-            The Act has changed how Indian organisations manage personal data, and who answers when they do not.
+            The Act has changed how Indian organisations manage personal data, and{" "}
+            <em className="text-slate-200">who answers when they do not</em>.
           </p>
         </Reveal>
 

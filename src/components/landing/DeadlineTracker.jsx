@@ -21,13 +21,13 @@ export default function DeadlineTracker() {
       : "Deadline reached";
 
   return (
-    <div className="border-b border-white/10 bg-slate-950">
-      <div className="mx-auto flex h-9 max-w-7xl items-center justify-center px-5 sm:px-8">
-        <p className="flex items-center gap-2.5 text-[11px] uppercase tracking-widest">
-          <Timer className="h-3.5 w-3.5 text-indigo-400" />
-          <span className="hidden font-medium text-slate-400 sm:inline">Full DPDP enforcement begins</span>
+    <div className="border-b border-white/10 bg-indigo-950/40">
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-center px-5 sm:px-8">
+        <p className="flex items-center gap-3 text-xs uppercase tracking-widest sm:text-[13px]">
+          <Timer className="h-4 w-4 flex-none text-indigo-400" />
+          <span className="hidden font-medium text-slate-300 sm:inline">Full DPDP enforcement begins</span>
           <span className="font-bold text-white">13 May 2027</span>
-          <span className="animate-pulse rounded-full bg-indigo-500/20 px-2 py-0.5 font-bold text-indigo-200 ring-1 ring-indigo-400/30">
+          <span className="animate-pulse rounded-full bg-indigo-500/20 px-3 py-1 font-bold text-indigo-200 ring-1 ring-indigo-400/30">
             {left}
           </span>
         </p>

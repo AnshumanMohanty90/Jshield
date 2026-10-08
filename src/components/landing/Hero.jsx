@@ -64,7 +64,10 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.05 }}
               className="text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl"
             >
-              DPDP compliance, made operational.
+              DPDP compliance,{" "}
+              <span className="italic bg-gradient-to-r from-indigo-400 to-sky-300 bg-clip-text text-transparent">
+                made operational.
+              </span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -72,8 +75,10 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.12 }}
               className="mt-3 max-w-xl text-lg leading-relaxed text-slate-300"
             >
-              One workspace for the complete DPDP program: discovery, consent, breach response and records,
-              audit-ready by default.
+              One workspace for the{" "}
+              <strong className="font-semibold text-white">complete DPDP program</strong>: discovery, consent,
+              breach response and records,{" "}
+              <em className="text-slate-100">audit-ready by default</em>.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

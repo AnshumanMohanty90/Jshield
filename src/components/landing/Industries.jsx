@@ -71,11 +71,12 @@ export default function Industries() {
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Built for your sector</span>
           <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
-            DPDP controls, tailored to how you process data
+            DPDP controls, <em className="text-indigo-300">tailored</em> to how you process data
           </h2>
           <p className="mt-3 text-lg text-slate-400">
             Different industries process personal data differently, and need different privacy controls. Whatever your
-            sector, Jaguard's guided sequence takes you from first data scan to an audit-ready posture in 30 days.
+            sector, Jaguard's guided sequence takes you from first data scan to an audit-ready posture in{" "}
+            <strong className="font-semibold text-white">30 days</strong>.
           </p>
         </Reveal>
 

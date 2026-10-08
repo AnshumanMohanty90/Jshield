@@ -17,7 +17,8 @@ export default function CTASection() {
           <div className="relative">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Ready to operationalize DPDP?</h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-indigo-100">
-              Start your free trial today and see your compliance score within the first hour.
+              Start your free trial today and see your compliance score{" "}
+              <strong className="font-semibold text-white">within the first hour</strong>.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
