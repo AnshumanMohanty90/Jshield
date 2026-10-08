@@ -90,3 +90,210 @@
     @apply bg-background text-foreground font-body;
   }
 }
+
+/* How we help: milestone rail section */
+.how-card {
+  box-sizing: border-box;
+  background: #f7f4ee;
+  border: 1px solid #d9d2c7;
+  border-radius: 32px;
+  color: #172b4d;
+  box-shadow: 0 16px 48px rgba(23, 43, 77, 0.09);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 26px 30px;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.how-card:hover {
+  box-shadow: 0 20px 54px rgba(23, 43, 77, 0.13);
+}
+.how-card:active {
+  background: #f1ece3;
+}
+.how-card:focus-visible {
+  outline: 2px solid #d66343;
+  outline-offset: 2px;
+}
+.how-head {
+  display: grid;
+  grid-template-columns: 1fr 1.12fr;
+  gap: 24px;
+  align-items: center;
+}
+.how-intro {
+  min-width: 0;
+}
+.how-eyebrow {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+  color: #a84e35;
+}
+.how-title {
+  font-size: 34px;
+  line-height: 1.08;
+  letter-spacing: -0.9px;
+  font-weight: 760;
+  margin: 6px 0;
+}
+.how-lede {
+  font-size: 16px;
+  line-height: 1.35;
+  color: #5d6671;
+  margin: 0;
+}
+.how-deadline {
+  min-height: 104px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: #172b4d;
+  color: #f7f4ee;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.how-deadline::after {
+  content: "";
+  position: absolute;
+  right: 28px;
+  top: -44px;
+  width: 184px;
+  height: 184px;
+  border: 1px solid rgba(247, 244, 238, 0.16);
+  border-radius: 50%;
+  box-shadow: 0 0 0 20px rgba(247, 244, 238, 0.04), 0 0 0 44px rgba(247, 244, 238, 0.035);
+  pointer-events: none;
+}
+.how-datecopy {
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #e7ded0;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+.how-date {
+  font-size: 44px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -1.6px;
+  color: #fff8ed;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+.how-rail {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  flex: 1;
+  min-height: 0;
+  padding-top: 2px;
+}
+.how-rail::before {
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  top: 26px;
+  height: 1px;
+  background: #d9d2c7;
+}
+.how-step {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: how-rise 0.55s cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+.how-step:nth-child(2) {
+  animation-delay: 0.08s;
+}
+.how-step:nth-child(3) {
+  animation-delay: 0.16s;
+}
+.how-step:nth-child(4) {
+  animation-delay: 0.24s;
+}
+.how-marker {
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: #f7f4ee;
+  border: 1px solid #d9d2c7;
+  display: grid;
+  place-items: center;
+  color: #172b4d;
+  font-size: 18px;
+  font-weight: 800;
+  z-index: 1;
+  animation: how-pulse 2.8s ease-in-out infinite;
+}
+.how-step:first-child .how-marker {
+  background: #d66343;
+  border-color: #d66343;
+  color: #ffffff;
+  box-shadow: 0 0 0 8px rgba(214, 99, 67, 0.12);
+}
+.how-step:not(:first-child) .how-marker {
+  animation-delay: 0.4s;
+}
+.how-step h3 {
+  font-size: 22px;
+  line-height: 1.15;
+  margin: 2px 0 0;
+  font-weight: 760;
+  letter-spacing: -0.3px;
+  color: #172b4d;
+}
+.how-step p {
+  font-size: 15px;
+  line-height: 1.32;
+  margin: 0;
+  color: #5d6671;
+  overflow-wrap: anywhere;
+}
+@keyframes how-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(214, 99, 67, 0.16);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(214, 99, 67, 0.08);
+  }
+}
+@keyframes how-rise {
+  from {
+    opacity: 0.4;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 640px) {
+  .how-head {
+    grid-template-columns: 1fr;
+  }
+  .how-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 14px;
+  }
+  .how-date {
+    font-size: 32px;
+  }
+}

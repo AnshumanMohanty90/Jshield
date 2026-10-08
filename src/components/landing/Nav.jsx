@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ClipboardCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
-import DeadlineStrip from "./DeadlineStrip";
 import { Image } from "@/components/ui/image";
 
 const LOGO_URL =
@@ -35,7 +34,6 @@ export default function Nav() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <DeadlineStrip />
       <div
         className={cn(
           "transition-all duration-300",
