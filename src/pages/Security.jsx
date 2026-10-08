@@ -13,7 +13,6 @@ const PILLARS = [
 ];
 
 const BADGES = [
-  "DPDP Act 2023 Aligned",
   "ISO 27001 (in progress)",
   "SOC 2 Type II (roadmap)",
   "GDPR-aware mapping",
@@ -64,7 +63,7 @@ export default function Security() {
                 key={b}
                 className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-950 px-4 py-2 text-sm font-medium text-slate-300"
               >
-                <ShieldCheck className="h-4 w-4 text-emerald-400" /> {b}
+                <ShieldCheck className="h-4 w-4 text-slate-400" /> {b}
               </span>
             ))}
           </div>
