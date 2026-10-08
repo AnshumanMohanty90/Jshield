@@ -334,10 +334,7 @@ export default function Assessment() {
                       ) : (
                         <ol className="mt-4 space-y-3">
                           {gaps.map((g, i) => (
-                            <li key={i} className="flex items-start gap-3 border-t border-white/10 pt-3">
-                              <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-white text-xs font-semibold text-slate-900">
-                                {i + 1}
-                              </span>
+                            <li key={i} className="border-t border-white/10 pt-3">
                               <div>
                                 <p className="text-sm font-medium text-white">{g.q.q}</p>
                                 <p className="mt-0.5 text-sm text-slate-400">{g.q.rec}</p>

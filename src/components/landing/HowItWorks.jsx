@@ -1,20 +1,25 @@
+import { ClipboardCheck, Radar, ShieldCheck, TrendingUp } from "lucide-react";
 import { Reveal } from "./primitives";
 
 const STEPS = [
   {
     title: "Assess",
+    icon: ClipboardCheck,
     desc: "We evaluate your current DPDP readiness through gap assessments, privacy control reviews, regulatory mapping and risk prioritisation.",
   },
   {
     title: "Discover",
+    icon: Radar,
     desc: "Discover and classify personal data, map data flows, build a centralised inventory and surface shadow data across systems.",
   },
   {
     title: "Implement",
+    icon: ShieldCheck,
     desc: "Stand up consent and notice management, DSAR workflows, governance controls and policy frameworks aligned to DPDP obligations.",
   },
   {
     title: "Govern",
+    icon: TrendingUp,
     desc: "Continuous monitoring, audit reporting, breach readiness and governance oversight keep you compliant as obligations evolve.",
   },
 ];
@@ -36,9 +41,9 @@ export default function HowItWorks() {
         <Reveal delay={0.08}>
           <div className="how-card">
             <div className="how-rail">
-              {STEPS.map((s, i) => (
+              {STEPS.map((s) => (
                 <div key={s.title} className="how-step">
-                  <span className="how-marker">{i + 1}</span>
+                  <span className="how-marker"><s.icon className="h-5 w-5" /></span>
                   <span className="how-steptitle">{s.title}</span>
                   <p className="how-desc">{s.desc}</p>
                 </div>

@@ -129,12 +129,9 @@ export default function DPDPAct() {
             </p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-            {OBLIGATIONS.map((o, i) => (
+            {OBLIGATIONS.map((o) => (
               <Reveal key={o.title} className="border-t border-white/10 pt-5">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-base font-semibold text-white">{o.title}</h3>
-                  <span className="text-xs text-slate-600">{String(i + 1).padStart(2, "0")}</span>
-                </div>
+                <h3 className="text-base font-semibold text-white">{o.title}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{o.desc}</p>
               </Reveal>
             ))}

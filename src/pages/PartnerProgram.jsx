@@ -78,12 +78,9 @@ export default function PartnerProgram() {
             </p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-            {PARTNER_TYPES.map((p, i) => (
+            {PARTNER_TYPES.map((p) => (
               <Reveal key={p.title} className="border-t border-white/10 pt-5">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-base font-semibold text-white">{p.title}</h3>
-                  <span className="text-xs text-slate-600">{String(i + 1).padStart(2, "0")}</span>
-                </div>
+                <h3 className="text-base font-semibold text-white">{p.title}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{p.desc}</p>
                 <p className="mt-3 text-xs font-semibold uppercase tracking-widest text-indigo-400">{p.earn}</p>
               </Reveal>
@@ -122,10 +119,9 @@ export default function PartnerProgram() {
             <p className="mt-3 text-lg text-slate-400">From application to first engagement in three steps.</p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-3">
-            {STEPS.map((s, i) => (
+            {STEPS.map((s) => (
               <Reveal key={s.title} className="border-t border-white/10 pt-5">
-                <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Step {i + 1}</span>
-                <h3 className="mt-1 text-base font-semibold text-white">{s.title}</h3>
+                <h3 className="text-base font-semibold text-white">{s.title}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{s.desc}</p>
               </Reveal>
             ))}
