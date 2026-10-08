@@ -65,7 +65,7 @@ export default function Hero() {
               className="text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl"
             >
               DPDP compliance,{" "}
-              <span className="italic bg-gradient-to-r from-indigo-400 to-sky-300 bg-clip-text text-transparent">
+              <span className="whitespace-nowrap bg-gradient-to-r from-indigo-400 to-sky-300 bg-clip-text italic text-transparent">
                 made operational.
               </span>
             </motion.h1>
@@ -78,7 +78,7 @@ export default function Hero() {
               One workspace for the{" "}
               <strong className="font-semibold text-white">complete DPDP program</strong>: discovery, consent,
               breach response and records,{" "}
-              <em className="text-slate-100">audit-ready by default</em>.
+              <em className="whitespace-nowrap text-slate-100">audit-ready by default</em>.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

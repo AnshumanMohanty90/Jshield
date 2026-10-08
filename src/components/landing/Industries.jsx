@@ -76,7 +76,7 @@ export default function Industries() {
           <p className="mt-3 text-lg text-slate-400">
             Different industries process personal data differently, and need different privacy controls. Whatever your
             sector, Jaguard's guided sequence takes you from first data scan to an audit-ready posture in{" "}
-            <strong className="font-semibold text-white">30 days</strong>.
+            <strong className="whitespace-nowrap font-semibold text-white">30 days</strong>.
           </p>
         </Reveal>
 

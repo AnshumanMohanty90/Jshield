@@ -75,11 +75,13 @@ export default function ModuleShowcase() {
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Proof over paperwork</span>
           <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
             Solutions for the obligations that{" "}
-            <span className="italic text-indigo-300">decide your exposure</span>
+            <span className="whitespace-nowrap italic text-indigo-300">decide your exposure</span>
           </h2>
           <p className="mt-3 text-lg text-slate-400">
             Three workflows where <em className="text-slate-200">proof</em> matters most, solved as{" "}
-            <strong className="font-semibold text-slate-200">product</strong> rather than paperwork.
+            <span className="whitespace-nowrap">
+              <strong className="font-semibold text-slate-200">product</strong> rather than paperwork.
+            </span>
           </p>
         </Reveal>
 
@@ -111,7 +113,7 @@ export default function ModuleShowcase() {
         >
           <div>
             <h3 className="text-xl font-semibold text-white">{tab.title}</h3>
-            <p className="mt-2 text-slate-400">{tab.blurb}</p>
+            <p className="mt-2 text-pretty text-slate-400">{tab.blurb}</p>
             <ul className="mt-6 space-y-3">
               {tab.points.map((p) => (
                 <li key={p} className="flex items-start gap-2.5 text-sm text-slate-300">

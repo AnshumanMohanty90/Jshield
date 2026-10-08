@@ -8,21 +8,21 @@ const CARDS = [
     suffix: " Cr",
     statLabel: "maximum penalty under DPDP",
     title: "Rising regulatory risk",
-    desc: <>The DPDP Act sets penalties as high as <strong className="font-semibold text-slate-200">₹250 crore</strong> and raises scrutiny across consent, data principal rights and breach handling.</>,
+    desc: <>The DPDP Act sets penalties as high as <strong className="whitespace-nowrap font-semibold text-slate-200">₹250 crore</strong> and raises scrutiny across consent, data principal rights and breach handling.</>,
   },
   {
     stat: 8,
     suffix: "",
     statLabel: "core DPDP obligations",
     title: "Mandatory privacy operations",
-    desc: <>Consent, rights requests, significant data fiduciary duties, breach response and grievance redressal are <strong className="font-semibold text-slate-200">operational duties now</strong>, not legal footnotes.</>,
+    desc: <>Consent, rights requests, significant data fiduciary duties, breach response and grievance redressal are <strong className="whitespace-nowrap font-semibold text-slate-200">operational duties now</strong>, not legal footnotes.</>,
   },
   {
     stat: 72,
     suffix: "h",
     statLabel: "breach notification window",
     title: "Continuous readiness",
-    desc: <>Centralised visibility, governance workflows and <strong className="font-semibold text-slate-200">audit readiness</strong> are what keep an enterprise aligned as the rules evolve.</>,
+    desc: <>Centralised visibility, governance workflows and <strong className="whitespace-nowrap font-semibold text-slate-200">audit readiness</strong> are what keep an enterprise aligned as the rules evolve.</>,
   },
 ];
 
@@ -38,7 +38,7 @@ export default function WhyMatters() {
           </h2>
           <p className="mt-3 text-lg text-slate-400">
             The Act has changed how Indian organisations manage personal data, and{" "}
-            <em className="text-slate-200">who answers when they do not</em>.
+            <em className="whitespace-nowrap text-slate-200">who answers when they do not</em>.
           </p>
         </Reveal>
 

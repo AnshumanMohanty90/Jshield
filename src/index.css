@@ -123,7 +123,7 @@
   position: absolute;
   left: 24px;
   right: 24px;
-  top: 26px;
+  top: 5px;
   height: 1px;
   background: rgba(255, 255, 255, 0.12);
 }
@@ -148,17 +148,12 @@
   animation-delay: 0.24s;
 }
 .how-marker {
-  width: 50px;
-  height: 50px;
+  width: 11px;
+  height: 11px;
   box-sizing: border-box;
   border-radius: 50%;
-  background: #020617;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  display: grid;
-  place-items: center;
-  color: #e2e8f0;
-  font-size: 18px;
-  font-weight: 800;
+  background: #6366f1;
+  box-shadow: 0 0 0 5px rgba(99, 102, 241, 0.16);
   z-index: 1;
 }
 .how-steptitle {
@@ -170,6 +165,7 @@
 }
 .how-desc {
   display: block;
+  text-wrap: pretty;
   font-size: 15px;
   line-height: 1.5;
   color: #94a3b8;
