@@ -66,14 +66,14 @@ export default function Industries() {
   const ind = INDUSTRIES.find((i) => i.key === active);
 
   return (
-    <section className="bg-slate-50 py-12">
+    <section className="bg-slate-900/50 py-12">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
-          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">By industry</span>
-          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
+          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">By industry</span>
+          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
             DPDP controls, tailored to how you process data
           </h2>
-          <p className="mt-3 text-lg text-slate-600">
+          <p className="mt-3 text-lg text-slate-400">
             Different industries process personal data differently, and need different privacy controls. Whatever your
             sector, Jaguard's guided sequence takes you from first data scan to an audit-ready posture in 30 days.
           </p>
@@ -85,7 +85,9 @@ export default function Industries() {
               key={i.key}
               onClick={() => setActive(i.key)}
               className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                active === i.key ? "bg-slate-900 text-white" : "bg-white text-slate-600 ring-1 ring-slate-200 hover:bg-slate-100"
+                active === i.key
+                  ? "bg-white text-slate-900"
+                  : "bg-white/5 text-slate-300 ring-1 ring-white/10 hover:bg-white/10"
               }`}
             >
               {i.label}
@@ -101,18 +103,18 @@ export default function Industries() {
           className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10"
         >
           <div>
-            <h3 className="text-xl font-semibold text-slate-900">{ind.headline}</h3>
-            <p className="mt-2 text-sm text-slate-600">
+            <h3 className="text-xl font-semibold text-white">{ind.headline}</h3>
+            <p className="mt-2 text-sm text-slate-400">
               {ind.label} teams use Jaguard to operationalise DPDP without slowing the business.
             </p>
           </div>
           <div className="grid gap-0 sm:grid-cols-2">
             {ind.points.map((p) => (
-              <div key={p} className="flex items-start gap-2.5 border-t border-slate-200 py-3.5">
-                <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+              <div key={p} className="flex items-start gap-2.5 border-t border-white/10 py-3.5">
+                <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400">
                   <Check className="h-3 w-3" />
                 </span>
-                <span className="text-sm text-slate-700">{p}</span>
+                <span className="text-sm text-slate-300">{p}</span>
               </div>
             ))}
           </div>

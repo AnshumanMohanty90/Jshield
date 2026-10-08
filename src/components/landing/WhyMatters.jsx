@@ -28,14 +28,14 @@ const CARDS = [
 
 export default function WhyMatters() {
   return (
-    <section className="bg-slate-50 py-12">
+    <section className="bg-slate-950 py-12">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
-          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Why it matters now</span>
-          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
+          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Why it matters now</span>
+          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
             DPDP compliance is now an operational business requirement
           </h2>
-          <p className="mt-3 text-lg text-slate-600">
+          <p className="mt-3 text-lg text-slate-400">
             The Act has changed how Indian organisations manage personal data, and who answers when they do not.
           </p>
         </Reveal>
@@ -48,16 +48,16 @@ export default function WhyMatters() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className={`sm:px-8 ${i > 0 ? "sm:border-l sm:border-slate-200" : ""}`}
+              className={`sm:px-8 ${i > 0 ? "sm:border-l sm:border-white/10" : ""}`}
             >
               <div className="flex items-end gap-1.5">
-                <span className="text-4xl font-bold tracking-tight text-slate-900">
+                <span className="text-4xl font-bold tracking-tight text-white">
                   <AnimatedNumber value={c.stat} prefix={c.prefix} suffix={c.suffix} />
                 </span>
               </div>
-              <p className="mt-1 text-xs font-medium uppercase tracking-wide text-slate-400">{c.statLabel}</p>
-              <h3 className="mt-5 text-base font-semibold text-slate-900">{c.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{c.desc}</p>
+              <p className="mt-1 text-xs font-medium uppercase tracking-wide text-slate-500">{c.statLabel}</p>
+              <h3 className="mt-5 text-base font-semibold text-white">{c.title}</h3>
+              <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{c.desc}</p>
             </motion.div>
           ))}
         </div>

@@ -57,24 +57,24 @@ export default function DPDPAct() {
         secondary={{ label: "See how Jaguard solves it", to: "/#solution" }}
       />
 
-      <section className="bg-white py-12">
+      <section className="bg-slate-950 py-12">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
               Does it apply to you?
             </h2>
-            <p className="mt-3 text-lg text-slate-600">
+            <p className="mt-3 text-lg text-slate-400">
               Almost certainly. If your organization keeps personal details in any digital form, the Act covers it. There is no
               small business exemption, and enforcement begins with a single complaint.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border border-slate-200 p-6">
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-emerald-600">Covered by the law</h3>
+            <div className="rounded-2xl border border-white/10 bg-slate-900 p-6">
+              <h3 className="text-sm font-semibold uppercase tracking-widest text-emerald-400">Covered by the law</h3>
               <ul className="mt-4 space-y-3">
                 {APPLIES.map((t) => (
-                  <li key={t} className="flex items-start gap-2.5 text-sm leading-relaxed text-slate-700">
-                    <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                  <li key={t} className="flex items-start gap-2.5 text-sm leading-relaxed text-slate-300">
+                    <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400">
                       <Check className="h-3 w-3" />
                     </span>
                     {t}
@@ -82,12 +82,12 @@ export default function DPDPAct() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl border border-slate-200 p-6">
+            <div className="rounded-2xl border border-white/10 bg-slate-900 p-6">
               <h3 className="text-sm font-semibold uppercase tracking-widest text-slate-500">Outside its scope</h3>
               <ul className="mt-4 space-y-3">
                 {EXEMPT.map((t) => (
-                  <li key={t} className="flex items-start gap-2.5 text-sm leading-relaxed text-slate-700">
-                    <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-slate-100 text-slate-500">
+                  <li key={t} className="flex items-start gap-2.5 text-sm leading-relaxed text-slate-300">
+                    <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-white/10 text-slate-400">
                       <X className="h-3 w-3" />
                     </span>
                     {t}
@@ -99,91 +99,91 @@ export default function DPDPAct() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-12">
+      <section className="bg-slate-900/50 py-12">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
               Who is who under the Act
             </h2>
-            <p className="mt-3 text-lg text-slate-600">Six roles carry the entire law. Every obligation maps to one of them.</p>
+            <p className="mt-3 text-lg text-slate-400">Six roles carry the entire law. Every obligation maps to one of them.</p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {ROLES.map((r) => (
-              <Reveal key={r.title} className="border-t border-slate-200 pt-5">
-                <h3 className="text-base font-semibold text-slate-900">{r.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{r.desc}</p>
+              <Reveal key={r.title} className="border-t border-white/10 pt-5">
+                <h3 className="text-base font-semibold text-white">{r.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{r.desc}</p>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-12">
+      <section className="bg-slate-950 py-12">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
               What the Act expects of you
             </h2>
-            <p className="mt-3 text-lg text-slate-600">
+            <p className="mt-3 text-lg text-slate-400">
               Ten obligations define a compliant data practice. Each one is a promise to the people whose data you hold.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {OBLIGATIONS.map((o, i) => (
-              <Reveal key={o.title} className="border-t border-slate-200 pt-5">
+              <Reveal key={o.title} className="border-t border-white/10 pt-5">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-base font-semibold text-slate-900">{o.title}</h3>
-                  <span className="text-xs text-slate-400">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="text-base font-semibold text-white">{o.title}</h3>
+                  <span className="text-xs text-slate-600">{String(i + 1).padStart(2, "0")}</span>
                 </div>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{o.desc}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{o.desc}</p>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-slate-50 py-12">
+      <section className="bg-slate-900/50 py-12">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
               The timeline that matters
             </h2>
-            <p className="mt-3 text-lg text-slate-600">
+            <p className="mt-3 text-lg text-slate-400">
               The dates below follow the official commencement schedule. Jaguard's weekwise readiness plan is a recommended
               preparation sequence, separate from the statutory calendar.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
             {DATES.map((d) => (
-              <Reveal key={d.year} className="border-t border-slate-300 pt-5">
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-indigo-600">{d.year}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{d.text}</p>
+              <Reveal key={d.year} className="border-t border-white/10 pt-5">
+                <h3 className="text-sm font-semibold uppercase tracking-widest text-indigo-400">{d.year}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-400">{d.text}</p>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-12">
+      <section className="bg-slate-950 py-12">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
               What non-compliance costs
             </h2>
-            <p className="mt-3 text-lg text-slate-600">
+            <p className="mt-3 text-lg text-slate-400">
               The Data Protection Board sets penalties after inquiry. The ceiling is high enough to end most businesses.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            <div className="rounded-2xl border border-slate-200 p-8">
-              <div className="text-4xl font-bold tracking-tight text-slate-900">₹250 crore</div>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+            <div className="rounded-2xl border border-white/10 bg-slate-900 p-8">
+              <div className="text-4xl font-bold tracking-tight text-white">₹250 crore</div>
+              <p className="mt-2 text-sm leading-relaxed text-slate-400">
                 The maximum penalty for failing to protect personal data with adequate security safeguards.
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200 p-8">
-              <div className="text-4xl font-bold tracking-tight text-slate-900">₹50 crore</div>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+            <div className="rounded-2xl border border-white/10 bg-slate-900 p-8">
+              <div className="text-4xl font-bold tracking-tight text-white">₹50 crore</div>
+              <p className="mt-2 text-sm leading-relaxed text-slate-400">
                 The maximum for most other violations, from consent failures to neglected principal rights.
               </p>
             </div>

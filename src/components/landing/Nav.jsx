@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ClipboardCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Image } from "@/components/ui/image";
+import DeadlineTracker from "./DeadlineTracker";
 
 const LOGO_URL =
   "https://media.base44.com/images/public/6abfe638fec4c87c5794805b/310448946_generated_df1a9fe9.png";
@@ -10,10 +11,8 @@ const LOGO_URL =
 const LINKS = [
   { label: "Solution", to: "/#solution" },
   { label: "DPDP Act", to: "/dpdp-act" },
-  { label: "Partner program", to: "/partners" },
   { label: "Pricing", to: "/pricing" },
-  { label: "Security", to: "/security" },
-  { label: "Contact", to: "/contact" },
+  { label: "Partner Program", to: "/partners" },
 ];
 
 export default function Nav() {
@@ -34,6 +33,7 @@ export default function Nav() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
+      <DeadlineTracker />
       <div
         className={cn(
           "transition-all duration-300",

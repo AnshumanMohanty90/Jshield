@@ -4,9 +4,9 @@ import { Reveal } from "./primitives";
 
 export default function CTASection() {
   return (
-    <section className="bg-white py-16">
+    <section className="bg-slate-950 py-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <Reveal className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-indigo-600 to-sky-500 px-6 py-12 text-center shadow-2xl shadow-indigo-200 sm:px-12">
+        <Reveal className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-indigo-600 to-sky-500 px-6 py-12 text-center shadow-2xl shadow-indigo-500/20 sm:px-12">
           <div
             className="pointer-events-none absolute inset-0 opacity-20"
             style={{

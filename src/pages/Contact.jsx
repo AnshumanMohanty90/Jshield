@@ -11,12 +11,12 @@ const CHANNELS = [
 ];
 
 const INPUT_CLS =
-  "w-full rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-slate-900 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20";
+  "w-full rounded-lg border border-white/10 bg-slate-900 px-3.5 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20";
 
 function Field({ label, children }) {
   return (
     <div className="space-y-1.5">
-      <label className="text-sm font-medium text-slate-700">{label}</label>
+      <label className="text-sm font-medium text-slate-300">{label}</label>
       {children}
     </div>
   );
@@ -52,20 +52,20 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="bg-white py-14">
+      <section className="bg-slate-950 py-14">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-8 lg:grid-cols-5">
             <div className="space-y-4 lg:col-span-2">
               {CHANNELS.map((c) => {
                 const Icon = c.icon;
                 return (
-                  <div key={c.label} className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                  <div key={c.label} className="flex items-center gap-4 rounded-2xl border border-white/10 bg-slate-900 p-5">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-400">
                       <Icon className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="text-xs font-semibold uppercase tracking-widest text-slate-400">{c.label}</div>
-                      <div className="text-sm font-medium text-slate-900">{c.value}</div>
+                      <div className="text-xs font-semibold uppercase tracking-widest text-slate-500">{c.label}</div>
+                      <div className="text-sm font-medium text-slate-100">{c.value}</div>
                     </div>
                   </div>
                 );
@@ -73,16 +73,16 @@ export default function Contact() {
             </div>
 
             <div className="lg:col-span-3">
-              <Reveal className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+              <Reveal className="rounded-2xl border border-white/10 bg-slate-900 p-6 sm:p-8">
                 {sent ? (
                   <div className="flex flex-col items-center py-10 text-center">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400">
                       <Check className="h-7 w-7" />
                     </div>
-                    <h3 className="mt-4 text-lg font-semibold text-slate-900">
+                    <h3 className="mt-4 text-lg font-semibold text-white">
                       Thanks, {form.name.split(" ")[0]}!
                     </h3>
-                    <p className="mt-2 max-w-sm text-sm text-slate-600">
+                    <p className="mt-2 max-w-sm text-sm text-slate-400">
                       Our privacy team has received your request and will reply within one business day.
                     </p>
                     <button
@@ -90,7 +90,7 @@ export default function Contact() {
                         setSent(false);
                         setForm({ name: "", email: "", company: "", size: "", message: "" });
                       }}
-                      className="mt-6 text-sm font-medium text-indigo-600 hover:underline"
+                      className="mt-6 text-sm font-medium text-indigo-400 hover:underline"
                     >
                       Send another message
                     </button>
@@ -140,10 +140,10 @@ export default function Contact() {
                         placeholder="Tell us about your DPDP readiness goals…"
                       />
                     </Field>
-                    {err && <p className="text-sm text-rose-600">{err}</p>}
+                    {err && <p className="text-sm text-rose-400">{err}</p>}
                     <button
                       type="submit"
-                      className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-200 transition hover:shadow-indigo-300"
+                      className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
                     >
                       Send message <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
                     </button>

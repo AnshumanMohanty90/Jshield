@@ -31,10 +31,10 @@ const QUESTIONS = [
 ];
 
 const TIERS = [
-  { min: 75, label: "Audit-ready", desc: "You are ahead of most peers. Jaguard keeps you there, automatically.", tone: "text-emerald-600", chip: "bg-emerald-50 text-emerald-700" },
-  { min: 50, label: "On the right track", desc: "A few critical gaps remain. Jaguard closes them in weeks, not quarters.", tone: "text-sky-600", chip: "bg-sky-50 text-sky-700" },
-  { min: 25, label: "Early stage", desc: "Prioritise the fundamentals first. We will show you where to start.", tone: "text-amber-600", chip: "bg-amber-50 text-amber-700" },
-  { min: 0, label: "Significant exposure", desc: "Let us build your DPDP roadmap together, starting with a free assessment call.", tone: "text-rose-600", chip: "bg-rose-50 text-rose-700" },
+  { min: 75, label: "Audit-ready", desc: "You are ahead of most peers. Jaguard keeps you there, automatically.", tone: "text-emerald-400", chip: "bg-emerald-500/15 text-emerald-300" },
+  { min: 50, label: "On the right track", desc: "A few critical gaps remain. Jaguard closes them in weeks, not quarters.", tone: "text-sky-400", chip: "bg-sky-500/15 text-sky-300" },
+  { min: 25, label: "Early stage", desc: "Prioritise the fundamentals first. We will show you where to start.", tone: "text-amber-400", chip: "bg-amber-500/15 text-amber-300" },
+  { min: 0, label: "Significant exposure", desc: "Let us build your DPDP roadmap together, starting with a free assessment call.", tone: "text-rose-400", chip: "bg-rose-500/15 text-rose-300" },
 ];
 
 function tierFor(score) {
@@ -159,26 +159,26 @@ export default function Assessment() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
-            className="bg-white py-16"
+            className="bg-slate-950 py-16"
           >
             <div className="mx-auto max-w-2xl px-5 sm:px-8">
-              <div className="flex items-center justify-between text-xs text-slate-500">
+              <div className="flex items-center justify-between text-xs text-slate-400">
                 <span>Question {step + 1} of {total}</span>
-                <button onClick={back} className="inline-flex items-center gap-1 text-slate-500 hover:text-slate-800">
+                <button onClick={back} className="inline-flex items-center gap-1 text-slate-400 hover:text-white">
                   <ArrowLeft className="h-3.5 w-3.5" /> Back
                 </button>
               </div>
-              <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
+              <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
                 <div
                   className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-sky-500 transition-all duration-300"
                   style={{ width: `${((step + 1) / total) * 100}%` }}
                 />
               </div>
 
-              <h2 className="mt-8 text-2xl font-bold tracking-tight text-slate-900">
+              <h2 className="mt-8 text-2xl font-bold tracking-tight text-white">
                 {QUESTIONS[step].q}
               </h2>
-              <div className="mt-6 divide-y divide-slate-200 overflow-hidden rounded-xl ring-1 ring-slate-100">
+              <div className="mt-6 divide-y divide-white/10 overflow-hidden rounded-xl ring-1 ring-white/10">
                 {QUESTIONS[step].opts.map((o) => {
                   const selected = answers[step] === o.s;
                   return (
@@ -186,12 +186,12 @@ export default function Assessment() {
                       key={o.l}
                       onClick={() => choose(o.s)}
                       className={`flex w-full items-center gap-3 px-5 py-4 text-left text-sm transition ${
-                        selected ? "bg-indigo-50 text-slate-900" : "hover:bg-slate-50 text-slate-700"
+                        selected ? "bg-indigo-500/15 text-white" : "hover:bg-white/5 text-slate-300"
                       }`}
                     >
                       <span
                         className={`flex h-6 w-6 flex-none items-center justify-center rounded-full border-2 transition ${
-                          selected ? "border-indigo-500 bg-indigo-500 text-white" : "border-slate-300"
+                          selected ? "border-indigo-500 bg-indigo-500 text-white" : "border-slate-600"
                         }`}
                       >
                         {selected && <Check className="h-3.5 w-3.5" />}
@@ -211,26 +211,26 @@ export default function Assessment() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
-            className="bg-white py-16"
+            className="bg-slate-950 py-16"
           >
             <div className="mx-auto max-w-md px-5 sm:px-8">
-              <span className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">
+              <span className="inline-flex items-center gap-2 rounded-full bg-indigo-500/15 px-3 py-1 text-xs font-semibold text-indigo-300">
                 <ClipboardCheck className="h-3.5 w-3.5" /> Almost there
               </span>
-              <h2 className="mt-4 text-2xl font-bold tracking-tight text-slate-900">
+              <h2 className="mt-4 text-2xl font-bold tracking-tight text-white">
                 Where should we send your report?
               </h2>
-              <p className="mt-2 text-sm text-slate-600">
+              <p className="mt-2 text-sm text-slate-400">
                 Your score is ready. Enter your work details and we will generate your prioritised DPDP action plan.
               </p>
 
               {error && (
-                <div className="mt-4 rounded-lg bg-rose-50 px-4 py-3 text-sm text-rose-700">{error}</div>
+                <div className="mt-4 rounded-lg bg-rose-500/10 px-4 py-3 text-sm text-rose-300">{error}</div>
               )}
 
               <form onSubmit={submit} className="mt-6 space-y-4">
                 <div className="space-y-1.5">
-                  <label className="text-sm font-medium text-slate-700">Work email</label>
+                  <label className="text-sm font-medium text-slate-300">Work email</label>
                   <input
                     type="email"
                     value={form.work_email}
@@ -242,45 +242,45 @@ export default function Assessment() {
                       setEmailHint(form.work_email.trim() ? (workEmailError(form.work_email) || "") : "")
                     }
                     placeholder="you@company.com"
-                    className={`h-11 w-full rounded-lg border px-3 text-sm outline-none transition ${
+                    className={`h-11 w-full rounded-lg border px-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none transition ${
                       emailHint
-                        ? "border-rose-300 bg-rose-50/40 focus:border-rose-400 focus:ring-2 focus:ring-rose-100"
-                        : "border-slate-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+                        ? "border-rose-400/50 bg-rose-500/10 focus:border-rose-400 focus:ring-2 focus:ring-rose-500/20"
+                        : "border-white/10 bg-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
                     }`}
                     required
                   />
                   {emailHint ? (
-                    <p className="text-xs text-rose-600">{emailHint}</p>
+                    <p className="text-xs text-rose-400">{emailHint}</p>
                   ) : (
-                    <p className="text-xs text-slate-400">Use your work email. Personal addresses are not accepted.</p>
+                    <p className="text-xs text-slate-500">Use your work email. Personal addresses are not accepted.</p>
                   )}
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-sm font-medium text-slate-700">Company name</label>
+                  <label className="text-sm font-medium text-slate-300">Company name</label>
                   <input
                     type="text"
                     value={form.company_name}
                     onChange={(e) => setForm({ ...form, company_name: e.target.value })}
                     placeholder="Acme Pvt Ltd"
-                    className="h-11 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+                    className="h-11 w-full rounded-lg border border-white/10 bg-slate-900 px-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
                     required
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-sm font-medium text-slate-700">Designation</label>
+                  <label className="text-sm font-medium text-slate-300">Designation</label>
                   <input
                     type="text"
                     value={form.designation}
                     onChange={(e) => setForm({ ...form, designation: e.target.value })}
                     placeholder="Data Protection Officer"
-                    className="h-11 w-full rounded-lg border border-slate-300 px-3 text-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+                    className="h-11 w-full rounded-lg border border-white/10 bg-slate-900 px-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
                     required
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-200 transition hover:shadow-indigo-300 disabled:opacity-70"
+                  className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50 disabled:opacity-70"
                 >
                   {submitting ? (
                     <>
@@ -292,7 +292,7 @@ export default function Assessment() {
                     </>
                   )}
                 </button>
-                <p className="text-center text-xs text-slate-400">
+                <p className="text-center text-xs text-slate-500">
                   We will email your report. No spam, ever.
                 </p>
               </form>
@@ -306,41 +306,41 @@ export default function Assessment() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
-            className="bg-slate-50 py-16"
+            className="bg-slate-950 py-16"
           >
             <div className="mx-auto max-w-3xl px-5 sm:px-8">
               {(() => {
                 const t = tierFor(score);
                 return (
                   <div>
-                    <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Your report</span>
+                    <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Your report</span>
                     <div className="mt-3 flex items-end gap-3">
                       <span className={`text-6xl font-bold tracking-tight ${t.tone}`}>{score}</span>
-                      <span className="mb-2 text-sm text-slate-400">/ 100</span>
+                      <span className="mb-2 text-sm text-slate-500">/ 100</span>
                     </div>
                     <div className={`mt-3 inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold ${t.chip}`}>
                       {t.label}
                     </div>
-                    <p className="mt-3 text-base leading-relaxed text-slate-600">{t.desc}</p>
+                    <p className="mt-3 text-base leading-relaxed text-slate-400">{t.desc}</p>
 
                     <div className="mt-10">
-                      <h3 className="text-sm font-semibold uppercase tracking-widest text-slate-400">
+                      <h3 className="text-sm font-semibold uppercase tracking-widest text-slate-500">
                         Prioritised actions
                       </h3>
                       {gaps.length === 0 ? (
-                        <p className="mt-3 text-sm text-slate-600">
+                        <p className="mt-3 text-sm text-slate-400">
                           You have no critical gaps. Jaguard will keep your program audit-ready as obligations evolve.
                         </p>
                       ) : (
                         <ol className="mt-4 space-y-3">
                           {gaps.map((g, i) => (
-                            <li key={i} className="flex items-start gap-3 border-t border-slate-200 pt-3">
-                              <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-slate-900 text-xs font-semibold text-white">
+                            <li key={i} className="flex items-start gap-3 border-t border-white/10 pt-3">
+                              <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-white text-xs font-semibold text-slate-900">
                                 {i + 1}
                               </span>
                               <div>
-                                <p className="text-sm font-medium text-slate-900">{g.q.q}</p>
-                                <p className="mt-0.5 text-sm text-slate-600">{g.q.rec}</p>
+                                <p className="text-sm font-medium text-white">{g.q.q}</p>
+                                <p className="mt-0.5 text-sm text-slate-400">{g.q.rec}</p>
                               </div>
                             </li>
                           ))}
@@ -351,14 +351,14 @@ export default function Assessment() {
                     <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                       <Link
                         to="/register"
-                        className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-200 transition hover:shadow-indigo-300"
+                        className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
                       >
                         Start your 10-day trial <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
                       </Link>
                     </div>
                     <p className="mt-5 text-xs text-slate-500">
                       Prefer a guided walkthrough?{" "}
-                      <Link to="/contact" className="text-slate-400 underline-offset-2 hover:text-slate-600 hover:underline">
+                      <Link to="/contact" className="text-slate-400 underline-offset-2 hover:text-white hover:underline">
                         Book a demo
                       </Link>
                     </p>

@@ -3,13 +3,13 @@ import { Reveal } from "./primitives";
 
 export default function CtaBand({ title, subtitle, primary, secondary }) {
   return (
-    <section className="bg-slate-50 py-12">
+    <section className="bg-slate-950 py-12">
       <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
         <Reveal>
-          <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
+          <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
             {title}
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-lg text-slate-600">{subtitle}</p>
+          <p className="mx-auto mt-3 max-w-xl text-lg text-slate-400">{subtitle}</p>
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               to={primary.to}
@@ -20,7 +20,7 @@ export default function CtaBand({ title, subtitle, primary, secondary }) {
             {secondary && (
               <Link
                 to={secondary.to}
-                className="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+                className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 {secondary.label}
               </Link>

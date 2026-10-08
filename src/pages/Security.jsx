@@ -36,18 +36,18 @@ export default function Security() {
         </div>
       </section>
 
-      <section className="bg-white py-14">
+      <section className="bg-slate-950 py-14">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {PILLARS.map((p, i) => {
               const Icon = p.icon;
               return (
-                <Reveal key={p.title} delay={(i % 3) * 0.06} className="rounded-2xl border border-slate-200 bg-white p-6">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 ring-1 ring-emerald-100">
+                <Reveal key={p.title} delay={(i % 3) * 0.06} className="rounded-2xl border border-white/10 bg-slate-900 p-6">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mt-4 text-base font-semibold text-slate-900">{p.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{p.desc}</p>
+                  <h3 className="mt-4 text-base font-semibold text-white">{p.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{p.desc}</p>
                 </Reveal>
               );
             })}
@@ -55,30 +55,30 @@ export default function Security() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-14">
+      <section className="bg-slate-900/50 py-14">
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">Standards & commitments</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-white">Standards & commitments</h2>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {BADGES.map((b) => (
               <span
                 key={b}
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-950 px-4 py-2 text-sm font-medium text-slate-300"
               >
-                <ShieldCheck className="h-4 w-4 text-emerald-600" /> {b}
+                <ShieldCheck className="h-4 w-4 text-emerald-400" /> {b}
               </span>
             ))}
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link
               to="/register"
-              className="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700"
+              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-indigo-500 to-sky-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
             >
               Start free trial
             </Link>
           </div>
           <p className="mt-4 text-xs text-slate-500">
             Ten-day trial. No credit card required.{" "}
-            <Link to="/contact" className="text-slate-400 underline-offset-2 hover:text-slate-600 hover:underline">
+            <Link to="/contact" className="text-slate-400 underline-offset-2 hover:text-white hover:underline">
               Talk to sales
             </Link>
           </p>

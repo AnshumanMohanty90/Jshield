@@ -67,66 +67,66 @@ export default function PartnerProgram() {
         secondary={{ label: "Explore the solution", to: "/#solution" }}
       />
 
-      <section className="bg-white py-12">
+      <section className="bg-slate-950 py-12">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
               Who we partner with
             </h2>
-            <p className="mt-3 text-lg text-slate-600">
+            <p className="mt-3 text-lg text-slate-400">
               Five partnership tracks, each with a clear commercial model.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {PARTNER_TYPES.map((p, i) => (
-              <Reveal key={p.title} className="border-t border-slate-200 pt-5">
+              <Reveal key={p.title} className="border-t border-white/10 pt-5">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-base font-semibold text-slate-900">{p.title}</h3>
-                  <span className="text-xs text-slate-400">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="text-base font-semibold text-white">{p.title}</h3>
+                  <span className="text-xs text-slate-600">{String(i + 1).padStart(2, "0")}</span>
                 </div>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{p.desc}</p>
-                <p className="mt-3 text-xs font-semibold uppercase tracking-widest text-indigo-600">{p.earn}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{p.desc}</p>
+                <p className="mt-3 text-xs font-semibold uppercase tracking-widest text-indigo-400">{p.earn}</p>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-slate-50 py-12">
+      <section className="bg-slate-900/50 py-12">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
               Why partners choose Jaguard
             </h2>
-            <p className="mt-3 text-lg text-slate-600">
+            <p className="mt-3 text-lg text-slate-400">
               A partnership designed around your economics, not just ours.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">
             {ADVANTAGES.map((a) => (
-              <Reveal key={a.title} className="border-t border-slate-200 pt-5">
-                <h3 className="text-base font-semibold text-slate-900">{a.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{a.desc}</p>
+              <Reveal key={a.title} className="border-t border-white/10 pt-5">
+                <h3 className="text-base font-semibold text-white">{a.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{a.desc}</p>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-12">
+      <section className="bg-slate-950 py-12">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-4xl text-balance">
+            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
               How it works
             </h2>
-            <p className="mt-3 text-lg text-slate-600">From application to first engagement in three steps.</p>
+            <p className="mt-3 text-lg text-slate-400">From application to first engagement in three steps.</p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-3">
             {STEPS.map((s, i) => (
-              <Reveal key={s.title} className="border-t border-slate-200 pt-5">
-                <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Step {i + 1}</span>
-                <h3 className="mt-1 text-base font-semibold text-slate-900">{s.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{s.desc}</p>
+              <Reveal key={s.title} className="border-t border-white/10 pt-5">
+                <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Step {i + 1}</span>
+                <h3 className="mt-1 text-base font-semibold text-white">{s.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{s.desc}</p>
               </Reveal>
             ))}
           </div>
