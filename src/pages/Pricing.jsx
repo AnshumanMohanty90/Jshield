@@ -53,7 +53,7 @@ export default function Pricing() {
                 No credit card required. No limits. Your compliance score within the first hour.
               </p>
               <Link
-                to="/register"
+                to="/trial"
                 className="group mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
               >
                 Start free trial <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />

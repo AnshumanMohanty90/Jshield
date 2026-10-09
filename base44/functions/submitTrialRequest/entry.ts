@@ -8,6 +8,8 @@ const FREE_EMAIL_DOMAINS = new Set([
   'rediffmail.com', 'qq.com', '163.com', '126.com',
 ]);
 
+const SOURCES = ['Trial Page', 'Assessment'];
+
 export default async function(req) {
   try {
     const base44 = createClientFromRequest(req);
@@ -18,12 +20,13 @@ export default async function(req) {
       return Response.json({ error: 'Invalid request body' }, { status: 400 });
     }
 
+    const full_name = String(body?.full_name || '').trim().slice(0, 120);
     const work_email = String(body?.work_email || '').trim().toLowerCase().slice(0, 120);
     const company_name = String(body?.company_name || '').trim().slice(0, 120);
     const designation = String(body?.designation || '').trim().slice(0, 120);
 
-    if (!work_email || !company_name || !designation) {
-      return Response.json({ error: 'Work email, company name and designation are required' }, { status: 400 });
+    if (!full_name || !work_email || !company_name || !designation) {
+      return Response.json({ error: 'Full name, work email, company name and designation are required' }, { status: 400 });
     }
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(work_email);
     if (!emailOk) {
@@ -37,11 +40,17 @@ export default async function(req) {
       );
     }
 
-    const score = Number.isFinite(body?.score) ? Math.max(0, Math.min(100, Math.round(body.score))) : 0;
-    const tier = String(body?.tier || '').slice(0, 40);
-    const summary = String(body?.summary || '').slice(0, 2000);
+    const source = SOURCES.includes(body?.source) ? body.source : 'Trial Page';
+    const leadData = { full_name, work_email, company_name, designation, source };
 
-    const leadData = { work_email, company_name, designation, score, tier, summary };
+    if (Number.isFinite(body?.score)) {
+      leadData.score = Math.max(0, Math.min(100, Math.round(body.score)));
+    }
+    const tier = String(body?.tier || '').slice(0, 40);
+    if (tier) leadData.tier = tier;
+    const summary = String(body?.summary || '').slice(0, 2000);
+    if (summary) leadData.summary = summary;
+
     const existing = await base44.asServiceRole.entities.Lead.filter({ work_email });
     if (existing && existing.length > 0) {
       const lead = await base44.asServiceRole.entities.Lead.update(existing[0].id, leadData);

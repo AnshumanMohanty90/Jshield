@@ -1,17 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  ArrowRight,
-  ArrowLeft,
-  Check,
-  ClipboardCheck,
-  Loader2,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, ArrowLeft, Check, Sparkles } from "lucide-react";
 import LandingLayout from "@/components/landing/LandingLayout";
-import { base44 } from "@/api/base44Client";
-import { workEmailError } from "@/lib/workEmail";
+import TrialCaptureForm from "@/components/landing/TrialCaptureForm";
 
 const QUESTIONS = [
   { w: 2, q: "Have you mapped personal data across all systems and data flows?", opts: [{ l: "Not yet", s: 0 }, { l: "Partially", s: 1 }, { l: "Yes, fully", s: 2 }], rec: "Map and classify personal data across every system. Start in Data Discovery." },
@@ -45,10 +37,6 @@ export default function Assessment() {
   const [stage, setStage] = useState("intro");
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState([]);
-  const [form, setForm] = useState({ work_email: "", company_name: "", designation: "" });
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState("");
-  const [emailHint, setEmailHint] = useState("");
   const [score, setScore] = useState(0);
 
   const total = QUESTIONS.length;
@@ -71,49 +59,13 @@ export default function Assessment() {
     if (step < total - 1) setStep(step + 1);
     else {
       setScore(calcScore(next));
-      setStage("capture");
+      setStage("report");
     }
   };
 
   const back = () => {
     if (step > 0) setStep(step - 1);
     else setStage("intro");
-  };
-
-  const submit = async (e) => {
-    e.preventDefault();
-    setError("");
-    const missing = !form.work_email.trim() || !form.company_name.trim() || !form.designation.trim();
-    const emailProblem = form.work_email.trim() ? workEmailError(form.work_email) : "Enter your work email.";
-    setEmailHint(emailProblem || "");
-    if (missing || emailProblem) {
-      if (missing) setError("Please fill in all fields to receive your report.");
-      return;
-    }
-    setSubmitting(true);
-    const t = tierFor(score);
-    const summary = QUESTIONS.map((q, i) => (answers[i] < 2 ? q.rec : null))
-      .filter(Boolean)
-      .join(" | ");
-    try {
-      await base44.functions.invoke("submitAssessment", {
-        ...form,
-        score,
-        tier: t.label,
-        summary,
-      });
-      setStage("report");
-    } catch (err) {
-      const message =
-        err?.response?.data?.error || err?.data?.error || err?.message || "";
-      if (/work email|personal/i.test(message)) {
-        setEmailHint(message);
-      } else {
-        setError(message || "Something went wrong. Please try again.");
-      }
-    } finally {
-      setSubmitting(false);
-    }
   };
 
   const gaps = QUESTIONS.map((q, i) => ({ q, score: answers[i] }))
@@ -139,8 +91,8 @@ export default function Assessment() {
                 Find out where you stand on DPDP, in three minutes.
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-slate-300">
-                Answer fourteen questions across every DPDP obligation. Get a readiness score, a prioritised action list,
-                and the exact modules that close your gaps. No signup, no credit card.
+                Answer fourteen questions across every DPDP obligation. Get your readiness score and a prioritised
+                action list the moment you finish. No signup, no credit card.
               </p>
               <button
                 onClick={start}
@@ -205,101 +157,6 @@ export default function Assessment() {
           </motion.section>
         )}
 
-        {stage === "capture" && (
-          <motion.section
-            key="capture"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            className="bg-slate-950 py-16"
-          >
-            <div className="mx-auto max-w-md px-5 sm:px-8">
-              <span className="inline-flex items-center gap-2 rounded-full bg-indigo-500/15 px-3 py-1 text-xs font-semibold text-indigo-300">
-                <ClipboardCheck className="h-3.5 w-3.5" /> Almost there
-              </span>
-              <h2 className="mt-4 text-2xl font-bold tracking-tight text-white">
-                Where should we send your report?
-              </h2>
-              <p className="mt-2 text-sm text-slate-400">
-                Your score is ready. Enter your work details and we will generate your prioritised DPDP action plan.
-              </p>
-
-              {error && (
-                <div className="mt-4 rounded-lg bg-rose-500/10 px-4 py-3 text-sm text-rose-300">{error}</div>
-              )}
-
-              <form onSubmit={submit} className="mt-6 space-y-4">
-                <div className="space-y-1.5">
-                  <label className="text-sm font-medium text-slate-300">Work email</label>
-                  <input
-                    type="email"
-                    value={form.work_email}
-                    onChange={(e) => {
-                      setForm({ ...form, work_email: e.target.value });
-                      if (emailHint) setEmailHint(workEmailError(e.target.value) || "");
-                    }}
-                    onBlur={() =>
-                      setEmailHint(form.work_email.trim() ? (workEmailError(form.work_email) || "") : "")
-                    }
-                    placeholder="you@company.com"
-                    className={`h-11 w-full rounded-lg border px-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none transition ${
-                      emailHint
-                        ? "border-rose-400/50 bg-rose-500/10 focus:border-rose-400 focus:ring-2 focus:ring-rose-500/20"
-                        : "border-white/10 bg-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
-                    }`}
-                    required
-                  />
-                  {emailHint ? (
-                    <p className="text-xs text-rose-400">{emailHint}</p>
-                  ) : (
-                    <p className="text-xs text-slate-500">Use your work email. Personal addresses are not accepted.</p>
-                  )}
-                </div>
-                <div className="space-y-1.5">
-                  <label className="text-sm font-medium text-slate-300">Company name</label>
-                  <input
-                    type="text"
-                    value={form.company_name}
-                    onChange={(e) => setForm({ ...form, company_name: e.target.value })}
-                    placeholder="Acme Pvt Ltd"
-                    className="h-11 w-full rounded-lg border border-white/10 bg-slate-900 px-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
-                    required
-                  />
-                </div>
-                <div className="space-y-1.5">
-                  <label className="text-sm font-medium text-slate-300">Designation</label>
-                  <input
-                    type="text"
-                    value={form.designation}
-                    onChange={(e) => setForm({ ...form, designation: e.target.value })}
-                    placeholder="Data Protection Officer"
-                    className="h-11 w-full rounded-lg border border-white/10 bg-slate-900 px-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20"
-                    required
-                  />
-                </div>
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50 disabled:opacity-70"
-                >
-                  {submitting ? (
-                    <>
-                      <Loader2 className="h-4 w-4 animate-spin" /> Generating report...
-                    </>
-                  ) : (
-                    <>
-                      Get my report <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-                    </>
-                  )}
-                </button>
-                <p className="text-center text-xs text-slate-500">
-                  We will email your report. No spam, ever.
-                </p>
-              </form>
-            </div>
-          </motion.section>
-        )}
-
         {stage === "report" && (
           <motion.section
             key="report"
@@ -311,6 +168,9 @@ export default function Assessment() {
             <div className="mx-auto max-w-3xl px-5 sm:px-8">
               {(() => {
                 const t = tierFor(score);
+                const summary = QUESTIONS.map((q, i) => (answers[i] < 2 ? q.rec : null))
+                  .filter(Boolean)
+                  .join(" | ");
                 return (
                   <div>
                     <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Your report</span>
@@ -345,20 +205,22 @@ export default function Assessment() {
                       )}
                     </div>
 
-                    <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-                      <Link
-                        to="/register"
-                        className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
-                      >
-                        Start your 10-day trial <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-                      </Link>
+                    <div className="mt-10 border-t border-white/10 pt-10">
+                      <h3 className="text-xl font-bold text-white">Start your 10-day free trial</h3>
+                      <p className="mt-2 max-w-xl text-sm text-slate-400">
+                        Our team will activate your trial on your work email. Your assessment results carry over, so
+                        you begin with your action plan already in place.
+                      </p>
+                      <div className="mt-6 max-w-xl">
+                        <TrialCaptureForm source="Assessment" score={score} tier={t.label} summary={summary} />
+                      </div>
+                      <p className="mt-5 text-xs text-slate-500">
+                        Prefer a guided walkthrough?{" "}
+                        <Link to="/contact" className="text-slate-400 underline-offset-2 hover:text-white hover:underline">
+                          Talk to sales
+                        </Link>
+                      </p>
                     </div>
-                    <p className="mt-5 text-xs text-slate-500">
-                      Prefer a guided walkthrough?{" "}
-                      <Link to="/contact" className="text-slate-400 underline-offset-2 hover:text-white hover:underline">
-                        Book a demo
-                      </Link>
-                    </p>
                   </div>
                 );
               })()}

@@ -19,6 +19,7 @@ import PricingPage from '@/pages/Pricing';
 import SecurityPage from '@/pages/Security';
 import ContactPage from '@/pages/Contact';
 import Assessment from '@/pages/Assessment';
+import Trial from '@/pages/Trial';
 import DPDPAct from '@/pages/DPDPAct';
 import PartnerProgram from '@/pages/PartnerProgram';
 // App pages
@@ -65,6 +66,7 @@ const AuthenticatedApp = () => {
       <Route path="/security" element={<SecurityPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/assessment" element={<Assessment />} />
+      <Route path="/trial" element={<Trial />} />
       <Route path="/dpdp-act" element={<DPDPAct />} />
       <Route path="/partners" element={<PartnerProgram />} />
       <Route element={<ProtectedRoute unauthenticatedElement={<Navigate to="/login" replace />} />}>

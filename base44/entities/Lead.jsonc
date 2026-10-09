@@ -2,6 +2,10 @@
   "name": "Lead",
   "type": "object",
   "properties": {
+    "full_name": {
+      "type": "string",
+      "title": "Full Name"
+    },
     "work_email": {
       "type": "string",
       "title": "Work Email"
@@ -25,11 +29,54 @@
     "summary": {
       "type": "string",
       "title": "Recommendation Summary"
+    },
+    "source": {
+      "type": "string",
+      "title": "Source",
+      "enum": [
+        "Trial Page",
+        "Assessment"
+      ],
+      "default": "Trial Page"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "New",
+        "Contacted",
+        "Trial Activated",
+        "Rejected"
+      ],
+      "default": "New"
     }
   },
   "required": [
+    "full_name",
     "work_email",
     "company_name",
     "designation"
-  ]
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
 }

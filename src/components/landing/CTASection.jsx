@@ -22,7 +22,7 @@ export default function CTASection() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
-                to="/register"
+                to="/trial"
                 className="group inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
               >
                 Start free trial <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
