@@ -112,7 +112,7 @@ export default function Hero() {
                 <span className="h-2.5 w-2.5 rounded-full bg-rose-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-amber-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
-                <span className="ml-3 text-[11px] text-slate-500">jaguard.app/dashboard</span>
+                <span className="ml-3 text-[11px] text-slate-500">jshield.app/dashboard</span>
               </div>
               <div className="grid grid-cols-3 overflow-hidden rounded-xl bg-slate-950/60">
                 <div className="col-span-1 divide-y divide-white/5 border-r border-white/5">

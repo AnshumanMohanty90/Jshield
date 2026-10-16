@@ -50,7 +50,7 @@ export default function Layout() {
           <Shield className="h-5 w-5 text-white" />
         </div>
         <div className="leading-tight">
-          <div className="text-sm font-semibold text-white tracking-tight">Jaguard</div>
+          <div className="text-sm font-semibold text-white tracking-tight">JShield</div>
           <div className="text-[10px] uppercase tracking-widest text-indigo-300/70">by Jago AI</div>
         </div>
       </div>
@@ -152,7 +152,7 @@ export default function Layout() {
           </button>
           <div className="flex items-center gap-2">
             <Shield className="h-5 w-5 text-indigo-600" />
-            <span className="font-semibold text-slate-900">Jaguard</span>
+            <span className="font-semibold text-slate-900">JShield</span>
           </div>
         </div>
 

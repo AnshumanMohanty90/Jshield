@@ -11,12 +11,12 @@ const PARTNER_TYPES = [
   },
   {
     title: "Technology Partners",
-    desc: "Product teams embedding Jaguard's consent, breach and audit capabilities into their own platforms.",
+    desc: "Product teams embedding JShield's consent, breach and audit capabilities into their own platforms.",
     earn: "Revenue share on co-sold and integrated deals",
   },
   {
     title: "System Integrators",
-    desc: "Implementation teams connecting Jaguard to enterprise estates such as CRM, HRMS and core systems.",
+    desc: "Implementation teams connecting JShield to enterprise estates such as CRM, HRMS and core systems.",
     earn: "Reseller margin plus your own implementation fees",
   },
   {
@@ -34,7 +34,7 @@ const PARTNER_TYPES = [
 const ADVANTAGES = [
   {
     title: "Durable services revenue",
-    desc: "Build recurring income from support, training and advisory work wrapped around every Jaguard deployment.",
+    desc: "Build recurring income from support, training and advisory work wrapped around every JShield deployment.",
   },
   {
     title: "A complete platform to stand behind",
@@ -61,7 +61,7 @@ export default function PartnerProgram() {
     <LandingLayout>
       <PageHero
         eyebrow="Partner program"
-        title="Build a DPDP practice with Jaguard"
+        title="Build a DPDP practice with JShield"
         subtitle="Join the ecosystem of consultants, technology teams and advisors helping Indian enterprises become compliant, while building a high-margin services revenue line on India's fastest-growing regulatory mandate."
         primary={{ label: "Apply to become a partner", to: "/contact" }}
         secondary={{ label: "Explore the solution", to: "/#solution" }}
@@ -93,7 +93,7 @@ export default function PartnerProgram() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
-              Why partners choose Jaguard
+              Why partners choose JShield
             </h2>
             <p className="mt-3 text-lg text-slate-400">
               A partnership designed around your economics, not just ours.

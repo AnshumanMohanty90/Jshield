@@ -30,7 +30,7 @@ export default function Security() {
             Compliance for the platform that keeps you compliant
           </h1>
           <p className="mt-4 text-lg text-slate-300">
-            Jaguard is built with the same security posture we help you achieve.
+            JShield is built with the same security posture we help you achieve.
           </p>
         </div>
       </section>

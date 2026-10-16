@@ -75,7 +75,7 @@ export default function Industries() {
           </h2>
           <p className="mt-3 text-lg text-slate-400">
             Different industries process personal data differently, and need different privacy controls. Whatever your
-            sector, Jaguard's guided sequence takes you from first data scan to an audit-ready posture in{" "}
+            sector, JShield's guided sequence takes you from first data scan to an audit-ready posture in{" "}
             <strong className="whitespace-nowrap font-semibold text-white">30 days</strong>.
           </p>
         </Reveal>
@@ -106,7 +106,7 @@ export default function Industries() {
           <div>
             <h3 className="text-xl font-semibold text-white">{ind.headline}</h3>
             <p className="mt-2 text-sm text-slate-400">
-              {ind.label} teams use Jaguard to operationalise DPDP without slowing the business.
+              {ind.label} teams use JShield to operationalise DPDP without slowing the business.
             </p>
           </div>
           <div className="grid gap-0 sm:grid-cols-2">

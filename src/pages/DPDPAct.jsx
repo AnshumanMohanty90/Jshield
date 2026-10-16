@@ -54,7 +54,7 @@ export default function DPDPAct() {
         title="The DPDP Act, in the language of operators"
         subtitle="The Digital Personal Data Protection Act, 2023 governs how every organization in India collects, uses, stores and shares personal data. Here is what it expects of you, without the legal fog."
         primary={{ label: "Take the DPDP readiness assessment", to: "/assessment" }}
-        secondary={{ label: "See how Jaguard solves it", to: "/#solution" }}
+        secondary={{ label: "See how JShield solves it", to: "/#solution" }}
       />
 
       <section className="bg-slate-950 py-12">
@@ -146,7 +146,7 @@ export default function DPDPAct() {
               The timeline that matters
             </h2>
             <p className="mt-3 text-lg text-slate-400">
-              The dates below follow the official commencement schedule. Jaguard's weekwise readiness plan is a recommended
+              The dates below follow the official commencement schedule. JShield's weekwise readiness plan is a recommended
               preparation sequence, separate from the statutory calendar.
             </p>
           </Reveal>
@@ -190,7 +190,7 @@ export default function DPDPAct() {
 
       <CtaBand
         title="Turn the law into an operating plan"
-        subtitle="Score your readiness against every obligation in fourteen questions, then let Jaguard close the gaps."
+        subtitle="Score your readiness against every obligation in fourteen questions, then let JShield close the gaps."
         primary={{ label: "Take the DPDP readiness assessment", to: "/assessment" }}
         secondary={{ label: "Talk to sales", to: "/contact" }}
       />

@@ -37,7 +37,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8">
         <div className="grid gap-8 md:grid-cols-5">
           <div className="md:col-span-2">
-            <Link to="/" aria-label="Jaguard home">
+            <Link to="/" aria-label="JShield home">
               <BrandLockup className="h-12 w-12" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">

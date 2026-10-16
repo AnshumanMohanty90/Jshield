@@ -17,7 +17,7 @@ const INCLUDED = [
 ];
 
 const FAQ = [
-  { q: "Is Jaguard aligned with the DPDP Act 2023?", a: "Yes. Every module maps to a DPDP obligation, from consent and ROPA to breach notification and data principal rights." },
+  { q: "Is JShield aligned with the DPDP Act 2023?", a: "Yes. Every module maps to a DPDP obligation, from consent and ROPA to breach notification and data principal rights." },
   { q: "What is included in the trial?", a: "Everything. The full platform, all nine modules and every feature, with no limits, for ten days." },
   { q: "Do I need a credit card to start?", a: "No. The trial needs no credit card and there is nothing to pay during the trial." },
   { q: "How is the trial activated?", a: "Share your work email on the trial page and our team activates your trial personally, within one business day." },

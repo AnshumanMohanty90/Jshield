@@ -9,7 +9,7 @@ export default function Trial() {
       <PageHero
         eyebrow="Free 10-day trial"
         title="Start your free trial."
-        subtitle="Tell us who you are and our team will activate your 10-day trial with full access to every Jaguard module. No credit card required."
+        subtitle="Tell us who you are and our team will activate your 10-day trial with full access to every JShield module. No credit card required."
       />
 
       <section className="bg-slate-950 pb-20">
