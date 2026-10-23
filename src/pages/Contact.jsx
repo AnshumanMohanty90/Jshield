@@ -17,9 +17,9 @@ export default function Contact() {
       <section className="bg-slate-950 pb-14 pt-28">
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
           <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-pretty">
-            Talk to us about getting audit-ready.
+            Questions about JShield?
           </h1>
-          <p className="mt-4 text-lg text-slate-300">Tell us where you are today. We reply within one working day.</p>
+          <p className="mt-4 text-lg text-slate-300">Write to us at contact@jagoshield.com or use the form.</p>
         </div>
       </section>
 
@@ -74,7 +74,7 @@ export default function Contact() {
                     },
                   ]}
                   submitLabel="Send"
-                  thankYou="Thank you. We will reply within one working day."
+                  thankYou="Thank you. Our team will be in touch."
                 />
               </Reveal>
             </div>

@@ -75,12 +75,7 @@ export default function Security() {
               Start free trial
             </Link>
           </div>
-          <p className="mt-4 text-xs text-slate-500">
-            Ten-day trial. No credit card required.{" "}
-            <Link to="/contact" className="text-slate-400 underline-offset-2 hover:text-white hover:underline">
-              Talk to us
-            </Link>
-          </p>
+          <p className="mt-4 text-xs text-slate-500">Ten-day trial. No payment details needed.</p>
         </div>
       </section>
     </LandingLayout>

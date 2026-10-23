@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MessageSquare } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Reveal } from "./primitives";
 
 export default function CTASection() {
@@ -29,10 +29,10 @@ export default function CTASection() {
                 Check your readiness <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </Link>
               <Link
-                to="/contact"
+                to="/trial"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/30 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                <MessageSquare className="h-4 w-4" /> Talk to us
+                Start free trial
               </Link>
             </div>
           </div>

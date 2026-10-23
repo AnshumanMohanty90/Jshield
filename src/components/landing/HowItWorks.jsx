@@ -3,7 +3,7 @@ import { Reveal } from "./primitives";
 const STEPS = [
   {
     title: "Check",
-    desc: "See where you stand against the law, with a score in the first hour.",
+    desc: "See where you stand against the law, with a score in 3 minutes.",
   },
   {
     title: "Find",

@@ -21,8 +21,8 @@ const FAQ = [
   { q: "Is JShield aligned with the DPDP Act 2023?", a: "Yes. Every module maps to a duty in the law, from consent to breach reporting and customer requests to see or delete their data." },
   { q: "What is included in the trial?", a: "Everything. The full platform, every JShield module and every feature, with no limits, for ten days." },
   { q: "Do I need a credit card to start?", a: "No. The trial needs no credit card and there is nothing to pay during the trial." },
-  { q: "How is the trial activated?", a: "Share your work email on the trial page and our team activates your trial personally, within one business day." },
-  { q: "What happens after the ten-day trial?", a: "JShield costs Rs 12 lakh a year on its own, or added to any Jago plan. Talk to us when you are ready to roll it out across your company." },
+  { q: "How is the trial activated?", a: "Share your work email on the trial page and activate your trial." },
+  { q: "What happens after the ten-day trial?", a: "JShield costs Rs 12 lakh a year on its own, or added to any Jago plan." },
   { q: "Can we export records for audits?", a: "Yes. Your data record, consent records and breach logs export as audit-ready documents in a single click." },
 ];
 
@@ -60,7 +60,7 @@ export default function Pricing() {
                   <span className="mb-1.5 text-sm text-slate-500">a year</span>
                 </div>
                 <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-slate-400">
-                  Free for the first ten days. No credit card required. Your readiness score within the first hour.
+                  Free for the first ten days. No payment details needed.
                 </p>
                 <Link
                   to="/trial"
@@ -93,14 +93,14 @@ export default function Pricing() {
               <div>
                 <h3 className="text-base font-semibold text-white">Prefer it with Jago?</h3>
                 <p className="mt-1 text-sm text-slate-400">
-                  The same Rs 12 lakh a year on its own, or added to any Jago plan. Talk to us about what fits.
+                  The same Rs 12 lakh a year on its own, or added to any Jago plan.
                 </p>
               </div>
               <Link
-                to="/contact"
+                to="/trial"
                 className="group inline-flex flex-none items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Talk to us <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                Start free trial <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </Link>
             </div>
           </Reveal>

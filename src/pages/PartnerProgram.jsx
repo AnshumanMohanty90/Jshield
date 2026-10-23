@@ -54,7 +54,7 @@ const ADVANTAGES = [
 
 const STEPS = [
   { title: "Apply", desc: "Send your practice details through the form below and tell us how you work with clients." },
-  { title: "Get reviewed", desc: "Our partnerships team reviews every application within two business days." },
+  { title: "Get reviewed", desc: "Our partnerships team reviews every application." },
   { title: "Start earning", desc: "Complete onboarding, then run your first co-sold engagement with our support behind you." },
 ];
 
@@ -135,7 +135,7 @@ export default function PartnerProgram() {
           <Reveal className="rounded-2xl border border-white/10 bg-slate-900/50 p-6 sm:p-8">
             <h2 className="text-xl font-semibold text-white">Apply to become a partner</h2>
             <p className="mt-1 text-sm text-slate-400">
-              Tell us about your practice. Our partnerships team reviews every application within two working days.
+              Tell us about your practice.
             </p>
             <div className="mt-6">
               <LeadForm
@@ -156,7 +156,7 @@ export default function PartnerProgram() {
                   { name: "clients_served", label: "Number of clients you serve", placeholder: "25" },
                 ]}
                 submitLabel="Apply to become a partner"
-                thankYou="Thank you. Our partnerships team reviews every application within two working days."
+                thankYou="Thank you. Our partnerships team will be in touch."
               />
             </div>
           </Reveal>

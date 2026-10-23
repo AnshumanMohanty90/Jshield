@@ -23,10 +23,10 @@ const QUESTIONS = [
 ];
 
 const TIERS = [
-  { min: 75, label: "Audit-ready", desc: "Most duties are in place. We can walk you through what is left before 13 May 2027.", tone: "text-emerald-400", chip: "bg-emerald-500/15 text-emerald-300" },
-  { min: 50, label: "On the right track", desc: "You have a base to build on. We can show you which gaps to close first.", tone: "text-sky-400", chip: "bg-sky-500/15 text-sky-300" },
-  { min: 25, label: "Early stage", desc: "Most duties are not yet in place. We can show you where to start.", tone: "text-amber-400", chip: "bg-amber-500/15 text-amber-300" },
-  { min: 0, label: "Significant exposure", desc: "Most duties are not yet in place. We can show you where to start.", tone: "text-rose-400", chip: "bg-rose-500/15 text-rose-300" },
+  { min: 75, label: "Audit-ready", desc: "Most duties are in place. Start a free trial to close what is left before 13 May 2027.", tone: "text-emerald-400", chip: "bg-emerald-500/15 text-emerald-300" },
+  { min: 50, label: "On the right track", desc: "You have a base to build on. Start a free trial to close the gaps that matter most.", tone: "text-sky-400", chip: "bg-sky-500/15 text-sky-300" },
+  { min: 25, label: "Early stage", desc: "Most duties are not yet in place. Start a free trial to see where to begin.", tone: "text-amber-400", chip: "bg-amber-500/15 text-amber-300" },
+  { min: 0, label: "Significant exposure", desc: "Most duties are not yet in place. Start a free trial to build your first controls.", tone: "text-rose-400", chip: "bg-rose-500/15 text-rose-300" },
 ];
 
 function tierFor(score) {
@@ -179,12 +179,11 @@ export default function Assessment() {
 
                     <div className="mt-10 border-t border-white/10 pt-10">
                       <h3 className="text-xl font-bold text-white text-pretty">
-                        Want help closing the gaps? Leave your details and we will call you to walk through your score
-                        and the first steps.
+                        Close these gaps with a free 10-day trial.
                       </h3>
                       <div className="mt-6 max-w-xl">
                         <LeadForm
-                          intent="assessment"
+                          intent="trial"
                           sourcePage="/assessment"
                           score={score}
                           fields={[
@@ -199,8 +198,8 @@ export default function Assessment() {
                               placeholder: "Select company size",
                             },
                           ]}
-                          submitLabel="Call me back"
-                          thankYou="Thank you. We will call you within one working day."
+                          submitLabel="Start free trial"
+                          thankYou="Thank you. Your trial request is in. We will email your login details to you."
                         />
                       </div>
                     </div>

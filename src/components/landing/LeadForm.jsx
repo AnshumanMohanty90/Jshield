@@ -11,7 +11,7 @@ const INPUT_CLASS =
 const EMAIL_BAD_CLASS =
   "h-11 w-full rounded-lg border border-rose-400/50 bg-rose-500/10 px-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-rose-400 focus:ring-2 focus:ring-rose-500/20";
 
-export default function LeadForm({ intent, sourcePage, score = null, fields, submitLabel, thankYou, footnote }) {
+export default function LeadForm({ intent, sourcePage, score = null, fields, submitLabel, thankYou }) {
   const [form, setForm] = useState(() => Object.fromEntries(fields.map((f) => [f.name, ""])));
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -132,7 +132,7 @@ export default function LeadForm({ intent, sourcePage, score = null, fields, sub
           </>
         )}
       </button>
-      {footnote && <p className="text-center text-xs text-slate-500">{footnote}</p>}
+      <p className="text-center text-xs text-slate-500">We do not share your details.</p>
     </form>
   );
 }
