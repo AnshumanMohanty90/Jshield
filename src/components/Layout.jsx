@@ -7,6 +7,21 @@ import {
   ChevronLeft, Menu, FileSearch, Lock,
 } from "lucide-react";
 import ShieldLogo from "@/components/ShieldLogo";
+import usePageTitle from "@/hooks/usePageTitle";
+
+const ROUTE_TITLES = {
+  "/dashboard": "DPDP Command Center",
+  "/data-discovery": "Data Discovery",
+  "/consents": "Consent Management",
+  "/cookies": "Cookie Manager",
+  "/dpia": "DPIA",
+  "/security-safeguards": "Security Safeguards Register",
+  "/vendors": "Vendor Risk",
+  "/breaches": "Breach and incident management",
+  "/ropa": "Data record",
+  "/grievances": "Grievances",
+  "/rights": "Data Principal Rights",
+};
 
 const NAV = [
   { label: "Command Center", to: "/", icon: LayoutDashboard },
@@ -40,6 +55,7 @@ const NAV = [
 export default function Layout() {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  usePageTitle(`${ROUTE_TITLES[location.pathname] || "Console"} | JShield`);
 
   const isActive = (to) =>
     to === "/" ? location.pathname === "/" : location.pathname.startsWith(to);

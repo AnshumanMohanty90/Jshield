@@ -6,8 +6,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Lock, Loader2, AlertTriangle } from "lucide-react";
 import AuthLayout from "@/components/AuthLayout";
+import usePageTitle from "@/hooks/usePageTitle";
 
 export default function ResetPassword() {
+  usePageTitle("Reset password | JShield");
   const [searchParams] = useSearchParams();
   const resetToken = searchParams.get("token");
 
