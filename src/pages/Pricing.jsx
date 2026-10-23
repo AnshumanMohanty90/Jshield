@@ -24,7 +24,7 @@ const FAQ = [
   { q: "What is included in the trial?", a: "Everything. The full platform, every JShield module and every feature, with no limits, for ten days." },
   { q: "Do I need a credit card to start?", a: "No. The trial needs no credit card and there is nothing to pay during the trial." },
   { q: "How is the trial activated?", a: "Share your work email on the trial page and activate your trial." },
-  { q: "What happens after the ten-day trial?", a: "JShield costs Rs 12 lakh a year on its own, or added to any Jago plan." },
+  { q: "What happens after the ten-day trial?", a: "We send you a quote based on your company size and systems. JShield is also available as part of any Jago plan." },
   { q: "Can we export records for audits?", a: "Yes. Your data record, consent records and breach logs export as audit-ready documents in a single click." },
 ];
 
@@ -36,8 +36,8 @@ export default function Pricing() {
     <LandingLayout>
       <PageHero
         eyebrow="Pricing"
-        title="A free trial, then Rs 12 lakh a year."
-        subtitle="The full platform for ten days at no cost. After that, Rs 12 lakh a year on its own, or added to any Jago plan."
+        title="A free trial, then pricing built around your company."
+        subtitle="The full platform for ten days at no cost. After that, a quote based on your company size and systems."
       />
 
       <section className="bg-slate-950 py-10 sm:py-16">
@@ -45,14 +45,14 @@ export default function Pricing() {
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-widest text-indigo-400">10-day free trial</p>
             <div className="mt-4 flex flex-wrap items-baseline gap-x-3">
-              <span className="text-5xl font-bold tracking-tight text-white">Rs 12 lakh</span>
-              <span className="text-sm text-slate-400">a year</span>
+              <span className="text-5xl font-bold tracking-tight text-white">Custom pricing</span>
             </div>
             <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">
-              Free for the first ten days. No payment details needed.
+              Priced on your company size and the systems that hold personal data.
             </p>
-            <div className="mt-7">
-              <CtaPrimary to="/trial">Start free trial</CtaPrimary>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <CtaPrimary to="/contact?intent=pricing">Get pricing</CtaPrimary>
+              <CtaSecondary to="/trial">Start free trial</CtaSecondary>
             </div>
           </Reveal>
 
@@ -74,7 +74,7 @@ export default function Pricing() {
             <div>
               <h3 className="font-semibold text-white">Prefer it with Jago?</h3>
               <p className="mt-1 text-sm leading-relaxed text-slate-400">
-                The same Rs 12 lakh a year on its own, or added to any Jago plan.
+                Also available as part of any Jago plan.
               </p>
             </div>
             <CtaSecondary to="/trial" className="flex-none">

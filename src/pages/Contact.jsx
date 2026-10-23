@@ -10,14 +10,59 @@ const CHANNELS = [
 ];
 
 export default function Contact() {
-  usePageTitle("Contact | JShield");
+  const isPricing = new URLSearchParams(window.location.search).get("intent") === "pricing";
+  usePageTitle(isPricing ? "Get pricing | JShield" : "Contact | JShield");
+
+  const fields = isPricing
+    ? [
+        { name: "name", label: "Full name", placeholder: "Anita Rao" },
+        { name: "work_email", label: "Work email", type: "email", placeholder: "anita@company.in" },
+        { name: "company", label: "Company", placeholder: "VeriFintech" },
+        {
+          name: "company_size",
+          label: "Company size",
+          type: "select",
+          options: COMPANY_SIZES,
+          placeholder: "Select company size",
+        },
+        {
+          name: "message",
+          label: "Where does customer data sit today?",
+          type: "textarea",
+          placeholder: "CRM, billing, support desk, spreadsheets",
+          rows: 4,
+        },
+      ]
+    : [
+        { name: "name", label: "Full name", placeholder: "Anita Rao" },
+        { name: "work_email", label: "Work email", type: "email", placeholder: "anita@company.in" },
+        { name: "company", label: "Company", placeholder: "VeriFintech" },
+        {
+          name: "company_size",
+          label: "Company size",
+          type: "select",
+          options: COMPANY_SIZES,
+          placeholder: "Select company size",
+        },
+        {
+          name: "message",
+          label: "What do you need help with?",
+          type: "textarea",
+          placeholder: "Tell us where you are today",
+          rows: 4,
+        },
+      ];
 
   return (
     <LandingLayout>
       <PageHero
-        eyebrow="Contact"
-        title="Questions about JShield?"
-        subtitle="Write to us at contact@jshield.com or use the form."
+        eyebrow={isPricing ? "Pricing" : "Contact"}
+        title={isPricing ? "Get JShield pricing for your company." : "Questions about JShield?"}
+        subtitle={
+          isPricing
+            ? "Tell us your company size and where personal data sits today. We will send you a quote."
+            : "Write to us at contact@jshield.com or use the form."
+        }
       />
 
       <section className="bg-slate-950 py-10 sm:py-16">
@@ -29,7 +74,10 @@ export default function Contact() {
                   <div className="text-xs font-semibold uppercase tracking-widest text-slate-400">{c.label}</div>
                   <div className="mt-1 text-sm text-slate-200">
                     {c.href ? (
-                      <a href={c.href} className="inline-flex min-h-[44px] items-center transition-colors hover:text-white">
+                      <a
+                        href={c.href}
+                        className="inline-flex min-h-[44px] items-center transition-colors hover:text-white"
+                      >
                         {c.value}
                       </a>
                     ) : (
@@ -42,29 +90,15 @@ export default function Contact() {
 
             <div className="lg:col-span-3">
               <LeadForm
-                intent="contact"
-                sourcePage="/contact"
-                fields={[
-                  { name: "name", label: "Full name", placeholder: "Anita Rao" },
-                  { name: "work_email", label: "Work email", type: "email", placeholder: "anita@company.in" },
-                  { name: "company", label: "Company", placeholder: "VeriFintech" },
-                  {
-                    name: "company_size",
-                    label: "Company size",
-                    type: "select",
-                    options: COMPANY_SIZES,
-                    placeholder: "Select company size",
-                  },
-                  {
-                    name: "message",
-                    label: "What do you need help with?",
-                    type: "textarea",
-                    placeholder: "Tell us where you are today",
-                    rows: 4,
-                  },
-                ]}
-                submitLabel="Send"
-                thankYou="Thank you. Our team will be in touch."
+                intent={isPricing ? "pricing" : "contact"}
+                sourcePage={isPricing ? "/contact?intent=pricing" : "/contact"}
+                fields={fields}
+                submitLabel={isPricing ? "Get my quote" : "Send"}
+                thankYou={
+                  isPricing
+                    ? "Thank you. We will email your quote to you."
+                    : "Thank you. Our team will be in touch."
+                }
               />
             </div>
           </div>

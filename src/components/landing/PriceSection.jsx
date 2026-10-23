@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Reveal } from "./primitives";
+import { primaryCtaClass, secondaryCtaClass } from "./Buttons";
 
 export default function PriceSection() {
   return (
@@ -9,18 +10,18 @@ export default function PriceSection() {
           <div>
             <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Price</span>
             <h2 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
-              Rs 12 lakh a year.
+              Pricing built around your data.
             </h2>
             <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400 text-pretty">
-              On its own, or added to any Jago plan. Free for the first 10 days.
+              Priced on the size of your company and the systems that hold personal data. Free for the first 10 days.
             </p>
           </div>
-          <div className="flex lg:justify-end">
-            <Link
-              to="/pricing"
-              className="group inline-flex min-h-[44px] items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
-            >
-              See pricing
+          <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+            <Link to="/contact?intent=pricing" className={primaryCtaClass}>
+              Get pricing
+            </Link>
+            <Link to="/trial" className={secondaryCtaClass}>
+              Start free trial
             </Link>
           </div>
         </Reveal>

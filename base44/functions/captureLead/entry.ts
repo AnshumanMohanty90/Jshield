@@ -8,7 +8,7 @@ const FREE_EMAIL_DOMAINS = new Set([
   'rediffmail.com', 'qq.com', '163.com', '126.com',
 ]);
 
-const INTENTS = ['assessment', 'trial', 'contact', 'partner'];
+const INTENTS = ['assessment', 'trial', 'contact', 'partner', 'pricing'];
 const NOTIFY_EMAILS = ['mohantyanshuman21@gmail.com', 'contact@jshield.com'];
 
 function clean(value, max) {

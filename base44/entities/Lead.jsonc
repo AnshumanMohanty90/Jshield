@@ -33,7 +33,8 @@
         "assessment",
         "trial",
         "contact",
-        "partner"
+        "partner",
+        "pricing"
       ],
       "default": "trial"
     },
