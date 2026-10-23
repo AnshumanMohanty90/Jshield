@@ -102,7 +102,9 @@ export default function Assessment() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
-            className="bg-slate-950 py-10 sm:py-16"
+            // Top padding clears the fixed announcement bar (56px) + header (64px) + 24px,
+            // so the question counter row and progress bar are never hidden underneath.
+            className="bg-slate-950 pt-[144px] pb-10 sm:pb-16"
           >
             <div className="mx-auto max-w-2xl px-5 sm:px-8">
               <div className="flex items-center justify-between text-xs text-slate-400">
@@ -121,13 +123,19 @@ export default function Assessment() {
               <h2 className="mt-8 font-bold leading-[1.15] tracking-tight text-white text-balance">
                 {QUESTIONS[step].q}
               </h2>
-              <div className="mt-6 divide-y divide-white/10 overflow-hidden rounded-xl ring-1 ring-white/10">
+              <div
+                className="mt-6 divide-y divide-white/10 overflow-hidden rounded-xl ring-1 ring-white/10"
+                role="radiogroup"
+                aria-label={QUESTIONS[step].q}
+              >
                 {QUESTIONS[step].opts.map((o) => {
                   const selected = answers[step] === o.s;
                   return (
                     <button
                       key={o.l}
                       onClick={() => choose(o.s)}
+                      role="radio"
+                      aria-checked={selected}
                       className={`flex w-full items-center gap-3 px-5 py-4 text-left text-sm transition ${
                         selected ? "bg-indigo-500/15 text-white" : "hover:bg-white/5 text-slate-300"
                       }`}
