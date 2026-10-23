@@ -70,7 +70,7 @@ export default function PartnerProgram() {
         secondary={{ label: "Start free trial", to: "/trial" }}
       />
 
-      <section className="bg-slate-950 py-12">
+      <section className="bg-slate-950 py-12 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
@@ -92,7 +92,7 @@ export default function PartnerProgram() {
         </div>
       </section>
 
-      <section className="bg-slate-900/50 py-12">
+      <section className="bg-slate-900/50 py-12 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
@@ -111,7 +111,7 @@ export default function PartnerProgram() {
         </div>
       </section>
 
-      <section className="bg-slate-950 py-12">
+      <section className="bg-slate-950 py-12 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
@@ -130,9 +130,9 @@ export default function PartnerProgram() {
         </div>
       </section>
 
-      <section id="apply" className="bg-slate-900/50 py-12">
+      <section id="apply" className="bg-slate-900/50 py-12 sm:py-20">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
-          <Reveal className="rounded-2xl border border-white/10 bg-slate-900/50 p-6 sm:p-8">
+          <Reveal>
             <h2 className="text-xl font-semibold text-white">Apply to become a partner</h2>
             <p className="mt-1 text-sm text-slate-400">
               Tell us about your practice.

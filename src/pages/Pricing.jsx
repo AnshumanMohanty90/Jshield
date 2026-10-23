@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import LandingLayout from "@/components/landing/LandingLayout";
 import { Reveal } from "@/components/landing/primitives";
-import { Check, ChevronDown, ArrowRight } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import usePageTitle from "@/hooks/usePageTitle";
 
 const INCLUDED = [
@@ -32,10 +32,10 @@ export default function Pricing() {
 
   return (
     <LandingLayout>
-      <section className="bg-slate-950 pb-10 pt-28">
-        <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
+      <section className="bg-slate-950 pb-12 pt-32 sm:pb-20 sm:pt-36">
+        <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Pricing</span>
-          <h1 className="mt-3 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-pretty">
+          <h1 className="mt-3 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">
             A free trial, then Rs 12 lakh a year.
           </h1>
           <p className="mt-4 text-lg text-slate-400 text-pretty">
@@ -45,71 +45,56 @@ export default function Pricing() {
         </div>
       </section>
 
-      <section className="bg-slate-950 pb-20">
+      <section className="bg-slate-950 py-12 sm:py-20">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <Reveal>
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 shadow-2xl shadow-black/50">
-              <div className="h-1 w-full bg-gradient-to-r from-indigo-500 via-sky-500 to-indigo-500" />
-
-              <div className="px-8 py-10 text-center sm:px-12">
-                <span className="inline-flex items-center rounded-full bg-indigo-500/15 px-3 py-1 text-xs font-semibold text-indigo-300">
-                  10-day free trial
-                </span>
-                <div className="mt-5 flex items-end justify-center gap-2">
-                  <span className="text-5xl font-bold tracking-tight text-white">Rs 12 lakh</span>
-                  <span className="mb-1.5 text-sm text-slate-500">a year</span>
-                </div>
-                <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-slate-400">
-                  Free for the first ten days. No payment details needed.
-                </p>
-                <Link
-                  to="/trial"
-                  className="group mt-7 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
-                >
-                  Start free trial <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-                </Link>
-              </div>
-
-              <div className="border-t border-white/10 px-8 py-8 sm:px-12">
-                <h3 className="text-center text-xs font-semibold uppercase tracking-widest text-slate-500">
-                  What is included
-                </h3>
-                <ul className="mt-5 grid gap-x-8 gap-y-3 sm:grid-cols-2">
-                  {INCLUDED.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-sm text-slate-300">
-                      <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400">
-                        <Check className="h-3 w-3" />
-                      </span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-indigo-400">10-day free trial</p>
+            <div className="mt-4 flex flex-wrap items-baseline gap-x-3">
+              <span className="text-5xl font-bold tracking-tight text-white">Rs 12 lakh</span>
+              <span className="text-sm text-slate-500">a year</span>
             </div>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-400">
+              Free for the first ten days. No payment details needed.
+            </p>
+            <Link
+              to="/trial"
+              className="mt-7 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
+            >
+              Start free trial
+            </Link>
           </Reveal>
 
-          <Reveal delay={0.08}>
-            <div className="mt-8 flex flex-col gap-4 rounded-2xl border border-white/10 bg-slate-900/30 px-8 py-6 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <h3 className="text-base font-semibold text-white">Prefer it with Jago?</h3>
-                <p className="mt-1 text-sm text-slate-400">
-                  The same Rs 12 lakh a year on its own, or added to any Jago plan.
-                </p>
-              </div>
-              <Link
-                to="/trial"
-                className="group inline-flex flex-none items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Start free trial <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-              </Link>
+          <Reveal delay={0.08} className="mt-10 border-t border-white/10 pt-8">
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-500">What is included</h2>
+            <ul className="mt-4 grid gap-x-8 sm:grid-cols-2">
+              {INCLUDED.map((f) => (
+                <li key={f} className="border-t border-white/10 py-3 text-sm text-slate-300">
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+
+          <Reveal delay={0.12} className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="text-base font-semibold text-white">Prefer it with Jago?</h2>
+              <p className="mt-1 text-sm text-slate-400">
+                The same Rs 12 lakh a year on its own, or added to any Jago plan.
+              </p>
             </div>
+            <Link
+              to="/trial"
+              className="inline-flex flex-none items-center justify-center rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              Start free trial
+            </Link>
           </Reveal>
         </div>
       </section>
 
-      <section className="bg-slate-900/50 py-16">
+      <section className="bg-slate-900/50 py-12 sm:py-20">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
-          <h2 className="text-center text-2xl font-bold tracking-tight text-white text-pretty">
+          <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
             Frequently asked questions
           </h2>
           <div className="mt-8">

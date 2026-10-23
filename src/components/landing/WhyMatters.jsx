@@ -9,7 +9,7 @@ const CARDS = [
 
 export default function WhyMatters() {
   return (
-    <section className="bg-slate-950 py-12">
+    <section className="bg-slate-950 py-12 sm:py-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Why it matters now</span>

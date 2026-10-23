@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft, Check, Sparkles } from "lucide-react";
+import { Check } from "lucide-react";
 import LandingLayout from "@/components/landing/LandingLayout";
 import LeadForm, { COMPANY_SIZES } from "@/components/landing/LeadForm";
 import usePageTitle from "@/hooks/usePageTitle";
@@ -78,24 +78,23 @@ export default function Assessment() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="bg-slate-950 pb-16 pt-28"
+            className="bg-slate-950 pb-12 pt-32 sm:pb-20 sm:pt-36"
           >
-            <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-indigo-200">
-                <Sparkles className="h-3.5 w-3.5" /> Free DPDP readiness assessment
+            <div className="mx-auto max-w-3xl px-5 sm:px-8">
+              <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">
+                Free DPDP readiness assessment
               </span>
-              <h1 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-pretty">
+              <h1 className="mt-3 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">
                 Find out where you stand on DPDP, in three minutes.
               </h1>
-              <p className="mt-5 text-lg leading-relaxed text-slate-300">
-                Answer fourteen questions across every duty in the law. Free. Your score appears as soon as you
-                finish.
+              <p className="mt-5 text-lg leading-relaxed text-slate-300 text-pretty">
+                Answer fourteen questions across every duty in the law. Free. Your score appears as soon as you finish.
               </p>
               <button
                 onClick={start}
-                className="group mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
+                className="mt-8 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
               >
-                Start the assessment <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                Start the assessment
               </button>
               <p className="mt-4 text-xs text-slate-500">14 questions · 3 minutes · score on screen</p>
             </div>
@@ -108,13 +107,13 @@ export default function Assessment() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
-            className="bg-slate-950 py-16"
+            className="bg-slate-950 py-12 sm:py-20"
           >
             <div className="mx-auto max-w-2xl px-5 sm:px-8">
               <div className="flex items-center justify-between text-xs text-slate-400">
                 <span>Question {step + 1} of {total}</span>
-                <button onClick={back} className="inline-flex items-center gap-1 text-slate-400 hover:text-white">
-                  <ArrowLeft className="h-3.5 w-3.5" /> Back
+                <button onClick={back} className="text-slate-400 hover:text-white">
+                  Back
                 </button>
               </div>
               <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
@@ -160,7 +159,7 @@ export default function Assessment() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
-            className="bg-slate-950 py-16"
+            className="bg-slate-950 py-12 sm:py-20"
           >
             <div className="mx-auto max-w-3xl px-5 sm:px-8">
               {(() => {
@@ -172,9 +171,7 @@ export default function Assessment() {
                       <span className={`text-6xl font-bold tracking-tight ${t.tone}`}>{score}</span>
                       <span className="mb-2 text-sm text-slate-500">/ 100</span>
                     </div>
-                    <div className={`mt-3 inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold ${t.chip}`}>
-                      {t.label}
-                    </div>
+                    <p className={`mt-3 text-sm font-semibold ${t.tone}`}>{t.label}</p>
                     <p className="mt-3 text-base leading-relaxed text-slate-400">{t.desc}</p>
 
                     <div className="mt-10 border-t border-white/10 pt-10">

@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ShieldCheck, AlertTriangle, FileText, Check } from "lucide-react";
 import { Reveal } from "./primitives";
 
 const TABS = [
   {
     key: "consent",
-    icon: ShieldCheck,
     title: "Customer consent",
     blurb: (
       <>
@@ -23,7 +21,6 @@ const TABS = [
   },
   {
     key: "breach",
-    icon: AlertTriangle,
     title: "Breach response",
     blurb: (
       <>
@@ -40,7 +37,6 @@ const TABS = [
   },
   {
     key: "record",
-    icon: FileText,
     title: "Data record",
     blurb: (
       <>
@@ -62,32 +58,29 @@ export default function ModuleShowcase() {
   const tab = TABS.find((t) => t.key === active);
 
   return (
-    <section id="solution" className="bg-slate-950 py-12">
+    <section id="solution" className="bg-slate-950 py-12 sm:py-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">What JShield does</span>
-          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
+          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
             The three jobs that matter most under the law.
           </h2>
         </Reveal>
 
-        <div className="mt-8 flex flex-wrap gap-2">
-          {TABS.map((t) => {
-            const Icon = t.icon;
-            return (
-              <button
-                key={t.key}
-                onClick={() => setActive(t.key)}
-                className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition ${
-                  active === t.key
-                    ? "bg-white text-slate-900"
-                    : "bg-white/5 text-slate-300 ring-1 ring-white/10 hover:bg-white/10"
-                }`}
-              >
-                <Icon className="h-4 w-4" /> {t.title}
-              </button>
-            );
-          })}
+        <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 border-b border-white/10">
+          {TABS.map((t) => (
+            <button
+              key={t.key}
+              onClick={() => setActive(t.key)}
+              className={`-mb-px border-b-2 pb-3 text-sm font-medium transition ${
+                active === t.key
+                  ? "border-white text-white"
+                  : "border-transparent text-slate-400 hover:text-slate-200"
+              }`}
+            >
+              {t.title}
+            </button>
+          ))}
         </div>
 
         <motion.div
@@ -100,27 +93,18 @@ export default function ModuleShowcase() {
           <div>
             <h3 className="text-xl font-semibold text-white">{tab.title}</h3>
             <p className="mt-2 text-pretty text-slate-400">{tab.blurb}</p>
-            <ul className="mt-6 space-y-3">
+            <ul className="mt-6">
               {tab.points.map((p) => (
-                <li key={p} className="flex items-start gap-2.5 text-sm text-slate-300">
-                  <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400">
-                    <Check className="h-3 w-3" />
-                  </span>
+                <li key={p} className="border-t border-white/10 py-3 text-sm text-slate-300">
                   {p}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl bg-slate-900 p-6 ring-1 ring-white/10 shadow-lg shadow-black/40">
-            <div className="flex items-end justify-between">
-              <div>
-                <div className="text-[11px] uppercase tracking-widest text-slate-500">{tab.mock.label}</div>
-                <div className="mt-1 text-4xl font-bold text-white">{tab.mock.metric}</div>
-              </div>
-              <span className="rounded-full bg-emerald-500/15 px-2.5 py-1 text-xs font-medium text-emerald-400">
-                {tab.mock.trend}
-              </span>
-            </div>
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-widest text-slate-500">{tab.mock.label}</div>
+            <div className="mt-2 text-4xl font-bold text-white">{tab.mock.metric}</div>
+            <p className="mt-1 text-sm text-slate-400">{tab.mock.trend}</p>
             <div className="mt-6 flex h-32 items-end gap-2">
               {tab.mock.bars.map((h, i) => (
                 <motion.div
@@ -133,7 +117,7 @@ export default function ModuleShowcase() {
                 />
               ))}
             </div>
-            <p className="mt-4 text-[10px] text-slate-500">Sample data</p>
+            <p className="mt-3 text-xs text-slate-500">Sample data</p>
           </div>
         </motion.div>
       </div>

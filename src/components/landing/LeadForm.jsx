@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { base44 } from "@/api/base44Client";
 import { workEmailError } from "@/lib/workEmail";
 
@@ -128,7 +128,7 @@ export default function LeadForm({ intent, sourcePage, score = null, fields, sub
           </>
         ) : (
           <>
-            {submitLabel} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+            {submitLabel}
           </>
         )}
       </button>

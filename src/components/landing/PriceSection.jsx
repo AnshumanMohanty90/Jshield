@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import { Reveal } from "./primitives";
 
 export default function PriceSection() {
   return (
-    <section className="bg-slate-900/50 py-12">
+    <section className="bg-slate-900/50 py-12 sm:py-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="grid gap-6 lg:grid-cols-2 lg:items-center">
           <div>
@@ -21,7 +20,7 @@ export default function PriceSection() {
               to="/pricing"
               className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
             >
-              See pricing <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              See pricing
             </Link>
           </div>
         </Reveal>

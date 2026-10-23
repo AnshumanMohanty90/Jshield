@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, ClipboardCheck, ShieldCheck, Database, AlertTriangle, Cookie, FileText } from "lucide-react";
+import { Database, ShieldCheck, AlertTriangle, Cookie, FileText } from "lucide-react";
 
 function Gauge() {
   const score = 92;
@@ -54,7 +54,7 @@ const STATUS_ROWS = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-slate-950 pb-12 pt-28">
+    <section className="relative overflow-hidden bg-slate-950 pb-12 pt-32 sm:pb-20 sm:pt-36">
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
@@ -72,16 +72,13 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.05 }}
               className="mt-3 text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl text-balance"
             >
-              Get ready for India's data protection law{" "}
-              <span className="whitespace-nowrap bg-gradient-to-r from-indigo-400 to-sky-300 bg-clip-text italic text-transparent">
-                in 30 days.
-              </span>
+              Get ready for India's data protection law in 30 days.
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.12 }}
-              className="mt-3 max-w-xl text-lg leading-relaxed text-slate-300"
+              className="mt-3 max-w-xl text-lg leading-relaxed text-slate-300 text-pretty"
             >
               Record customer consent, find the personal data you hold and report breaches on time. Every step is
               logged, so you have proof for any audit.
@@ -94,15 +91,15 @@ export default function Hero() {
             >
               <Link
                 to="/assessment"
-                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
+                className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
               >
-                <ClipboardCheck className="h-4 w-4" /> Check your readiness
+                Check your readiness
               </Link>
               <Link
                 to="/trial"
-                className="group inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Start free trial <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                Start free trial
               </Link>
             </motion.div>
             <motion.p

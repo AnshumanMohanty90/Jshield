@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ClipboardCheck } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import DeadlineTracker from "./DeadlineTracker";
 import BrandLockup from "./BrandLockup";
@@ -67,9 +67,8 @@ export default function Nav() {
             )}
             <Link
               to="/assessment"
-              className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
+              className="rounded-lg bg-gradient-to-r from-indigo-500 to-sky-500 px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
             >
-              <ClipboardCheck className="h-4 w-4" />
               Check your readiness
             </Link>
           </div>
@@ -90,7 +89,7 @@ export default function Nav() {
                   href={l.to}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-200 hover:bg-white/5"
+                  className="block px-3 py-2.5 text-sm font-medium text-slate-200 hover:text-white"
                 >
                   {l.label}
                 </a>
@@ -98,7 +97,7 @@ export default function Nav() {
                 <Link
                   key={l.label}
                   to={l.to}
-                  className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-200 hover:bg-white/5"
+                  className="block px-3 py-2.5 text-sm font-medium text-slate-200 hover:text-white"
                 >
                   {l.label}
                 </Link>
@@ -106,9 +105,8 @@ export default function Nav() {
             ))}
             <Link
               to="/assessment"
-              className="mt-2 flex items-center gap-2 rounded-lg bg-white px-3 py-2.5 text-sm font-semibold text-slate-900"
+              className="mt-2 flex items-center justify-center rounded-lg bg-gradient-to-r from-indigo-500 to-sky-500 px-3 py-2.5 text-sm font-semibold text-white"
             >
-              <ClipboardCheck className="h-4 w-4" />
               Check your readiness
             </Link>
           </div>

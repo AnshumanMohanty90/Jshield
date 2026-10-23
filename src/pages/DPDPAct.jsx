@@ -2,7 +2,6 @@ import LandingLayout from "@/components/landing/LandingLayout";
 import PageHero from "@/components/landing/PageHero";
 import CtaBand from "@/components/landing/CtaBand";
 import { Reveal } from "@/components/landing/primitives";
-import { Check, X } from "lucide-react";
 import usePageTitle from "@/hooks/usePageTitle";
 
 const APPLIES = [
@@ -59,7 +58,7 @@ export default function DPDPAct() {
         secondary={{ label: "See how JShield solves it", to: "/#solution" }}
       />
 
-      <section className="bg-slate-950 py-12">
+      <section className="bg-slate-950 py-12 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
@@ -70,28 +69,22 @@ export default function DPDPAct() {
               it. There is no small business exemption, and enforcement begins with a single complaint.
             </p>
           </Reveal>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-slate-900 p-6">
+          <div className="mt-8 grid gap-x-8 gap-y-10 md:grid-cols-2">
+            <div>
               <h3 className="text-sm font-semibold uppercase tracking-widest text-emerald-400">Covered by the law</h3>
-              <ul className="mt-4 space-y-3">
+              <ul className="mt-4">
                 {APPLIES.map((t) => (
-                  <li key={t} className="flex items-start gap-2.5 text-sm leading-relaxed text-slate-300">
-                    <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400">
-                      <Check className="h-3 w-3" />
-                    </span>
+                  <li key={t} className="border-t border-white/10 py-3 text-sm leading-relaxed text-slate-300">
                     {t}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-slate-900 p-6">
+            <div>
               <h3 className="text-sm font-semibold uppercase tracking-widest text-slate-500">Outside its scope</h3>
-              <ul className="mt-4 space-y-3">
+              <ul className="mt-4">
                 {EXEMPT.map((t) => (
-                  <li key={t} className="flex items-start gap-2.5 text-sm leading-relaxed text-slate-300">
-                    <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-white/10 text-slate-400">
-                      <X className="h-3 w-3" />
-                    </span>
+                  <li key={t} className="border-t border-white/10 py-3 text-sm leading-relaxed text-slate-300">
                     {t}
                   </li>
                 ))}
@@ -101,7 +94,7 @@ export default function DPDPAct() {
         </div>
       </section>
 
-      <section className="bg-slate-900/50 py-12">
+      <section className="bg-slate-900/50 py-12 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
@@ -123,7 +116,7 @@ export default function DPDPAct() {
         </div>
       </section>
 
-      <section className="bg-slate-950 py-12">
+      <section className="bg-slate-950 py-12 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
@@ -144,7 +137,7 @@ export default function DPDPAct() {
         </div>
       </section>
 
-      <section className="bg-slate-900/50 py-12">
+      <section className="bg-slate-900/50 py-12 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
@@ -166,7 +159,7 @@ export default function DPDPAct() {
         </div>
       </section>
 
-      <section className="bg-slate-950 py-12">
+      <section className="bg-slate-950 py-12 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
@@ -177,14 +170,14 @@ export default function DPDPAct() {
               and are set after an inquiry.
             </p>
           </Reveal>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-slate-900 p-8">
+          <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">
+            <div className="border-t border-white/10 pt-5">
               <div className="text-4xl font-bold tracking-tight text-white">Rs 250 crore</div>
               <p className="mt-2 text-sm leading-relaxed text-slate-400">
                 The maximum penalty for failing to protect personal data with adequate security safeguards.
               </p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-slate-900 p-8">
+            <div className="border-t border-white/10 pt-5">
               <div className="text-4xl font-bold tracking-tight text-white">Rs 50 crore</div>
               <p className="mt-2 text-sm leading-relaxed text-slate-400">
                 The maximum for most other violations, from consent failures to neglected principal rights.
