@@ -53,7 +53,7 @@ export default function Footer() {
           </div>
           {COLS.map((c) => (
             <div key={c.title}>
-              <div className="text-[15px] font-semibold text-slate-400">{c.title}</div>
+              <div className="text-[15px] font-semibold text-indigo-400">{c.title}</div>
               <ul className="mt-4 space-y-2.5">
                 {c.links.map(([label, to]) => (
                   <li key={label}>
@@ -67,8 +67,8 @@ export default function Footer() {
           ))}
         </div>
         <div className="mt-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-          <p className="text-xs text-slate-400">
-            © 2026 Jago AI · JShield is part of{" "}
+          <p className="text-[15px] text-slate-300">
+            © 2026 Jago AI, JShield is part of{" "}
             <a
               href="https://jagotech.ai"
               target="_blank"
@@ -77,7 +77,7 @@ export default function Footer() {
             >
               Jago AI
             </a>{" "}
-            · Built for data protection teams in India
+            , Built for data protection teams in India
           </p>
         </div>
       </div>

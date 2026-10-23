@@ -76,7 +76,7 @@ export default function Assessment() {
             className="bg-slate-950 pb-10 pt-32 sm:pb-16 sm:pt-36"
           >
             <div className="mx-auto max-w-3xl px-5 sm:px-8">
-              <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">
+              <span className="text-[15px] font-semibold text-indigo-400">
                 Free DPDP readiness assessment
               </span>
               <h1 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
@@ -91,7 +91,7 @@ export default function Assessment() {
               >
                 Start the assessment
               </button>
-              <p className="mt-4 text-xs text-slate-400">14 questions · 3 minutes · score on screen</p>
+              <p className="mt-4 text-[15px] text-slate-300">14 questions, 3 minutes, score on screen</p>
             </div>
           </motion.section>
         )}
@@ -169,7 +169,7 @@ export default function Assessment() {
                 const t = tierFor(score);
                 return (
                   <div>
-                    <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Your score</span>
+                    <span className="text-[15px] font-semibold text-indigo-400">Your score</span>
                     <div className="mt-3 flex items-end gap-3">
                       <span className={`text-6xl font-bold tracking-tight ${t.tone}`}>{score}</span>
                       <span className="mb-2 text-sm text-slate-400">/ 100</span>
