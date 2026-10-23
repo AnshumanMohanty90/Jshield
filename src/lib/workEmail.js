@@ -6,15 +6,14 @@ const FREE_EMAIL_DOMAINS = [
   "rediffmail.com", "qq.com", "163.com", "126.com",
 ];
 
+// Returns "" when the email is a valid work email, or the message to show otherwise.
 export function workEmailError(email) {
   const value = String(email || "").trim().toLowerCase();
-  if (!value) return null;
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-    return "Enter a valid email address.";
+  if (!value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+    return "Enter a valid work email.";
   }
-  const domain = value.split("@")[1];
-  if (FREE_EMAIL_DOMAINS.includes(domain)) {
+  if (FREE_EMAIL_DOMAINS.includes(value.split("@")[1])) {
     return "Please use your work email.";
   }
-  return null;
+  return "";
 }

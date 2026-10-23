@@ -1,10 +1,12 @@
 import { useLocation } from 'react-router-dom';
 import { base44 } from '@/api/base44Client';
 import { useQuery } from '@tanstack/react-query';
+import usePageTitle from '@/hooks/usePageTitle';
 
 export default function PageNotFound({}) {
     const location = useLocation();
     const pageName = location.pathname.substring(1);
+    usePageTitle('Page not found | JShield');
 
     const { data: authData, isFetched } = useQuery({
         queryKey: ['user'],
@@ -33,12 +35,12 @@ export default function PageNotFound({}) {
                     </p>
                 )}
 
-                <button
-                    onClick={() => { window.location.href = '/'; }}
-                    className="mt-8 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white"
+                <a
+                    href="/"
+                    className="mt-8 inline-flex min-h-[44px] items-center justify-center rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3 text-sm font-semibold text-white"
                 >
                     Go home
-                </button>
+                </a>
             </div>
         </div>
     )
