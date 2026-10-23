@@ -1,10 +1,10 @@
 import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
-import { AuthProvider, useAuth } from '@/lib/AuthContext';
-import UserNotRegisteredError from '@/components/UserNotRegisteredError';
+import { AuthProvider } from '@/lib/AuthContext';
 import ScrollToTop from './components/ScrollToTop';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import Layout from '@/components/Layout';
@@ -18,45 +18,34 @@ import Landing from '@/pages/Landing';
 import PricingPage from '@/pages/Pricing';
 import SecurityPage from '@/pages/Security';
 import ContactPage from '@/pages/Contact';
-import Assessment from '@/pages/Assessment';
 import Trial from '@/pages/Trial';
 import DPDPAct from '@/pages/DPDPAct';
-import PartnerProgram from '@/pages/PartnerProgram';
+const Assessment = lazy(() => import('@/pages/Assessment'));
+const PartnerProgram = lazy(() => import('@/pages/PartnerProgram'));
 import LegalPage from '@/components/LegalPage';
-// App pages
-import Dashboard from '@/pages/Dashboard';
-import DataDiscovery from '@/pages/DataDiscovery';
-import ConsentManagement from '@/pages/ConsentManagement';
-import CookieManagement from '@/pages/CookieManagement';
-import VendorRisk from '@/pages/VendorRisk';
-import BreachManagement from '@/pages/BreachManagement';
-import ROPA from '@/pages/ROPA';
-import GrievanceManagement from '@/pages/GrievanceManagement';
-import RightsRequests from '@/pages/RightsRequests';
-import DPIA from '@/pages/DPIA';
-import SecuritySafeguards from '@/pages/SecuritySafeguards';
+// App pages: lazy-loaded so the public site never downloads the console code
+const Dashboard = lazy(() => import('@/pages/Dashboard'));
+const DataDiscovery = lazy(() => import('@/pages/DataDiscovery'));
+const ConsentManagement = lazy(() => import('@/pages/ConsentManagement'));
+const CookieManagement = lazy(() => import('@/pages/CookieManagement'));
+const VendorRisk = lazy(() => import('@/pages/VendorRisk'));
+const BreachManagement = lazy(() => import('@/pages/BreachManagement'));
+const ROPA = lazy(() => import('@/pages/ROPA'));
+const GrievanceManagement = lazy(() => import('@/pages/GrievanceManagement'));
+const RightsRequests = lazy(() => import('@/pages/RightsRequests'));
+const DPIA = lazy(() => import('@/pages/DPIA'));
+const SecuritySafeguards = lazy(() => import('@/pages/SecuritySafeguards'));
 
+const PageLoader = () => (
+  <div className="fixed inset-0 flex items-center justify-center">
+    <div className="w-8 h-8 border-4 border-slate-200 border-t-slate-800 rounded-full animate-spin"></div>
+  </div>
+);
+
+// Public pages render immediately; no page above the fold waits on the login or app-settings check.
 const AuthenticatedApp = () => {
-  const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
-
-  if (isLoadingPublicSettings || isLoadingAuth) {
-    return (
-      <div className="fixed inset-0 flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-slate-200 border-t-slate-800 rounded-full animate-spin"></div>
-      </div>
-    );
-  }
-
-  if (authError) {
-    if (authError.type === 'user_not_registered') {
-      return <UserNotRegisteredError />;
-    } else if (authError.type === 'auth_required') {
-      navigateToLogin();
-      return null;
-    }
-  }
-
   return (
+    <Suspense fallback={<PageLoader />}>
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
@@ -91,6 +80,7 @@ const AuthenticatedApp = () => {
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
+    </Suspense>
   );
 };
 

@@ -1,9 +1,7 @@
-import { motion, useReducedMotion } from "framer-motion";
 import { Database, ShieldCheck, AlertTriangle, Cookie, FileText } from "lucide-react";
 import { CtaPrimary, CtaSecondary } from "./Buttons";
 
 function Gauge() {
-  const reduceMotion = useReducedMotion();
   const score = 92;
   const r = 52;
   const c = 2 * Math.PI * r;
@@ -12,7 +10,7 @@ function Gauge() {
     <div className="relative flex flex-col items-center">
       <svg width="132" height="132" viewBox="0 0 140 140">
         <circle cx="70" cy="70" r={r} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="10" />
-        <motion.circle
+        <circle
           cx="70"
           cy="70"
           r={r}
@@ -21,10 +19,7 @@ function Gauge() {
           strokeWidth="10"
           strokeLinecap="round"
           strokeDasharray={c}
-          initial={reduceMotion ? false : { strokeDashoffset: c }}
-          whileInView={reduceMotion ? undefined : { strokeDashoffset: offset }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.4, ease: "easeOut", delay: 0.4 }}
+          strokeDashoffset={offset}
           transform="rotate(-90 70 70)"
         />
         <defs>
@@ -54,54 +49,30 @@ const STATUS_ROWS = [
 ];
 
 export default function Hero() {
-  const reduceMotion = useReducedMotion();
-  const fade = (delay = 0) =>
-    reduceMotion
-      ? {}
-      : { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.6, delay } };
-
   return (
     <section className="relative overflow-hidden bg-slate-950 pb-10 pt-32 sm:pb-16 sm:pt-36">
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <motion.span
-              {...fade(0.02)}
-              className="text-xs font-semibold uppercase tracking-widest text-indigo-400"
-            >
+            <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">
               DPDP Act compliance for Indian companies
-            </motion.span>
-            <motion.h1
-              {...fade(0.05)}
-              className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance"
-            >
+            </span>
+            <h1 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
               Get ready for India's data protection law in 30 days.
-            </motion.h1>
-            <motion.p
-              {...fade(0.12)}
-              className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-200 text-pretty"
-            >
+            </h1>
+            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-200 text-pretty">
               Record customer consent, find the personal data you hold and report breaches on time. Every step is
               logged, so you have proof for any audit.
-            </motion.p>
-            <motion.div {...fade(0.18)} className="mt-6 flex flex-col gap-3 sm:flex-row">
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <CtaPrimary to="/assessment">Check your readiness</CtaPrimary>
               <CtaSecondary to="/trial">Start free trial</CtaSecondary>
-            </motion.div>
-            <motion.p {...fade(0.22)} className="mt-4 text-sm text-slate-400">
-              Free readiness check. 14 questions. Score in 3 minutes.
-            </motion.p>
-            <motion.p {...fade(0.26)} className="mt-2 text-xs text-slate-400">
-              Mapped to every duty in the DPDP Act and the DPDP Rules 2025
-            </motion.p>
+            </div>
+            <p className="mt-4 text-sm text-slate-400">Free readiness check. 14 questions. Score in 3 minutes.</p>
+            <p className="mt-2 text-xs text-slate-400">Mapped to every duty in the DPDP Act and the DPDP Rules 2025</p>
           </div>
 
-          <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 30, scale: 0.98 }}
-            animate={reduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative"
-          >
+          <div className="relative">
             <div className="rounded-2xl bg-slate-900/70 p-2 shadow-2xl shadow-indigo-900/40 ring-1 ring-white/10 backdrop-blur">
               <div className="flex items-center gap-1.5 px-3 py-2">
                 <span className="h-2.5 w-2.5 rounded-full bg-rose-400/70" />
@@ -149,7 +120,7 @@ export default function Hero() {
             <div className="absolute -bottom-4 -right-4 hidden rounded-xl bg-slate-900 px-4 py-3 shadow-xl ring-1 ring-white/10 sm:block">
               <div className="text-xs text-slate-300">71h left in the breach reporting window</div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 export default function ShieldLogo({ className = "h-9 w-9" }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" focusable="false">
+    <svg width="36" height="36" viewBox="0 0 24 24" className={className} aria-hidden="true" focusable="false">
       <defs>
         <linearGradient id="jshield-shield-gradient" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#6366f1" />
