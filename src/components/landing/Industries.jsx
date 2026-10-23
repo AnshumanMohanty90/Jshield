@@ -73,10 +73,10 @@ export default function Industries() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Built for your sector</span>
-          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
+          <h2 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
             Set up for your sector.
           </h2>
-          <p className="mt-3 text-lg text-slate-400 text-pretty">
+          <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400 text-pretty">
             JShield comes ready with the consent forms, retention rules and reports your sector needs.
           </p>
         </Reveal>
@@ -105,7 +105,7 @@ export default function Industries() {
           className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10"
         >
           <div>
-            <h3 className="text-xl font-semibold text-white">{ind.headline}</h3>
+            <h3 className="font-semibold text-white">{ind.headline}</h3>
             <p className="mt-2 text-sm text-slate-400">{ind.line}</p>
           </div>
           <ul className="sm:grid sm:grid-cols-2 sm:gap-x-8">

@@ -1,6 +1,6 @@
 import LandingLayout from "@/components/landing/LandingLayout";
 import PageHero from "@/components/landing/PageHero";
-import CtaBand from "@/components/landing/CtaBand";
+import CTASection from "@/components/landing/CTASection";
 import { Reveal } from "@/components/landing/primitives";
 import LeadForm from "@/components/landing/LeadForm";
 import usePageTitle from "@/hooks/usePageTitle";
@@ -66,24 +66,22 @@ export default function PartnerProgram() {
         eyebrow="Partner programme"
         title="Build a compliance practice with JShield"
         subtitle="Help Indian companies meet the data law and build a steady services revenue line alongside ours. Five partner tracks, each with a clear way to earn."
-        primary={{ label: "Apply to become a partner", to: "#apply" }}
-        secondary={{ label: "Start free trial", to: "/trial" }}
       />
 
       <section className="bg-slate-950 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
+            <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">
               Who we partner with
             </h2>
-            <p className="mt-3 text-lg text-slate-400">
+            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">
               Five partnership tracks, each with a clear commercial model.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {PARTNER_TYPES.map((p) => (
               <Reveal key={p.title} className="border-t border-white/10 pt-5">
-                <h3 className="text-base font-semibold text-white">{p.title}</h3>
+                <h3 className="font-semibold text-white">{p.title}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{p.desc}</p>
                 <p className="mt-3 text-sm leading-relaxed text-slate-400">{p.earn}</p>
               </Reveal>
@@ -95,15 +93,15 @@ export default function PartnerProgram() {
       <section className="bg-slate-900/50 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
+            <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">
               Why partners choose JShield
             </h2>
-            <p className="mt-3 text-lg text-slate-400">How partners earn with JShield.</p>
+            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">How partners earn with JShield.</p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">
             {ADVANTAGES.map((a) => (
               <Reveal key={a.title} className="border-t border-white/10 pt-5">
-                <h3 className="text-base font-semibold text-white">{a.title}</h3>
+                <h3 className="font-semibold text-white">{a.title}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{a.desc}</p>
               </Reveal>
             ))}
@@ -114,15 +112,15 @@ export default function PartnerProgram() {
       <section className="bg-slate-950 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
+            <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">
               How it works
             </h2>
-            <p className="mt-3 text-lg text-slate-400">From application to first engagement in three steps.</p>
+            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">From application to first engagement in three steps.</p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-3">
             {STEPS.map((s) => (
               <Reveal key={s.title} className="border-t border-white/10 pt-5">
-                <h3 className="text-base font-semibold text-white">{s.title}</h3>
+                <h3 className="font-semibold text-white">{s.title}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{s.desc}</p>
               </Reveal>
             ))}
@@ -133,7 +131,7 @@ export default function PartnerProgram() {
       <section id="apply" className="bg-slate-900/50 py-10 sm:py-16">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <Reveal>
-            <h2 className="text-xl font-semibold text-white">Apply to become a partner</h2>
+            <h2 className="font-semibold text-white">Apply to become a partner</h2>
             <p className="mt-1 text-sm text-slate-400">
               Tell us about your practice.
             </p>
@@ -163,12 +161,7 @@ export default function PartnerProgram() {
         </div>
       </section>
 
-      <CtaBand
-        title="Partner with the platform built for India's data law"
-        subtitle="Tell us about your practice and we will shape a track around it."
-        primary={{ label: "Apply to become a partner", to: "#apply" }}
-        secondary={{ label: "Check your readiness", to: "/assessment" }}
-      />
+      <CTASection />
     </LandingLayout>
   );
 }

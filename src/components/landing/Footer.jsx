@@ -53,7 +53,7 @@ export default function Footer() {
           </div>
           {COLS.map((c) => (
             <div key={c.title}>
-              <div className="text-xs font-semibold uppercase tracking-widest text-slate-500">{c.title}</div>
+              <div className="text-xs font-semibold uppercase tracking-widest text-slate-400">{c.title}</div>
               <ul className="mt-4 space-y-2.5">
                 {c.links.map(([label, to]) => (
                   <li key={label}>
@@ -67,7 +67,7 @@ export default function Footer() {
           ))}
         </div>
         <div className="mt-8 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center">
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-slate-400">
             © 2026 Jago AI · JShield is part of{" "}
             <a
               href="https://jagotech.ai"

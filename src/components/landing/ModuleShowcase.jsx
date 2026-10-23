@@ -62,7 +62,7 @@ export default function ModuleShowcase() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">What JShield does</span>
-          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
+          <h2 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
             The three jobs that matter most under the law.
           </h2>
         </Reveal>
@@ -91,7 +91,7 @@ export default function ModuleShowcase() {
           className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10"
         >
           <div>
-            <h3 className="text-xl font-semibold text-white">{tab.title}</h3>
+            <h3 className="font-semibold text-white">{tab.title}</h3>
             <p className="mt-2 text-pretty text-slate-400">{tab.blurb}</p>
             <ul className="mt-6">
               {tab.points.map((p) => (
@@ -102,7 +102,7 @@ export default function ModuleShowcase() {
             </ul>
           </div>
           <div>
-            <div className="text-xs font-semibold uppercase tracking-widest text-slate-500">{tab.mock.label}</div>
+            <div className="text-xs font-semibold uppercase tracking-widest text-slate-400">{tab.mock.label}</div>
             <div className="mt-2 text-4xl font-bold text-white">{tab.mock.metric}</div>
             <p className="mt-1 text-sm text-slate-400">{tab.mock.trend}</p>
             <div className="mt-6 flex h-32 items-end gap-2">
@@ -117,7 +117,7 @@ export default function ModuleShowcase() {
                 />
               ))}
             </div>
-            <p className="mt-3 text-xs text-slate-500">Sample data</p>
+            <p className="mt-3 text-xs text-slate-400">Sample data</p>
           </div>
         </motion.div>
       </div>

@@ -1,4 +1,6 @@
 import LandingLayout from "@/components/landing/LandingLayout";
+import PageHero from "@/components/landing/PageHero";
+import CTASection from "@/components/landing/CTASection";
 import LeadForm, { COMPANY_SIZES } from "@/components/landing/LeadForm";
 import usePageTitle from "@/hooks/usePageTitle";
 
@@ -12,16 +14,11 @@ export default function Contact() {
 
   return (
     <LandingLayout>
-      <section className="bg-slate-950 pb-10 pt-32 sm:pb-16 sm:pt-36">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">
-            Questions about JShield?
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-slate-300 text-pretty">
-            Write to us at contact@jshield.com or use the form.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Contact"
+        title="Questions about JShield?"
+        subtitle="Write to us at contact@jshield.com or use the form."
+      />
 
       <section className="bg-slate-950 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
@@ -29,10 +26,12 @@ export default function Contact() {
             <div className="lg:col-span-2">
               {CHANNELS.map((c) => (
                 <div key={c.label} className="border-t border-white/10 py-5">
-                  <div className="text-xs font-semibold uppercase tracking-widest text-slate-500">{c.label}</div>
+                  <div className="text-xs font-semibold uppercase tracking-widest text-slate-400">{c.label}</div>
                   <div className="mt-1 text-sm text-slate-200">
                     {c.href ? (
-                      <a href={c.href} className="transition-colors hover:text-white">{c.value}</a>
+                      <a href={c.href} className="inline-flex min-h-[44px] items-center transition-colors hover:text-white">
+                        {c.value}
+                      </a>
                     ) : (
                       c.value
                     )}
@@ -71,6 +70,8 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      <CTASection />
     </LandingLayout>
   );
 }

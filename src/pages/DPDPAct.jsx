@@ -1,6 +1,6 @@
 import LandingLayout from "@/components/landing/LandingLayout";
 import PageHero from "@/components/landing/PageHero";
-import CtaBand from "@/components/landing/CtaBand";
+import CTASection from "@/components/landing/CTASection";
 import { Reveal } from "@/components/landing/primitives";
 import usePageTitle from "@/hooks/usePageTitle";
 
@@ -54,24 +54,22 @@ export default function DPDPAct() {
         eyebrow="The DPDP Act, explained"
         title="What the law asks of you, in plain words."
         subtitle="The DPDP Act is India's law for personal data. It says what a company may collect, what it must do in return and what it costs to get it wrong. Here is the whole of it, without the legal language."
-        primary={{ label: "Check your readiness", to: "/assessment" }}
-        secondary={{ label: "See how JShield solves it", to: "/#solution" }}
       />
 
       <section className="bg-slate-950 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
+            <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">
               Does it apply to you?
             </h2>
-            <p className="mt-3 text-lg text-slate-400">
+            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">
               Almost certainly. If your company keeps customer or employee details in any digital form, the law covers
               it. There is no small business exemption, and enforcement begins with a single complaint.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-10 md:grid-cols-2">
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-emerald-400">Covered by the law</h3>
+              <p className="text-sm font-semibold uppercase tracking-widest text-emerald-400">Covered by the law</p>
               <ul className="mt-4">
                 {APPLIES.map((t) => (
                   <li key={t} className="border-t border-white/10 py-3 text-sm leading-relaxed text-slate-300">
@@ -81,7 +79,7 @@ export default function DPDPAct() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-slate-500">Outside its scope</h3>
+              <p className="text-sm font-semibold uppercase tracking-widest text-slate-400">Outside its scope</p>
               <ul className="mt-4">
                 {EXEMPT.map((t) => (
                   <li key={t} className="border-t border-white/10 py-3 text-sm leading-relaxed text-slate-300">
@@ -97,10 +95,10 @@ export default function DPDPAct() {
       <section className="bg-slate-900/50 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
+            <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">
               Who is who under the Act
             </h2>
-            <p className="mt-3 text-lg text-slate-400">
+            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">
               Six roles carry the whole law. Every duty maps to one of them, and you will meet each term below before
               it is used.
             </p>
@@ -108,7 +106,7 @@ export default function DPDPAct() {
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {ROLES.map((r) => (
               <Reveal key={r.title} className="border-t border-white/10 pt-5">
-                <h3 className="text-base font-semibold text-white">{r.title}</h3>
+                <h3 className="font-semibold text-white">{r.title}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{r.desc}</p>
               </Reveal>
             ))}
@@ -119,17 +117,17 @@ export default function DPDPAct() {
       <section className="bg-slate-950 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
+            <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">
               What the Act expects of you
             </h2>
-            <p className="mt-3 text-lg text-slate-400">
+            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">
               Each duty in the law is a promise to the people whose data you hold.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {OBLIGATIONS.map((o) => (
               <Reveal key={o.title} className="border-t border-white/10 pt-5">
-                <h3 className="text-base font-semibold text-white">{o.title}</h3>
+                <h3 className="font-semibold text-white">{o.title}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{o.desc}</p>
               </Reveal>
             ))}
@@ -140,10 +138,10 @@ export default function DPDPAct() {
       <section className="bg-slate-900/50 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
+            <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">
               The timeline that matters
             </h2>
-            <p className="mt-3 text-lg text-slate-400">
+            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">
               These dates follow the official schedule set by the government. The biggest one is 13 May 2027, when the
               rules apply in full.
             </p>
@@ -151,7 +149,7 @@ export default function DPDPAct() {
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
             {DATES.map((d) => (
               <Reveal key={d.year} className="border-t border-white/10 pt-5">
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-indigo-400">{d.year}</h3>
+                <p className="text-sm font-semibold uppercase tracking-widest text-indigo-400">{d.year}</p>
                 <p className="mt-2 text-sm leading-relaxed text-slate-400">{d.text}</p>
               </Reveal>
             ))}
@@ -162,10 +160,10 @@ export default function DPDPAct() {
       <section className="bg-slate-950 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
-            <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
+            <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">
               What non-compliance costs
             </h2>
-            <p className="mt-3 text-lg text-slate-400">
+            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">
               The Data Protection Board, India's data regulator, handles enforcement. Penalties depend on the breach
               and are set after an inquiry.
             </p>
@@ -187,12 +185,7 @@ export default function DPDPAct() {
         </div>
       </section>
 
-      <CtaBand
-        title="Know where you stand before the deadline."
-        subtitle="Fourteen questions, a readiness score and a prioritised action list, in three minutes."
-        primary={{ label: "Check your readiness", to: "/assessment" }}
-        secondary={{ label: "Start free trial", to: "/trial" }}
-      />
+      <CTASection />
     </LandingLayout>
   );
 }

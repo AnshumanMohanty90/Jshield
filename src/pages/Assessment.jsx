@@ -84,10 +84,10 @@ export default function Assessment() {
               <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">
                 Free DPDP readiness assessment
               </span>
-              <h1 className="mt-3 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">
+              <h1 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
                 Find out where you stand on DPDP, in three minutes.
               </h1>
-              <p className="mt-5 text-lg leading-relaxed text-slate-300 text-pretty">
+              <p className="mt-4 max-w-[68ch] text-[17px] leading-[1.6] text-slate-200 text-pretty">
                 Answer fourteen questions across every duty in the law. Free. Your score appears as soon as you finish.
               </p>
               <button
@@ -96,7 +96,7 @@ export default function Assessment() {
               >
                 Start the assessment
               </button>
-              <p className="mt-4 text-xs text-slate-500">14 questions · 3 minutes · score on screen</p>
+              <p className="mt-4 text-xs text-slate-400">14 questions · 3 minutes · score on screen</p>
             </div>
           </motion.section>
         )}
@@ -112,7 +112,7 @@ export default function Assessment() {
             <div className="mx-auto max-w-2xl px-5 sm:px-8">
               <div className="flex items-center justify-between text-xs text-slate-400">
                 <span>Question {step + 1} of {total}</span>
-                <button onClick={back} className="text-slate-400 hover:text-white">
+                <button onClick={back} className="inline-flex min-h-[44px] items-center text-slate-400 hover:text-white">
                   Back
                 </button>
               </div>
@@ -123,7 +123,7 @@ export default function Assessment() {
                 />
               </div>
 
-              <h2 className="mt-8 text-2xl font-bold tracking-tight text-white">
+              <h2 className="mt-8 font-bold leading-[1.15] tracking-tight text-white text-balance">
                 {QUESTIONS[step].q}
               </h2>
               <div className="mt-6 divide-y divide-white/10 overflow-hidden rounded-xl ring-1 ring-white/10">
@@ -169,13 +169,13 @@ export default function Assessment() {
                     <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Your score</span>
                     <div className="mt-3 flex items-end gap-3">
                       <span className={`text-6xl font-bold tracking-tight ${t.tone}`}>{score}</span>
-                      <span className="mb-2 text-sm text-slate-500">/ 100</span>
+                      <span className="mb-2 text-sm text-slate-400">/ 100</span>
                     </div>
                     <p className="mt-3 text-sm text-slate-400">{t.label}</p>
-                    <p className="mt-3 text-base leading-relaxed text-slate-400">{t.desc}</p>
+                    <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">{t.desc}</p>
 
                     <div className="mt-10 border-t border-white/10 pt-10">
-                      <h3 className="text-xl font-bold text-white text-pretty">
+                      <h3 className="font-bold text-white text-pretty">
                         Close these gaps with a free 10-day trial.
                       </h3>
                       <div className="mt-6 max-w-xl">

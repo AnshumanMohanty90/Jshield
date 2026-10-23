@@ -98,3 +98,57 @@
     text-wrap: pretty;
   }
 }
+
+/* Public site: anchor links must not hide under the sticky header */
+html {
+  scroll-padding-top: 132px;
+}
+
+/* Visible keyboard focus on every link, button and field */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #94a3b8;
+  outline-offset: 2px;
+}
+
+@layer base {
+  /* Public site type scale: H1 36/56, H2 28/36, H3 20 */
+  .public-page h1 {
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .public-page h2 {
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .public-page h3 {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  @media (min-width: 640px) {
+    .public-page h1 {
+      font-size: 56px;
+    }
+    .public-page h2 {
+      font-size: 36px;
+    }
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

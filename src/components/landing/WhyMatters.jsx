@@ -13,10 +13,10 @@ export default function WhyMatters() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Why it matters now</span>
-          <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
+          <h2 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
             From 13 May 2027, the law asks for proof.
           </h2>
-          <p className="mt-3 text-lg text-slate-400 text-pretty">
+          <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400 text-pretty">
             India's Digital Personal Data Protection Act (DPDP) sets how companies collect, use and protect customer
             data.
           </p>

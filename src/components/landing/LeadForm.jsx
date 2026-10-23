@@ -6,10 +6,10 @@ import { workEmailError } from "@/lib/workEmail";
 export const COMPANY_SIZES = ["1 to 50", "51 to 200", "201 to 500", "501 to 1,000", "Over 1,000"];
 
 const INPUT_CLASS =
-  "h-11 w-full rounded-lg border border-white/10 bg-slate-900 px-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20";
+  "h-11 w-full rounded-lg border border-white/10 bg-slate-900 px-3 text-sm text-slate-100 placeholder:text-slate-400 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20";
 
 const EMAIL_BAD_CLASS =
-  "h-11 w-full rounded-lg border border-rose-400/50 bg-rose-500/10 px-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-rose-400 focus:ring-2 focus:ring-rose-500/20";
+  "h-11 w-full rounded-lg border border-rose-400/50 bg-rose-500/10 px-3 text-sm text-slate-100 placeholder:text-slate-400 outline-none transition focus:border-rose-400 focus:ring-2 focus:ring-rose-500/20";
 
 export default function LeadForm({ intent, sourcePage, score = null, fields, submitLabel, thankYou }) {
   const [form, setForm] = useState(() => Object.fromEntries(fields.map((f) => [f.name, ""])));
@@ -110,7 +110,7 @@ export default function LeadForm({ intent, sourcePage, score = null, fields, sub
                 (emailHint ? (
                   <p className="text-xs text-rose-400">{emailHint}</p>
                 ) : (
-                  f.hint && <p className="text-xs text-slate-500">{f.hint}</p>
+                  f.hint && <p className="text-xs text-slate-400">{f.hint}</p>
                 ))}
             </div>
           );
@@ -132,7 +132,7 @@ export default function LeadForm({ intent, sourcePage, score = null, fields, sub
           </>
         )}
       </button>
-      <p className="text-center text-xs text-slate-500">We do not share your details.</p>
+      <p className="text-center text-xs text-slate-400">We do not share your details.</p>
     </form>
   );
 }
