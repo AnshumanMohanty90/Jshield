@@ -23,10 +23,10 @@ const QUESTIONS = [
 ];
 
 const TIERS = [
-  { min: 75, label: "Audit-ready", desc: "You are ahead of most peers. JShield keeps you there, automatically.", tone: "text-emerald-400", chip: "bg-emerald-500/15 text-emerald-300" },
-  { min: 50, label: "On the right track", desc: "A few critical gaps remain. JShield closes them in weeks, not quarters.", tone: "text-sky-400", chip: "bg-sky-500/15 text-sky-300" },
-  { min: 25, label: "Early stage", desc: "Prioritise the fundamentals first. We will show you where to start.", tone: "text-amber-400", chip: "bg-amber-500/15 text-amber-300" },
-  { min: 0, label: "Significant exposure", desc: "Let us build your DPDP roadmap together, starting with a free assessment call.", tone: "text-rose-400", chip: "bg-rose-500/15 text-rose-300" },
+  { min: 75, label: "Audit-ready", desc: "Most duties are in place. The full report shows what is left before 13 May 2027.", tone: "text-emerald-400", chip: "bg-emerald-500/15 text-emerald-300" },
+  { min: 50, label: "On the right track", desc: "You have a base to build on. The full report shows which gaps to close first.", tone: "text-sky-400", chip: "bg-sky-500/15 text-sky-300" },
+  { min: 25, label: "Early stage", desc: "Most duties are not yet in place. The full report shows where to start.", tone: "text-amber-400", chip: "bg-amber-500/15 text-amber-300" },
+  { min: 0, label: "Significant exposure", desc: "Most duties are not yet in place. The full report shows where to start.", tone: "text-rose-400", chip: "bg-rose-500/15 text-rose-300" },
 ];
 
 function tierFor(score) {

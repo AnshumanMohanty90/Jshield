@@ -6,8 +6,8 @@ import usePageTitle from "@/hooks/usePageTitle";
 
 const PILLARS = [
   { icon: Lock, title: "Encryption everywhere", desc: "Data is encrypted in transit with TLS 1.3 and at rest with AES-256." },
-  { icon: ShieldCheck, title: "DPDP-native controls", desc: "Role-based access, audit logging and consent artifacts by design." },
-  { icon: Server, title: "Data residency", desc: "Hosted in India-region infrastructure with configurable residency for enterprise." },
+  { icon: ShieldCheck, title: "Access controls", desc: "You decide who can see and change each record. Every action is logged." },
+  { icon: Server, title: "Data residency", desc: "Your data is stored in India." },
   { icon: Eye, title: "Continuous monitoring", desc: "Alerts when a breach is suspected, a deadline is close or a setting changes." },
   { icon: Fingerprint, title: "Strong authentication", desc: "Single sign-on, two-step login and session controls." },
   { icon: FileCheck, title: "Audit-ready exports", desc: "Logs that cannot be changed later, with one-click export of your data record, consent and breach records." },
@@ -30,7 +30,7 @@ export default function Security() {
             How we protect your data
           </h1>
           <p className="mt-4 text-lg text-slate-300">
-            JShield is built with the same security posture we help you achieve.
+            We hold your data to the same rules we help you meet.
           </p>
         </div>
       </section>
@@ -56,7 +56,7 @@ export default function Security() {
 
       <section className="bg-slate-900/50 py-14">
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-white">Standards & commitments</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-white">Standards</h2>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {BADGES.map((b) => (
               <span

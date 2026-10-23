@@ -19,15 +19,15 @@ const NAV = [
     ],
   },
   {
-    group: "Risk & Compliance",
+    group: "Risk and compliance",
     items: [
       { label: "Security Safeguards", to: "/security-safeguards", icon: Lock },
       { label: "Vendor Risk", to: "/vendors", icon: Building2 },
-      { label: "Breach & Incidents", to: "/breaches", icon: AlertTriangle },
+      { label: "Breaches", to: "/breaches", icon: AlertTriangle },
     ],
   },
   {
-    group: "Records & Rights",
+    group: "Records and rights",
     items: [
       { label: "Data record", to: "/ropa", icon: FileText },
       { label: "Grievances", to: "/grievances", icon: MessageSquareWarning },

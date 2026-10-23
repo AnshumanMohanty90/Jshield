@@ -130,7 +130,7 @@ export default function DPDPAct() {
               What the Act expects of you
             </h2>
             <p className="mt-3 text-lg text-slate-400">
-              The law sets duties, not suggestions. Each one is a promise to the people whose data you hold.
+              Each duty in the law is a promise to the people whose data you hold.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">

@@ -23,7 +23,7 @@ export default function ConsentManagement() {
       <div className="mx-auto max-w-7xl px-5 pt-8 sm:px-8">
         <TabsList className="bg-slate-100">
           <TabsTrigger value="purposes" className="gap-1.5"><ShieldCheck className="h-4 w-4" /> Purposes</TabsTrigger>
-          <TabsTrigger value="records" className="gap-1.5"><FileKey className="h-4 w-4" /> Consent Records & Artifacts</TabsTrigger>
+          <TabsTrigger value="records" className="gap-1.5"><FileKey className="h-4 w-4" /> Consent records</TabsTrigger>
         </TabsList>
       </div>
 
@@ -61,11 +61,11 @@ export default function ConsentManagement() {
       <TabsContent value="records" className="mt-0">
         <EntityModule
           entityName="ConsentRecord"
-          title="Consent Records & Artifacts"
+          title="Consent records"
           subtitle="Every consent is cryptographically stamped with a unique ID and timestamp, giving tamper-proof proof of consent that the data subject can retrieve anytime."
           icon={FileKey}
           columns={[
-            { key: "artifact_id", label: "Artifact ID", className: "font-mono text-xs text-indigo-600" },
+            { key: "artifact_id", label: "Record ID", className: "font-mono text-xs text-indigo-600" },
             { key: "principal_name", label: "Principal", className: "font-medium text-slate-900" },
             { key: "purpose", label: "Purpose" },
             { key: "channel", label: "Channel" },
@@ -81,7 +81,7 @@ export default function ConsentManagement() {
             { key: "purpose", label: "Purpose", placeholder: "e.g. Onboarding Notice" },
             { key: "status", label: "Status", type: "select", options: CONSENT_STATUSES, default: "Granted" },
             { key: "channel", label: "Collection Channel", type: "select", options: CHANNELS },
-            { key: "artifact_id", label: "Artifact ID", placeholder: "Auto-generated if blank", default: genId() },
+            { key: "artifact_id", label: "Record ID", placeholder: "Auto-generated if blank", default: genId() },
             { key: "hash", label: "Consent Hash", placeholder: "Auto-generated if blank", default: genHash() },
             { key: "timestamp", label: "Timestamp", type: "datetime", default: new Date().toISOString() },
             { key: "involves_children", label: "Involves Children's Data", type: "boolean", default: false },

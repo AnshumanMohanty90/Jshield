@@ -40,7 +40,7 @@ export default function SecuritySafeguards() {
         { key: "status", label: "Implementation Status", type: "select", options: STATUSES, default: "Planned" },
         { key: "owner", label: "Control Owner", placeholder: "e.g. SecOps Lead" },
         { key: "last_reviewed", label: "Last Reviewed", type: "date" },
-        { key: "evidence", label: "Evidence / Artifact", placeholder: "Link or reference to proof" },
+        { key: "evidence", label: "Evidence / Proof", placeholder: "Link or reference to proof" },
         { key: "notes", label: "Notes", type: "textarea" },
       ]}
     />

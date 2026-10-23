@@ -144,7 +144,7 @@ export default function Hero() {
                 <div className="col-span-2">
                   <div className="flex items-center justify-between px-4 py-4">
                     <div>
-                      <div className="text-[10px] uppercase tracking-widest text-slate-500">Compliance posture</div>
+                      <div className="text-[10px] uppercase tracking-widest text-slate-500">Readiness</div>
                       <div className="text-sm font-semibold text-white">Healthy</div>
                     </div>
                     <Gauge />
