@@ -5,7 +5,7 @@ import Stepper from "./Stepper";
 const STEPS = [
   {
     title: "Check",
-    desc: "See where you stand against the law, with a score in 3 minutes.",
+    desc: "See where you stand against the law, with a score in about 5 minutes.",
   },
   {
     title: "Find",

@@ -30,11 +30,11 @@ export const PROFILE = [
   {
     id: "P3",
     q: "How many people's data do you hold?",
-    options: ["Under 1 lakh", "1 lakh to 10 lakh", "Over 10 lakh"],
+    options: ["Under 1 lakh", "1 lakh to 10 lakh", "10 lakh to 1 crore", "Over 1 crore"],
   },
   {
     id: "P4",
-    q: "Do you process data of anyone under 18?",
+    q: "Do you process data of children under 18, or of persons with disabilities through a guardian?",
     options: ["Yes", "No", "Not sure"],
   },
 ];
@@ -44,33 +44,33 @@ export const AREAS = [
   {
     id: "security",
     name: "Security safeguards",
-    weight: 22,
+    weight: 20,
     penalty: 250,
     questions: [
       {
         id: "Q1",
-        q: "Is personal data encrypted or masked when stored and when sent?",
+        q: "Is personal data encrypted or masked wherever it is stored or sent?",
         critical: true,
         capNone: "Capped because personal data is not encrypted or masked. Penalty up to Rs 250 crore.",
         capPart: "Capped because encryption or masking is only partly in place. Penalty up to Rs 250 crore.",
-        fix: "Encrypt personal data when stored and when sent.",
+        fix: "Encrypt or mask personal data wherever it is stored or sent.",
       },
       {
         id: "Q2",
-        q: "Is access to personal data limited by role and reviewed at least once a year?",
-        fix: "Set role-based access to personal data and review it every year.",
+        q: "Is access to personal data limited to staff who need it for their work?",
+        fix: "Limit access to personal data to staff who need it for their work.",
       },
       {
         id: "Q3",
-        q: "Do you log access to personal data and keep the logs for at least one year?",
-        fix: "Log access to personal data and keep the logs for one year.",
+        q: "Do you keep logs of who accessed personal data for at least one year?",
+        fix: "Log who accessed personal data and keep the logs for at least one year.",
       },
     ],
   },
   {
     id: "breach",
     name: "Breach response",
-    weight: 18,
+    weight: 16,
     penalty: 200,
     questions: [
       {
@@ -83,11 +83,16 @@ export const AREAS = [
       },
       {
         id: "Q5",
-        q: "Can you inform the Data Protection Board and send the detailed report within 72 hours?",
-        fix: "Prepare the 72-hour notice and detailed report to the Data Protection Board.",
+        q: "Have you tested that plan, for example with a drill, in the last 12 months?",
+        fix: "Test the breach plan with a drill at least once a year.",
       },
       {
         id: "Q6",
+        q: "Can you inform the Data Protection Board and file the detailed report within 72 hours?",
+        fix: "Prepare the 72-hour notice and detailed report to the Data Protection Board.",
+      },
+      {
+        id: "Q7",
         q: "Can you tell affected people about a breach quickly and in plain words?",
         fix: "Draft plain-language notices for the people affected by a breach.",
       },
@@ -96,21 +101,29 @@ export const AREAS = [
   {
     id: "consent",
     name: "Notice and consent",
-    weight: 15,
+    weight: 18,
     penalty: 50,
     questions: [
       {
-        id: "Q7",
+        id: "Q8",
+        q: "For each use of personal data, do you know whether it relies on consent or on a legitimate use the law allows?",
+        fix: "List each use of personal data and mark it consent or a legitimate use the law allows.",
+      },
+      {
+        id: "Q9",
         q: "Does every place you collect data show a clear notice of what you take and why?",
         fix: "Show a clear notice of what you take and why at every collection point.",
       },
       {
-        id: "Q8",
-        q: "Do you record each consent with time, purpose and channel?",
+        id: "Q10",
+        q: "Do you keep a record of each consent with its time, purpose and channel?",
+        recordCritical: true,
+        capNone: "Capped because each consent is not recorded with its time, purpose and channel. Penalty up to Rs 50 crore.",
+        capPart: "Capped because consent records are only partly in place. Penalty up to Rs 50 crore.",
         fix: "Record each consent with its time, purpose and channel.",
       },
       {
-        id: "Q9",
+        id: "Q11",
         q: "Can people withdraw consent as easily as they gave it?",
         fix: "Make withdrawing consent as easy as giving it.",
       },
@@ -118,20 +131,20 @@ export const AREAS = [
   },
   {
     id: "children",
-    name: "Children's data",
+    name: "Children and guardians",
     weight: 10,
     penalty: 200,
     questions: [
       {
-        id: "Q10",
-        q: "Do you verify a parent's consent before processing a child's data?",
+        id: "Q12",
+        q: "Do you verify consent from a parent or lawful guardian before processing their data?",
         critical: true,
-        capNone: "Capped because children's data is processed without verified parental consent. Penalty up to Rs 200 crore.",
-        capPart: "Capped because parental consent verification is only partly in place. Penalty up to Rs 200 crore.",
-        fix: "Verify a parent's consent before processing any child's data.",
+        capNone: "Capped because their data is processed without verified consent from a parent or lawful guardian. Penalty up to Rs 200 crore.",
+        capPart: "Capped because consent from a parent or lawful guardian is only partly verified. Penalty up to Rs 200 crore.",
+        fix: "Verify consent from a parent or lawful guardian before processing their data.",
       },
       {
-        id: "Q11",
+        id: "Q13",
         q: "Have you stopped tracking, behavioural monitoring and targeted ads aimed at children?",
         fix: "Stop tracking, behavioural monitoring and targeted ads aimed at children.",
       },
@@ -140,35 +153,35 @@ export const AREAS = [
   {
     id: "rights",
     name: "Rights and complaints",
-    weight: 9,
+    weight: 11,
     penalty: 50,
     questions: [
       {
-        id: "Q12",
-        q: "Can you act on requests to see, correct or erase data within the legal time?",
-        fix: "Set a workflow that closes data requests within the legal time.",
+        id: "Q14",
+        q: "Can you act on requests to see, correct or erase data within the time the rules set?",
+        fix: "Set a workflow that closes data requests within the time the rules set.",
       },
       {
-        id: "Q13",
-        q: "Do you publish a grievance contact and track each complaint to closure?",
-        fix: "Publish a grievance contact and track each complaint to closure.",
+        id: "Q15",
+        q: "Do you publish a grievance contact and resolve each complaint within 90 days?",
+        fix: "Publish a grievance contact and resolve each complaint within 90 days.",
       },
     ],
   },
   {
     id: "retention",
     name: "Retention and accuracy",
-    weight: 8,
+    weight: 7,
     penalty: 50,
     questions: [
       {
-        id: "Q14",
-        q: "Do you have a retention schedule and erase data when its purpose ends?",
-        fix: "Write a retention schedule and erase data when its purpose ends.",
+        id: "Q16",
+        q: "Do you erase personal data once its purpose is over, following a written retention schedule?",
+        fix: "Write a retention schedule and erase personal data once its purpose is over.",
       },
       {
-        id: "Q15",
-        q: "Do you keep personal data accurate when it is used for decisions?",
+        id: "Q17",
+        q: "Do you keep personal data accurate when it is used for decisions about people?",
         fix: "Check accuracy wherever personal data drives a decision.",
       },
     ],
@@ -180,12 +193,12 @@ export const AREAS = [
     penalty: 50,
     questions: [
       {
-        id: "Q16",
+        id: "Q18",
         q: "Does every vendor that handles your personal data have a signed contract with data protection terms?",
         fix: "Sign data protection terms with every vendor that handles personal data.",
       },
       {
-        id: "Q17",
+        id: "Q19",
         q: "Do you know which countries your data goes to and check them against government restrictions?",
         fix: "List the countries your data goes to and check them against restrictions.",
       },
@@ -198,24 +211,24 @@ export const AREAS = [
     penalty: 50,
     questions: [
       {
-        id: "Q18",
+        id: "Q20",
         q: "Do you keep one current map of the personal data you hold, where it sits and why?",
         fix: "Keep one current map of the personal data you hold, where it sits and why.",
       },
       {
-        id: "Q19",
+        id: "Q21",
         q: "Is a named person accountable for DPDP compliance, reporting to leadership?",
         fix: "Name one person accountable for DPDP compliance, reporting to leadership.",
       },
       {
-        id: "Q20",
+        id: "Q22",
         q: "Have you appointed a Data Protection Officer based in India?",
         sdf: true,
         penalty: 150,
         fix: "Appoint a Data Protection Officer based in India.",
       },
       {
-        id: "Q21",
+        id: "Q23",
         q: "Do you run a yearly data protection impact assessment and an independent audit?",
         sdf: true,
         penalty: 150,
@@ -225,16 +238,18 @@ export const AREAS = [
   },
 ];
 
-// The inline question shown on the home page.
+// The inline question shown on the home page: the data map question.
 export const INLINE_QUESTION = AREAS.find((a) => a.id === "governance").questions.find(
-  (q) => q.id === "Q18"
+  (q) => q.id === "Q20"
 );
 
 const REGULATED = ["Banking, NBFC or insurance", "Health", "Telecom, e-commerce or social media"];
 
 export function isSDF(profile) {
-  if (profile.P3 === "Over 10 lakh") return true;
-  return REGULATED.includes(profile.P1) && ["501 to 1,000", "Over 1,000"].includes(profile.P2);
+  if (profile.P3 === "Over 1 crore") return true;
+  return (
+    REGULATED.includes(profile.P1) && ["10 lakh to 1 crore", "Over 1 crore"].includes(profile.P3)
+  );
 }
 
 export function childrenInScope(profile) {
@@ -250,8 +265,8 @@ export function areasInUse(profile) {
   const list = AREAS.filter((a) => a.id !== "children" || kids).map((a) => {
     let w = a.weight;
     let questions = a.questions;
-    if (a.id === "children") w = 14;
-    if (a.id === "consent") w = kids ? 11 : 15;
+    if (kids && a.id === "children") w = 14;
+    if (kids && a.id === "consent") w = 14;
     if (regulated && a.id === "security") w += 2;
     if (regulated && a.id === "breach") w += 2;
     if (a.id === "governance" && !sdf) questions = questions.filter((q) => !q.sdf);
@@ -282,6 +297,7 @@ export function buildQuiz(profile) {
       id: q.id,
       q: q.q,
       critical: q.critical,
+      recordCritical: q.recordCritical,
       fix: q.fix,
       capNone: q.capNone,
       capPart: q.capPart,
@@ -293,7 +309,7 @@ export function buildQuiz(profile) {
 }
 
 export const BANDS = [
-  { min: 90, name: "Audit-ready", tone: "text-emerald-400", desc: "Most duties are in place and provable. Close what is left before 13 May 2027." },
+  { min: 90, name: "Strong", tone: "text-emerald-400", desc: "Most duties are in place and provable. Close what is left before 13 May 2027." },
   { min: 75, name: "Ready", tone: "text-sky-400", desc: "You are close. Close the remaining gaps before the deadline." },
   { min: 55, name: "Progressing", tone: "text-indigo-300", desc: "Halfway there. Work through the top gaps below first." },
   { min: 30, name: "Developing", tone: "text-amber-400", desc: "Core duties are missing. Start with the critical items below." },
@@ -304,7 +320,8 @@ export function bandFor(score) {
   return BANDS.find((b) => score >= b.min) || BANDS[BANDS.length - 1];
 }
 
-const BAND_RANK = { Exposed: 0, Developing: 1, Progressing: 2, Ready: 3, "Audit-ready": 4 };
+const BAND_RANK = { Exposed: 0, Developing: 1, Progressing: 2, Ready: 3, Strong: 4 };
+const bandByRank = (rank) => BANDS.find((b) => BAND_RANK[b.name] === rank);
 
 // Full scoring: area averages, weighted overall score, critical caps and top gaps.
 export function computeResult(profile, answers) {
@@ -324,35 +341,52 @@ export function computeResult(profile, answers) {
     areaResults.reduce((s, a) => s + a.score * a.weight, 0) / weightSum
   );
 
+  // Caps: critical questions cap at Exposed (Not yet or Not sure) or Developing (Partly);
+  // the record-critical consent item caps at Developing or Progressing.
   let band = bandFor(score);
   let capReason = null;
-
-  const criticals = areas.flatMap((a) => a.questions.filter((q) => q.critical));
-  const zeroCap = criticals.find((q) => points(q.id) === 0);
-  const partCap = criticals.find((q) => points(q.id) === 50);
-  if (zeroCap && BAND_RANK[band.name] > BAND_RANK.Exposed) {
-    band = bandFor(29);
-    capReason = zeroCap.capNone;
-  } else if (partCap && BAND_RANK[band.name] > BAND_RANK.Developing) {
-    band = bandFor(30);
-    capReason = partCap.capPart;
+  let capTarget = null;
+  for (const a of areas) {
+    for (const q of a.questions) {
+      const p = points(q.id);
+      let target = null;
+      let reason = null;
+      if (q.critical && p === 0) [target, reason] = [BAND_RANK.Exposed, q.capNone];
+      else if (q.critical && p === 50) [target, reason] = [BAND_RANK.Developing, q.capPart];
+      else if (q.recordCritical && p === 0) [target, reason] = [BAND_RANK.Developing, q.capNone];
+      else if (q.recordCritical && p === 50) [target, reason] = [BAND_RANK.Progressing, q.capPart];
+      if (target == null) continue;
+      if (BAND_RANK[band.name] > target && (capTarget == null || target < capTarget)) {
+        capTarget = target;
+        capReason = reason;
+      }
+    }
   }
+  if (capTarget != null) band = bandByRank(capTarget);
 
-  const gaps = areas
-    .flatMap((a) =>
-      a.questions
-        .filter((q) => points(q.id) < 100)
-        .map((q) => ({
-          id: q.id,
-          q: q.q,
-          fix: q.fix,
-          weight: a.weight,
-          penalty: q.sdf ? (q.penalty ?? a.penalty) : a.penalty,
-          gapPoints: (100 - points(q.id)) * (q.sdf ? (q.penalty ?? a.penalty) : a.penalty),
-        }))
-    )
-    .sort((x, y) => y.gapPoints - x.gapPoints || y.weight - x.weight)
-    .slice(0, 3);
+  // Gaps: critical and record-critical questions below 100 first (highest penalty first),
+  // then the rest by (100 minus points) x the area penalty ceiling, ties by area weight.
+  const flagged = [];
+  const rest = [];
+  for (const a of areas) {
+    for (const q of a.questions) {
+      const p = points(q.id);
+      if (p >= 100) continue;
+      const item = {
+        id: q.id,
+        q: q.q,
+        fix: q.fix,
+        weight: a.weight,
+        penalty: q.sdf ? (q.penalty ?? a.penalty) : a.penalty,
+        gapPoints: (100 - p) * (q.sdf ? (q.penalty ?? a.penalty) : a.penalty),
+      };
+      if (q.critical || q.recordCritical) flagged.push(item);
+      else rest.push(item);
+    }
+  }
+  flagged.sort((x, y) => y.penalty - x.penalty || y.weight - x.weight);
+  rest.sort((x, y) => y.gapPoints - x.gapPoints || y.weight - x.weight);
+  const gaps = [...flagged, ...rest].slice(0, 3);
 
   return { score, band, capReason, areas: areaResults, gaps };
 }

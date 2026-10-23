@@ -68,7 +68,7 @@ export default function Hero() {
               <CtaPrimary to="/assessment">Check your readiness</CtaPrimary>
               <CtaSecondary to="/trial">Start free trial</CtaSecondary>
             </div>
-            <p className="mt-4 text-[16px] font-semibold text-white">Free readiness check, up to 21 questions, score in 3 minutes.</p>
+            <p className="mt-4 text-[16px] font-semibold text-white">Free readiness check, about 5 minutes, score at the end.</p>
             <p className="mt-2 text-sm text-slate-400">Mapped to every duty in the DPDP Act and the DPDP Rules 2025</p>
           </div>
 

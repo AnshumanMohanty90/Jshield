@@ -22,7 +22,7 @@ export default function CTASection({ tone = false }) {
       <Reveal>
         <h2 className="text-white text-balance">See where you stand today.</h2>
         <p className="mt-4 max-w-[68ch] text-[17px] leading-[1.6] text-slate-300 text-pretty">
-          Answer up to 21 questions and see your readiness score in 3 minutes.
+          Answer the questions and see your readiness score in about 5 minutes.
         </p>
 
         <div className="mt-8 max-w-2xl">

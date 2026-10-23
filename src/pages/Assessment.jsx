@@ -24,7 +24,7 @@ function useCountdown() {
 
 export default function Assessment() {
   usePageTitle("Readiness assessment | JShield");
-  // Answer picked inline on the home page: open at the first question with it saved for Q18.
+  // Answer picked inline on the home page: open at the first question with it saved for Q20.
   const preselect = (() => {
     try {
       const v = window.sessionStorage.getItem(PRESELECT_KEY);
@@ -40,7 +40,7 @@ export default function Assessment() {
   const [stage, setStage] = useState(preselect !== null ? "quiz" : "intro");
   const [idx, setIdx] = useState(0);
   const [profile, setProfile] = useState({});
-  const [answers, setAnswers] = useState(preselect !== null ? { Q18: preselect } : {});
+  const [answers, setAnswers] = useState(preselect !== null ? { Q20: preselect } : {});
   const [result, setResult] = useState(null);
   const [showHow, setShowHow] = useState(false);
   const { weeks, days } = useCountdown();
@@ -112,11 +112,11 @@ export default function Assessment() {
                 Free DPDP readiness assessment
               </span>
               <h1 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
-                Find out where you stand on DPDP, in three minutes.
+                Find out where you stand on DPDP, in about 5 minutes.
               </h1>
               <p className="mt-4 max-w-[68ch] text-[17px] leading-[1.6] text-slate-200 text-pretty">
-                Answer a few questions about your company, then up to 21 questions across every duty in
-                the law. Free. Your score appears as soon as you finish.
+                Answer a few questions about your company, then questions across every duty in the
+                law. Free. About 5 minutes, and your score appears as soon as you finish.
               </p>
               <button
                 onClick={start}
@@ -124,7 +124,7 @@ export default function Assessment() {
               >
                 Start the assessment
               </button>
-              <p className="mt-4 text-[15px] text-slate-300">Up to 21 questions, 3 minutes, score on screen</p>
+              <p className="mt-4 text-[15px] text-slate-300">About 5 minutes, score on screen</p>
             </div>
           </motion.section>
         )}
@@ -211,6 +211,11 @@ export default function Assessment() {
                   : result.band.desc}
               </p>
 
+              <p className="mt-2 max-w-[68ch] text-[15px] leading-[1.6] text-slate-400 text-pretty">
+                Answers are self-reported. An inquiry or audit will ask for evidence of each one.
+              </p>
+              <p className="mt-1 text-[15px] text-slate-400">Not sure is counted as a gap.</p>
+
               {result.capReason && (
                 <p className="mt-4 rounded-lg border border-amber-400/30 bg-amber-500/10 px-4 py-3 text-sm leading-relaxed text-amber-200">
                   {result.capReason}
@@ -274,7 +279,9 @@ export default function Assessment() {
                   <div className="mt-1 space-y-4 rounded-xl px-5 py-5 text-sm leading-[1.7] text-slate-300 ring-1 ring-white/10">
                     <p>
                       We weight each duty area by the penalty it carries. Your score is the weighted
-                      average of your answers, and a missing critical duty caps your band.
+                      average of your answers. Critical questions cap your band: Not yet or Not
+                      sure caps it at Exposed, Partly at Developing. The consent record question
+                      caps it at Developing, or at Progressing when it is only partly in place.
                     </p>
                     <ul className="space-y-1.5">
                       {result.areas.map((a) => (
@@ -284,7 +291,7 @@ export default function Assessment() {
                       ))}
                     </ul>
                     <p>
-                      Bands: 90 to 100 Audit-ready, 75 to 89 Ready, 55 to 74 Progressing, 30 to 54
+                      Bands: 90 to 100 Strong, 75 to 89 Ready, 55 to 74 Progressing, 30 to 54
                       Developing, 0 to 29 Exposed.
                     </p>
                   </div>
