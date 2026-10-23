@@ -9,7 +9,7 @@ const PILLARS = [
   { icon: Server, title: "Data residency", desc: "Hosted in India-region infrastructure with configurable residency for enterprise." },
   { icon: Eye, title: "Continuous monitoring", desc: "Real-time alerts on breaches, SLA breaches and policy drift." },
   { icon: Fingerprint, title: "Strong authentication", desc: "SSO, MFA and session controls available on Growth and Enterprise." },
-  { icon: FileCheck, title: "Audit-ready exports", desc: "Immutable logs and one-click export of ROPA, consent and breach records." },
+  { icon: FileCheck, title: "Audit-ready exports", desc: "Logs that cannot be changed later, with one-click export of your data record, consent and breach records." },
 ];
 
 const BADGES = [
@@ -78,7 +78,7 @@ export default function Security() {
           <p className="mt-4 text-xs text-slate-500">
             Ten-day trial. No credit card required.{" "}
             <Link to="/contact" className="text-slate-400 underline-offset-2 hover:text-white hover:underline">
-              Talk to sales
+              Talk to us
             </Link>
           </p>
         </div>

@@ -45,8 +45,8 @@ const ADVANTAGES = [
     desc: "Technical training, co-selling support, marketing collateral and a partner success manager assigned to you.",
   },
   {
-    title: "Zero platform licensing cost for clients",
-    desc: "Your economics come from implementation, training and advisory, keeping the client's entry barrier low.",
+    title: "Simple commercials",
+    desc: "One clear price keeps the client's entry barrier low, while your revenue comes from implementation, training and advisory.",
   },
 ];
 
@@ -61,10 +61,10 @@ export default function PartnerProgram() {
     <LandingLayout>
       <PageHero
         eyebrow="Partner program"
-        title="Build a DPDP practice with JShield"
-        subtitle="Join the ecosystem of consultants, technology teams and advisors helping Indian enterprises become compliant, while building a high-margin services revenue line on India's fastest-growing regulatory mandate."
+        title="Build a compliance practice with JShield"
+        subtitle="Help Indian companies meet the data law and build a steady services revenue line alongside ours. Five partner tracks, each with a clear way to earn."
         primary={{ label: "Apply to become a partner", to: "/contact" }}
-        secondary={{ label: "Explore the solution", to: "/#solution" }}
+        secondary={{ label: "Start free trial", to: "/trial" }}
       />
 
       <section className="bg-slate-950 py-12">
@@ -130,10 +130,10 @@ export default function PartnerProgram() {
       </section>
 
       <CtaBand
-        title="Partner with a platform built for India's privacy mandate"
+        title="Partner with the platform built for India's data law"
         subtitle="Tell us about your practice and we will shape a track around it."
         primary={{ label: "Apply to become a partner", to: "/contact" }}
-        secondary={{ label: "Take the readiness assessment", to: "/assessment" }}
+        secondary={{ label: "Check your readiness", to: "/assessment" }}
       />
     </LandingLayout>
   );

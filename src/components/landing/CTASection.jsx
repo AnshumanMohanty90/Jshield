@@ -15,23 +15,24 @@ export default function CTASection() {
             }}
           />
           <div className="relative">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Ready to operationalize DPDP?</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl text-pretty">
+              See where you stand today.
+            </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-indigo-100">
-              Start your free trial today and see your compliance score{" "}
-              <strong className="whitespace-nowrap font-semibold text-white">within the first hour</strong>.
+              Get your readiness score within the first hour.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
-                to="/trial"
+                to="/assessment"
                 className="group inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
               >
-                Start free trial <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                Check your readiness <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </Link>
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/30 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                <MessageSquare className="h-4 w-4" /> Talk to sales
+                <MessageSquare className="h-4 w-4" /> Talk to us
               </Link>
             </div>
           </div>

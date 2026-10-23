@@ -6,57 +6,56 @@ import { Reveal } from "./primitives";
 const INDUSTRIES = [
   {
     key: "bfsi",
-    label: "BFSI & NBFC",
+    label: "Banks and lenders",
     headline: "Protect financial and customer data",
     points: [
-      "Consent governance for financial products",
-      "Audit-ready compliance workflows",
-      "Breach response and regulatory reporting",
-      "RBI-aligned data retention controls",
+      "Consent for every loan and card product",
+      "Customer data kept only as long as RBI rules allow",
+      "Audit reports ready to send",
     ],
   },
   {
     key: "saas",
-    label: "SaaS & Technology",
-    headline: "Scale privacy across cloud-native apps",
+    label: "Software companies",
+    headline: "Scale privacy across cloud apps",
     points: [
-      "User data governance and minimisation",
-      "Automated privacy operations",
-      "Scalable DSAR workflows",
-      "Multi-tenant data mapping",
+      "Clear rules on who can see customer data",
+      "Automated privacy work",
+      "Customer requests handled at scale",
+      "Data mapped across every customer and tenant",
     ],
   },
   {
     key: "health",
-    label: "Healthcare & Pharma",
-    headline: "Govern sensitive health data",
+    label: "Healthcare",
+    headline: "Protect sensitive health data",
     points: [
-      "Patient consent management",
+      "Patient consent on record",
       "Controlled access to health records",
-      "Data minimisation and retention",
-      "DPIA for clinical processing",
+      "Keep only the data you need, only as long as you need it",
+      "Risk review for clinical processing",
     ],
   },
   {
     key: "retail",
-    label: "E-Commerce & Retail",
+    label: "Retail and e-commerce",
     headline: "Track consent across commerce",
     points: [
-      "Marketing consent tracking",
-      "Third-party data sharing governance",
-      "Cookie and pixel management",
-      "Customer rights on demand",
+      "Marketing consent tracked",
+      "Clear rules for sharing data with third parties",
+      "Cookie and pixel control",
+      "Customer requests answered on deadline",
     ],
   },
   {
     key: "edtech",
-    label: "EdTech & Education",
-    headline: "Protect student and institutional data",
+    label: "Education",
+    headline: "Protect student and school data",
     points: [
-      "Parental consent workflows",
+      "Parent consent workflows",
       "Controlled retention practices",
-      "Centralised privacy management",
-      "Vendor and platform DPAs",
+      "One place for every privacy task",
+      "Vendor contracts on file",
     ],
   },
 ];
@@ -71,11 +70,11 @@ export default function Industries() {
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Built for your sector</span>
           <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
-            DPDP controls, <em className="text-indigo-300">tailored</em> to how you process data
+            Built for how your sector handles customer data.
           </h2>
-          <p className="mt-3 text-lg text-slate-400">
-            Different industries process personal data differently, and need different privacy controls. Whatever your
-            sector, JShield's guided sequence takes you from first data scan to an audit-ready posture in{" "}
+          <p className="mt-3 text-lg text-slate-400 text-pretty">
+            Different sectors handle customer data differently. Whatever yours does, JShield's guided path takes you
+            from first data scan to an audit-ready posture in{" "}
             <strong className="whitespace-nowrap font-semibold text-white">30 days</strong>.
           </p>
         </Reveal>
@@ -106,7 +105,7 @@ export default function Industries() {
           <div>
             <h3 className="text-xl font-semibold text-white">{ind.headline}</h3>
             <p className="mt-2 text-sm text-slate-400">
-              {ind.label} teams use JShield to operationalise DPDP without slowing the business.
+              {ind.label} teams use JShield to meet India's data law without slowing the business.
             </p>
           </div>
           <div className="grid gap-0 sm:grid-cols-2">

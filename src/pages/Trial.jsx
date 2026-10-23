@@ -27,7 +27,7 @@ export default function Trial() {
           <p className="mt-6 text-center text-sm text-slate-400">
             Prefer a guided walkthrough first?{" "}
             <Link to="/contact" className="text-slate-200 underline-offset-2 hover:text-white hover:underline">
-              Talk to sales
+              Talk to us
             </Link>
             .
           </p>

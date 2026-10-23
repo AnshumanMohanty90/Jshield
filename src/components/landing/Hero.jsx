@@ -41,14 +41,14 @@ function Gauge() {
   );
 }
 
-const NAV_ITEMS = ["Command", "Discovery", "Consents", "Cookies", "Vendors", "Breaches", "ROPA"];
+const NAV_ITEMS = ["Command", "Discovery", "Consents", "Cookies", "Vendors", "Breaches", "Data record"];
 
 const STATUS_ROWS = [
   { icon: Database, label: "Data assets", tone: "bg-emerald-400" },
   { icon: ShieldCheck, label: "Consents", tone: "bg-emerald-400" },
   { icon: AlertTriangle, label: "Breaches", tone: "bg-amber-400" },
   { icon: Cookie, label: "Cookies", tone: "bg-emerald-400" },
-  { icon: FileText, label: "ROPA", tone: "bg-emerald-400" },
+  { icon: FileText, label: "Data record", tone: "bg-emerald-400" },
   { icon: ShieldCheck, label: "Vendors", tone: "bg-amber-400" },
 ];
 
@@ -58,15 +58,23 @@ export default function Hero() {
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.02 }}
+              className="text-xs font-semibold uppercase tracking-widest text-indigo-400"
+            >
+              JShield, part of Jago AI
+            </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.05 }}
-              className="text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl"
+              className="mt-3 text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl text-pretty"
             >
-              DPDP compliance,{" "}
+              Get ready for India's data protection law{" "}
               <span className="whitespace-nowrap bg-gradient-to-r from-indigo-400 to-sky-300 bg-clip-text italic text-transparent">
-                made operational.
+                in 30 days.
               </span>
             </motion.h1>
             <motion.p
@@ -75,10 +83,8 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.12 }}
               className="mt-3 max-w-xl text-lg leading-relaxed text-slate-300"
             >
-              One workspace for the{" "}
-              <strong className="font-semibold text-white">complete DPDP program</strong>: discovery, consent,
-              breach response and records,{" "}
-              <em className="whitespace-nowrap text-slate-100">audit-ready by default</em>.
+              One place to record customer consent, find the personal data you hold and report breaches on time, with
+              proof ready for any audit.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -87,18 +93,26 @@ export default function Hero() {
               className="mt-6 flex flex-col gap-3 sm:flex-row"
             >
               <Link
-                to="/trial"
+                to="/assessment"
                 className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
+              >
+                <ClipboardCheck className="h-4 w-4" /> Check your readiness
+              </Link>
+              <Link
+                to="/trial"
+                className="group inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Start free trial <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </Link>
-              <Link
-                to="/assessment"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                <ClipboardCheck className="h-4 w-4" /> Take the DPDP readiness assessment
-              </Link>
             </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.24 }}
+              className="mt-4 text-xs leading-relaxed text-slate-500"
+            >
+              Built from the text of India's DPDP Act, Europe's GDPR and the US SOC 2 security standard
+            </motion.p>
           </div>
 
           <motion.div
@@ -151,7 +165,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="absolute -bottom-4 -right-4 hidden rounded-xl bg-slate-900 px-4 py-3 shadow-xl ring-1 ring-white/10 sm:block">
-              <div className="text-xs text-slate-300">Breach SLA: 71h remaining</div>
+              <div className="text-xs text-slate-300">71h left in the breach reporting window</div>
             </div>
           </motion.div>
         </div>

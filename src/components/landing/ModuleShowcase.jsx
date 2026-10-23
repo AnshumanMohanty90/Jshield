@@ -7,60 +7,53 @@ const TABS = [
   {
     key: "consent",
     icon: ShieldCheck,
-    title: "Consent Management",
+    title: "Customer consent",
     blurb: (
       <>
-        Solves consent governance <strong className="font-semibold text-slate-200">end to end</strong>: every
-        permission captured against a declared purpose, proven with a{" "}
-        <strong className="font-semibold text-slate-200">tamper-evident record</strong>, and withdrawable in a
-        single action.
+        Record every customer's permission, show proof at any time, and remove it in one click when they ask.
       </>
     ),
     points: [
-      "A central catalog of purposes every channel captures consent against",
-      "Tamper-proof hashes that prove each consent in an audit",
-      "Withdrawal handled in one action, with the full trail preserved",
-      "Capture across web, app, API and offline channels",
+      "One list of reasons you collect data, used everywhere",
+      "Proof that cannot be changed later",
+      "Permission removed in one click, with the history kept",
+      "Works on websites, apps and offline forms",
     ],
     mock: { metric: "1,284", label: "Active consents", trend: "+12% this month", bars: [62, 78, 71, 88, 95, 82, 90] },
   },
   {
     key: "breach",
     icon: AlertTriangle,
-    title: "Breach Response",
+    title: "Breach response",
     blurb: (
       <>
-        Solves the <strong className="font-semibold text-slate-200">72-hour problem</strong>: detection,
-        investigation, containment and Board notification run as one workflow, so nothing is improvised under
-        pressure.
+        Spot a breach, judge how serious it is and report it within the legal time limit, with every step on record.
       </>
     ),
     points: [
-      "Incident intake with severity-based routing",
+      "Report an incident and route it by how serious it is",
       "Affected records and root cause tracked in one place",
-      "Board notification prepared inside the 72-hour window",
-      "Containment through resolution as a single workflow",
+      "Regulator and customer notices prepared inside the legal window",
+      "Every step recorded, from detection to closure",
     ],
-    mock: { metric: "71h", label: "to DPB notification", trend: "SLA on track", bars: [30, 45, 60, 72, 55, 40, 35] },
+    mock: { metric: "71h", label: "left to report the breach", trend: "On track", bars: [30, 45, 60, 72, 55, 40, 35] },
   },
   {
-    key: "ropa",
+    key: "record",
     icon: FileText,
-    title: "Records of Processing",
+    title: "Data record",
     blurb: (
       <>
-        Solves the audit question: every processing activity documented with legal basis, retention and
-        ownership, <strong className="font-semibold text-slate-200">maintained continuously</strong> instead of
-        rebuilt annually.
+        Keep one live list of the personal data you hold, why you hold it and who you share it with.
       </>
     ),
     points: [
-      "A processing inventory that keeps itself current",
-      "Legal basis and retention attached to every activity",
-      "Owners and review cycles so records never go stale",
-      "Exports shaped for regulator and auditor requests",
+      "One live list of the personal data you hold and why",
+      "How long you keep each record, and the reason you hold it",
+      "Who you share it with, inside and outside India",
+      "Exports ready for any auditor request",
     ],
-    mock: { metric: "47", label: "processing activities", trend: "3 due for review", bars: [40, 52, 48, 60, 64, 58, 66] },
+    mock: { metric: "47", label: "records kept", trend: "3 due for review", bars: [40, 52, 48, 60, 64, 58, 66] },
   },
 ];
 
@@ -72,17 +65,10 @@ export default function ModuleShowcase() {
     <section id="solution" className="bg-slate-950 py-12">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
-          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Proof over paperwork</span>
+          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">What JShield does</span>
           <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
-            Solutions for the obligations that{" "}
-            <span className="whitespace-nowrap italic text-indigo-300">decide your exposure</span>
+            Three jobs the law cares about most, done for you.
           </h2>
-          <p className="mt-3 text-lg text-slate-400">
-            Three workflows where <em className="text-slate-200">proof</em> matters most, solved as{" "}
-            <span className="whitespace-nowrap">
-              <strong className="font-semibold text-slate-200">product</strong> rather than paperwork.
-            </span>
-          </p>
         </Reveal>
 
         <div className="mt-8 flex flex-wrap gap-2">

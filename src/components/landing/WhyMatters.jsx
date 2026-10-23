@@ -1,29 +1,10 @@
 import { motion } from "framer-motion";
-import { Reveal, AnimatedNumber } from "./primitives";
+import { Reveal } from "./primitives";
 
 const CARDS = [
-  {
-    stat: 250,
-    prefix: "₹",
-    suffix: " Cr",
-    statLabel: "maximum penalty under DPDP",
-    title: "Rising regulatory risk",
-    desc: <>The DPDP Act sets penalties as high as <strong className="whitespace-nowrap font-semibold text-slate-200">₹250 crore</strong> and raises scrutiny across consent, data principal rights and breach handling.</>,
-  },
-  {
-    stat: 8,
-    suffix: "",
-    statLabel: "core DPDP obligations",
-    title: "Mandatory privacy operations",
-    desc: <>Consent, rights requests, significant data fiduciary duties, breach response and grievance redressal are <strong className="whitespace-nowrap font-semibold text-slate-200">operational duties now</strong>, not legal footnotes.</>,
-  },
-  {
-    stat: 72,
-    suffix: "h",
-    statLabel: "breach notification window",
-    title: "Continuous readiness",
-    desc: <>Centralised visibility, governance workflows and <strong className="whitespace-nowrap font-semibold text-slate-200">audit readiness</strong> are what keep an enterprise aligned as the rules evolve.</>,
-  },
+  { pre: "Up to", stat: "Rs 250 crore", label: "fine for a single breach" },
+  { pre: "", stat: "7", label: "duties every company must run" },
+  { pre: "", stat: "72 hours", label: "to report a breach" },
 ];
 
 export default function WhyMatters() {
@@ -33,33 +14,27 @@ export default function WhyMatters() {
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Why it matters now</span>
           <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
-            DPDP compliance is now an{" "}
-            <span className="italic text-indigo-300">operational</span> business requirement
+            The law now asks for proof, not promises.
           </h2>
-          <p className="mt-3 text-lg text-slate-400">
-            The Act has changed how Indian organisations manage personal data, and{" "}
-            <em className="whitespace-nowrap text-slate-200">who answers when they do not</em>.
+          <p className="mt-3 text-lg text-slate-400 text-pretty">
+            India's Digital Personal Data Protection Act (DPDP) sets how companies collect, use and protect customer
+            data.
           </p>
         </Reveal>
 
         <div className="mt-8 grid gap-8 sm:grid-cols-3 sm:gap-0">
           {CARDS.map((c, i) => (
             <motion.div
-              key={c.title}
+              key={c.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className={`sm:px-8 ${i > 0 ? "sm:border-l sm:border-white/10" : ""}`}
             >
-              <div className="flex items-end gap-1.5">
-                <span className="text-4xl font-bold tracking-tight text-white">
-                  <AnimatedNumber value={c.stat} prefix={c.prefix} suffix={c.suffix} />
-                </span>
-              </div>
-              <p className="mt-1 text-xs font-medium uppercase tracking-wide text-slate-500">{c.statLabel}</p>
-              <h3 className="mt-5 text-base font-semibold text-white">{c.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{c.desc}</p>
+              {c.pre && <p className="text-sm font-medium text-slate-400">{c.pre}</p>}
+              <div className="text-4xl font-bold tracking-tight text-white text-pretty">{c.stat}</div>
+              <p className="mt-2 text-sm leading-relaxed text-slate-400">{c.label}</p>
             </motion.div>
           ))}
         </div>

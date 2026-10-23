@@ -34,7 +34,7 @@ const OBLIGATIONS = [
   { title: "Retention and erasure", desc: "Erase personal data once the purpose is served and consent is withdrawn or expires." },
   { title: "Security safeguards", desc: "Protect data with reasonable technical and operational controls, including for children." },
   { title: "Breach notification", desc: "Inform affected principals and report to the Board without delay when data is compromised." },
-  { title: "Principal rights", desc: "Honor requests for access, correction, erasure and grievance redressal on deadline." },
+  { title: "Customer requests", desc: "Answer requests to see, correct or delete their data, and resolve complaints, within the set deadlines." },
   { title: "Children's data", desc: "Process a child's data only with verifiable parental consent, and never track or target them." },
   { title: "Grievance redressal", desc: "Publish a grievance officer and respond to principals within the prescribed timelines." },
 ];
@@ -50,10 +50,10 @@ export default function DPDPAct() {
   return (
     <LandingLayout>
       <PageHero
-        eyebrow="The law, explained"
-        title="The DPDP Act, in the language of operators"
-        subtitle="The Digital Personal Data Protection Act, 2023 governs how every organization in India collects, uses, stores and shares personal data. Here is what it expects of you, without the legal fog."
-        primary={{ label: "Take the DPDP readiness assessment", to: "/assessment" }}
+        eyebrow="The DPDP Act, explained"
+        title="What the law asks of you, in plain words."
+        subtitle="The DPDP Act is India's law for personal data. It says what a company may collect, what it must do in return and what it costs to get it wrong. Here is the whole of it, without the legal language."
+        primary={{ label: "Check your readiness", to: "/assessment" }}
         secondary={{ label: "See how JShield solves it", to: "/#solution" }}
       />
 
@@ -64,8 +64,8 @@ export default function DPDPAct() {
               Does it apply to you?
             </h2>
             <p className="mt-3 text-lg text-slate-400">
-              Almost certainly. If your organization keeps personal details in any digital form, the Act covers it. There is no
-              small business exemption, and enforcement begins with a single complaint.
+              Almost certainly. If your company keeps customer or employee details in any digital form, the law covers
+              it. There is no small business exemption, and enforcement begins with a single complaint.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
@@ -105,7 +105,10 @@ export default function DPDPAct() {
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
               Who is who under the Act
             </h2>
-            <p className="mt-3 text-lg text-slate-400">Six roles carry the entire law. Every obligation maps to one of them.</p>
+            <p className="mt-3 text-lg text-slate-400">
+              Six roles carry the whole law. Every duty maps to one of them, and you will meet each term below before
+              it is used.
+            </p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {ROLES.map((r) => (
@@ -125,7 +128,7 @@ export default function DPDPAct() {
               What the Act expects of you
             </h2>
             <p className="mt-3 text-lg text-slate-400">
-              Ten obligations define a compliant data practice. Each one is a promise to the people whose data you hold.
+              The law sets duties, not suggestions. Each one is a promise to the people whose data you hold.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -146,8 +149,8 @@ export default function DPDPAct() {
               The timeline that matters
             </h2>
             <p className="mt-3 text-lg text-slate-400">
-              The dates below follow the official commencement schedule. JShield's weekwise readiness plan is a recommended
-              preparation sequence, separate from the statutory calendar.
+              These dates follow the official schedule set by the government. The biggest one is 13 May 2027, when the
+              rules apply in full.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -168,7 +171,8 @@ export default function DPDPAct() {
               What non-compliance costs
             </h2>
             <p className="mt-3 text-lg text-slate-400">
-              The Data Protection Board sets penalties after inquiry. The ceiling is high enough to end most businesses.
+              The Data Protection Board, India's data regulator, sets penalties after an inquiry. The ceiling is high
+              enough to end most businesses.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -189,10 +193,10 @@ export default function DPDPAct() {
       </section>
 
       <CtaBand
-        title="Turn the law into an operating plan"
-        subtitle="Score your readiness against every obligation in fourteen questions, then let JShield close the gaps."
-        primary={{ label: "Take the DPDP readiness assessment", to: "/assessment" }}
-        secondary={{ label: "Talk to sales", to: "/contact" }}
+        title="Know where you stand before the deadline."
+        subtitle="Fourteen questions, a readiness score and a prioritised action list, in three minutes."
+        primary={{ label: "Check your readiness", to: "/assessment" }}
+        secondary={{ label: "Start free trial", to: "/trial" }}
       />
     </LandingLayout>
   );

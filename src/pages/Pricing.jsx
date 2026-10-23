@@ -7,22 +7,22 @@ import { Check, ChevronDown, ArrowRight } from "lucide-react";
 const INCLUDED = [
   "All nine compliance modules",
   "Unlimited users and data owners",
-  "Consent artifacts and tamper-proof records",
-  "Records of Processing (ROPA)",
-  "Breach SLA tracking and DPB notifications",
-  "Vendor DPAs and risk scoring",
-  "Data principal rights workflows",
+  "Proof that cannot be changed later for every consent",
+  "Data record: what personal data you hold and why",
+  "Breach tracking and reports to the regulator, inside the legal window",
+  "Vendor contracts and risk scores",
+  "Customer requests to see or delete their data, handled on deadline",
   "Audit-ready exports",
   "Email support",
 ];
 
 const FAQ = [
-  { q: "Is JShield aligned with the DPDP Act 2023?", a: "Yes. Every module maps to a DPDP obligation, from consent and ROPA to breach notification and data principal rights." },
+  { q: "Is JShield aligned with the DPDP Act 2023?", a: "Yes. Every module maps to a duty in the law, from consent to breach reporting and customer requests to see or delete their data." },
   { q: "What is included in the trial?", a: "Everything. The full platform, all nine modules and every feature, with no limits, for ten days." },
   { q: "Do I need a credit card to start?", a: "No. The trial needs no credit card and there is nothing to pay during the trial." },
   { q: "How is the trial activated?", a: "Share your work email on the trial page and our team activates your trial personally, within one business day." },
-  { q: "What happens after the ten-day trial?", a: "The trial is the complete platform. When you are ready to roll it out across your organisation, contact sales about enterprise adoption." },
-  { q: "Can we export records for audits?", a: "Yes. ROPA, consent records and breach logs export as audit-ready documents in a single click." },
+  { q: "What happens after the ten-day trial?", a: "JShield costs Rs 12 lakh a year on its own, or added to any Jago plan. Talk to us when you are ready to roll it out across your company." },
+  { q: "Can we export records for audits?", a: "Yes. Your data record, consent records and breach logs export as audit-ready documents in a single click." },
 ];
 
 export default function Pricing() {
@@ -34,11 +34,11 @@ export default function Pricing() {
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Pricing</span>
           <h1 className="mt-3 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-pretty">
-            Everything. Free for ten days.
+            A free trial, then Rs 12 lakh a year.
           </h1>
           <p className="mt-4 text-lg text-slate-400 text-pretty">
-            The full platform, every module, no credit card. Use it for ten days, then talk to sales about enterprise
-            adoption.
+            The full platform for ten days at no cost. After that, Rs 12 lakh a year on its own, or added to any Jago
+            plan.
           </p>
         </div>
       </section>
@@ -51,14 +51,14 @@ export default function Pricing() {
 
               <div className="px-8 py-10 text-center sm:px-12">
                 <span className="inline-flex items-center rounded-full bg-indigo-500/15 px-3 py-1 text-xs font-semibold text-indigo-300">
-                  10-day full trial
+                  10-day free trial
                 </span>
                 <div className="mt-5 flex items-end justify-center gap-2">
-                  <span className="text-5xl font-bold tracking-tight text-white">Free</span>
-                  <span className="mb-1.5 text-sm text-slate-500">for 10 days</span>
+                  <span className="text-5xl font-bold tracking-tight text-white">Rs 12 lakh</span>
+                  <span className="mb-1.5 text-sm text-slate-500">a year</span>
                 </div>
                 <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-slate-400">
-                  No credit card required. No limits. Your compliance score within the first hour.
+                  Free for the first ten days. No credit card required. Your readiness score within the first hour.
                 </p>
                 <Link
                   to="/trial"
@@ -89,17 +89,16 @@ export default function Pricing() {
           <Reveal delay={0.08}>
             <div className="mt-8 flex flex-col gap-4 rounded-2xl border border-white/10 bg-slate-900/30 px-8 py-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <h3 className="text-base font-semibold text-white">After your trial</h3>
+                <h3 className="text-base font-semibold text-white">Prefer it with Jago?</h3>
                 <p className="mt-1 text-sm text-slate-400">
-                  The trial is the full product. To adopt it across your organisation, talk to sales about enterprise
-                  rollout.
+                  The same Rs 12 lakh a year on its own, or added to any Jago plan. Talk to us about what fits.
                 </p>
               </div>
               <Link
                 to="/contact"
                 className="group inline-flex flex-none items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Talk to sales <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                Talk to us <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </Link>
             </div>
           </Reveal>

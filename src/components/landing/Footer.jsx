@@ -41,7 +41,8 @@ export default function Footer() {
               <BrandLockup className="h-12 w-12" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
-              The privacy operations platform that operationalizes India's DPDP Act, from data discovery to breach response.
+              JShield helps Indian companies meet India's new data protection law, from finding personal data to
+              reporting breaches.
             </p>
           </div>
           {COLS.map((c) => (
@@ -60,8 +61,18 @@ export default function Footer() {
           ))}
         </div>
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center">
-          <p className="text-xs text-slate-500">© {new Date().getFullYear()} Jago AI. All rights reserved.</p>
-          <p className="text-xs text-slate-500">Built for data protection teams in India.</p>
+          <p className="text-xs text-slate-500">
+            © 2026 Jago AI · JShield is part of{" "}
+            <a
+              href="https://jagotech.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline-offset-2 transition-colors hover:text-white hover:underline"
+            >
+              Jago AI
+            </a>{" "}
+            · Built for data protection teams in India
+          </p>
         </div>
       </div>
     </footer>

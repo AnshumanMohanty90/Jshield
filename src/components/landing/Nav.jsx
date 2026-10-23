@@ -10,6 +10,7 @@ const LINKS = [
   { label: "DPDP Act", to: "/dpdp-act" },
   { label: "Pricing", to: "/pricing" },
   { label: "Partner Program", to: "/partners" },
+  { label: "Jago AI", to: "https://jagotech.ai", external: true },
 ];
 
 export default function Nav() {
@@ -43,21 +44,33 @@ export default function Nav() {
           </Link>
 
           <div className="hidden items-center gap-6 lg:flex">
-            {LINKS.map((l) => (
-              <Link
-                key={l.label}
-                to={l.to}
-                className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
-              >
-                {l.label}
-              </Link>
-            ))}
+            {LINKS.map((l) =>
+              l.external ? (
+                <a
+                  key={l.label}
+                  href={l.to}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
+                >
+                  {l.label}
+                </a>
+              ) : (
+                <Link
+                  key={l.label}
+                  to={l.to}
+                  className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
+                >
+                  {l.label}
+                </Link>
+              )
+            )}
             <Link
               to="/assessment"
               className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
             >
               <ClipboardCheck className="h-4 w-4" />
-              Take the DPDP readiness assessment
+              Check your readiness
             </Link>
           </div>
 
@@ -71,20 +84,32 @@ export default function Nav() {
         <div className="border-t border-white/10 bg-slate-950/95 px-5 py-4 backdrop-blur-xl lg:hidden">
           <div className="space-y-1">
             {LINKS.map((l) => (
-              <Link
-                key={l.label}
-                to={l.to}
-                className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-200 hover:bg-white/5"
-              >
-                {l.label}
-              </Link>
+              l.external ? (
+                <a
+                  key={l.label}
+                  href={l.to}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-200 hover:bg-white/5"
+                >
+                  {l.label}
+                </a>
+              ) : (
+                <Link
+                  key={l.label}
+                  to={l.to}
+                  className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-200 hover:bg-white/5"
+                >
+                  {l.label}
+                </Link>
+              )
             ))}
             <Link
               to="/assessment"
               className="mt-2 flex items-center gap-2 rounded-lg bg-white px-3 py-2.5 text-sm font-semibold text-slate-900"
             >
               <ClipboardCheck className="h-4 w-4" />
-              Take the DPDP readiness assessment
+              Check your readiness
             </Link>
           </div>
         </div>
