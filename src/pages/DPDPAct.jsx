@@ -8,7 +8,7 @@ import usePageTitle from "@/hooks/usePageTitle";
 const APPLIES = [
   "Customer, employee or patient records held in any computer, application or website",
   "Details collected on paper first, then typed or photographed into a digital system",
-  "Organizations outside India that offer goods or services to people in India online",
+  "Organisations outside India that offer goods or services to people in India online",
 ];
 
 const EXEMPT = [
@@ -20,7 +20,7 @@ const EXEMPT = [
 
 const ROLES = [
   { title: "Data Principal", desc: "The individual the data belongs to. The Act restores their say over how it is used." },
-  { title: "Data Fiduciary", desc: "Your organization. It decides why and how personal data is processed, and answers for it." },
+  { title: "Data Fiduciary", desc: "Your organisation. It decides why and how personal data is processed, and answers for it." },
   { title: "Significant Data Fiduciary", desc: "A fiduciary notified as significant. It carries additional duties such as impact assessments and audits." },
   { title: "Data Processor", desc: "Vendors and platforms that process data on your instructions. You remain accountable for them." },
   { title: "Consent Manager", desc: "A single accountable interface through which principals review and manage the consents they have given." },
