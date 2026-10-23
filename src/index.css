@@ -145,6 +145,19 @@ select:focus-visible,
   }
 }
 
+/* Assessment question heading: higher specificity than the .public-page h2 type scale,
+   so the question text keeps its own size and weight at every breakpoint */
+.public-page h2.question-heading {
+  font-size: 19px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+@media (min-width: 640px) {
+  .public-page h2.question-heading {
+    font-size: 22px;
+  }
+}
+
 /* A6: shared hover and keyboard-focus state for clickable rows */
 .public-page .row-hover {
   cursor: pointer;

@@ -153,7 +153,7 @@ export default function Assessment() {
                 />
               </div>
 
-              <h2 className="mt-5 max-w-[60ch] text-[19px] font-semibold leading-[1.3] tracking-tight text-white text-balance sm:text-[22px]">
+              <h2 className="question-heading mt-5 max-w-[60ch] tracking-tight text-white text-balance">
                 {current.q}
               </h2>
               <div
@@ -206,7 +206,9 @@ export default function Assessment() {
               </div>
               <p className="mt-3 text-[22px] font-semibold text-white">{result.band.name}</p>
               <p className="mt-2 max-w-[68ch] text-[17px] leading-[1.6] text-slate-300 text-pretty">
-                {result.band.desc}
+                {result.capReason
+                  ? `Your answers score ${result.score}, but a critical control is missing or partly in place, so your band stays ${result.band.name} until it is fixed.`
+                  : result.band.desc}
               </p>
 
               {result.capReason && (
@@ -237,7 +239,9 @@ export default function Assessment() {
 
               {result.gaps.length > 0 && (
                 <div className="mt-10 border-t border-white/10 pt-8">
-                  <h3 className="text-white">Your top three gaps.</h3>
+                  <h3 className="text-white">
+                    {result.gaps.length < 3 ? "Your gaps." : "Your top three gaps."}
+                  </h3>
                   <ol className="mt-4 space-y-4">
                     {result.gaps.map((g, i) => (
                       <li key={g.id} className="rounded-xl px-5 py-4 ring-1 ring-white/10">
@@ -288,7 +292,11 @@ export default function Assessment() {
               </div>
 
               <div className="mt-10 border-t border-white/10 pt-8">
-                <h3 className="text-white text-pretty">Close these gaps with a free 10-day trial.</h3>
+                <h3 className="text-white text-pretty">
+                  {result.gaps.length === 0
+                    ? "Keep your controls in order with a free 10-day trial."
+                    : "Close these gaps with a free 10-day trial."}
+                </h3>
                 <div className="mt-6 max-w-xl">
                   <LeadForm
                     intent="trial"
