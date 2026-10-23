@@ -1,7 +1,10 @@
 import LandingLayout from "@/components/landing/LandingLayout";
 import PageHero from "@/components/landing/PageHero";
+import Section from "@/components/landing/Section";
+import SectionHeading from "@/components/landing/SectionHeading";
+import Accordion from "@/components/landing/Accordion";
+import Stepper from "@/components/landing/Stepper";
 import CTASection from "@/components/landing/CTASection";
-import { Reveal } from "@/components/landing/primitives";
 import usePageTitle from "@/hooks/usePageTitle";
 
 const APPLIES = [
@@ -40,10 +43,10 @@ const OBLIGATIONS = [
 ];
 
 const DATES = [
-  { year: "2017", text: "The Supreme Court holds privacy to be a fundamental right, setting the constitutional foundation." },
-  { year: "August 2023", text: "The DPDP Act receives Presidential assent as India's first dedicated digital personal data law." },
-  { year: "November 2025", text: "The DPDP Rules are notified. The compliance clock starts on a staggered commencement schedule." },
-  { year: "13 MAY 2027", text: "The main duties apply in full." },
+  { title: "2017", desc: "The Supreme Court holds privacy to be a fundamental right, setting the constitutional foundation." },
+  { title: "August 2023", desc: "The DPDP Act receives Presidential assent as India's first dedicated digital personal data law." },
+  { title: "November 2025", desc: "The DPDP Rules are notified. The compliance clock starts on a staggered commencement schedule." },
+  { title: "13 MAY 2027", desc: "The main duties apply in full." },
 ];
 
 export default function DPDPAct() {
@@ -56,134 +59,79 @@ export default function DPDPAct() {
         subtitle="The DPDP Act is India's law for personal data. It says what a company may collect, what it must do in return and what it costs to get it wrong. Here is the whole of it, without the legal language."
       />
 
-      <section className="bg-slate-950 py-10 sm:py-16">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <Reveal className="max-w-2xl">
-            <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">
-              Does it apply to you?
-            </h2>
-            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">
-              Almost certainly. If your company keeps customer or employee details in any digital form, the law covers
-              it. There is no small business exemption, and enforcement begins with a single complaint.
-            </p>
-          </Reveal>
-          <div className="mt-8 grid gap-x-8 gap-y-10 md:grid-cols-2">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-emerald-400">Covered by the law</p>
-              <ul className="mt-4">
-                {APPLIES.map((t) => (
-                  <li key={t} className="border-t border-white/10 py-3 text-sm leading-relaxed text-slate-300">
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-slate-400">Outside its scope</p>
-              <ul className="mt-4">
-                {EXEMPT.map((t) => (
-                  <li key={t} className="border-t border-white/10 py-3 text-sm leading-relaxed text-slate-300">
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            </div>
+      <Section tone>
+        <SectionHeading
+          title="Does it apply to you?"
+          intro="Almost certainly. If your company keeps customer or employee details in any digital form, the law covers it. There is no small business exemption, and enforcement begins with a single complaint."
+        />
+        <div className="mt-8 grid gap-x-8 gap-y-10 md:grid-cols-2">
+          <div>
+            <p className="text-[15px] font-semibold text-emerald-400">Covered by the law</p>
+            <ul className="mt-4">
+              {APPLIES.map((t) => (
+                <li key={t} className="py-3 text-[17px] leading-[1.6] text-slate-300">
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-[15px] font-semibold text-slate-400">Outside its scope</p>
+            <ul className="mt-4">
+              {EXEMPT.map((t) => (
+                <li key={t} className="py-3 text-[17px] leading-[1.6] text-slate-300">
+                  {t}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </section>
+      </Section>
 
-      <section className="bg-slate-900/50 py-10 sm:py-16">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <Reveal className="max-w-2xl">
-            <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">
-              Who is who under the Act
-            </h2>
-            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">
-              Six roles carry the whole law. Every duty maps to one of them, and you will meet each term below before
-              it is used.
-            </p>
-          </Reveal>
-          <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-            {ROLES.map((r) => (
-              <Reveal key={r.title} className="border-t border-white/10 pt-5">
-                <h3 className="font-semibold text-white">{r.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{r.desc}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Section>
+        <SectionHeading
+          title="Who is who under the Act"
+          intro="Six roles carry the whole law. Every duty maps to one of them, and you will meet each term below before it is used."
+        />
+        <Accordion items={ROLES} />
+      </Section>
 
-      <section className="bg-slate-950 py-10 sm:py-16">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <Reveal className="max-w-2xl">
-            <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">
-              What the Act expects of you
-            </h2>
-            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">
-              Each duty in the law is a promise to the people whose data you hold.
-            </p>
-          </Reveal>
-          <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-            {OBLIGATIONS.map((o) => (
-              <Reveal key={o.title} className="border-t border-white/10 pt-5">
-                <h3 className="font-semibold text-white">{o.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{o.desc}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Section tone>
+        <SectionHeading
+          title="What the Act expects of you"
+          intro="Each duty in the law is a promise to the people whose data you hold."
+        />
+        <Accordion items={OBLIGATIONS} />
+      </Section>
 
-      <section className="bg-slate-900/50 py-10 sm:py-16">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <Reveal className="max-w-2xl">
-            <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">
-              The timeline that matters
-            </h2>
-            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">
-              These dates follow the official schedule set by the government. The biggest one is 13 May 2027, when the
-              rules apply in full.
-            </p>
-          </Reveal>
-          <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
-            {DATES.map((d) => (
-              <Reveal key={d.year} className="border-t border-white/10 pt-5">
-                <p className="text-sm font-semibold uppercase tracking-widest text-indigo-400">{d.year}</p>
-                <p className="mt-2 text-sm leading-relaxed text-slate-400">{d.text}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Section>
+        <SectionHeading
+          title="The timeline that matters"
+          intro="These dates follow the official schedule set by the government. The biggest one is 13 May 2027, when the rules apply in full."
+        />
+        <Stepper steps={DATES} ariaLabel="The timeline that matters" />
+      </Section>
 
-      <section className="bg-slate-950 py-10 sm:py-16">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <Reveal className="max-w-2xl">
-            <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">
-              What non-compliance costs
-            </h2>
-            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">
-              The Data Protection Board, India's data regulator, handles enforcement. Penalties depend on the breach
-              and are set after an inquiry.
+      <Section tone>
+        <SectionHeading
+          title="What non-compliance costs"
+          intro="The Data Protection Board, India's data regulator, handles enforcement. Penalties depend on the breach and are set after an inquiry."
+        />
+        <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">
+          <div>
+            <div className="text-4xl font-bold tracking-tight text-white">Rs 250 crore</div>
+            <p className="mt-2 text-[17px] leading-[1.6] text-slate-300">
+              The maximum penalty for failing to protect personal data with adequate security safeguards.
             </p>
-          </Reveal>
-          <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">
-            <div className="border-t border-white/10 pt-5">
-              <div className="text-4xl font-bold tracking-tight text-white">Rs 250 crore</div>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                The maximum penalty for failing to protect personal data with adequate security safeguards.
-              </p>
-            </div>
-            <div className="border-t border-white/10 pt-5">
-              <div className="text-4xl font-bold tracking-tight text-white">Rs 50 crore</div>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                The maximum for most other violations, from consent failures to neglected principal rights.
-              </p>
-            </div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold tracking-tight text-white">Rs 50 crore</div>
+            <p className="mt-2 text-[17px] leading-[1.6] text-slate-300">
+              The maximum for most other violations, from consent failures to neglected principal rights.
+            </p>
           </div>
         </div>
-      </section>
+      </Section>
 
       <CTASection />
     </LandingLayout>

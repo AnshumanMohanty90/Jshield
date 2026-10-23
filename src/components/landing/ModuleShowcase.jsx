@@ -1,6 +1,8 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Reveal } from "./primitives";
+import { useCallback, useState } from "react";
+import Section from "./Section";
+import SectionHeading from "./SectionHeading";
+import TabSwitcher from "./TabSwitcher";
+import { AnimatedNumber, useInView } from "./primitives";
 
 const TABS = [
   {
@@ -17,7 +19,7 @@ const TABS = [
       "Permission removed in one click, with the history kept",
       "Works on websites, apps and offline forms",
     ],
-    mock: { metric: "1,284", label: "Active consents", trend: "+12% this month", bars: [62, 78, 71, 88, 95, 82, 90] },
+    mock: { num: 1284, suffix: "", label: "Active consents", trend: "+12% this month", bars: [62, 78, 71, 88, 95, 82, 90] },
   },
   {
     key: "breach",
@@ -33,7 +35,7 @@ const TABS = [
       "Regulator and customer notices prepared inside the legal window",
       "Every step recorded, from detection to closure",
     ],
-    mock: { metric: "71h", label: "left to report the breach", trend: "On track", bars: [30, 45, 60, 72, 55, 40, 35] },
+    mock: { num: 71, suffix: "h", label: "left to report the breach", trend: "On track", bars: [30, 45, 60, 72, 55, 40, 35] },
   },
   {
     key: "record",
@@ -49,78 +51,67 @@ const TABS = [
       "Who you share it with, inside and outside India",
       "Exports ready for any auditor request",
     ],
-    mock: { metric: "47", label: "records kept", trend: "3 due for review", bars: [40, 52, 48, 60, 64, 58, 66] },
+    mock: { num: 47, suffix: "", label: "records kept", trend: "3 due for review", bars: [40, 52, 48, 60, 64, 58, 66] },
   },
 ];
 
+const TAB_ITEMS = TABS.map((t) => ({ key: t.key, label: t.title }));
+
+function GrowBars({ bars }) {
+  const [ref, inView] = useInView(0.15);
+  return (
+    <div ref={ref} className="mt-6 flex h-32 items-end gap-2">
+      {bars.map((h, i) => (
+        <div
+          key={i}
+          className="flex-1 rounded-t-md bg-gradient-to-t from-indigo-600 to-sky-400 transition-[height] duration-500 ease-out"
+          style={{ height: inView ? `${h}%` : "0%", transitionDelay: `${i * 50}ms` }}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default function ModuleShowcase() {
   const [active, setActive] = useState("consent");
+  const handleTabChange = useCallback((key) => setActive(key), []);
   const tab = TABS.find((t) => t.key === active);
 
   return (
-    <section id="solution" className="bg-slate-950 py-10 sm:py-16">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <Reveal className="max-w-2xl">
-          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">What JShield does</span>
-          <h2 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
-            The three jobs that matter most under the law.
-          </h2>
-        </Reveal>
+    <Section id="solution">
+      <SectionHeading label="What JShield does" title="The three jobs that matter most under the law." />
 
-        <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 border-b border-white/10">
-          {TABS.map((t) => (
-            <button
-              key={t.key}
-              onClick={() => setActive(t.key)}
-              className={`-mb-px border-b-2 pb-3 text-sm font-medium transition ${
-                active === t.key
-                  ? "border-white text-white"
-                  : "border-transparent text-slate-400 hover:text-slate-200"
-              }`}
-            >
-              {t.title}
-            </button>
-          ))}
+      <TabSwitcher
+        id="modules"
+        items={TAB_ITEMS}
+        activeKey={active}
+        onChange={handleTabChange}
+        autoMs={6000}
+        ariaLabel="What JShield does"
+      />
+
+      <div id="modules-panel" role="tabpanel" className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10">
+        <div>
+          <h3 className="text-white">{tab.title}</h3>
+          <p className="mt-2 text-[17px] leading-[1.6] text-slate-300 text-pretty">{tab.blurb}</p>
+          <ul className="mt-6">
+            {tab.points.map((p) => (
+              <li key={p} className="row-hover py-3 text-[17px] leading-[1.6] text-slate-300">
+                {p}
+              </li>
+            ))}
+          </ul>
         </div>
-
-        <motion.div
-          key={active}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45 }}
-          className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10"
-        >
-          <div>
-            <h3 className="font-semibold text-white">{tab.title}</h3>
-            <p className="mt-2 text-pretty text-slate-400">{tab.blurb}</p>
-            <ul className="mt-6">
-              {tab.points.map((p) => (
-                <li key={p} className="border-t border-white/10 py-3 text-sm text-slate-300">
-                  {p}
-                </li>
-              ))}
-            </ul>
+        <div>
+          <div className="text-xs font-semibold uppercase tracking-widest text-slate-400">{tab.mock.label}</div>
+          <div className="mt-2 text-4xl font-bold text-white">
+            <AnimatedNumber value={tab.mock.num} suffix={tab.mock.suffix} />
           </div>
-          <div>
-            <div className="text-xs font-semibold uppercase tracking-widest text-slate-400">{tab.mock.label}</div>
-            <div className="mt-2 text-4xl font-bold text-white">{tab.mock.metric}</div>
-            <p className="mt-1 text-sm text-slate-400">{tab.mock.trend}</p>
-            <div className="mt-6 flex h-32 items-end gap-2">
-              {tab.mock.bars.map((h, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ height: 0 }}
-                  whileInView={{ height: `${h}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.05 }}
-                  className="flex-1 rounded-t-md bg-gradient-to-t from-indigo-600 to-sky-400"
-                />
-              ))}
-            </div>
-            <p className="mt-3 text-xs text-slate-400">Sample data</p>
-          </div>
-        </motion.div>
+          <p className="mt-1 text-sm text-slate-400">{tab.mock.trend}</p>
+          <GrowBars bars={tab.mock.bars} />
+          <p className="mt-3 text-xs text-slate-400">Sample data</p>
+        </div>
       </div>
-    </section>
+    </Section>
   );
 }

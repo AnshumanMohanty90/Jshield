@@ -1,5 +1,7 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useCallback, useState } from "react";
+import Section from "./Section";
+import SectionHeading from "./SectionHeading";
+import TabSwitcher from "./TabSwitcher";
 import { Reveal } from "./primitives";
 
 const INDUSTRIES = [
@@ -64,59 +66,42 @@ const INDUSTRIES = [
   },
 ];
 
+const TAB_ITEMS = INDUSTRIES.map((i) => ({ key: i.key, label: i.label }));
+
 export default function Industries() {
   const [active, setActive] = useState("bfsi");
+  const handleTabChange = useCallback((key) => setActive(key), []);
   const ind = INDUSTRIES.find((i) => i.key === active);
 
   return (
-    <section className="bg-slate-900/50 py-10 sm:py-16">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <Reveal className="max-w-2xl">
-          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Built for your sector</span>
-          <h2 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
-            Set up for your sector.
-          </h2>
-          <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400 text-pretty">
-            JShield comes ready with the consent forms, retention rules and reports your sector needs.
-          </p>
-        </Reveal>
+    <Section>
+      <SectionHeading
+        label="Built for your sector"
+        title="Set up for your sector."
+        intro="JShield comes ready with the consent forms, retention rules and reports your sector needs."
+      />
 
-        <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 border-b border-white/10">
-          {INDUSTRIES.map((i) => (
-            <button
-              key={i.key}
-              onClick={() => setActive(i.key)}
-              className={`-mb-px border-b-2 pb-3 text-sm font-medium transition ${
-                active === i.key
-                  ? "border-white text-white"
-                  : "border-transparent text-slate-400 hover:text-slate-200"
-              }`}
-            >
-              {i.label}
-            </button>
-          ))}
+      <TabSwitcher
+        id="sectors"
+        items={TAB_ITEMS}
+        activeKey={active}
+        onChange={handleTabChange}
+        ariaLabel="Set up for your sector"
+      />
+
+      <div id="sectors-panel" role="tabpanel" className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10">
+        <div>
+          <h3 className="text-white">{ind.headline}</h3>
+          <p className="mt-2 text-[17px] leading-[1.6] text-slate-300">{ind.line}</p>
         </div>
-
-        <motion.div
-          key={active}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10"
-        >
-          <div>
-            <h3 className="font-semibold text-white">{ind.headline}</h3>
-            <p className="mt-2 text-sm text-slate-400">{ind.line}</p>
-          </div>
-          <ul className="sm:grid sm:grid-cols-2 sm:gap-x-8">
-            {ind.points.map((p) => (
-              <li key={p} className="border-t border-white/10 py-3.5 text-sm text-slate-300">
-                {p}
-              </li>
-            ))}
-          </ul>
-        </motion.div>
+        <ul className="grid gap-x-8 sm:grid-cols-2">
+          {ind.points.map((p) => (
+            <li key={p} className="row-hover py-3 text-[17px] leading-[1.6] text-slate-300">
+              {p}
+            </li>
+          ))}
+        </ul>
       </div>
-    </section>
+    </Section>
   );
 }

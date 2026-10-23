@@ -33,7 +33,7 @@ const COLS = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-slate-950 text-slate-400">
+    <footer className="bg-slate-950 text-slate-400">
       <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-16">
         <div className="grid gap-8 md:grid-cols-5">
           <div className="md:col-span-2">
@@ -53,7 +53,7 @@ export default function Footer() {
           </div>
           {COLS.map((c) => (
             <div key={c.title}>
-              <div className="text-xs font-semibold uppercase tracking-widest text-slate-400">{c.title}</div>
+              <div className="text-[15px] font-semibold text-slate-400">{c.title}</div>
               <ul className="mt-4 space-y-2.5">
                 {c.links.map(([label, to]) => (
                   <li key={label}>
@@ -66,7 +66,7 @@ export default function Footer() {
             </div>
           ))}
         </div>
-        <div className="mt-8 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center">
+        <div className="mt-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <p className="text-xs text-slate-400">
             © 2026 Jago AI · JShield is part of{" "}
             <a

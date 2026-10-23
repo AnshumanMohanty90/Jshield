@@ -1,5 +1,11 @@
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import Section from "./Section";
+import SectionHeading from "./SectionHeading";
 import { Reveal } from "./primitives";
+
+const DEADLINE = new Date("2027-05-13T00:00:00");
+const WEEK = 604800000;
+const DAY = 86400000;
 
 const CARDS = [
   { pre: "Up to", stat: "Rs 250 crore", label: "fine for a single breach" },
@@ -8,37 +14,44 @@ const CARDS = [
 ];
 
 export default function WhyMatters() {
-  return (
-    <section className="bg-slate-950 py-10 sm:py-16">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <Reveal className="max-w-2xl">
-          <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Why it matters now</span>
-          <h2 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
-            From 13 May 2027, the law asks for proof.
-          </h2>
-          <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400 text-pretty">
-            India's Digital Personal Data Protection Act (DPDP) sets how companies collect, use and protect customer
-            data.
-          </p>
-        </Reveal>
+  const [ms, setMs] = useState(() => DEADLINE.getTime() - Date.now());
 
-        <div className="mt-8 grid gap-8 sm:grid-cols-3 sm:gap-0">
-          {CARDS.map((c, i) => (
-            <motion.div
-              key={c.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className={`sm:px-8 ${i > 0 ? "sm:border-l sm:border-white/10" : ""}`}
-            >
-              {c.pre && <p className="text-sm text-slate-400">{c.pre}</p>}
-              <div className="text-4xl font-bold tracking-tight text-white text-pretty">{c.stat}</div>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">{c.label}</p>
-            </motion.div>
-          ))}
+  useEffect(() => {
+    const id = setInterval(() => setMs(DEADLINE.getTime() - Date.now()), 30000);
+    return () => clearInterval(id);
+  }, []);
+
+  const weeks = Math.max(0, Math.floor(ms / WEEK));
+  const days = Math.max(0, Math.floor((ms % WEEK) / DAY));
+
+  return (
+    <Section tone>
+      <SectionHeading
+        label="Why it matters now"
+        title="From 13 May 2027, the law asks for proof."
+        intro="India's Digital Personal Data Protection Act (DPDP) sets how companies collect, use and protect customer data."
+      />
+
+      <Reveal className="mt-8 flex flex-wrap items-end gap-x-10 gap-y-6">
+        <div>
+          <div className="text-[56px] font-bold leading-none tracking-tight text-white">{weeks}</div>
+          <div className="mt-1 text-sm text-slate-300">{weeks === 1 ? "week" : "weeks"}</div>
         </div>
+        <div>
+          <div className="text-[56px] font-bold leading-none tracking-tight text-white">{days}</div>
+          <div className="mt-1 text-sm text-slate-300">{days === 1 ? "day" : "days"}</div>
+        </div>
+      </Reveal>
+
+      <div className="mt-10 grid gap-8 sm:grid-cols-3">
+        {CARDS.map((c, i) => (
+          <Reveal key={c.label} delay={i * 60}>
+            {c.pre && <p className="text-sm text-slate-400">{c.pre}</p>}
+            <div className="text-4xl font-bold tracking-tight text-white text-pretty">{c.stat}</div>
+            <p className="mt-2 text-[17px] leading-[1.6] text-slate-300">{c.label}</p>
+          </Reveal>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

@@ -1,5 +1,9 @@
 import LandingLayout from "@/components/landing/LandingLayout";
 import PageHero from "@/components/landing/PageHero";
+import Section from "@/components/landing/Section";
+import SectionHeading from "@/components/landing/SectionHeading";
+import Accordion from "@/components/landing/Accordion";
+import Stepper from "@/components/landing/Stepper";
 import CTASection from "@/components/landing/CTASection";
 import { Reveal } from "@/components/landing/primitives";
 import LeadForm from "@/components/landing/LeadForm";
@@ -68,100 +72,71 @@ export default function PartnerProgram() {
         subtitle="Help Indian companies meet the data law and build a steady services revenue line alongside ours. Five partner tracks, each with a clear way to earn."
       />
 
-      <section className="bg-slate-950 py-10 sm:py-16">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <Reveal className="max-w-2xl">
-            <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">
-              Who we partner with
-            </h2>
-            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">
-              Five partnership tracks, each with a clear commercial model.
-            </p>
-          </Reveal>
-          <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-            {PARTNER_TYPES.map((p) => (
-              <Reveal key={p.title} className="border-t border-white/10 pt-5">
-                <h3 className="font-semibold text-white">{p.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{p.desc}</p>
-                <p className="mt-3 text-sm leading-relaxed text-slate-400">{p.earn}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Section tone>
+        <SectionHeading
+          title="Who we partner with"
+          intro="Five partnership tracks, each with a clear commercial model."
+        />
+        <Accordion
+          items={PARTNER_TYPES.map((p) => ({
+            title: p.title,
+            desc: (
+              <>
+                {p.desc}
+                <span className="mt-3 block text-slate-300">{p.earn}</span>
+              </>
+            ),
+          }))}
+        />
+      </Section>
 
-      <section className="bg-slate-900/50 py-10 sm:py-16">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <Reveal className="max-w-2xl">
-            <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">
-              Why partners choose JShield
-            </h2>
-            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">How partners earn with JShield.</p>
-          </Reveal>
-          <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">
-            {ADVANTAGES.map((a) => (
-              <Reveal key={a.title} className="border-t border-white/10 pt-5">
-                <h3 className="font-semibold text-white">{a.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{a.desc}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-slate-950 py-10 sm:py-16">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <Reveal className="max-w-2xl">
-            <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">
-              How it works
-            </h2>
-            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">From application to first engagement in three steps.</p>
-          </Reveal>
-          <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-3">
-            {STEPS.map((s) => (
-              <Reveal key={s.title} className="border-t border-white/10 pt-5">
-                <h3 className="font-semibold text-white">{s.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{s.desc}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="apply" className="bg-slate-900/50 py-10 sm:py-16">
-        <div className="mx-auto max-w-3xl px-5 sm:px-8">
-          <Reveal>
-            <h2 className="font-semibold text-white">Apply to become a partner</h2>
-            <p className="mt-1 text-sm text-slate-400">
-              Tell us about your practice.
-            </p>
-            <div className="mt-6">
-              <LeadForm
-                intent="partner"
-                sourcePage="/partners"
-                fields={[
-                  { name: "name", label: "Name", placeholder: "Priya Sharma" },
-                  { name: "work_email", label: "Work email", type: "email", placeholder: "you@firm.com" },
-                  { name: "company", label: "Firm", placeholder: "Acme Advisory" },
-                  {
-                    name: "partner_type",
-                    label: "Partner type",
-                    type: "select",
-                    options: PARTNER_TYPES.map((p) => p.title),
-                    placeholder: "Select a partner type",
-                  },
-                  { name: "city", label: "City", placeholder: "Bengaluru" },
-                  { name: "clients_served", label: "Number of clients you serve", placeholder: "25" },
-                ]}
-                submitLabel="Apply to become a partner"
-                thankYou="Thank you. Our partnerships team will be in touch."
-              />
+      <Section>
+        <SectionHeading title="Why partners choose JShield" intro="How partners earn with JShield." />
+        <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">
+          {ADVANTAGES.map((a) => (
+            <div key={a.title}>
+              <h3 className="text-white">{a.title}</h3>
+              <p className="mt-2 text-[17px] leading-[1.6] text-slate-300">{a.desc}</p>
             </div>
-          </Reveal>
+          ))}
         </div>
-      </section>
+      </Section>
 
-      <CTASection />
+      <Section tone>
+        <SectionHeading title="How it works" intro="From application to first engagement in three steps." />
+        <Stepper steps={STEPS} ariaLabel="How it works" />
+      </Section>
+
+      <Section id="apply" narrow>
+        <Reveal>
+          <h2 className="text-white text-balance">Apply to become a partner</h2>
+          <p className="mt-2 text-[17px] leading-[1.6] text-slate-300">Tell us about your practice.</p>
+          <div className="mt-8">
+            <LeadForm
+              intent="partner"
+              sourcePage="/partners"
+              fields={[
+                { name: "name", label: "Name", placeholder: "Priya Sharma" },
+                { name: "work_email", label: "Work email", type: "email", placeholder: "you@firm.com" },
+                { name: "company", label: "Firm", placeholder: "Acme Advisory" },
+                {
+                  name: "partner_type",
+                  label: "Partner type",
+                  type: "select",
+                  options: PARTNER_TYPES.map((p) => p.title),
+                  placeholder: "Select a partner type",
+                },
+                { name: "city", label: "City", placeholder: "Bengaluru" },
+                { name: "clients_served", label: "Number of clients you serve", placeholder: "25" },
+              ]}
+              submitLabel="Apply to become a partner"
+              thankYou="Thank you. Our partnerships team will be in touch."
+            />
+          </div>
+        </Reveal>
+      </Section>
+
+      <CTASection tone />
     </LandingLayout>
   );
 }

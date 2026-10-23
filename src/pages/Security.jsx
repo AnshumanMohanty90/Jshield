@@ -1,7 +1,8 @@
 import LandingLayout from "@/components/landing/LandingLayout";
 import PageHero from "@/components/landing/PageHero";
+import Section from "@/components/landing/Section";
+import Accordion from "@/components/landing/Accordion";
 import CTASection from "@/components/landing/CTASection";
-import { Reveal } from "@/components/landing/primitives";
 import usePageTitle from "@/hooks/usePageTitle";
 
 const PILLARS = [
@@ -27,31 +28,20 @@ export default function Security() {
         subtitle="We hold your data to the same rules we help you meet."
       />
 
-      <section className="bg-slate-950 py-10 sm:py-16">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-            {PILLARS.map((p, i) => (
-              <Reveal key={p.title} delay={(i % 3) * 0.06} className="border-t border-white/10 pt-5">
-                <h3 className="font-semibold text-white">{p.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{p.desc}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Section tone>
+        <Accordion items={PILLARS} />
+      </Section>
 
-      <section className="bg-slate-900/50 py-10 sm:py-16">
-        <div className="mx-auto max-w-3xl px-5 sm:px-8">
-          <h2 className="font-bold leading-[1.1] tracking-tight text-white text-balance">Standards</h2>
-          {STANDARDS.map((b) => (
-            <p key={b} className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400 text-pretty">
-              {b}
-            </p>
-          ))}
-        </div>
-      </section>
+      <Section narrow>
+        <h2 className="text-white text-balance">Standards</h2>
+        {STANDARDS.map((b) => (
+          <p key={b} className="mt-4 max-w-[68ch] text-[17px] leading-[1.6] text-slate-300 text-pretty">
+            {b}
+          </p>
+        ))}
+      </Section>
 
-      <CTASection />
+      <CTASection tone />
     </LandingLayout>
   );
 }

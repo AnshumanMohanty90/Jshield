@@ -1,22 +1,55 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
 
+// Fires true once, as soon as `threshold` of the element is visible.
+// Skipped entirely (returns true immediately) when reduced motion is preferred.
+export function useInView(threshold = 0.15) {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return undefined;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setInView(true);
+      return undefined;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [threshold]);
+
+  return [ref, inView];
+}
+
+// One short fade-up (12px, 300ms) starting when 15% of the element is visible.
+// Never leaves content faded; skipped under prefers-reduced-motion.
 export function Reveal({ children, delay = 0, className = "" }) {
-  const reduceMotion = useReducedMotion();
-
+  const [ref, inView] = useInView(0.15);
   return (
-    <motion.div
+    <div
+      ref={ref}
       className={className}
-      initial={reduceMotion ? false : { opacity: 0, y: 24 }}
-      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+      style={{
+        opacity: inView ? 1 : 0,
+        transform: inView ? "none" : "translateY(12px)",
+        transition: "opacity 300ms ease-out, transform 300ms ease-out",
+        transitionDelay: `${delay}ms`,
+      }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
+// Counts a number up once, when the element is shown.
 export function AnimatedNumber({ value, duration = 1.6, suffix = "", prefix = "" }) {
   const ref = useRef(null);
   const [display, setDisplay] = useState(0);
@@ -24,7 +57,11 @@ export function AnimatedNumber({ value, duration = 1.6, suffix = "", prefix = ""
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el) return undefined;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setDisplay(value);
+      return undefined;
+    }
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -41,7 +78,7 @@ export function AnimatedNumber({ value, duration = 1.6, suffix = "", prefix = ""
           }
         });
       },
-      { threshold: 0.4 }
+      { threshold: 0.15 }
     );
     obs.observe(el);
     return () => obs.disconnect();

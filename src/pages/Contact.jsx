@@ -1,5 +1,6 @@
 import LandingLayout from "@/components/landing/LandingLayout";
 import PageHero from "@/components/landing/PageHero";
+import Section from "@/components/landing/Section";
 import CTASection from "@/components/landing/CTASection";
 import LeadForm, { COMPANY_SIZES } from "@/components/landing/LeadForm";
 import usePageTitle from "@/hooks/usePageTitle";
@@ -65,45 +66,43 @@ export default function Contact() {
         }
       />
 
-      <section className="bg-slate-950 py-10 sm:py-16">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="grid gap-x-8 gap-y-10 lg:grid-cols-5">
-            <div className="lg:col-span-2">
-              {CHANNELS.map((c) => (
-                <div key={c.label} className="border-t border-white/10 py-5">
-                  <div className="text-xs font-semibold uppercase tracking-widest text-slate-400">{c.label}</div>
-                  <div className="mt-1 text-sm text-slate-200">
-                    {c.href ? (
-                      <a
-                        href={c.href}
-                        className="inline-flex min-h-[44px] items-center transition-colors hover:text-white"
-                      >
-                        {c.value}
-                      </a>
-                    ) : (
-                      c.value
-                    )}
-                  </div>
+      <Section tone>
+        <div className="grid gap-x-8 gap-y-10 lg:grid-cols-5">
+          <div className="lg:col-span-2">
+            {CHANNELS.map((c) => (
+              <div key={c.label} className="py-5">
+                <div className="text-[15px] font-semibold text-slate-400">{c.label}</div>
+                <div className="mt-1 text-[17px] leading-[1.6] text-slate-200">
+                  {c.href ? (
+                    <a
+                      href={c.href}
+                      className="inline-flex min-h-[44px] items-center transition-colors hover:text-white"
+                    >
+                      {c.value}
+                    </a>
+                  ) : (
+                    c.value
+                  )}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
+          </div>
 
-            <div className="lg:col-span-3">
-              <LeadForm
-                intent={isPricing ? "pricing" : "contact"}
-                sourcePage={isPricing ? "/contact?intent=pricing" : "/contact"}
-                fields={fields}
-                submitLabel={isPricing ? "Get my quote" : "Send"}
-                thankYou={
-                  isPricing
-                    ? "Thank you. We will email your quote to you."
-                    : "Thank you. Our team will be in touch."
-                }
-              />
-            </div>
+          <div className="lg:col-span-3">
+            <LeadForm
+              intent={isPricing ? "pricing" : "contact"}
+              sourcePage={isPricing ? "/contact?intent=pricing" : "/contact"}
+              fields={fields}
+              submitLabel={isPricing ? "Get my quote" : "Send"}
+              thankYou={
+                isPricing
+                  ? "Thank you. We will email your quote to you."
+                  : "Thank you. Our team will be in touch."
+              }
+            />
           </div>
         </div>
-      </section>
+      </Section>
 
       <CTASection />
     </LandingLayout>
