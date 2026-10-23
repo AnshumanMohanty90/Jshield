@@ -67,7 +67,7 @@ export default function ModuleShowcase() {
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">What JShield does</span>
           <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
-            Three jobs the law cares about most, done for you.
+            The three jobs that matter most under the law.
           </h2>
         </Reveal>
 

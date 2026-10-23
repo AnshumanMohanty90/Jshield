@@ -75,12 +75,10 @@ export default function Industries() {
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Built for your sector</span>
           <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
-            Built for how your sector handles customer data.
+            Set up for your sector.
           </h2>
           <p className="mt-3 text-lg text-slate-400 text-pretty">
-            Each sector collects and keeps customer data in its own way. JShield comes set up for yours, so you are
-            audit-ready in{" "}
-            <strong className="whitespace-nowrap font-semibold text-white">30 days</strong>.
+            JShield comes ready with the consent forms, retention rules and reports your sector needs.
           </p>
         </Reveal>
 

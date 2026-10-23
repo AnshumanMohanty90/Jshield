@@ -10,10 +10,10 @@ export default function PriceSection() {
           <div>
             <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Price</span>
             <h2 className="mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
-              One clear price.
+              Rs 12 lakh a year.
             </h2>
             <p className="mt-3 max-w-xl text-lg text-slate-400 text-pretty">
-              Rs 12 lakh a year on its own, or added to any Jago plan.
+              On its own, or added to any Jago plan. Free for the first 10 days.
             </p>
           </div>
           <div className="flex lg:justify-end">

@@ -11,8 +11,8 @@ export default function BetterWithJago() {
             Compliance built in from the start.
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-slate-400 text-pretty">
-            When your teams use Jago to ask questions or update records, consent and access rules are already in
-            place. No separate project.
+            When your teams use Jago to ask questions or update records, consent and access rules already apply, so
+            there is no separate compliance project.
           </p>
           <a
             href="https://jagotech.ai"

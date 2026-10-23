@@ -19,7 +19,7 @@ export default function CTASection() {
               See where you stand today.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-indigo-100">
-              Get your readiness score within the first hour.
+              Answer 14 questions and see your readiness score in 3 minutes.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link

@@ -64,13 +64,13 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.02 }}
               className="text-xs font-semibold uppercase tracking-widest text-indigo-400"
             >
-              JShield, part of Jago AI
+              DPDP Act compliance for Indian companies
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.05 }}
-              className="mt-3 text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl text-pretty"
+              className="mt-3 text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl text-balance"
             >
               Get ready for India's data protection law{" "}
               <span className="whitespace-nowrap bg-gradient-to-r from-indigo-400 to-sky-300 bg-clip-text italic text-transparent">
@@ -83,8 +83,8 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.12 }}
               className="mt-3 max-w-xl text-lg leading-relaxed text-slate-300"
             >
-              One place to record customer consent, find the personal data you hold and report breaches on time, with
-              proof ready for any audit.
+              Record customer consent, find the personal data you hold and report breaches on time. Every step is
+              logged, so you have proof for any audit.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -111,7 +111,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.24 }}
               className="mt-4 text-xs leading-relaxed text-slate-500"
             >
-              Built from the text of India's DPDP Act, Europe's GDPR and the US SOC 2 security standard
+              Mapped to every duty in the DPDP Act and the DPDP Rules 2025
             </motion.p>
           </div>
 
