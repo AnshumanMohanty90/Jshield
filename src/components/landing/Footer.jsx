@@ -7,7 +7,7 @@ const COLS = [
     links: [
       ["Solution overview", "/#solution"],
       ["DPDP Act", "/dpdp-act"],
-      ["Partner program", "/partners"],
+      ["Partner programme", "/partners"],
       ["Readiness assessment", "/assessment"],
     ],
   },
@@ -23,10 +23,10 @@ const COLS = [
   {
     title: "Legal",
     links: [
-      ["Privacy Policy", "/security"],
-      ["Terms", "/security"],
-      ["DPDP Statement", "/security"],
-      ["Sub-processors", "/security"],
+      ["Privacy Policy", "/privacy"],
+      ["Terms", "/terms"],
+      ["DPDP Statement", "/dpdp-statement"],
+      ["Sub-processors", "/sub-processors"],
     ],
   },
 ];

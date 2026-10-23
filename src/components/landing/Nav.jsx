@@ -9,7 +9,7 @@ const LINKS = [
   { label: "Solution", to: "/#solution" },
   { label: "DPDP Act", to: "/dpdp-act" },
   { label: "Pricing", to: "/pricing" },
-  { label: "Partner Program", to: "/partners" },
+  { label: "Partner programme", to: "/partners" },
   { label: "Jago AI", to: "https://jagotech.ai", external: true },
 ];
 

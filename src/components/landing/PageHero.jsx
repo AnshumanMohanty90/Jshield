@@ -32,14 +32,22 @@ export default function PageHero({ eyebrow, title, subtitle, primary, secondary 
           transition={{ duration: 0.5, delay: 0.14 }}
           className="mt-7 flex flex-col gap-3 sm:flex-row"
         >
-          {primary && (
-            <Link
-              to={primary.to}
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
-            >
-              {primary.label}
-            </Link>
-          )}
+          {primary &&
+            (primary.to.startsWith("#") ? (
+              <a
+                href={primary.to}
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
+              >
+                {primary.label}
+              </a>
+            ) : (
+              <Link
+                to={primary.to}
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50"
+              >
+                {primary.label}
+              </Link>
+            ))}
           {secondary && (
             <Link
               to={secondary.to}

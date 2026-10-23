@@ -163,6 +163,7 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
+              <p className="px-3 pb-2 pt-1 text-[10px] text-slate-500">Sample data</p>
             </div>
             <div className="absolute -bottom-4 -right-4 hidden rounded-xl bg-slate-900 px-4 py-3 shadow-xl ring-1 ring-white/10 sm:block">
               <div className="text-xs text-slate-300">71h left in the breach reporting window</div>

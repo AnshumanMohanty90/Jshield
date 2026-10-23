@@ -10,8 +10,8 @@ export default function ROPA() {
   return (
     <EntityModule
       entityName="ROPAEntry"
-      title="Records of Processing Activities (ROPA)"
-      subtitle="Auto-generate and maintain ROPA documentation as required under the DPDP Act. Track processing activities, data categories, and retention periods."
+      title="Data record"
+      subtitle="Keep one live list of the personal data you hold, why you hold it and who you share it with. Track processing activities, data categories and retention periods."
       icon={FileText}
       extraStats={(items) => [
         { label: "Total Activities", value: items.length, icon: FileText, tone: "emerald" },

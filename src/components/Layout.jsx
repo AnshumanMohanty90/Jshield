@@ -29,7 +29,7 @@ const NAV = [
   {
     group: "Records & Rights",
     items: [
-      { label: "ROPA", to: "/ropa", icon: FileText },
+      { label: "Data record", to: "/ropa", icon: FileText },
       { label: "Grievances", to: "/grievances", icon: MessageSquareWarning },
       { label: "Data Principal Rights", to: "/rights", icon: UserCog },
     ],
@@ -108,7 +108,7 @@ export default function Layout() {
             DPDP Act 2023 Aligned
           </div>
           <p className="mt-1.5 text-[11px] leading-relaxed text-slate-500">
-            Continuous monitoring across 9 compliance modules.
+            Continuous monitoring across every JShield module.
           </p>
         </div>
       </div>

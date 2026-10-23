@@ -3,6 +3,7 @@ import PageHero from "@/components/landing/PageHero";
 import CtaBand from "@/components/landing/CtaBand";
 import { Reveal } from "@/components/landing/primitives";
 import { Check, X } from "lucide-react";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const APPLIES = [
   "Customer, employee or patient records held in any computer, application or website",
@@ -23,7 +24,7 @@ const ROLES = [
   { title: "Significant Data Fiduciary", desc: "A fiduciary notified as significant. It carries additional duties such as impact assessments and audits." },
   { title: "Data Processor", desc: "Vendors and platforms that process data on your instructions. You remain accountable for them." },
   { title: "Consent Manager", desc: "A single accountable interface through which principals review and manage the consents they have given." },
-  { title: "Data Protection Board", desc: "The digital-first regulator. It fields complaints, runs inquiries and imposes penalties." },
+  { title: "Data Protection Board", desc: "The regulator. It hears complaints, runs inquiries and sets penalties." },
 ];
 
 const OBLIGATIONS = [
@@ -43,10 +44,11 @@ const DATES = [
   { year: "2017", text: "The Supreme Court holds privacy to be a fundamental right, setting the constitutional foundation." },
   { year: "August 2023", text: "The DPDP Act receives Presidential assent as India's first dedicated digital personal data law." },
   { year: "November 2025", text: "The DPDP Rules are notified. The compliance clock starts on a staggered commencement schedule." },
-  { year: "Ahead", text: "Several substantive obligations become enforceable in phases, roughly eighteen months from notification." },
+  { year: "13 MAY 2027", text: "The main duties apply in full." },
 ];
 
 export default function DPDPAct() {
+  usePageTitle("DPDP Act explained | JShield");
   return (
     <LandingLayout>
       <PageHero
@@ -171,19 +173,19 @@ export default function DPDPAct() {
               What non-compliance costs
             </h2>
             <p className="mt-3 text-lg text-slate-400">
-              The Data Protection Board, India's data regulator, sets penalties after an inquiry. The ceiling is high
-              enough to end most businesses.
+              The Data Protection Board, India's data regulator, handles enforcement. Penalties depend on the breach
+              and are set after an inquiry.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-slate-900 p-8">
-              <div className="text-4xl font-bold tracking-tight text-white">₹250 crore</div>
+              <div className="text-4xl font-bold tracking-tight text-white">Rs 250 crore</div>
               <p className="mt-2 text-sm leading-relaxed text-slate-400">
                 The maximum penalty for failing to protect personal data with adequate security safeguards.
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-slate-900 p-8">
-              <div className="text-4xl font-bold tracking-tight text-white">₹50 crore</div>
+              <div className="text-4xl font-bold tracking-tight text-white">Rs 50 crore</div>
               <p className="mt-2 text-sm leading-relaxed text-slate-400">
                 The maximum for most other violations, from consent failures to neglected principal rights.
               </p>

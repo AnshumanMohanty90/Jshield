@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import LandingLayout from "@/components/landing/LandingLayout";
 import { Reveal } from "@/components/landing/primitives";
 import { Check, ChevronDown, ArrowRight } from "lucide-react";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const INCLUDED = [
-  "All nine compliance modules",
-  "Unlimited users and data owners",
+  "Every JShield module",
+  "No per-user charges",
   "Proof that cannot be changed later for every consent",
   "Data record: what personal data you hold and why",
   "Breach tracking and reports to the regulator, inside the legal window",
@@ -18,7 +19,7 @@ const INCLUDED = [
 
 const FAQ = [
   { q: "Is JShield aligned with the DPDP Act 2023?", a: "Yes. Every module maps to a duty in the law, from consent to breach reporting and customer requests to see or delete their data." },
-  { q: "What is included in the trial?", a: "Everything. The full platform, all nine modules and every feature, with no limits, for ten days." },
+  { q: "What is included in the trial?", a: "Everything. The full platform, every JShield module and every feature, with no limits, for ten days." },
   { q: "Do I need a credit card to start?", a: "No. The trial needs no credit card and there is nothing to pay during the trial." },
   { q: "How is the trial activated?", a: "Share your work email on the trial page and our team activates your trial personally, within one business day." },
   { q: "What happens after the ten-day trial?", a: "JShield costs Rs 12 lakh a year on its own, or added to any Jago plan. Talk to us when you are ready to roll it out across your company." },
@@ -26,6 +27,7 @@ const FAQ = [
 ];
 
 export default function Pricing() {
+  usePageTitle("Pricing | JShield");
   const [open, setOpen] = useState(0);
 
   return (

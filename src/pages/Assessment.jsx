@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowLeft, Check, Sparkles } from "lucide-react";
 import LandingLayout from "@/components/landing/LandingLayout";
-import TrialCaptureForm from "@/components/landing/TrialCaptureForm";
+import LeadForm, { COMPANY_SIZES } from "@/components/landing/LeadForm";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const QUESTIONS = [
   { w: 2, q: "Have you mapped personal data across all systems and data flows?", opts: [{ l: "Not yet", s: 0 }, { l: "Partially", s: 1 }, { l: "Yes, fully", s: 2 }], rec: "Map and classify personal data across every system. Start in Data Discovery." },
@@ -34,6 +34,7 @@ function tierFor(score) {
 }
 
 export default function Assessment() {
+  usePageTitle("Readiness assessment | JShield");
   const [stage, setStage] = useState("intro");
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState([]);
@@ -68,10 +69,6 @@ export default function Assessment() {
     else setStage("intro");
   };
 
-  const gaps = QUESTIONS.map((q, i) => ({ q, score: answers[i] }))
-    .filter((x) => x.score < 2)
-    .sort((a, b) => a.score - b.score);
-
   return (
     <LandingLayout>
       <AnimatePresence mode="wait">
@@ -91,8 +88,8 @@ export default function Assessment() {
                 Find out where you stand on DPDP, in three minutes.
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-slate-300">
-                Answer fourteen questions across every DPDP obligation. Get your readiness score and a prioritised
-                action list the moment you finish. No signup, no credit card.
+                Answer fourteen questions across every duty in the law. Free. Your score appears as soon as you
+                finish.
               </p>
               <button
                 onClick={start}
@@ -168,9 +165,6 @@ export default function Assessment() {
             <div className="mx-auto max-w-3xl px-5 sm:px-8">
               {(() => {
                 const t = tierFor(score);
-                const summary = QUESTIONS.map((q, i) => (answers[i] < 2 ? q.rec : null))
-                  .filter(Boolean)
-                  .join(" | ");
                 return (
                   <div>
                     <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Your report</span>
@@ -183,43 +177,32 @@ export default function Assessment() {
                     </div>
                     <p className="mt-3 text-base leading-relaxed text-slate-400">{t.desc}</p>
 
-                    <div className="mt-10">
-                      <h3 className="text-sm font-semibold uppercase tracking-widest text-slate-500">
-                        Prioritised actions
-                      </h3>
-                      {gaps.length === 0 ? (
-                        <p className="mt-3 text-sm text-slate-400">
-                          You have no critical gaps. JShield will keep your program audit-ready as obligations evolve.
-                        </p>
-                      ) : (
-                        <ol className="mt-4 space-y-3">
-                          {gaps.map((g, i) => (
-                            <li key={i} className="border-t border-white/10 pt-3">
-                              <div>
-                                <p className="text-sm font-medium text-white">{g.q.q}</p>
-                                <p className="mt-0.5 text-sm text-slate-400">{g.q.rec}</p>
-                              </div>
-                            </li>
-                          ))}
-                        </ol>
-                      )}
-                    </div>
-
                     <div className="mt-10 border-t border-white/10 pt-10">
-                      <h3 className="text-xl font-bold text-white">Start your 10-day free trial</h3>
-                      <p className="mt-2 max-w-xl text-sm text-slate-400">
-                        Our team will activate your trial on your work email. Your assessment results carry over, so
-                        you begin with your action plan already in place.
-                      </p>
+                      <h3 className="text-xl font-bold text-white text-pretty">
+                        Get your full report: your score on each of the 7 duties, the gaps that carry the highest
+                        fines, and a 30-day action plan.
+                      </h3>
                       <div className="mt-6 max-w-xl">
-                        <TrialCaptureForm source="Assessment" score={score} tier={t.label} summary={summary} />
+                        <LeadForm
+                          intent="assessment"
+                          sourcePage="/assessment"
+                          score={score}
+                          fields={[
+                            { name: "name", label: "Name", placeholder: "Priya Sharma" },
+                            { name: "work_email", label: "Work email", type: "email", placeholder: "you@company.com" },
+                            { name: "company", label: "Company", placeholder: "Acme Pvt Ltd" },
+                            {
+                              name: "company_size",
+                              label: "Company size",
+                              type: "select",
+                              options: COMPANY_SIZES,
+                              placeholder: "Select company size",
+                            },
+                          ]}
+                          submitLabel="Email my report"
+                          thankYou="Thank you. Your report will reach your inbox within one working day. If you want to walk through it, reply to that email and we will set up a 30-minute call."
+                        />
                       </div>
-                      <p className="mt-5 text-xs text-slate-500">
-                        Prefer a guided walkthrough?{" "}
-                        <Link to="/contact" className="text-slate-400 underline-offset-2 hover:text-white hover:underline">
-                          Talk to us
-                        </Link>
-                      </p>
                     </div>
                   </div>
                 );

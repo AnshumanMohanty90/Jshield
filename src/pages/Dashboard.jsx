@@ -17,7 +17,7 @@ const MODULES = [
   { label: "Cookie Manager", to: "/cookies", icon: Cookie, tone: "text-amber-600 bg-amber-50" },
   { label: "Vendor Risk", to: "/vendors", icon: Building2, tone: "text-violet-600 bg-violet-50" },
   { label: "Breach & Incidents", to: "/breaches", icon: AlertTriangle, tone: "text-rose-600 bg-rose-50" },
-  { label: "ROPA", to: "/ropa", icon: FileText, tone: "text-emerald-600 bg-emerald-50" },
+  { label: "Data record", to: "/ropa", icon: FileText, tone: "text-emerald-600 bg-emerald-50" },
   { label: "Grievances", to: "/grievances", icon: MessageSquareWarning, tone: "text-orange-600 bg-orange-50" },
   { label: "Data Principal Rights", to: "/rights", icon: UserCog, tone: "text-cyan-600 bg-cyan-50" },
   { label: "DPIA", to: "/dpia", icon: FileSearch, tone: "text-indigo-600 bg-indigo-50" },
@@ -115,7 +115,7 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-xs font-medium uppercase tracking-widest text-indigo-300/80">Compliance Score</p>
-              <p className="mt-1 text-sm text-slate-400">Real-time posture across 11 modules</p>
+              <p className="mt-1 text-sm text-slate-400">Real-time posture across every JShield module</p>
             </div>
             <Activity className="h-5 w-5 text-indigo-400" />
           </div>

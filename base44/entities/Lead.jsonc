@@ -2,42 +2,48 @@
   "name": "Lead",
   "type": "object",
   "properties": {
-    "full_name": {
+    "name": {
       "type": "string",
-      "title": "Full Name"
+      "title": "Name"
     },
     "work_email": {
       "type": "string",
       "title": "Work Email"
     },
-    "company_name": {
+    "company": {
       "type": "string",
-      "title": "Company Name"
+      "title": "Company"
     },
     "designation": {
       "type": "string",
       "title": "Designation"
     },
-    "score": {
-      "type": "number",
-      "title": "Assessment Score"
-    },
-    "tier": {
+    "company_size": {
       "type": "string",
-      "title": "Readiness Tier"
+      "title": "Company Size"
     },
-    "summary": {
+    "message": {
       "type": "string",
-      "title": "Recommendation Summary"
+      "title": "Message"
     },
-    "source": {
+    "intent": {
       "type": "string",
-      "title": "Source",
+      "title": "Intent",
       "enum": [
-        "Trial Page",
-        "Assessment"
+        "assessment",
+        "trial",
+        "contact",
+        "partner"
       ],
-      "default": "Trial Page"
+      "default": "trial"
+    },
+    "source_page": {
+      "type": "string",
+      "title": "Source Page"
+    },
+    "readiness_score": {
+      "type": "number",
+      "title": "Readiness Score"
     },
     "status": {
       "type": "string",
@@ -52,10 +58,9 @@
     }
   },
   "required": [
-    "full_name",
+    "name",
     "work_email",
-    "company_name",
-    "designation"
+    "intent"
   ],
   "rls": {
     "create": {

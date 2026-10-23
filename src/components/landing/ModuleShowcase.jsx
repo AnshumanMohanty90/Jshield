@@ -133,6 +133,7 @@ export default function ModuleShowcase() {
                 />
               ))}
             </div>
+            <p className="mt-4 text-[10px] text-slate-500">Sample data</p>
           </div>
         </motion.div>
       </div>

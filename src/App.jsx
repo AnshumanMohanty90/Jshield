@@ -22,6 +22,7 @@ import Assessment from '@/pages/Assessment';
 import Trial from '@/pages/Trial';
 import DPDPAct from '@/pages/DPDPAct';
 import PartnerProgram from '@/pages/PartnerProgram';
+import LegalPage from '@/components/LegalPage';
 // App pages
 import Dashboard from '@/pages/Dashboard';
 import DataDiscovery from '@/pages/DataDiscovery';
@@ -69,6 +70,10 @@ const AuthenticatedApp = () => {
       <Route path="/trial" element={<Trial />} />
       <Route path="/dpdp-act" element={<DPDPAct />} />
       <Route path="/partners" element={<PartnerProgram />} />
+      <Route path="/privacy" element={<LegalPage title="Privacy Policy" />} />
+      <Route path="/terms" element={<LegalPage title="Terms" />} />
+      <Route path="/dpdp-statement" element={<LegalPage title="DPDP Statement" />} />
+      <Route path="/sub-processors" element={<LegalPage title="Sub-processors" />} />
       <Route element={<ProtectedRoute unauthenticatedElement={<Navigate to="/login" replace />} />}>
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />

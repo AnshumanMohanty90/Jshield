@@ -14,7 +14,7 @@ export function workEmailError(email) {
   }
   const domain = value.split("@")[1];
   if (FREE_EMAIL_DOMAINS.includes(domain)) {
-    return "Please use your work email. Personal addresses such as Gmail are not accepted.";
+    return "Please use your work email.";
   }
   return null;
 }

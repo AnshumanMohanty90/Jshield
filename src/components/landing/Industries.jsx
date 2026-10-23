@@ -8,6 +8,7 @@ const INDUSTRIES = [
     key: "bfsi",
     label: "Banks and lenders",
     headline: "Protect financial and customer data",
+    line: "Lenders use JShield to take consent at loan sign-up and prove it later.",
     points: [
       "Consent for every loan and card product",
       "Customer data kept only as long as RBI rules allow",
@@ -18,6 +19,7 @@ const INDUSTRIES = [
     key: "saas",
     label: "Software companies",
     headline: "Scale privacy across cloud apps",
+    line: "Software companies use JShield to show clients where their data sits and who can see it.",
     points: [
       "Clear rules on who can see customer data",
       "Automated privacy work",
@@ -29,6 +31,7 @@ const INDUSTRIES = [
     key: "health",
     label: "Healthcare",
     headline: "Protect sensitive health data",
+    line: "Hospitals and clinics use JShield to record patient consent and control who opens records.",
     points: [
       "Patient consent on record",
       "Controlled access to health records",
@@ -40,6 +43,7 @@ const INDUSTRIES = [
     key: "retail",
     label: "Retail and e-commerce",
     headline: "Track consent across commerce",
+    line: "Retailers use JShield to manage marketing consent and cookie choices across web and app.",
     points: [
       "Marketing consent tracked",
       "Clear rules for sharing data with third parties",
@@ -51,6 +55,7 @@ const INDUSTRIES = [
     key: "edtech",
     label: "Education",
     headline: "Protect student and school data",
+    line: "Schools and colleges use JShield to take parent consent for student data.",
     points: [
       "Parent consent workflows",
       "Controlled retention practices",
@@ -73,8 +78,8 @@ export default function Industries() {
             Built for how your sector handles customer data.
           </h2>
           <p className="mt-3 text-lg text-slate-400 text-pretty">
-            Different sectors handle customer data differently. Whatever yours does, JShield's guided path takes you
-            from first data scan to an audit-ready posture in{" "}
+            Each sector collects and keeps customer data in its own way. JShield comes set up for yours, so you are
+            audit-ready in{" "}
             <strong className="whitespace-nowrap font-semibold text-white">30 days</strong>.
           </p>
         </Reveal>
@@ -104,9 +109,7 @@ export default function Industries() {
         >
           <div>
             <h3 className="text-xl font-semibold text-white">{ind.headline}</h3>
-            <p className="mt-2 text-sm text-slate-400">
-              {ind.label} teams use JShield to meet India's data law without slowing the business.
-            </p>
+            <p className="mt-2 text-sm text-slate-400">{ind.line}</p>
           </div>
           <div className="grid gap-0 sm:grid-cols-2">
             {ind.points.map((p) => (
