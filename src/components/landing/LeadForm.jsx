@@ -56,14 +56,8 @@ export default function LeadForm({ intent, sourcePage, score = null, fields, sub
       if (score != null) payload.readiness_score = score;
       await base44.functions.invoke("captureLead", payload);
       setDone(true);
-    } catch (err) {
-      const message = err?.response?.data?.error || err?.data?.error || err?.message || "";
-      if (/work email/i.test(message)) {
-        setErrors((prev) => ({ ...prev, work_email: message }));
-        inputRefs.current.work_email?.focus();
-      } else {
-        setFormError(message || "Something went wrong. Please try again.");
-      }
+    } catch {
+      setFormError("Something went wrong. Please try again in a moment.");
     } finally {
       setSubmitting(false);
     }
@@ -79,8 +73,6 @@ export default function LeadForm({ intent, sourcePage, score = null, fields, sub
 
   return (
     <form onSubmit={submit} className="space-y-4" noValidate>
-      {formError && <div className="rounded-lg bg-rose-500/10 px-4 py-3 text-sm text-rose-300">{formError}</div>}
-
       <div className="grid gap-4 sm:grid-cols-2">
         {fields.map((f) => {
           const fullWidth = f.type === "textarea" || f.full;
@@ -162,6 +154,11 @@ export default function LeadForm({ intent, sourcePage, score = null, fields, sub
           submitLabel
         )}
       </button>
+      {formError && (
+        <p role="alert" className="text-xs text-rose-400">
+          {formError}
+        </p>
+      )}
       <p className="text-center text-xs text-slate-400">We do not share your details.</p>
     </form>
   );
