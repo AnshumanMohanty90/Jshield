@@ -42,7 +42,7 @@ export default function TabSwitcher({ id, items, activeKey, onChange, autoMs = 0
       onMouseLeave={() => setHovered(false)}
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}
-      className="mt-8 flex flex-wrap gap-x-2 gap-y-1"
+      className="mt-6 flex flex-wrap gap-x-2 gap-y-1"
     >
       {items.map((it, i) => {
         const active = i === activeIndex;

@@ -174,7 +174,7 @@ export default function Nav() {
                   <div className="grid grid-cols-2 gap-x-10 px-6 pb-6 pt-4">
                     {PRODUCT_GROUPS.map((g) => (
                       <div key={g.title}>
-                        <p className="text-[15px] font-semibold text-indigo-400">{g.title}</p>
+                        <p className="text-[16px] font-semibold text-indigo-400">{g.title}</p>
                         <div className="mt-1">
                           {g.links.map((l, i) => (
                             <Link
@@ -261,7 +261,7 @@ export default function Nav() {
                 <div className="pb-2 pl-4">
                   {PRODUCT_GROUPS.map((g) => (
                     <div key={g.title} className="border-t border-white/10 py-2">
-                      <p className="px-3 py-1.5 text-[15px] font-semibold text-indigo-400">
+                      <p className="px-3 py-1.5 text-[16px] font-semibold text-indigo-400">
                         {g.title}
                       </p>
                       {g.links.map((l) => (

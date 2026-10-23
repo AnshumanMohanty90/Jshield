@@ -89,7 +89,7 @@ export default function Industries() {
         ariaLabel="Set up for your sector"
       />
 
-      <div id="sectors-panel" role="tabpanel" className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10">
+      <div id="sectors-panel" role="tabpanel" className="mt-6 grid gap-8 lg:grid-cols-2 lg:gap-10">
         <div>
           <h3 className="text-white">{ind.headline}</h3>
           <p className="mt-2 text-[17px] leading-[1.6] text-slate-300">{ind.line}</p>

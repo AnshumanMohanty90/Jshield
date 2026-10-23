@@ -54,7 +54,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <span className="text-[15px] font-semibold text-indigo-400">
+            <span className="text-[16px] font-semibold text-indigo-400">
               DPDP Act compliance for Indian companies
             </span>
             <h1 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
@@ -68,8 +68,8 @@ export default function Hero() {
               <CtaPrimary to="/assessment">Check your readiness</CtaPrimary>
               <CtaSecondary to="/trial">Start free trial</CtaSecondary>
             </div>
-            <p className="mt-4 text-[15px] text-slate-300">Free readiness check, 14 questions, score in 3 minutes.</p>
-            <p className="mt-2 text-[15px] text-slate-300">Mapped to every duty in the DPDP Act and the DPDP Rules 2025</p>
+            <p className="mt-4 text-[16px] font-semibold text-white">Free readiness check, up to 21 questions, score in 3 minutes.</p>
+            <p className="mt-2 text-sm text-slate-400">Mapped to every duty in the DPDP Act and the DPDP Rules 2025</p>
           </div>
 
           <div className="relative">
@@ -85,7 +85,7 @@ export default function Hero() {
                   {NAV_ITEMS.map((x, i) => (
                     <div
                       key={x}
-                      className={`flex items-center gap-2 px-3 py-2 text-[11px] ${
+                      className={`flex items-center gap-2 px-3 py-1.5 text-[11px] ${
                         i === 0 ? "bg-indigo-500/20 text-white" : "text-slate-400"
                       }`}
                     >
@@ -94,7 +94,7 @@ export default function Hero() {
                   ))}
                 </div>
                 <div className="col-span-2">
-                  <div className="flex items-center justify-between px-4 py-4">
+                  <div className="flex items-center justify-between px-4 py-3">
                     <div>
                       <div className="text-[10px] uppercase tracking-widest text-slate-400">Readiness</div>
                       <div className="text-sm font-semibold text-white">Healthy</div>
@@ -105,7 +105,7 @@ export default function Hero() {
                     {STATUS_ROWS.map((r) => {
                       const Icon = r.icon;
                       return (
-                        <div key={r.label} className="flex items-center gap-2.5 px-4 py-2.5 text-[11px] text-slate-300">
+                        <div key={r.label} className="flex items-center gap-2.5 px-4 py-2 text-[11px] text-slate-300">
                           <Icon className="h-3.5 w-3.5 text-indigo-300" />
                           <span>{r.label}</span>
                           <span className={`ml-auto h-1.5 w-1.5 rounded-full ${r.tone}`} />

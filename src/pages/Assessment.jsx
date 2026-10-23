@@ -1,68 +1,100 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check } from "lucide-react";
 import LandingLayout from "@/components/landing/LandingLayout";
 import LeadForm, { COMPANY_SIZES } from "@/components/landing/LeadForm";
 import usePageTitle from "@/hooks/usePageTitle";
-import { QUESTIONS, PRESELECT_KEY } from "@/lib/assessmentQuestions";
+import { ANSWER_OPTIONS, PROFILE, PRESELECT_KEY, buildQuiz, computeResult } from "@/lib/assessmentQuestions";
 
-const TIERS = [
-  { min: 75, label: "Audit-ready", desc: "Most duties are in place. Start a free trial to close what is left before 13 May 2027.", tone: "text-emerald-400", chip: "bg-emerald-500/15 text-emerald-300" },
-  { min: 50, label: "On the right track", desc: "You have a base to build on. Start a free trial to close the gaps that matter most.", tone: "text-sky-400", chip: "bg-sky-500/15 text-sky-300" },
-  { min: 25, label: "Early stage", desc: "Most duties are not yet in place. Start a free trial to see where to begin.", tone: "text-amber-400", chip: "bg-amber-500/15 text-amber-300" },
-  { min: 0, label: "Significant exposure", desc: "Most duties are not yet in place. Start a free trial to build your first controls.", tone: "text-rose-400", chip: "bg-rose-500/15 text-rose-300" },
-];
+const DEADLINE = new Date("2027-05-13T00:00:00");
+const WEEK = 604800000;
+const DAY = 86400000;
 
-function tierFor(score) {
-  return TIERS.find((t) => score >= t.min);
+function useCountdown() {
+  const [ms, setMs] = useState(() => DEADLINE.getTime() - Date.now());
+  useEffect(() => {
+    const id = setInterval(() => setMs(DEADLINE.getTime() - Date.now()), 30000);
+    return () => clearInterval(id);
+  }, []);
+  return {
+    weeks: Math.max(0, Math.floor(ms / WEEK)),
+    days: Math.max(0, Math.floor((ms % WEEK) / DAY)),
+  };
 }
 
 export default function Assessment() {
   usePageTitle("Readiness assessment | JShield");
-  // Answer picked inline on the home page: open at question one with it selected.
+  // Answer picked inline on the home page: open at the first question with it saved for Q18.
   const preselect = (() => {
     try {
       const v = window.sessionStorage.getItem(PRESELECT_KEY);
       if (v === null) return null;
       window.sessionStorage.removeItem(PRESELECT_KEY);
-      return Number(v);
+      const i = Number(v);
+      return i >= 0 && i <= 3 ? i : null;
     } catch {
       return null;
     }
   })();
-  const [stage, setStage] = useState(preselect !== null ? "questions" : "intro");
-  const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState(preselect !== null ? [preselect] : []);
-  const [score, setScore] = useState(0);
 
-  const total = QUESTIONS.length;
-  const calcScore = (arr) => {
-    const totalW = QUESTIONS.reduce((s, q) => s + q.w, 0);
-    const got = QUESTIONS.reduce((s, q, i) => s + q.w * ((arr[i] ?? 0) / 2), 0);
-    return Math.round((got / totalW) * 100);
-  };
+  const [stage, setStage] = useState(preselect !== null ? "quiz" : "intro");
+  const [idx, setIdx] = useState(0);
+  const [profile, setProfile] = useState({});
+  const [answers, setAnswers] = useState(preselect !== null ? { Q18: preselect } : {});
+  const [result, setResult] = useState(null);
+  const [showHow, setShowHow] = useState(false);
+  const { weeks, days } = useCountdown();
+
+  const profileDone = PROFILE.every((p) => profile[p.id] != null);
+  const scoredSteps = useMemo(
+    () => (profileDone ? buildQuiz(profile).scored : []),
+    [profileDone, profile]
+  );
+  const steps = useMemo(() => [...PROFILE, ...scoredSteps], [scoredSteps]);
+
+  const current = steps[idx];
+  const isProfile = current && current.id.startsWith("P");
+  const scoredCount = steps.length - PROFILE.length;
+  const scoredIndex = idx - PROFILE.length;
+  const counter = isProfile
+    ? `About you, ${idx + 1} of ${PROFILE.length}`
+    : `Question ${scoredIndex + 1} of ${scoredCount}`;
+  const progress = isProfile
+    ? ((idx + 1) / PROFILE.length) * 100
+    : ((scoredIndex + 1) / scoredCount) * 100;
 
   const start = () => {
-    setStage("questions");
-    setStep(0);
-    setAnswers([]);
+    setStage("quiz");
+    setIdx(0);
   };
 
-  const choose = (s) => {
-    const next = [...answers];
-    next[step] = s;
-    setAnswers(next);
-    if (step < total - 1) setStep(step + 1);
-    else {
-      setScore(calcScore(next));
-      setStage("report");
+  const choose = (optionIndex) => {
+    if (isProfile) {
+      setProfile({ ...profile, [current.id]: current.options[optionIndex] });
+      setIdx(idx + 1);
+    } else {
+      const nextAnswers = { ...answers, [current.id]: optionIndex };
+      setAnswers(nextAnswers);
+      if (idx + 1 < steps.length) setIdx(idx + 1);
+      else {
+        setResult(computeResult(profile, nextAnswers));
+        setStage("report");
+      }
     }
   };
 
-  const back = () => {
-    if (step > 0) setStep(step - 1);
-    else setStage("intro");
-  };
+  const back = () => (idx > 0 ? setIdx(idx - 1) : setStage("intro"));
+
+  const opts = current
+    ? isProfile
+      ? current.options.map((l) => ({ l }))
+      : ANSWER_OPTIONS
+    : [];
+  const selected = current
+    ? isProfile
+      ? current.options.findIndex((l) => l === profile[current.id])
+      : (answers[current.id] ?? -1)
+    : -1;
 
   return (
     <LandingLayout>
@@ -76,14 +108,15 @@ export default function Assessment() {
             className="bg-slate-950 pb-10 pt-32 sm:pb-16 sm:pt-36"
           >
             <div className="mx-auto max-w-3xl px-5 sm:px-8">
-              <span className="text-[15px] font-semibold text-indigo-400">
+              <span className="text-[16px] font-semibold text-indigo-400">
                 Free DPDP readiness assessment
               </span>
               <h1 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
                 Find out where you stand on DPDP, in three minutes.
               </h1>
               <p className="mt-4 max-w-[68ch] text-[17px] leading-[1.6] text-slate-200 text-pretty">
-                Answer fourteen questions across every duty in the law. Free. Your score appears as soon as you finish.
+                Answer a few questions about your company, then up to 21 questions across every duty in
+                the law. Free. Your score appears as soon as you finish.
               </p>
               <button
                 onClick={start}
@@ -91,24 +124,24 @@ export default function Assessment() {
               >
                 Start the assessment
               </button>
-              <p className="mt-4 text-[15px] text-slate-300">14 questions, 3 minutes, score on screen</p>
+              <p className="mt-4 text-[15px] text-slate-300">Up to 21 questions, 3 minutes, score on screen</p>
             </div>
           </motion.section>
         )}
 
-        {stage === "questions" && (
+        {stage === "quiz" && current && (
           <motion.section
-            key="questions"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
+            key="quiz"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             // Top padding clears the fixed announcement bar (56px) + header (64px) + 24px,
             // so the question counter row and progress bar are never hidden underneath.
-            className="bg-slate-950 pt-[144px] pb-10 sm:pb-16"
+            className="bg-slate-950 pb-8 pt-[144px]"
           >
             <div className="mx-auto max-w-2xl px-5 sm:px-8">
               <div className="flex items-center justify-between text-xs text-slate-400">
-                <span>Question {step + 1} of {total}</span>
+                <span>{counter}</span>
                 <button onClick={back} className="inline-flex min-h-[44px] items-center text-slate-400 hover:text-white">
                   Back
                 </button>
@@ -116,36 +149,37 @@ export default function Assessment() {
               <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
                 <div
                   className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-sky-500 transition-all duration-300"
-                  style={{ width: `${((step + 1) / total) * 100}%` }}
+                  style={{ width: `${progress}%` }}
                 />
               </div>
 
-              <h2 className="mt-8 font-bold leading-[1.15] tracking-tight text-white text-balance">
-                {QUESTIONS[step].q}
+              <h2 className="mt-5 max-w-[60ch] text-[19px] font-semibold leading-[1.3] tracking-tight text-white text-balance sm:text-[22px]">
+                {current.q}
               </h2>
               <div
-                className="mt-6 divide-y divide-white/10 overflow-hidden rounded-xl ring-1 ring-white/10"
+                className="mt-4 divide-y divide-white/10 overflow-hidden rounded-xl ring-1 ring-white/10"
                 role="radiogroup"
-                aria-label={QUESTIONS[step].q}
+                aria-label={current.q}
               >
-                {QUESTIONS[step].opts.map((o) => {
-                  const selected = answers[step] === o.s;
+                {opts.map((o, i) => {
+                  const isSelected = i === selected;
                   return (
                     <button
                       key={o.l}
-                      onClick={() => choose(o.s)}
+                      type="button"
+                      onClick={() => choose(i)}
                       role="radio"
-                      aria-checked={selected}
-                      className={`flex w-full items-center gap-3 px-5 py-4 text-left text-sm transition ${
-                        selected ? "bg-indigo-500/15 text-white" : "hover:bg-white/5 text-slate-300"
+                      aria-checked={isSelected}
+                      className={`flex min-h-[48px] w-full items-center gap-3 px-5 text-left text-[17px] transition ${
+                        isSelected ? "bg-indigo-500/15 text-white" : "hover:bg-white/5 text-slate-300"
                       }`}
                     >
                       <span
-                        className={`flex h-6 w-6 flex-none items-center justify-center rounded-full border-2 transition ${
-                          selected ? "border-indigo-500 bg-indigo-500 text-white" : "border-slate-600"
+                        className={`flex h-5 w-5 flex-none items-center justify-center rounded-full border-2 transition ${
+                          isSelected ? "border-indigo-500 bg-indigo-500 text-white" : "border-slate-600"
                         }`}
                       >
-                        {selected && <Check className="h-3.5 w-3.5" />}
+                        {isSelected && <Check className="h-3 w-3" />}
                       </span>
                       {o.l}
                     </button>
@@ -156,56 +190,134 @@ export default function Assessment() {
           </motion.section>
         )}
 
-        {stage === "report" && (
+        {stage === "report" && result && (
           <motion.section
             key="report"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            className="bg-slate-950 py-10 sm:py-16"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="bg-slate-950 pb-16 pt-[144px]"
           >
             <div className="mx-auto max-w-3xl px-5 sm:px-8">
-              {(() => {
-                const t = tierFor(score);
-                return (
-                  <div>
-                    <span className="text-[15px] font-semibold text-indigo-400">Your score</span>
-                    <div className="mt-3 flex items-end gap-3">
-                      <span className={`text-6xl font-bold tracking-tight ${t.tone}`}>{score}</span>
-                      <span className="mb-2 text-sm text-slate-400">/ 100</span>
-                    </div>
-                    <p className="mt-3 text-sm text-slate-400">{t.label}</p>
-                    <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-400">{t.desc}</p>
+              <span className="text-[16px] font-semibold text-indigo-400">Your score</span>
+              <div className="mt-3 flex items-end gap-3">
+                <span className={`text-6xl font-bold tracking-tight ${result.band.tone}`}>{result.score}</span>
+                <span className="mb-2 text-sm text-slate-400">/ 100</span>
+              </div>
+              <p className="mt-3 text-[22px] font-semibold text-white">{result.band.name}</p>
+              <p className="mt-2 max-w-[68ch] text-[17px] leading-[1.6] text-slate-300 text-pretty">
+                {result.band.desc}
+              </p>
 
-                    <div className="mt-10 border-t border-white/10 pt-10">
-                      <h3 className="font-bold text-white text-pretty">
-                        Close these gaps with a free 10-day trial.
-                      </h3>
-                      <div className="mt-6 max-w-xl">
-                        <LeadForm
-                          intent="trial"
-                          sourcePage="/assessment"
-                          score={score}
-                          fields={[
-                            { name: "name", label: "Name", placeholder: "Priya Sharma" },
-                            { name: "work_email", label: "Work email", type: "email", placeholder: "you@company.com" },
-                            { name: "company", label: "Company", placeholder: "Acme Pvt Ltd" },
-                            {
-                              name: "company_size",
-                              label: "Company size",
-                              type: "select",
-                              options: COMPANY_SIZES,
-                              placeholder: "Select company size",
-                            },
-                          ]}
-                          submitLabel="Start free trial"
-                          thankYou="Thank you. Your trial request is in. We will email your login details to you."
-                        />
-                      </div>
+              {result.capReason && (
+                <p className="mt-4 rounded-lg border border-amber-400/30 bg-amber-500/10 px-4 py-3 text-sm leading-relaxed text-amber-200">
+                  {result.capReason}
+                </p>
+              )}
+
+              <div className="mt-8 space-y-5">
+                {result.areas.map((a) => (
+                  <div key={a.id}>
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                      <span className="text-[17px] font-medium text-slate-100">{a.name}</span>
+                      <span className="text-sm text-slate-400">
+                        <span className="font-semibold text-slate-200">{a.score} of 100</span>, penalty
+                        up to Rs {a.penalty} crore
+                      </span>
+                    </div>
+                    <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-sky-500"
+                        style={{ width: `${a.score}%` }}
+                      />
                     </div>
                   </div>
-                );
-              })()}
+                ))}
+              </div>
+
+              {result.gaps.length > 0 && (
+                <div className="mt-10 border-t border-white/10 pt-8">
+                  <h3 className="text-white">Your top three gaps.</h3>
+                  <ol className="mt-4 space-y-4">
+                    {result.gaps.map((g, i) => (
+                      <li key={g.id} className="rounded-xl px-5 py-4 ring-1 ring-white/10">
+                        <p className="text-[17px] font-medium leading-snug text-slate-100">
+                          {i + 1}. {g.q}
+                        </p>
+                        <p className="mt-1.5 text-[15px] leading-[1.6] text-slate-300">{g.fix}</p>
+                        <p className="mt-1 text-sm text-rose-300">Penalty up to Rs {g.penalty} crore</p>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              )}
+
+              <p className="mt-8 text-[15px] text-slate-300">
+                {weeks} weeks, {days} days until 13 May 2027, when the rules apply in full.
+              </p>
+              <p className="mt-3 text-sm text-slate-400">Indicative score, not legal advice.</p>
+
+              <div className="mt-6">
+                <button
+                  type="button"
+                  onClick={() => setShowHow((v) => !v)}
+                  aria-expanded={showHow}
+                  className="inline-flex min-h-[44px] items-center text-sm font-semibold text-indigo-300 transition-colors hover:text-white"
+                >
+                  How we score
+                </button>
+                {showHow && (
+                  <div className="mt-1 space-y-4 rounded-xl px-5 py-5 text-sm leading-[1.7] text-slate-300 ring-1 ring-white/10">
+                    <p>
+                      We weight each duty area by the penalty it carries. Your score is the weighted
+                      average of your answers, and a missing critical duty caps your band.
+                    </p>
+                    <ul className="space-y-1.5">
+                      {result.areas.map((a) => (
+                        <li key={a.id}>
+                          {a.name}: weight {a.weight} of 100, penalty up to Rs {a.penalty} crore.
+                        </li>
+                      ))}
+                    </ul>
+                    <p>
+                      Bands: 90 to 100 Audit-ready, 75 to 89 Ready, 55 to 74 Progressing, 30 to 54
+                      Developing, 0 to 29 Exposed.
+                    </p>
+                  </div>
+                )}
+              </div>
+
+              <div className="mt-10 border-t border-white/10 pt-8">
+                <h3 className="text-white text-pretty">Close these gaps with a free 10-day trial.</h3>
+                <div className="mt-6 max-w-xl">
+                  <LeadForm
+                    intent="trial"
+                    sourcePage="/assessment"
+                    score={result.score}
+                    extra={{
+                      readiness_band: result.band.name,
+                      readiness_gaps: JSON.stringify(
+                        result.gaps.map((g) => ({ question: g.q, fix: g.fix, penalty: g.penalty }))
+                      ),
+                      assessment_answers: JSON.stringify({ profile, answers }),
+                    }}
+                    fields={[
+                      { name: "name", label: "Name", placeholder: "Priya Sharma" },
+                      { name: "work_email", label: "Work email", type: "email", placeholder: "you@company.com" },
+                      { name: "company", label: "Company", placeholder: "Acme Pvt Ltd" },
+                      {
+                        name: "company_size",
+                        label: "Company size",
+                        type: "select",
+                        options: COMPANY_SIZES,
+                        placeholder: "Select company size",
+                      },
+                    ]}
+                    submitLabel="Start free trial"
+                    thankYou="Thank you. Your trial request is in. We will email your login details to you."
+                  />
+                </div>
+              </div>
             </div>
           </motion.section>
         )}

@@ -60,7 +60,7 @@ const TAB_ITEMS = TABS.map((t) => ({ key: t.key, label: t.title }));
 function GrowBars({ bars }) {
   const [ref, inView] = useInView(0.15);
   return (
-    <div ref={ref} className="mt-6 flex h-32 items-end gap-2">
+    <div ref={ref} className="mt-6 flex h-24 items-end gap-2">
       {bars.map((h, i) => (
         <div
           key={i}
@@ -90,7 +90,7 @@ export default function ModuleShowcase() {
         ariaLabel="What JShield does"
       />
 
-      <div id="modules-panel" role="tabpanel" className="mt-8 grid gap-8 lg:grid-cols-2 lg:gap-10">
+      <div id="modules-panel" role="tabpanel" className="mt-6 grid gap-8 lg:grid-cols-2 lg:gap-10">
         <div>
           <h3 className="text-white">{tab.title}</h3>
           <p className="mt-2 text-[17px] leading-[1.6] text-slate-300 text-pretty">{tab.blurb}</p>

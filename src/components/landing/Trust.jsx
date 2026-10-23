@@ -16,7 +16,7 @@ export default function Trust() {
     <Section tone>
       <SectionHeading label="Trust" title="We hold your data to the same rules we help you meet." />
       <Accordion items={ITEMS} />
-      <Reveal delay={0.1} className="mt-8">
+      <Reveal delay={0.1} className="mt-6">
         <Link
           to="/security"
           className="inline-flex min-h-[44px] items-center text-sm text-slate-200 underline-offset-4 hover:text-white hover:underline"

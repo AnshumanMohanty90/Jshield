@@ -10,7 +10,7 @@ export default function BetterWithJago() {
         title="Compliance built in from the start."
         intro="When your teams use Jago to ask questions or update records, consent and access rules already apply, so there is no separate compliance project."
       />
-      <Reveal delay={0.1} className="mt-8">
+      <Reveal delay={0.1} className="mt-6">
         <a
           href="https://jagotech.ai"
           target="_blank"

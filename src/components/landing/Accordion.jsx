@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 // One line visible per item, click to open. The first item is open by default.
-export default function Accordion({ items, className = "mt-8" }) {
+export default function Accordion({ items, className = "mt-6" }) {
   const [open, setOpen] = useState(0);
 
   return (

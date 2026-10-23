@@ -23,7 +23,7 @@ function validate(field, value) {
   return "";
 }
 
-export default function LeadForm({ intent, sourcePage, score = null, fields, submitLabel, thankYou }) {
+export default function LeadForm({ intent, sourcePage, score = null, fields, submitLabel, thankYou, extra = {} }) {
   const [form, setForm] = useState(() => Object.fromEntries(fields.map((f) => [f.name, ""])));
   const [errors, setErrors] = useState({});
   const [formError, setFormError] = useState("");
@@ -52,7 +52,7 @@ export default function LeadForm({ intent, sourcePage, score = null, fields, sub
     }
     setSubmitting(true);
     try {
-      const payload = { intent, source_page: sourcePage, ...form };
+      const payload = { intent, source_page: sourcePage, ...form, ...extra };
       if (score != null) payload.readiness_score = score;
       await base44.functions.invoke("captureLead", payload);
       setDone(true);

@@ -3,37 +3,36 @@ import { ArrowRight } from "lucide-react";
 import Section from "./Section";
 import { Reveal } from "./primitives";
 import { CtaPrimary, CtaSecondary } from "./Buttons";
-import { QUESTIONS, PRESELECT_KEY } from "@/lib/assessmentQuestions";
+import { ANSWER_OPTIONS, INLINE_QUESTION, PRESELECT_KEY } from "@/lib/assessmentQuestions";
 
 export default function CTASection({ tone = false }) {
   const navigate = useNavigate();
-  const first = QUESTIONS[0];
 
-  const pick = (s) => {
+  const pick = (i) => {
     try {
-      window.sessionStorage.setItem(PRESELECT_KEY, String(s));
+      window.sessionStorage.setItem(PRESELECT_KEY, String(i));
     } catch {
-      // Storage unavailable: the assessment still opens at question one.
+      // Storage unavailable: the assessment still opens at the first question.
     }
     navigate("/assessment");
   };
 
   return (
-    <Section tone={tone}>
+    <Section tone>
       <Reveal>
         <h2 className="text-white text-balance">See where you stand today.</h2>
         <p className="mt-4 max-w-[68ch] text-[17px] leading-[1.6] text-slate-300 text-pretty">
-          Answer 14 questions and see your readiness score in 3 minutes.
+          Answer up to 21 questions and see your readiness score in 3 minutes.
         </p>
 
         <div className="mt-8 max-w-2xl">
-          <p className="text-[17px] leading-[1.6] text-slate-300">{first.q}</p>
+          <p className="text-[17px] leading-[1.6] text-slate-300">{INLINE_QUESTION.q}</p>
           <div className="mt-4 flex flex-col gap-1">
-            {first.opts.map((o) => (
+            {ANSWER_OPTIONS.map((o, i) => (
               <button
                 key={o.l}
                 type="button"
-                onClick={() => pick(o.s)}
+                onClick={() => pick(i)}
                 className="row-hover group flex min-h-[44px] w-full items-center justify-between gap-4 px-4 py-3 text-left text-[17px] text-slate-300"
               >
                 {o.l}

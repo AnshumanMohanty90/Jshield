@@ -3,7 +3,7 @@ import { useInView } from "./primitives";
 
 // Horizontal stepper: a progress bar fills across the steps when the section
 // scrolls into view; clicking a step shows its detail. Step one is open by default.
-export default function Stepper({ steps, ariaLabel = "Steps", className = "mt-8" }) {
+export default function Stepper({ steps, ariaLabel = "Steps", className = "mt-6" }) {
   const [active, setActive] = useState(0);
   const [trackRef, filled] = useInView(0.15);
 
@@ -58,7 +58,7 @@ export default function Stepper({ steps, ariaLabel = "Steps", className = "mt-8"
           );
         })}
       </div>
-      <div role="tabpanel" className="mt-8">
+      <div role="tabpanel" className="mt-6">
         <h3 className="text-white">{steps[active].title}</h3>
         <p className="mt-2 max-w-[68ch] text-[17px] leading-[1.6] text-slate-300">{steps[active].desc}</p>
       </div>

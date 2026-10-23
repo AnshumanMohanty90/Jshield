@@ -53,7 +53,7 @@ export default function Footer() {
           </div>
           {COLS.map((c) => (
             <div key={c.title}>
-              <div className="text-[15px] font-semibold text-indigo-400">{c.title}</div>
+              <div className="text-[16px] font-semibold text-indigo-400">{c.title}</div>
               <ul className="mt-4 space-y-2.5">
                 {c.links.map(([label, to]) => (
                   <li key={label}>

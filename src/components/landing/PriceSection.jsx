@@ -8,7 +8,7 @@ export default function PriceSection() {
     <Section tone>
       <Reveal className="grid gap-6 lg:grid-cols-2 lg:items-center">
         <div>
-          <p className="text-[15px] font-semibold text-indigo-400">Price</p>
+          <p className="text-[16px] font-semibold text-indigo-400">Price</p>
           <h2 className="mt-3 text-white text-balance">Pricing built around your data.</h2>
           <p className="mt-4 max-w-[68ch] text-[17px] leading-[1.6] text-slate-300 text-pretty">
             Priced on the size of your company and the systems that hold personal data. Free for the first 10 days.

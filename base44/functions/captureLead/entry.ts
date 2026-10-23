@@ -67,6 +67,13 @@ export default async function(req) {
       leadData.readiness_score = Math.max(0, Math.min(100, Math.round(Number(body.readiness_score))));
     }
 
+    const readiness_band = clean(body?.readiness_band, 40);
+    const readiness_gaps = clean(body?.readiness_gaps, 2000);
+    const assessment_answers = clean(body?.assessment_answers, 6000);
+    if (readiness_band) leadData.readiness_band = readiness_band;
+    if (readiness_gaps) leadData.readiness_gaps = readiness_gaps;
+    if (assessment_answers) leadData.assessment_answers = assessment_answers;
+
     const existing = await base44.asServiceRole.entities.Lead.filter({ work_email, intent });
     let lead;
     if (existing && existing.length > 0) {
@@ -80,6 +87,8 @@ export default async function(req) {
     if (leadData.designation) lines.push(`Designation: ${leadData.designation}`);
     if (leadData.company_size) lines.push(`Company size: ${leadData.company_size}`);
     if (leadData.readiness_score !== undefined) lines.push(`Readiness score: ${leadData.readiness_score}`);
+    if (leadData.readiness_band) lines.push(`Readiness band: ${leadData.readiness_band}`);
+    if (leadData.readiness_gaps) lines.push(`Top gaps: ${leadData.readiness_gaps}`);
     if (leadData.source_page) lines.push(`Source page: ${leadData.source_page}`);
     if (leadData.message) lines.push(`Message: ${leadData.message}`);
     const subject = `New ${intent} lead: ${leadData.name}${leadData.company ? ' (' + leadData.company + ')' : ''}`;

@@ -46,6 +46,18 @@
       "type": "number",
       "title": "Readiness Score"
     },
+    "readiness_band": {
+      "type": "string",
+      "title": "Readiness Band"
+    },
+    "readiness_gaps": {
+      "type": "string",
+      "title": "Top Gaps"
+    },
+    "assessment_answers": {
+      "type": "string",
+      "title": "Assessment Answers"
+    },
     "status": {
       "type": "string",
       "title": "Status",
