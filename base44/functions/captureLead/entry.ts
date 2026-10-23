@@ -75,29 +75,32 @@ export default async function(req) {
       lead = await base44.asServiceRole.entities.Lead.create(leadData);
     }
 
-    let notified = true;
-    try {
-      const lines = [`Intent: ${intent}`, `Name: ${leadData.name}`, `Work email: ${leadData.work_email}`];
-      if (leadData.company) lines.push(`Company: ${leadData.company}`);
-      if (leadData.designation) lines.push(`Designation: ${leadData.designation}`);
-      if (leadData.company_size) lines.push(`Company size: ${leadData.company_size}`);
-      if (leadData.readiness_score !== undefined) lines.push(`Readiness score: ${leadData.readiness_score}`);
-      if (leadData.source_page) lines.push(`Source page: ${leadData.source_page}`);
-      if (leadData.message) lines.push(`Message: ${leadData.message}`);
-      const subject = `New ${intent} lead: ${leadData.name}${leadData.company ? ' (' + leadData.company + ')' : ''}`;
-      for (const to of NOTIFY_EMAILS) {
+    const lines = [`Intent: ${intent}`, `Name: ${leadData.name}`, `Work email: ${leadData.work_email}`];
+    if (leadData.company) lines.push(`Company: ${leadData.company}`);
+    if (leadData.designation) lines.push(`Designation: ${leadData.designation}`);
+    if (leadData.company_size) lines.push(`Company size: ${leadData.company_size}`);
+    if (leadData.readiness_score !== undefined) lines.push(`Readiness score: ${leadData.readiness_score}`);
+    if (leadData.source_page) lines.push(`Source page: ${leadData.source_page}`);
+    if (leadData.message) lines.push(`Message: ${leadData.message}`);
+    const subject = `New ${intent} lead: ${leadData.name}${leadData.company ? ' (' + leadData.company + ')' : ''}`;
+
+    const notified = [];
+    const failed = [];
+    for (const to of NOTIFY_EMAILS) {
+      try {
         await base44.asServiceRole.integrations.Core.SendEmail({
           to,
           from_name: 'JShield',
           subject,
           text: lines.join('\n'),
         });
+        notified.push(to);
+      } catch (_) {
+        failed.push(to);
       }
-    } catch (_) {
-      notified = false;
     }
 
-    return Response.json({ ok: true, id: lead.id, notified });
+    return Response.json({ ok: true, id: lead.id, notified, failed });
   } catch (error) {
     return Response.json({ error: error.message }, { status: 500 });
   }
