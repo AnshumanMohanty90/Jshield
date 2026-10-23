@@ -9,7 +9,7 @@ const FREE_EMAIL_DOMAINS = new Set([
 ]);
 
 const INTENTS = ['assessment', 'trial', 'contact', 'partner'];
-const NOTIFY_EMAILS = ['mohantyanshuman21@gmail.com', 'contact@jagoshield.com'];
+const NOTIFY_EMAILS = ['mohantyanshuman21@gmail.com', 'contact@jshield.com'];
 
 function clean(value, max) {
   return String(value || '').trim().slice(0, max);

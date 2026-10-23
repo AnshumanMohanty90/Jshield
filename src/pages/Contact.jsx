@@ -5,7 +5,7 @@ import LeadForm, { COMPANY_SIZES } from "@/components/landing/LeadForm";
 import usePageTitle from "@/hooks/usePageTitle";
 
 const CHANNELS = [
-  { icon: Mail, label: "Email", value: "contact@jagoshield.com", href: "mailto:contact@jagoshield.com" },
+  { icon: Mail, label: "Email", value: "contact@jshield.com", href: "mailto:contact@jshield.com" },
   { icon: MapPin, label: "Office", value: "Bengaluru, India" },
 ];
 
@@ -19,7 +19,7 @@ export default function Contact() {
           <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-pretty">
             Questions about JShield?
           </h1>
-          <p className="mt-4 text-lg text-slate-300">Write to us at contact@jagoshield.com or use the form.</p>
+          <p className="mt-4 text-lg text-slate-300">Write to us at contact@jshield.com or use the form.</p>
         </div>
       </section>
 

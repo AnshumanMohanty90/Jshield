@@ -45,10 +45,10 @@ export default function Footer() {
               reporting breaches.
             </p>
             <a
-              href="mailto:contact@jagoshield.com"
+              href="mailto:contact@jshield.com"
               className="mt-3 inline-block text-sm text-slate-300 underline-offset-2 transition-colors hover:text-white hover:underline"
             >
-              contact@jagoshield.com
+              contact@jshield.com
             </a>
           </div>
           {COLS.map((c) => (

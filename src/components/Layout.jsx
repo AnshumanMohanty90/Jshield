@@ -4,8 +4,9 @@ import { cn } from "@/lib/utils";
 import {
   LayoutDashboard, Database, ShieldCheck, Cookie, Building2,
   AlertTriangle, FileText, MessageSquareWarning, UserCog,
-  Shield, ChevronLeft, Menu, FileSearch, Lock,
+  ChevronLeft, Menu, FileSearch, Lock,
 } from "lucide-react";
+import ShieldLogo from "@/components/ShieldLogo";
 
 const NAV = [
   { label: "Command Center", to: "/", icon: LayoutDashboard },
@@ -46,9 +47,7 @@ export default function Layout() {
   const SidebarContent = (
     <div className="flex h-full flex-col bg-[#0B1120] text-slate-300">
       <div className="flex items-center gap-2.5 px-5 h-16 border-b border-white/5">
-        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-sky-500 shadow-lg shadow-indigo-500/20">
-          <Shield className="h-5 w-5 text-white" />
-        </div>
+        <ShieldLogo className="h-9 w-9 flex-none" />
         <div className="leading-tight">
           <div className="text-sm font-semibold text-white tracking-tight">JShield</div>
           <div className="text-[10px] uppercase tracking-widest text-indigo-300/70">by Jago AI</div>
@@ -151,7 +150,7 @@ export default function Layout() {
             <Menu className="h-5 w-5" />
           </button>
           <div className="flex items-center gap-2">
-            <Shield className="h-5 w-5 text-indigo-600" />
+            <ShieldLogo className="h-5 w-5" />
             <span className="font-semibold text-slate-900">JShield</span>
           </div>
         </div>
