@@ -44,6 +44,12 @@ export default function Footer() {
               JShield helps Indian companies meet India's new data protection law, from finding personal data to
               reporting breaches.
             </p>
+            <a
+              href="mailto:contact@jagoshield.com"
+              className="mt-3 inline-block text-sm text-slate-300 underline-offset-2 transition-colors hover:text-white hover:underline"
+            >
+              contact@jagoshield.com
+            </a>
           </div>
           {COLS.map((c) => (
             <div key={c.title}>

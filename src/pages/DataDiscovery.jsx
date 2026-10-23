@@ -11,7 +11,7 @@ export default function DataDiscovery() {
     <EntityModule
       entityName="DataAsset"
       title="Data Discovery"
-      subtitle="Automated scanning and AI classification of personal data across every system in your stack. You can't protect what you can't see."
+      subtitle="Automated scanning and AI classification of personal data across every system in your stack. You cannot protect what you cannot see."
       icon={Database}
       extraStats={(items) => [
         { label: "Total Assets", value: items.length, icon: Database, tone: "sky" },

@@ -9,7 +9,7 @@ const FREE_EMAIL_DOMAINS = new Set([
 ]);
 
 const INTENTS = ['assessment', 'trial', 'contact', 'partner'];
-const SITE_OWNER_EMAIL = 'mohantyanshuman21@gmail.com';
+const NOTIFY_EMAILS = ['mohantyanshuman21@gmail.com', 'contact@jagoshield.com'];
 
 function clean(value, max) {
   return String(value || '').trim().slice(0, max);
@@ -84,12 +84,15 @@ export default async function(req) {
       if (leadData.readiness_score !== undefined) lines.push(`Readiness score: ${leadData.readiness_score}`);
       if (leadData.source_page) lines.push(`Source page: ${leadData.source_page}`);
       if (leadData.message) lines.push(`Message: ${leadData.message}`);
-      await base44.asServiceRole.integrations.Core.SendEmail({
-        to: SITE_OWNER_EMAIL,
-        from_name: 'JShield',
-        subject: `New ${intent} lead: ${leadData.name}${leadData.company ? ' (' + leadData.company + ')' : ''}`,
-        text: lines.join('\n'),
-      });
+      const subject = `New ${intent} lead: ${leadData.name}${leadData.company ? ' (' + leadData.company + ')' : ''}`;
+      for (const to of NOTIFY_EMAILS) {
+        await base44.asServiceRole.integrations.Core.SendEmail({
+          to,
+          from_name: 'JShield',
+          subject,
+          text: lines.join('\n'),
+        });
+      }
     } catch (_) {
       notified = false;
     }

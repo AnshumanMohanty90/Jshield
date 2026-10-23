@@ -23,10 +23,10 @@ const QUESTIONS = [
 ];
 
 const TIERS = [
-  { min: 75, label: "Audit-ready", desc: "Most duties are in place. The full report shows what is left before 13 May 2027.", tone: "text-emerald-400", chip: "bg-emerald-500/15 text-emerald-300" },
-  { min: 50, label: "On the right track", desc: "You have a base to build on. The full report shows which gaps to close first.", tone: "text-sky-400", chip: "bg-sky-500/15 text-sky-300" },
-  { min: 25, label: "Early stage", desc: "Most duties are not yet in place. The full report shows where to start.", tone: "text-amber-400", chip: "bg-amber-500/15 text-amber-300" },
-  { min: 0, label: "Significant exposure", desc: "Most duties are not yet in place. The full report shows where to start.", tone: "text-rose-400", chip: "bg-rose-500/15 text-rose-300" },
+  { min: 75, label: "Audit-ready", desc: "Most duties are in place. We can walk you through what is left before 13 May 2027.", tone: "text-emerald-400", chip: "bg-emerald-500/15 text-emerald-300" },
+  { min: 50, label: "On the right track", desc: "You have a base to build on. We can show you which gaps to close first.", tone: "text-sky-400", chip: "bg-sky-500/15 text-sky-300" },
+  { min: 25, label: "Early stage", desc: "Most duties are not yet in place. We can show you where to start.", tone: "text-amber-400", chip: "bg-amber-500/15 text-amber-300" },
+  { min: 0, label: "Significant exposure", desc: "Most duties are not yet in place. We can show you where to start.", tone: "text-rose-400", chip: "bg-rose-500/15 text-rose-300" },
 ];
 
 function tierFor(score) {
@@ -97,7 +97,7 @@ export default function Assessment() {
               >
                 Start the assessment <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </button>
-              <p className="mt-4 text-xs text-slate-500">14 questions · 3 minutes · instant report</p>
+              <p className="mt-4 text-xs text-slate-500">14 questions · 3 minutes · score on screen</p>
             </div>
           </motion.section>
         )}
@@ -167,7 +167,7 @@ export default function Assessment() {
                 const t = tierFor(score);
                 return (
                   <div>
-                    <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Your report</span>
+                    <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Your score</span>
                     <div className="mt-3 flex items-end gap-3">
                       <span className={`text-6xl font-bold tracking-tight ${t.tone}`}>{score}</span>
                       <span className="mb-2 text-sm text-slate-500">/ 100</span>
@@ -179,8 +179,8 @@ export default function Assessment() {
 
                     <div className="mt-10 border-t border-white/10 pt-10">
                       <h3 className="text-xl font-bold text-white text-pretty">
-                        Get your full report: your score on each of the 7 duties, the gaps that carry the highest
-                        fines, and a 30-day action plan.
+                        Want help closing the gaps? Leave your details and we will call you to walk through your score
+                        and the first steps.
                       </h3>
                       <div className="mt-6 max-w-xl">
                         <LeadForm
@@ -199,8 +199,8 @@ export default function Assessment() {
                               placeholder: "Select company size",
                             },
                           ]}
-                          submitLabel="Email my report"
-                          thankYou="Thank you. Your report will reach your inbox within one working day. If you want to walk through it, reply to that email and we will set up a 30-minute call."
+                          submitLabel="Call me back"
+                          thankYou="Thank you. We will call you within one working day."
                         />
                       </div>
                     </div>

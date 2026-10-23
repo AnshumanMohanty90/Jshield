@@ -28,10 +28,10 @@ function renderCell(row, col) {
     if (col.key === "priority") return <PriorityBadge priority={value} />;
   }
   if (col.type === "boolean") return value ? <span className="text-emerald-600 text-xs font-medium">Yes</span> : <span className="text-slate-400 text-xs">No</span>;
-  if (col.type === "date") return value ? new Date(value).toLocaleDateString() : <span className="text-slate-400">—</span>;
-  if (col.type === "datetime") return value ? new Date(value).toLocaleString() : <span className="text-slate-400">—</span>;
+  if (col.type === "date") return value ? new Date(value).toLocaleDateString() : <span className="text-slate-400">N/A</span>;
+  if (col.type === "datetime") return value ? new Date(value).toLocaleString() : <span className="text-slate-400">N/A</span>;
   if (col.type === "number") return value?.toLocaleString?.() ?? value;
-  if (!value && value !== 0) return <span className="text-slate-400">—</span>;
+  if (!value && value !== 0) return <span className="text-slate-400">N/A</span>;
   return <span className="text-slate-700">{value}</span>;
 }
 

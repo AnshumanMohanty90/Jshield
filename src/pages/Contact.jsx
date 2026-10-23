@@ -5,7 +5,7 @@ import LeadForm, { COMPANY_SIZES } from "@/components/landing/LeadForm";
 import usePageTitle from "@/hooks/usePageTitle";
 
 const CHANNELS = [
-  { icon: Mail, label: "Email", value: "to be added" },
+  { icon: Mail, label: "Email", value: "contact@jagoshield.com", href: "mailto:contact@jagoshield.com" },
   { icon: MapPin, label: "Office", value: "Bengaluru, India" },
 ];
 
@@ -36,7 +36,13 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="text-xs font-semibold uppercase tracking-widest text-slate-500">{c.label}</div>
-                      <div className="text-sm font-medium text-slate-100">{c.value}</div>
+                      <div className="text-sm font-medium text-slate-100">
+                        {c.href ? (
+                          <a href={c.href} className="transition-colors hover:text-white">{c.value}</a>
+                        ) : (
+                          c.value
+                        )}
+                      </div>
                     </div>
                   </div>
                 );
