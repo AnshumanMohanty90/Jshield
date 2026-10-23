@@ -3,7 +3,7 @@ import { Reveal } from "./primitives";
 
 export default function CtaBand({ title, subtitle, primary, secondary }) {
   return (
-    <section className="bg-slate-950 py-12 sm:py-20">
+    <section className="bg-slate-950 py-10 sm:py-16">
       <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
         <Reveal>
           <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">

@@ -12,7 +12,7 @@ export default function Contact() {
 
   return (
     <LandingLayout>
-      <section className="bg-slate-950 pb-12 pt-32 sm:pb-20 sm:pt-36">
+      <section className="bg-slate-950 pb-10 pt-32 sm:pb-16 sm:pt-36">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">
             Questions about JShield?
@@ -23,14 +23,14 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="bg-slate-950 py-12 sm:py-20">
+      <section className="bg-slate-950 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-x-8 gap-y-10 lg:grid-cols-5">
             <div className="lg:col-span-2">
               {CHANNELS.map((c) => (
                 <div key={c.label} className="border-t border-white/10 py-5">
                   <div className="text-xs font-semibold uppercase tracking-widest text-slate-500">{c.label}</div>
-                  <div className="mt-1 text-sm font-medium text-slate-100">
+                  <div className="mt-1 text-sm text-slate-200">
                     {c.href ? (
                       <a href={c.href} className="transition-colors hover:text-white">{c.value}</a>
                     ) : (

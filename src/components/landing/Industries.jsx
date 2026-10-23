@@ -69,7 +69,7 @@ export default function Industries() {
   const ind = INDUSTRIES.find((i) => i.key === active);
 
   return (
-    <section className="bg-slate-900/50 py-12 sm:py-20">
+    <section className="bg-slate-900/50 py-10 sm:py-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Built for your sector</span>

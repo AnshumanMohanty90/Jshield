@@ -70,7 +70,7 @@ export default function PartnerProgram() {
         secondary={{ label: "Start free trial", to: "/trial" }}
       />
 
-      <section className="bg-slate-950 py-12 sm:py-20">
+      <section className="bg-slate-950 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
@@ -85,14 +85,14 @@ export default function PartnerProgram() {
               <Reveal key={p.title} className="border-t border-white/10 pt-5">
                 <h3 className="text-base font-semibold text-white">{p.title}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{p.desc}</p>
-                <p className="mt-3 text-xs font-semibold uppercase tracking-widest text-indigo-400">{p.earn}</p>
+                <p className="mt-3 text-sm leading-relaxed text-slate-400">{p.earn}</p>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-slate-900/50 py-12 sm:py-20">
+      <section className="bg-slate-900/50 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
@@ -111,7 +111,7 @@ export default function PartnerProgram() {
         </div>
       </section>
 
-      <section className="bg-slate-950 py-12 sm:py-20">
+      <section className="bg-slate-950 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
@@ -130,7 +130,7 @@ export default function PartnerProgram() {
         </div>
       </section>
 
-      <section id="apply" className="bg-slate-900/50 py-12 sm:py-20">
+      <section id="apply" className="bg-slate-900/50 py-10 sm:py-16">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <Reveal>
             <h2 className="text-xl font-semibold text-white">Apply to become a partner</h2>

@@ -9,7 +9,7 @@ const CARDS = [
 
 export default function WhyMatters() {
   return (
-    <section className="bg-slate-950 py-12 sm:py-20">
+    <section className="bg-slate-950 py-10 sm:py-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Why it matters now</span>
@@ -32,7 +32,7 @@ export default function WhyMatters() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className={`sm:px-8 ${i > 0 ? "sm:border-l sm:border-white/10" : ""}`}
             >
-              {c.pre && <p className="text-sm font-medium text-slate-400">{c.pre}</p>}
+              {c.pre && <p className="text-sm text-slate-400">{c.pre}</p>}
               <div className="text-4xl font-bold tracking-tight text-white text-pretty">{c.stat}</div>
               <p className="mt-2 text-sm leading-relaxed text-slate-400">{c.label}</p>
             </motion.div>

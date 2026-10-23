@@ -54,7 +54,7 @@ const STATUS_ROWS = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-slate-950 pb-12 pt-32 sm:pb-20 sm:pt-36">
+    <section className="relative overflow-hidden bg-slate-950 pb-10 pt-32 sm:pb-16 sm:pt-36">
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>

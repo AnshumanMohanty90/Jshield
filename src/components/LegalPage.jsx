@@ -8,7 +8,7 @@ export default function LegalPage({ title }) {
   return (
     <LandingLayout>
       <PageHero eyebrow="Legal" title={title} />
-      <section className="bg-slate-950 pb-20">
+      <section className="bg-slate-950 pb-10 sm:pb-16">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <p className="text-lg leading-relaxed text-slate-300 text-pretty">
             This page is being updated.{" "}

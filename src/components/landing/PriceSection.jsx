@@ -3,7 +3,7 @@ import { Reveal } from "./primitives";
 
 export default function PriceSection() {
   return (
-    <section className="bg-slate-900/50 py-12 sm:py-20">
+    <section className="bg-slate-900/50 py-10 sm:py-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="grid gap-6 lg:grid-cols-2 lg:items-center">
           <div>

@@ -24,7 +24,7 @@ export default function PageNotFound({}) {
                 <h1 className="text-7xl font-light text-slate-300">404</h1>
                 <h2 className="mt-4 text-2xl font-medium text-white">Page not found</h2>
                 <p className="mt-3 text-slate-400 leading-relaxed text-pretty">
-                    The page <span className="font-medium text-slate-300">"{pageName}"</span> could not be found in this application.
+                    The page "{pageName}" could not be found in this application.
                 </p>
 
                 {isFetched && authData.isAuthenticated && authData.user?.role === 'admin' && (

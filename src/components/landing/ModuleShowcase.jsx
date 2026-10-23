@@ -58,7 +58,7 @@ export default function ModuleShowcase() {
   const tab = TABS.find((t) => t.key === active);
 
   return (
-    <section id="solution" className="bg-slate-950 py-12 sm:py-20">
+    <section id="solution" className="bg-slate-950 py-10 sm:py-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">What JShield does</span>

@@ -58,7 +58,7 @@ export default function DPDPAct() {
         secondary={{ label: "See how JShield solves it", to: "/#solution" }}
       />
 
-      <section className="bg-slate-950 py-12 sm:py-20">
+      <section className="bg-slate-950 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
@@ -94,7 +94,7 @@ export default function DPDPAct() {
         </div>
       </section>
 
-      <section className="bg-slate-900/50 py-12 sm:py-20">
+      <section className="bg-slate-900/50 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
@@ -116,7 +116,7 @@ export default function DPDPAct() {
         </div>
       </section>
 
-      <section className="bg-slate-950 py-12 sm:py-20">
+      <section className="bg-slate-950 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
@@ -137,7 +137,7 @@ export default function DPDPAct() {
         </div>
       </section>
 
-      <section className="bg-slate-900/50 py-12 sm:py-20">
+      <section className="bg-slate-900/50 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">
@@ -159,7 +159,7 @@ export default function DPDPAct() {
         </div>
       </section>
 
-      <section className="bg-slate-950 py-12 sm:py-20">
+      <section className="bg-slate-950 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
             <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-pretty">

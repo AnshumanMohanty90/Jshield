@@ -14,7 +14,7 @@ export default function Trial() {
         subtitle="Activate a 10-day trial with every JShield module. No payment details needed."
       />
 
-      <section className="bg-slate-950 py-12 sm:py-20">
+      <section className="bg-slate-950 py-10 sm:py-16">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <h2 className="text-xl font-semibold text-white">Where should we activate your trial?</h2>
           <p className="mt-1 text-sm text-slate-400">

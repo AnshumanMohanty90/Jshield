@@ -22,10 +22,9 @@ export default function DeadlineTracker() {
   return (
     <div className="border-b border-white/10 bg-slate-950">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-center px-5 sm:px-8">
-        <p className="text-xs font-medium text-slate-300 sm:text-[13px]">
-          <span className="whitespace-nowrap font-bold text-red-400">13 May 2027:</span>{" "}
-          <span className="hidden sm:inline">India's new data protection rules apply in full. </span>
-          <span className="whitespace-nowrap font-bold text-red-300">{left}</span>
+        <p className="text-xs text-slate-300 sm:text-[13px]">
+          13 May 2027: <span className="hidden sm:inline">India's new data protection rules apply in full. </span>
+          {left}
         </p>
       </div>
     </div>

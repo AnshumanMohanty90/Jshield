@@ -78,7 +78,7 @@ export default function Assessment() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="bg-slate-950 pb-12 pt-32 sm:pb-20 sm:pt-36"
+            className="bg-slate-950 pb-10 pt-32 sm:pb-16 sm:pt-36"
           >
             <div className="mx-auto max-w-3xl px-5 sm:px-8">
               <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">
@@ -107,7 +107,7 @@ export default function Assessment() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
-            className="bg-slate-950 py-12 sm:py-20"
+            className="bg-slate-950 py-10 sm:py-16"
           >
             <div className="mx-auto max-w-2xl px-5 sm:px-8">
               <div className="flex items-center justify-between text-xs text-slate-400">
@@ -159,7 +159,7 @@ export default function Assessment() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
-            className="bg-slate-950 py-12 sm:py-20"
+            className="bg-slate-950 py-10 sm:py-16"
           >
             <div className="mx-auto max-w-3xl px-5 sm:px-8">
               {(() => {
@@ -171,7 +171,7 @@ export default function Assessment() {
                       <span className={`text-6xl font-bold tracking-tight ${t.tone}`}>{score}</span>
                       <span className="mb-2 text-sm text-slate-500">/ 100</span>
                     </div>
-                    <p className={`mt-3 text-sm font-semibold ${t.tone}`}>{t.label}</p>
+                    <p className="mt-3 text-sm text-slate-400">{t.label}</p>
                     <p className="mt-3 text-base leading-relaxed text-slate-400">{t.desc}</p>
 
                     <div className="mt-10 border-t border-white/10 pt-10">

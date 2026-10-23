@@ -32,7 +32,7 @@ export default function Pricing() {
 
   return (
     <LandingLayout>
-      <section className="bg-slate-950 pb-12 pt-32 sm:pb-20 sm:pt-36">
+      <section className="bg-slate-950 pb-10 pt-32 sm:pb-16 sm:pt-36">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Pricing</span>
           <h1 className="mt-3 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">
@@ -45,7 +45,7 @@ export default function Pricing() {
         </div>
       </section>
 
-      <section className="bg-slate-950 py-12 sm:py-20">
+      <section className="bg-slate-950 py-10 sm:py-16">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-widest text-indigo-400">10-day free trial</p>
@@ -64,7 +64,7 @@ export default function Pricing() {
             </Link>
           </Reveal>
 
-          <Reveal delay={0.08} className="mt-10 border-t border-white/10 pt-8">
+          <Reveal delay={0.08} className="mt-8 border-t border-white/10 pt-8">
             <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-500">What is included</h2>
             <ul className="mt-4 grid gap-x-8 sm:grid-cols-2">
               {INCLUDED.map((f) => (
@@ -75,7 +75,7 @@ export default function Pricing() {
             </ul>
           </Reveal>
 
-          <Reveal delay={0.12} className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <Reveal delay={0.12} className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h2 className="text-base font-semibold text-white">Prefer it with Jago?</h2>
               <p className="mt-1 text-sm text-slate-400">
@@ -92,7 +92,7 @@ export default function Pricing() {
         </div>
       </section>
 
-      <section className="bg-slate-900/50 py-12 sm:py-20">
+      <section className="bg-slate-900/50 py-10 sm:py-16">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
             Frequently asked questions

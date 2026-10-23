@@ -20,7 +20,7 @@ export default function Security() {
   usePageTitle("Security | JShield");
   return (
     <LandingLayout>
-      <section className="bg-slate-950 pb-12 pt-32 sm:pb-20 sm:pt-36">
+      <section className="bg-slate-950 pb-10 pt-32 sm:pb-16 sm:pt-36">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">Security</span>
           <h1 className="mt-3 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl text-balance">
@@ -32,7 +32,7 @@ export default function Security() {
         </div>
       </section>
 
-      <section className="bg-slate-950 py-12 sm:py-20">
+      <section className="bg-slate-950 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {PILLARS.map((p, i) => (
@@ -45,7 +45,7 @@ export default function Security() {
         </div>
       </section>
 
-      <section className="bg-slate-900/50 py-12 sm:py-20">
+      <section className="bg-slate-900/50 py-10 sm:py-16">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl text-balance">
             Standards

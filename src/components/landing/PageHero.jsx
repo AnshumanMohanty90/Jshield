@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function PageHero({ eyebrow, title, subtitle, primary, secondary }) {
   return (
-    <section className="bg-slate-950 pb-12 pt-32 sm:pb-20 sm:pt-36">
+    <section className="bg-slate-950 pb-10 pt-32 sm:pb-16 sm:pt-36">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         {eyebrow && (
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">
