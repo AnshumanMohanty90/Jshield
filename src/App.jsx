@@ -20,6 +20,8 @@ import SecurityPage from '@/pages/Security';
 import ContactPage from '@/pages/Contact';
 import Trial from '@/pages/Trial';
 import DPDPAct from '@/pages/DPDPAct';
+const GDPR = lazy(() => import('@/pages/GDPR'));
+const SOC2 = lazy(() => import('@/pages/SOC2'));
 const Assessment = lazy(() => import('@/pages/Assessment'));
 const PartnerProgram = lazy(() => import('@/pages/PartnerProgram'));
 import LegalPage from '@/components/LegalPage';
@@ -71,6 +73,8 @@ const AuthenticatedApp = () => {
       <Route path="/assessment" element={<Assessment />} />
       <Route path="/trial" element={<Trial />} />
       <Route path="/dpdp-act" element={<DPDPAct />} />
+      <Route path="/gdpr" element={<GDPR />} />
+      <Route path="/soc-2" element={<SOC2 />} />
       <Route path="/partners" element={<PartnerProgram />} />
       <Route path="/privacy" element={<LegalPage title="Privacy Policy" />} />
       <Route path="/terms" element={<LegalPage title="Terms" />} />
