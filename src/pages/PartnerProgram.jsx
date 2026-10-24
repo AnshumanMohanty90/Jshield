@@ -116,9 +116,9 @@ export default function PartnerProgram() {
               intent="partner"
               sourcePage="/partners"
               fields={[
-                { name: "name", label: "Name", placeholder: "Priya Sharma" },
-                { name: "work_email", label: "Work email", type: "email", placeholder: "priya@yourcompany.com" },
-                { name: "company", label: "Firm", placeholder: "Your firm name" },
+                { name: "name", label: "Name" },
+                { name: "work_email", label: "Work email", type: "email" },
+                { name: "company", label: "Firm" },
                 {
                   name: "partner_type",
                   label: "Partner type",
@@ -126,8 +126,8 @@ export default function PartnerProgram() {
                   options: PARTNER_TYPES.map((p) => p.title),
                   placeholder: "Select a partner type",
                 },
-                { name: "city", label: "City", placeholder: "Bengaluru" },
-                { name: "clients_served", label: "Number of clients you serve", placeholder: "25" },
+                { name: "city", label: "City" },
+                { name: "clients_served", label: "Number of clients you serve" },
               ]}
               submitLabel="Apply to become a partner"
               thankYou="Thank you. Our partnerships team will be in touch."

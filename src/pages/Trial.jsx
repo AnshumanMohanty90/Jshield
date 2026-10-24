@@ -24,10 +24,10 @@ export default function Trial() {
             intent="trial"
             sourcePage="/trial"
             fields={[
-              { name: "name", label: "Full name", placeholder: "Priya Sharma" },
-              { name: "work_email", label: "Work email", type: "email", placeholder: "priya@yourcompany.com" },
-              { name: "company", label: "Company name", placeholder: "Your company name" },
-              { name: "designation", label: "Designation", placeholder: "For example, Head of Compliance" },
+              { name: "name", label: "Full name" },
+              { name: "work_email", label: "Work email", type: "email" },
+              { name: "company", label: "Company name" },
+              { name: "designation", label: "Designation" },
               {
                 name: "company_size",
                 label: "Company size",

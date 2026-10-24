@@ -192,7 +192,6 @@ export default function Register() {
               type="email"
               autoComplete="email"
               autoFocus
-              placeholder="you@company.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="pl-10 h-12"
@@ -208,7 +207,6 @@ export default function Register() {
               id="company"
               type="text"
               autoComplete="organization"
-              placeholder="Acme Pvt Ltd"
               value={companyName}
               onChange={(e) => setCompanyName(e.target.value)}
               className="pl-10 h-12"
@@ -224,7 +222,6 @@ export default function Register() {
               id="designation"
               type="text"
               autoComplete="organization-title"
-              placeholder="Data Protection Officer"
               value={designation}
               onChange={(e) => setDesignation(e.target.value)}
               className="pl-10 h-12"
@@ -240,7 +237,6 @@ export default function Register() {
               id="password"
               type="password"
               autoComplete="new-password"
-              placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="pl-10 h-12"
@@ -256,7 +252,6 @@ export default function Register() {
               id="confirm"
               type="password"
               autoComplete="new-password"
-              placeholder="••••••••"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               className="pl-10 h-12"

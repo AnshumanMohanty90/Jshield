@@ -370,9 +370,9 @@ export default function Assessment() {
                       assessment_answers: JSON.stringify({ profile, answers }),
                     }}
                     fields={[
-                      { name: "name", label: "Name", placeholder: "Priya Sharma" },
-                      { name: "work_email", label: "Work email", type: "email", placeholder: "priya@yourcompany.com" },
-                      { name: "company", label: "Company", placeholder: "Your company name" },
+                      { name: "name", label: "Name" },
+                      { name: "work_email", label: "Work email", type: "email" },
+                      { name: "company", label: "Company" },
                       {
                         name: "company_size",
                         label: "Company size",

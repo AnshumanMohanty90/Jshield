@@ -16,9 +16,9 @@ export default function Contact() {
 
   const fields = isPricing
     ? [
-        { name: "name", label: "Full name", placeholder: "Priya Sharma" },
-        { name: "work_email", label: "Work email", type: "email", placeholder: "priya@yourcompany.com" },
-        { name: "company", label: "Company", placeholder: "Your company name" },
+        { name: "name", label: "Full name" },
+        { name: "work_email", label: "Work email", type: "email" },
+        { name: "company", label: "Company" },
         {
           name: "company_size",
           label: "Company size",
@@ -30,14 +30,13 @@ export default function Contact() {
           name: "message",
           label: "Where does customer data sit today?",
           type: "textarea",
-          placeholder: "CRM, billing, support desk, spreadsheets",
           rows: 4,
         },
       ]
     : [
-        { name: "name", label: "Full name", placeholder: "Priya Sharma" },
-        { name: "work_email", label: "Work email", type: "email", placeholder: "priya@yourcompany.com" },
-        { name: "company", label: "Company", placeholder: "Your company name" },
+        { name: "name", label: "Full name" },
+        { name: "work_email", label: "Work email", type: "email" },
+        { name: "company", label: "Company" },
         {
           name: "company_size",
           label: "Company size",
@@ -49,7 +48,6 @@ export default function Contact() {
           name: "message",
           label: "What do you need help with?",
           type: "textarea",
-          placeholder: "Tell us where you are today",
           rows: 4,
         },
       ];
