@@ -23,12 +23,23 @@ function validate(field, value) {
   return "";
 }
 
-export default function LeadForm({ intent, sourcePage, score = null, fields, submitLabel, thankYou, extra = {} }) {
+export default function LeadForm({
+  intent,
+  sourcePage,
+  score = null,
+  fields,
+  submitLabel,
+  thankYou,
+  extra = {},
+  onDone,
+}) {
   const [form, setForm] = useState(() => Object.fromEntries(fields.map((f) => [f.name, ""])));
   const [errors, setErrors] = useState({});
   const [formError, setFormError] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
+  // Honeypot: real visitors never see or fill this field.
+  const [honeypot, setHoneypot] = useState("");
   const inputRefs = useRef({});
 
   const set = (name, value) => {
@@ -42,7 +53,13 @@ export default function LeadForm({ intent, sourcePage, score = null, fields, sub
 
   const submit = async (e) => {
     e.preventDefault();
+    if (submitting) return;
     setFormError("");
+    if (honeypot) {
+      // Filled by a bot: show the normal thank-you and save nothing.
+      setDone(true);
+      return;
+    }
     const next = Object.fromEntries(fields.map((f) => [f.name, validate(f, form[f.name])]));
     setErrors(next);
     const firstBad = fields.find((f) => next[f.name]);
@@ -56,8 +73,11 @@ export default function LeadForm({ intent, sourcePage, score = null, fields, sub
       if (score != null) payload.readiness_score = score;
       await base44.functions.invoke("captureLead", payload);
       setDone(true);
+      onDone?.();
     } catch {
-      setFormError("Something went wrong. Please try again in a moment.");
+      setFormError(
+        "We could not send this. Your details are still here; please try again or write to contact@jshield.com."
+      );
     } finally {
       setSubmitting(false);
     }
@@ -65,7 +85,7 @@ export default function LeadForm({ intent, sourcePage, score = null, fields, sub
 
   if (done) {
     return (
-      <div className="rounded-xl border border-emerald-400/20 bg-emerald-500/10 px-5 py-5 text-sm leading-relaxed text-emerald-300">
+      <div className="rounded-xl bg-emerald-500/10 px-5 py-5 text-sm leading-relaxed text-emerald-300">
         {thankYou}
       </div>
     );
@@ -73,78 +93,87 @@ export default function LeadForm({ intent, sourcePage, score = null, fields, sub
 
   return (
     <form onSubmit={submit} className="space-y-4" noValidate>
-      <div className="grid gap-4 sm:grid-cols-2">
-        {fields.map((f) => {
-          const fullWidth = f.type === "textarea" || f.full;
-          const inputId = `${intent}-${f.name}`;
-          const errorId = `${inputId}-error`;
-          const error = errors[f.name];
-          const fieldProps = {
-            id: inputId,
-            value: form[f.name],
-            onChange: (e) => set(f.name, e.target.value),
-            onBlur: () => blur(f),
-            "aria-invalid": error ? "true" : undefined,
-            "aria-describedby": error ? errorId : undefined,
-            autoComplete: AUTOCOMPLETE[f.name],
-            required: f.required !== false,
-            ref: (el) => (inputRefs.current[f.name] = el),
-          };
-          return (
-            <div key={f.name} className={`space-y-1.5 ${fullWidth ? "sm:col-span-2" : ""}`}>
-              <label htmlFor={inputId} className="text-sm font-medium text-slate-300">
-                {f.label}
-              </label>
-              {f.type === "select" ? (
-                <select
-                  {...fieldProps}
-                  className={cn(INPUT_CLASS, error && "border-rose-400/60 bg-rose-500/10 focus:border-rose-400 focus:ring-rose-500/20")}
-                >
-                  <option value="" disabled>
-                    {f.placeholder || "Select an option"}
+      {fields.map((f) => {
+        const inputId = `${intent}-${f.name}`;
+        const errorId = `${inputId}-error`;
+        const error = errors[f.name];
+        const fieldProps = {
+          id: inputId,
+          value: form[f.name],
+          onChange: (e) => set(f.name, e.target.value),
+          onBlur: () => blur(f),
+          "aria-invalid": error ? "true" : undefined,
+          "aria-describedby": error ? errorId : undefined,
+          autoComplete: AUTOCOMPLETE[f.name],
+          required: f.required !== false,
+          ref: (el) => (inputRefs.current[f.name] = el),
+        };
+        return (
+          <div key={f.name} className="space-y-1.5">
+            <label htmlFor={inputId} className="text-sm font-medium text-slate-300">
+              {f.label}
+            </label>
+            {f.type === "select" ? (
+              <select
+                {...fieldProps}
+                className={cn(INPUT_CLASS, error && "border-rose-400/60 bg-rose-500/10 focus:border-rose-400 focus:ring-rose-500/20")}
+              >
+                <option value="" disabled>
+                  {f.placeholder || "Select an option"}
+                </option>
+                {f.options.map((o) => (
+                  <option key={o} value={o}>
+                    {o}
                   </option>
-                  {f.options.map((o) => (
-                    <option key={o} value={o}>
-                      {o}
-                    </option>
-                  ))}
-                </select>
-              ) : f.type === "textarea" ? (
-                <textarea
-                  {...fieldProps}
-                  rows={f.rows || 4}
-                  placeholder={f.placeholder}
-                  className={cn(
-                    INPUT_CLASS,
-                    "resize-none py-3",
-                    error && "border-rose-400/60 bg-rose-500/10 focus:border-rose-400 focus:ring-rose-500/20"
-                  )}
-                />
-              ) : (
-                <input
-                  {...fieldProps}
-                  type={f.type || "text"}
-                  placeholder={f.placeholder}
-                  className={cn(INPUT_CLASS, error && "border-rose-400/60 bg-rose-500/10 focus:border-rose-400 focus:ring-rose-500/20")}
-                />
-              )}
-              {error ? (
-                <p id={errorId} className="text-xs text-rose-400">
-                  {error}
-                </p>
-              ) : (
-                f.name === "work_email" &&
-                f.hint && <p className="text-xs text-slate-400">{f.hint}</p>
-              )}
-            </div>
-          );
-        })}
-      </div>
+                ))}
+              </select>
+            ) : f.type === "textarea" ? (
+              <textarea
+                {...fieldProps}
+                rows={f.rows || 4}
+                placeholder={f.placeholder}
+                className={cn(
+                  INPUT_CLASS,
+                  "resize-none py-3",
+                  error && "border-rose-400/60 bg-rose-500/10 focus:border-rose-400 focus:ring-rose-500/20"
+                )}
+              />
+            ) : (
+              <input
+                {...fieldProps}
+                type={f.type || "text"}
+                placeholder={f.placeholder}
+                className={cn(INPUT_CLASS, error && "border-rose-400/60 bg-rose-500/10 focus:border-rose-400 focus:ring-rose-500/20")}
+              />
+            )}
+            {error ? (
+              <p id={errorId} className="text-xs text-rose-400">
+                {error}
+              </p>
+            ) : (
+              f.name === "work_email" &&
+              f.hint && <p className="text-xs text-slate-400">{f.hint}</p>
+            )}
+          </div>
+        );
+      })}
+
+      {/* Honeypot field: hidden from people and screen readers, tempting to bots. */}
+      <input
+        type="text"
+        name="company_website"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-[9999px] -top-[9999px] h-0 w-0 opacity-0"
+      />
 
       <button
         type="submit"
         disabled={submitting}
-        className="group inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-indigo-500/50 disabled:opacity-70"
+        className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-70"
       >
         {submitting ? (
           <>

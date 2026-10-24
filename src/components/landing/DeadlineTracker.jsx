@@ -20,9 +20,9 @@ export default function DeadlineTracker() {
       : "Deadline reached";
 
   return (
-    <div className="border-b border-white/10 bg-slate-950">
+    <div className="bg-slate-950">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-center px-5 sm:px-8">
-        <p className="text-xs text-slate-300 sm:text-[13px]">
+        <p className="text-xs text-slate-300 sm:text-[14px]">
           13 May 2027: <span className="hidden sm:inline">India's new data protection rules apply in full. </span>
           {left}
         </p>

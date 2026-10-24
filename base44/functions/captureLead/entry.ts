@@ -46,6 +46,7 @@ export default async function(req) {
       name,
       work_email,
       intent,
+      submission_id: crypto.randomUUID(),
       company: clean(body?.company, 160),
       designation: clean(body?.designation, 120),
       company_size: clean(body?.company_size, 40),
@@ -74,10 +75,17 @@ export default async function(req) {
     if (readiness_gaps) leadData.readiness_gaps = readiness_gaps;
     if (assessment_answers) leadData.assessment_answers = assessment_answers;
 
-    const existing = await base44.asServiceRole.entities.Lead.filter({ work_email, intent });
+    // Same work email and intent within 10 minutes updates the existing Lead
+    // (a double click or a retry); after that a new Lead is created.
+    const TEN_MINUTES = 10 * 60 * 1000;
+    const page = await base44.asServiceRole.entities.Lead.filter(
+      { work_email, intent },
+      { sort: '-created_date', limit: 1 }
+    );
+    const last = Array.isArray(page) ? page[0] : page?.items?.[0];
     let lead;
-    if (existing && existing.length > 0) {
-      lead = await base44.asServiceRole.entities.Lead.update(existing[0].id, leadData);
+    if (last && Date.now() - new Date(last.created_date).getTime() < TEN_MINUTES) {
+      lead = await base44.asServiceRole.entities.Lead.update(last.id, leadData);
     } else {
       lead = await base44.asServiceRole.entities.Lead.create(leadData);
     }

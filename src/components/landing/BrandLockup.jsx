@@ -13,7 +13,7 @@ export default function BrandLockup({ className = "h-11 w-11", dark = true }) {
           JShield
         </span>
         <span
-          className={`mt-1 text-[10px] font-semibold uppercase tracking-[0.25em] ${
+          className={`mt-1 text-[12px] font-semibold uppercase tracking-[0.25em] ${
             dark ? "text-slate-400" : "text-muted-foreground"
           }`}
         >

@@ -66,20 +66,20 @@ export default function DPDPAct() {
         />
         <div className="mt-8 grid gap-x-8 gap-y-10 md:grid-cols-2">
           <div>
-            <p className="text-[15px] font-semibold text-emerald-400">Covered by the law</p>
+            <p className="text-[16px] font-semibold text-emerald-400">Covered by the law</p>
             <ul className="mt-4">
               {APPLIES.map((t) => (
-                <li key={t} className="py-3 text-[17px] leading-[1.6] text-slate-300">
+                <li key={t} className="py-3 text-[18px] leading-[1.6] text-slate-300">
                   {t}
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <p className="text-[15px] font-semibold text-slate-400">Outside its scope</p>
+            <p className="text-[16px] font-semibold text-slate-400">Outside its scope</p>
             <ul className="mt-4">
               {EXEMPT.map((t) => (
-                <li key={t} className="py-3 text-[17px] leading-[1.6] text-slate-300">
+                <li key={t} className="py-3 text-[18px] leading-[1.6] text-slate-300">
                   {t}
                 </li>
               ))}
@@ -120,13 +120,13 @@ export default function DPDPAct() {
         <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">
           <div>
             <div className="text-4xl font-bold tracking-tight text-white">Rs 250 crore</div>
-            <p className="mt-2 text-[17px] leading-[1.6] text-slate-300">
+            <p className="mt-2 text-[18px] leading-[1.6] text-slate-300">
               The maximum penalty for failing to protect personal data with adequate security safeguards.
             </p>
           </div>
           <div>
             <div className="text-4xl font-bold tracking-tight text-white">Rs 50 crore</div>
-            <p className="mt-2 text-[17px] leading-[1.6] text-slate-300">
+            <p className="mt-2 text-[18px] leading-[1.6] text-slate-300">
               The maximum for most other violations, from consent failures to neglected principal rights.
             </p>
           </div>

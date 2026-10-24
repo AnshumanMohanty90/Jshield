@@ -58,6 +58,10 @@
       "type": "string",
       "title": "Assessment Answers"
     },
+    "submission_id": {
+      "type": "string",
+      "title": "Submission ID"
+    },
     "status": {
       "type": "string",
       "title": "Status",

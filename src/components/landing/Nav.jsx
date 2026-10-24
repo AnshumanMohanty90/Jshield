@@ -145,7 +145,7 @@ export default function Nav() {
       <div
         className={cn(
           "transition-all duration-300",
-          scrolled ? "border-b border-white/10 bg-slate-950/80 backdrop-blur-xl" : "bg-transparent"
+          scrolled ? "bg-slate-950/80 shadow-md shadow-black/20 backdrop-blur-xl" : "bg-transparent"
         )}
       >
         <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
@@ -169,7 +169,7 @@ export default function Nav() {
               {menuOpen && (
                 <div
                   onKeyDown={onMenuPanelKey}
-                  className="absolute left-0 top-full w-[600px] border-b border-white/10 bg-slate-950/95 shadow-xl backdrop-blur-xl"
+                  className="absolute left-0 top-full w-[600px] bg-slate-950/95 shadow-xl backdrop-blur-xl"
                 >
                   <div className="grid grid-cols-2 gap-x-10 px-6 pb-6 pt-4">
                     {PRODUCT_GROUPS.map((g) => (

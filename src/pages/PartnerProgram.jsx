@@ -96,7 +96,7 @@ export default function PartnerProgram() {
           {ADVANTAGES.map((a) => (
             <div key={a.title}>
               <h3 className="text-white">{a.title}</h3>
-              <p className="mt-2 text-[17px] leading-[1.6] text-slate-300">{a.desc}</p>
+              <p className="mt-2 text-[18px] leading-[1.6] text-slate-300">{a.desc}</p>
             </div>
           ))}
         </div>
@@ -110,15 +110,15 @@ export default function PartnerProgram() {
       <Section id="apply" narrow>
         <Reveal>
           <h2 className="text-white text-balance">Apply to become a partner</h2>
-          <p className="mt-2 text-[17px] leading-[1.6] text-slate-300">Tell us about your practice.</p>
-          <div className="mt-8">
+          <p className="mt-2 text-[18px] leading-[1.6] text-slate-300">Tell us about your practice.</p>
+          <div className="mt-8 rounded-2xl bg-white/[0.03] p-6 sm:p-8">
             <LeadForm
               intent="partner"
               sourcePage="/partners"
               fields={[
                 { name: "name", label: "Name", placeholder: "Priya Sharma" },
-                { name: "work_email", label: "Work email", type: "email", placeholder: "you@firm.com" },
-                { name: "company", label: "Firm", placeholder: "Acme Advisory" },
+                { name: "work_email", label: "Work email", type: "email", placeholder: "priya@yourcompany.com" },
+                { name: "company", label: "Firm", placeholder: "Your firm name" },
                 {
                   name: "partner_type",
                   label: "Partner type",

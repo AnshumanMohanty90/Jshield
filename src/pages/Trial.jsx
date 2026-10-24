@@ -18,16 +18,16 @@ export default function Trial() {
 
       <Section tone narrow>
         <h2 className="text-white text-balance">Where should we activate your trial?</h2>
-        <p className="mt-2 text-[17px] leading-[1.6] text-slate-300">Use your work email. Personal addresses are not accepted.</p>
+        <p className="mt-2 text-[18px] leading-[1.6] text-slate-300">Use your work email. Personal addresses are not accepted.</p>
         <div className="mt-8">
           <LeadForm
             intent="trial"
             sourcePage="/trial"
             fields={[
               { name: "name", label: "Full name", placeholder: "Priya Sharma" },
-              { name: "work_email", label: "Work email", type: "email", placeholder: "you@company.com" },
-              { name: "company", label: "Company name", placeholder: "Acme Pvt Ltd" },
-              { name: "designation", label: "Designation", placeholder: "Data Protection Officer" },
+              { name: "work_email", label: "Work email", type: "email", placeholder: "priya@yourcompany.com" },
+              { name: "company", label: "Company name", placeholder: "Your company name" },
+              { name: "designation", label: "Designation", placeholder: "For example, Head of Compliance" },
               {
                 name: "company_size",
                 label: "Company size",

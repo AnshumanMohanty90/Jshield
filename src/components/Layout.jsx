@@ -66,7 +66,7 @@ export default function Layout() {
         <ShieldLogo className="h-9 w-9 flex-none" />
         <div className="leading-tight">
           <div className="text-sm font-semibold text-white tracking-tight">JShield</div>
-          <div className="text-[10px] uppercase tracking-widest text-indigo-300/70">by Jago AI</div>
+          <div className="text-[12px] uppercase tracking-widest text-indigo-300/70">by Jago AI</div>
         </div>
       </div>
 
@@ -87,7 +87,7 @@ export default function Layout() {
 
         {NAV.filter((n) => n.group).map((section) => (
           <div key={section.group}>
-            <div className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-widest text-slate-500">
+            <div className="px-3 mb-2 text-[12px] font-semibold uppercase tracking-widest text-slate-500">
               {section.group}
             </div>
             <div className="space-y-0.5">
@@ -122,7 +122,7 @@ export default function Layout() {
             <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
             DPDP Act 2023 Aligned
           </div>
-          <p className="mt-1.5 text-[11px] leading-relaxed text-slate-500">
+          <p className="mt-1.5 text-[12px] leading-relaxed text-slate-500">
             Continuous monitoring across every JShield module.
           </p>
         </div>

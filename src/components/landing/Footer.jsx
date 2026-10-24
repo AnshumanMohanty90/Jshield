@@ -33,7 +33,7 @@ const COLS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 text-slate-400">
+    <footer className="bg-slate-900/30 text-slate-400">
       <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-16">
         <div className="grid gap-8 md:grid-cols-5">
           <div className="md:col-span-2">
@@ -46,7 +46,7 @@ export default function Footer() {
             </p>
             <a
               href="mailto:contact@jshield.com"
-              className="mt-3 inline-block text-sm text-slate-300 underline-offset-2 transition-colors hover:text-white hover:underline"
+              className="mt-3 inline-flex min-h-[44px] md:min-h-6 items-center text-sm text-slate-300 underline-offset-2 transition-colors hover:text-white hover:underline"
             >
               contact@jshield.com
             </a>
@@ -57,7 +57,10 @@ export default function Footer() {
               <ul className="mt-4 space-y-2.5">
                 {c.links.map(([label, to]) => (
                   <li key={label}>
-                    <Link to={to} className="text-sm transition-colors hover:text-white">
+                    <Link
+                      to={to}
+                      className="inline-flex min-h-[44px] md:min-h-6 items-center text-sm transition-colors hover:text-white"
+                    >
                       {label}
                     </Link>
                   </li>
@@ -67,13 +70,13 @@ export default function Footer() {
           ))}
         </div>
         <div className="mt-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-          <p className="text-[15px] text-slate-300">
+          <p className="text-[16px] text-slate-300">
             © 2026 Jago AI, JShield is part of{" "}
             <a
               href="https://jagotech.ai"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline-offset-2 transition-colors hover:text-white hover:underline"
+              className="inline-flex min-h-[44px] md:min-h-6 items-baseline underline-offset-2 transition-colors hover:text-white hover:underline"
             >
               Jago AI
             </a>{" "}

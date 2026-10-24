@@ -10,6 +10,23 @@ const DEADLINE = new Date("2027-05-13T00:00:00");
 const WEEK = 604800000;
 const DAY = 86400000;
 
+const PROGRESS_KEY = "jshield_assessment_progress";
+
+// Saved progress lets a refresh, the browser Back button or a second tab resume
+// the assessment at the same question with the answers kept.
+function loadProgress() {
+  try {
+    const saved = JSON.parse(window.sessionStorage.getItem(PROGRESS_KEY));
+    if (!saved || !["quiz", "report"].includes(saved.stage)) return null;
+    if (typeof saved.idx !== "number" || saved.idx < 0) return null;
+    if (!saved.profile || typeof saved.profile !== "object") return null;
+    if (!saved.answers || typeof saved.answers !== "object") return null;
+    return saved;
+  } catch {
+    return null;
+  }
+}
+
 function useCountdown() {
   const [ms, setMs] = useState(() => DEADLINE.getTime() - Date.now());
   useEffect(() => {
@@ -37,13 +54,52 @@ export default function Assessment() {
     }
   })();
 
-  const [stage, setStage] = useState(preselect !== null ? "quiz" : "intro");
-  const [idx, setIdx] = useState(0);
-  const [profile, setProfile] = useState({});
-  const [answers, setAnswers] = useState(preselect !== null ? { Q20: preselect } : {});
-  const [result, setResult] = useState(null);
+  const restored = (() => {
+    if (preselect !== null) return { stage: "quiz", idx: 0, profile: {}, answers: { Q20: preselect } };
+    const saved = loadProgress();
+    if (!saved) return null;
+    const done = PROFILE.every((p) => saved.profile[p.id] != null);
+    if (saved.stage === "quiz") {
+      const total = done ? PROFILE.length + buildQuiz(saved.profile).scored.length : PROFILE.length;
+      return {
+        stage: "quiz",
+        idx: Math.min(saved.idx, total - 1),
+        profile: saved.profile,
+        answers: saved.answers,
+      };
+    }
+    if (done && buildQuiz(saved.profile).scored.every((q) => saved.answers[q.id] != null)) {
+      return { stage: "report", idx: PROFILE.length, profile: saved.profile, answers: saved.answers };
+    }
+    return null;
+  })();
+
+  const [stage, setStage] = useState(restored ? restored.stage : "intro");
+  const [idx, setIdx] = useState(restored ? restored.idx : 0);
+  const [profile, setProfile] = useState(restored ? restored.profile : {});
+  const [answers, setAnswers] = useState(restored ? restored.answers : {});
+  const [result, setResult] = useState(
+    restored && restored.stage === "report" ? computeResult(restored.profile, restored.answers) : null
+  );
   const [showHow, setShowHow] = useState(false);
   const { weeks, days } = useCountdown();
+
+  useEffect(() => {
+    if (stage !== "quiz" && stage !== "report") return;
+    try {
+      window.sessionStorage.setItem(PROGRESS_KEY, JSON.stringify({ stage, idx, profile, answers }));
+    } catch {
+      // Storage unavailable: the assessment still runs, it just does not resume.
+    }
+  }, [stage, idx, profile, answers]);
+
+  const clearProgress = () => {
+    try {
+      window.sessionStorage.removeItem(PROGRESS_KEY);
+    } catch {
+      // Nothing to clear.
+    }
+  };
 
   const profileDone = PROFILE.every((p) => profile[p.id] != null);
   const scoredSteps = useMemo(
@@ -114,7 +170,7 @@ export default function Assessment() {
               <h1 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
                 Find out where you stand on DPDP.
               </h1>
-              <p className="mt-4 max-w-[68ch] text-[17px] leading-[1.6] text-slate-200 text-pretty">
+              <p className="mt-4 max-w-[68ch] text-[18px] leading-[1.6] text-slate-200 text-pretty">
                 Answer a few questions about your company, then questions across every duty in the
                 law. It is free, and your score appears as soon as you finish.
               </p>
@@ -124,7 +180,7 @@ export default function Assessment() {
               >
                 Start the assessment
               </button>
-              <p className="mt-4 text-[15px] text-slate-300">About 4 minutes, score on screen</p>
+              <p className="mt-4 text-[16px] text-slate-300">About 4 minutes, score on screen</p>
             </div>
           </motion.section>
         )}
@@ -156,11 +212,7 @@ export default function Assessment() {
               <h2 className="question-heading mt-5 max-w-[60ch] tracking-tight text-white text-balance">
                 {current.q}
               </h2>
-              <div
-                className="mt-4 divide-y divide-white/10 overflow-hidden rounded-xl ring-1 ring-white/10"
-                role="radiogroup"
-                aria-label={current.q}
-              >
+              <div className="mt-5 space-y-2" role="radiogroup" aria-label={current.q}>
                 {opts.map((o, i) => {
                   const isSelected = i === selected;
                   return (
@@ -170,8 +222,8 @@ export default function Assessment() {
                       onClick={() => choose(i)}
                       role="radio"
                       aria-checked={isSelected}
-                      className={`flex min-h-[48px] w-full items-center gap-3 px-5 text-left text-[17px] transition ${
-                        isSelected ? "bg-indigo-500/15 text-white" : "hover:bg-white/5 text-slate-300"
+                      className={`flex min-h-[48px] w-full items-center gap-3 rounded-lg px-5 text-left text-[18px] transition ${
+                        isSelected ? "bg-indigo-500/20 text-white" : "text-slate-300 hover:bg-white/5"
                       }`}
                     >
                       <span
@@ -204,17 +256,17 @@ export default function Assessment() {
                 <span className={`text-6xl font-bold tracking-tight ${result.band.tone}`}>{result.score}</span>
                 <span className="mb-2 text-sm text-slate-400">/ 100</span>
               </div>
-              <p className="mt-3 text-[22px] font-semibold text-white">{result.band.name}</p>
-              <p className="mt-2 max-w-[68ch] text-[17px] leading-[1.6] text-slate-300 text-pretty">
+              <p className="mt-3 text-[20px] font-semibold text-white">{result.band.name}</p>
+              <p className="mt-2 max-w-[68ch] text-[18px] leading-[1.6] text-slate-300 text-pretty">
                 {result.capReason
                   ? `Your answers score ${result.score}, but a critical control is missing or partly in place, so your band stays ${result.band.name} until it is fixed.`
                   : result.band.desc}
               </p>
 
-              <p className="mt-2 max-w-[68ch] text-[15px] leading-[1.6] text-slate-400 text-pretty">
+              <p className="mt-2 max-w-[68ch] text-[16px] leading-[1.6] text-slate-400 text-pretty">
                 Answers are self-reported. An inquiry or audit will ask for evidence of each one.
               </p>
-              <p className="mt-1 text-[15px] text-slate-400">Not sure is counted as a gap.</p>
+              <p className="mt-1 text-[16px] text-slate-400">Not sure is counted as a gap.</p>
 
               {result.capReason && (
                 <p className="mt-4 rounded-lg border border-amber-400/30 bg-amber-500/10 px-4 py-3 text-sm leading-relaxed text-amber-200">
@@ -226,7 +278,7 @@ export default function Assessment() {
                 {result.areas.map((a) => (
                   <div key={a.id}>
                     <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                      <span className="text-[17px] font-medium text-slate-100">{a.name}</span>
+                      <span className="text-[18px] font-medium text-slate-100">{a.name}</span>
                       <span className="text-sm text-slate-400">
                         <span className="font-semibold text-slate-200">{a.score} of 100</span>, penalty
                         up to Rs {a.penalty} crore
@@ -250,10 +302,10 @@ export default function Assessment() {
                   <ol className="mt-4 space-y-4">
                     {result.gaps.map((g, i) => (
                       <li key={g.id} className="rounded-xl px-5 py-4 ring-1 ring-white/10">
-                        <p className="text-[17px] font-medium leading-snug text-slate-100">
+                        <p className="text-[18px] font-medium leading-snug text-slate-100">
                           {i + 1}. {g.q}
                         </p>
-                        <p className="mt-1.5 text-[15px] leading-[1.6] text-slate-300">{g.fix}</p>
+                        <p className="mt-1.5 text-[16px] leading-[1.6] text-slate-300">{g.fix}</p>
                         <p className="mt-1 text-sm text-rose-300">Penalty up to Rs {g.penalty} crore</p>
                       </li>
                     ))}
@@ -261,7 +313,7 @@ export default function Assessment() {
                 </div>
               )}
 
-              <p className="mt-8 text-[15px] text-slate-300">
+              <p className="mt-8 text-[16px] text-slate-300">
                 {weeks} weeks, {days} days until 13 May 2027, when the rules apply in full.
               </p>
               <p className="mt-3 text-sm text-slate-400">Indicative score, not legal advice.</p>
@@ -304,11 +356,12 @@ export default function Assessment() {
                     ? "Keep your controls in order with a free 10-day trial."
                     : "Close these gaps with a free 10-day trial."}
                 </h3>
-                <div className="mt-6 max-w-xl">
+                <div className="mt-6 max-w-xl rounded-2xl bg-white/[0.03] p-6 sm:p-8">
                   <LeadForm
                     intent="trial"
                     sourcePage="/assessment"
                     score={result.score}
+                    onDone={clearProgress}
                     extra={{
                       readiness_band: result.band.name,
                       readiness_gaps: JSON.stringify(
@@ -318,8 +371,8 @@ export default function Assessment() {
                     }}
                     fields={[
                       { name: "name", label: "Name", placeholder: "Priya Sharma" },
-                      { name: "work_email", label: "Work email", type: "email", placeholder: "you@company.com" },
-                      { name: "company", label: "Company", placeholder: "Acme Pvt Ltd" },
+                      { name: "work_email", label: "Work email", type: "email", placeholder: "priya@yourcompany.com" },
+                      { name: "company", label: "Company", placeholder: "Your company name" },
                       {
                         name: "company_size",
                         label: "Company size",

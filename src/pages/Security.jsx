@@ -35,7 +35,7 @@ export default function Security() {
       <Section narrow>
         <h2 className="text-white text-balance">Standards</h2>
         {STANDARDS.map((b) => (
-          <p key={b} className="mt-4 max-w-[68ch] text-[17px] leading-[1.6] text-slate-300 text-pretty">
+          <p key={b} className="mt-4 max-w-[68ch] text-[18px] leading-[1.6] text-slate-300 text-pretty">
             {b}
           </p>
         ))}

@@ -11,9 +11,12 @@ export default function LegalPage({ title }) {
     <LandingLayout>
       <PageHero eyebrow="Legal" title={title} subtitle="This page is being updated." />
       <Section tone narrow>
-        <p className="max-w-[68ch] text-[17px] leading-[1.6] text-slate-300 text-pretty">
+        <p className="max-w-[68ch] text-[18px] leading-[1.6] text-slate-300 text-pretty">
           For a copy of this document,{" "}
-          <Link to="/contact" className="underline-offset-4 hover:text-white hover:underline">
+          <Link
+            to="/contact"
+            className="inline-flex min-h-[44px] md:min-h-6 items-center underline-offset-4 hover:text-white hover:underline"
+          >
             write to us
           </Link>
           .

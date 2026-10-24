@@ -16,9 +16,9 @@ export default function Contact() {
 
   const fields = isPricing
     ? [
-        { name: "name", label: "Full name", placeholder: "Anita Rao" },
-        { name: "work_email", label: "Work email", type: "email", placeholder: "anita@company.in" },
-        { name: "company", label: "Company", placeholder: "VeriFintech" },
+        { name: "name", label: "Full name", placeholder: "Priya Sharma" },
+        { name: "work_email", label: "Work email", type: "email", placeholder: "priya@yourcompany.com" },
+        { name: "company", label: "Company", placeholder: "Your company name" },
         {
           name: "company_size",
           label: "Company size",
@@ -35,9 +35,9 @@ export default function Contact() {
         },
       ]
     : [
-        { name: "name", label: "Full name", placeholder: "Anita Rao" },
-        { name: "work_email", label: "Work email", type: "email", placeholder: "anita@company.in" },
-        { name: "company", label: "Company", placeholder: "VeriFintech" },
+        { name: "name", label: "Full name", placeholder: "Priya Sharma" },
+        { name: "work_email", label: "Work email", type: "email", placeholder: "priya@yourcompany.com" },
+        { name: "company", label: "Company", placeholder: "Your company name" },
         {
           name: "company_size",
           label: "Company size",
@@ -71,8 +71,8 @@ export default function Contact() {
           <div className="lg:col-span-2">
             {CHANNELS.map((c) => (
               <div key={c.label} className="py-5">
-                <div className="text-[15px] font-semibold text-slate-400">{c.label}</div>
-                <div className="mt-1 text-[17px] leading-[1.6] text-slate-200">
+                <div className="text-[16px] font-semibold text-slate-400">{c.label}</div>
+                <div className="mt-1 text-[18px] leading-[1.6] text-slate-200">
                   {c.href ? (
                     <a
                       href={c.href}

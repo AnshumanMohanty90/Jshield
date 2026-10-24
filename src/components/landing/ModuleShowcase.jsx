@@ -93,10 +93,10 @@ export default function ModuleShowcase() {
       <div id="modules-panel" role="tabpanel" className="mt-6 grid gap-8 lg:grid-cols-2 lg:gap-10">
         <div>
           <h3 className="text-white">{tab.title}</h3>
-          <p className="mt-2 text-[17px] leading-[1.6] text-slate-300 text-pretty">{tab.blurb}</p>
+          <p className="mt-2 text-[18px] leading-[1.6] text-slate-300 text-pretty">{tab.blurb}</p>
           <ul className="mt-6">
             {tab.points.map((p) => (
-              <li key={p} className="row-hover py-3 text-[17px] leading-[1.6] text-slate-300">
+              <li key={p} className="row-hover py-3 text-[18px] leading-[1.6] text-slate-300">
                 {p}
               </li>
             ))}

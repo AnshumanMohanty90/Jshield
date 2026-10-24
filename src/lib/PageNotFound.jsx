@@ -23,7 +23,7 @@ export default function PageNotFound({}) {
     return (
         <div className="min-h-screen bg-slate-950 px-5 py-24">
             <div className="mx-auto max-w-md text-center">
-                <h1 className="text-7xl font-light text-slate-300">404</h1>
+                <h1 className="text-6xl font-light text-slate-300">404</h1>
                 <h2 className="mt-4 text-2xl font-medium text-white">Page not found</h2>
                 <p className="mt-3 text-slate-400 leading-relaxed text-pretty">
                     The page "{pageName}" could not be found in this application.

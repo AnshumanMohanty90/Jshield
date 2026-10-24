@@ -36,11 +36,11 @@ export default function WhyMatters() {
       <Reveal className="mt-6 grid grid-cols-2 gap-x-6 gap-y-6 rounded-xl border border-white/10 bg-white/[0.03] px-6 py-6 lg:grid-cols-4 lg:gap-x-8">
         {items.map((c) => (
           <div key={c.label}>
-            {c.pre && <p className="text-[15px] text-slate-400">{c.pre}</p>}
-            <div className="text-[32px] font-bold leading-none tracking-tight text-white text-pretty">
+            {c.pre && <p className="text-[16px] text-slate-400">{c.pre}</p>}
+            <div className="text-[30px] font-bold leading-none tracking-tight text-white text-pretty">
               {c.stat}
             </div>
-            <p className="mt-2 text-[15px] leading-snug text-slate-300 text-pretty">{c.label}</p>
+            <p className="mt-2 text-[16px] leading-snug text-slate-300 text-pretty">{c.label}</p>
           </div>
         ))}
       </Reveal>

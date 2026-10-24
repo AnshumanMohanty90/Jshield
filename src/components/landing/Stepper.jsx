@@ -60,7 +60,7 @@ export default function Stepper({ steps, ariaLabel = "Steps", className = "mt-6"
       </div>
       <div role="tabpanel" className="mt-6">
         <h3 className="text-white">{steps[active].title}</h3>
-        <p className="mt-2 max-w-[68ch] text-[17px] leading-[1.6] text-slate-300">{steps[active].desc}</p>
+        <p className="mt-2 max-w-[68ch] text-[18px] leading-[1.6] text-slate-300">{steps[active].desc}</p>
       </div>
     </div>
   );

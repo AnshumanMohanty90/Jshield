@@ -7,7 +7,7 @@ export default function PageHero({ eyebrow, title, subtitle }) {
         {eyebrow && <p className="text-[16px] font-semibold text-indigo-400">{eyebrow}</p>}
         <h1 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">{title}</h1>
         {subtitle && (
-          <p className="mt-4 max-w-[68ch] text-[17px] leading-[1.6] text-slate-200 text-pretty">{subtitle}</p>
+          <p className="mt-4 max-w-[68ch] text-[18px] leading-[1.6] text-slate-200 text-pretty">{subtitle}</p>
         )}
         <div className="mt-7 flex flex-col gap-3 sm:flex-row">
           <CtaPrimary to="/assessment">Check your readiness</CtaPrimary>

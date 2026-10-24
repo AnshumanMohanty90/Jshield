@@ -28,7 +28,7 @@ export default function Accordion({ items, className = "mt-6" }) {
               className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
             >
               <div className="overflow-hidden">
-                <p className="pb-4 text-[17px] leading-[1.6] text-slate-300">{it.desc}</p>
+                <p className="pb-4 text-[18px] leading-[1.6] text-slate-300">{it.desc}</p>
               </div>
             </div>
           </div>

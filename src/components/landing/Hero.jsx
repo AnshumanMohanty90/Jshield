@@ -31,7 +31,7 @@ function Gauge() {
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className="text-2xl font-bold text-white">{score}</span>
-        <span className="text-[9px] uppercase tracking-widest text-slate-400">Score</span>
+        <span className="text-[12px] uppercase tracking-widest text-slate-400">Score</span>
       </div>
     </div>
   );
@@ -60,7 +60,7 @@ export default function Hero() {
             <h1 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
               Get ready for India's data protection law in 30 days.
             </h1>
-            <p className="mt-3 max-w-[68ch] text-[17px] leading-[1.6] text-slate-200 text-pretty">
+            <p className="mt-3 max-w-[68ch] text-[18px] leading-[1.6] text-slate-200 text-pretty">
               Record customer consent, find the personal data you hold and report breaches on time. Every step is
               logged, so you have proof for any audit.
             </p>
@@ -78,14 +78,14 @@ export default function Hero() {
                 <span className="h-2.5 w-2.5 rounded-full bg-rose-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-amber-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
-                <span className="ml-3 text-[11px] text-slate-400">jshield.app/dashboard</span>
+                <span className="ml-3 text-[12px] text-slate-400">jshield.app/dashboard</span>
               </div>
               <div className="grid grid-cols-3 overflow-hidden rounded-xl bg-slate-950/60">
-                <div className="col-span-1 divide-y divide-white/5 border-r border-white/5">
+                <div className="col-span-1 border-r border-white/5">
                   {NAV_ITEMS.map((x, i) => (
                     <div
                       key={x}
-                      className={`flex items-center gap-2 px-3 py-1.5 text-[11px] ${
+                      className={`flex items-center gap-2 px-3 py-2 text-[12px] ${
                         i === 0 ? "bg-indigo-500/20 text-white" : "text-slate-400"
                       }`}
                     >
@@ -96,16 +96,16 @@ export default function Hero() {
                 <div className="col-span-2">
                   <div className="flex items-center justify-between px-4 py-3">
                     <div>
-                      <div className="text-[10px] uppercase tracking-widest text-slate-400">Readiness</div>
+                      <div className="text-[12px] uppercase tracking-widest text-slate-400">Readiness</div>
                       <div className="text-sm font-semibold text-white">Healthy</div>
                     </div>
                     <Gauge />
                   </div>
-                  <div className="divide-y divide-white/5 border-t border-white/5">
+                  <div>
                     {STATUS_ROWS.map((r) => {
                       const Icon = r.icon;
                       return (
-                        <div key={r.label} className="flex items-center gap-2.5 px-4 py-2 text-[11px] text-slate-300">
+                        <div key={r.label} className="flex items-center gap-2.5 px-4 py-2.5 text-[12px] text-slate-300">
                           <Icon className="h-3.5 w-3.5 text-indigo-300" />
                           <span>{r.label}</span>
                           <span className={`ml-auto h-1.5 w-1.5 rounded-full ${r.tone}`} />
@@ -115,7 +115,7 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
-              <p className="px-3 pb-2 pt-1 text-[10px] text-slate-400">Sample data</p>
+              <p className="px-3 pb-2 pt-1 text-[12px] text-slate-400">Sample data</p>
             </div>
             <div className="absolute -bottom-4 -right-4 hidden rounded-xl bg-slate-900 px-4 py-3 shadow-xl ring-1 ring-white/10 sm:block">
               <div className="text-xs text-slate-300">71h left in the breach reporting window</div>

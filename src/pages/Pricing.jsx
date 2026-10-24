@@ -43,11 +43,11 @@ export default function Pricing() {
 
       <Section tone narrow>
         <Reveal>
-          <p className="text-[15px] font-semibold text-indigo-400">10-day free trial</p>
+          <p className="text-[16px] font-semibold text-indigo-400">10-day free trial</p>
           <div className="mt-4 flex flex-wrap items-baseline gap-x-3">
             <span className="text-5xl font-bold tracking-tight text-white">Custom pricing</span>
           </div>
-          <p className="mt-4 max-w-[68ch] text-[17px] leading-[1.6] text-slate-300">
+          <p className="mt-4 max-w-[68ch] text-[18px] leading-[1.6] text-slate-300">
             Priced on your company size and the systems that hold personal data.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -57,10 +57,10 @@ export default function Pricing() {
         </Reveal>
 
         <Reveal delay={80} className="mt-10">
-          <p className="text-[15px] font-semibold text-slate-400">What is included</p>
+          <p className="text-[16px] font-semibold text-slate-400">What is included</p>
           <ul className="mt-4 grid gap-x-8 sm:grid-cols-2">
             {INCLUDED.map((f) => (
-              <li key={f} className="row-hover py-3 text-[17px] leading-[1.6] text-slate-300">
+              <li key={f} className="row-hover py-3 text-[18px] leading-[1.6] text-slate-300">
                 {f}
               </li>
             ))}
@@ -70,7 +70,7 @@ export default function Pricing() {
         <Reveal delay={120} className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h3 className="text-white">Prefer it with Jago?</h3>
-            <p className="mt-2 text-[17px] leading-[1.6] text-slate-300">
+            <p className="mt-2 text-[18px] leading-[1.6] text-slate-300">
               Also available as part of any Jago plan.
             </p>
           </div>
@@ -91,7 +91,7 @@ export default function Pricing() {
                   type="button"
                   onClick={() => setOpen(isOpen ? -1 : i)}
                   aria-expanded={isOpen}
-                  className="flex min-h-[44px] w-full items-center justify-between gap-4 py-3.5 text-left text-[17px] text-slate-100"
+                  className="flex min-h-[44px] w-full items-center justify-between gap-4 py-3.5 text-left text-[18px] text-slate-100"
                 >
                   {f.q}
                   <ChevronDown
@@ -103,7 +103,7 @@ export default function Pricing() {
                 <div
                   className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] pb-4" : "grid-rows-[0fr]"}`}
                 >
-                  <div className="overflow-hidden text-[17px] leading-[1.6] text-slate-300">{f.a}</div>
+                  <div className="overflow-hidden text-[18px] leading-[1.6] text-slate-300">{f.a}</div>
                 </div>
               </div>
             );

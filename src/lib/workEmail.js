@@ -13,7 +13,7 @@ export function workEmailError(email) {
     return "Enter a valid work email.";
   }
   if (FREE_EMAIL_DOMAINS.includes(value.split("@")[1])) {
-    return "Please use your work email.";
+    return "Please use your work email, not a Gmail, Yahoo or Outlook address.";
   }
   return "";
 }
