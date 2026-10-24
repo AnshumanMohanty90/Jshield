@@ -80,7 +80,7 @@ export default function GDPR() {
           intro="GDPR follows the people, not the office. Where you are based does not matter if you offer goods or services to people in the EU or track how they behave online."
         />
         <div className="mt-8 grid gap-x-8 gap-y-8 md:grid-cols-2">
-          <ul>
+          <ul className="md:-mt-3">
             {APPLIES.map((t) => (
               <li key={t} className="py-3 text-[18px] leading-[1.6] text-slate-300">
                 {t}

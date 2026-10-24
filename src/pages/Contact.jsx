@@ -70,7 +70,7 @@ export default function Contact() {
         <div className="grid gap-x-8 gap-y-10 lg:grid-cols-5">
           <div className="lg:col-span-2">
             {CHANNELS.map((c) => (
-              <div key={c.label} className="py-5">
+              <div key={c.label} className="py-5 first:pt-0">
                 <div className="text-[16px] font-semibold text-slate-400">{c.label}</div>
                 <div className="mt-1 text-[18px] leading-[1.6] text-slate-200">
                   {c.href ? (
