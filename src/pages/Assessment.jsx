@@ -112,11 +112,11 @@ export default function Assessment() {
                 Free DPDP readiness assessment
               </span>
               <h1 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
-                Find out where you stand on DPDP, in about 5 minutes.
+                Find out where you stand on DPDP.
               </h1>
               <p className="mt-4 max-w-[68ch] text-[17px] leading-[1.6] text-slate-200 text-pretty">
                 Answer a few questions about your company, then questions across every duty in the
-                law. Free. About 5 minutes, and your score appears as soon as you finish.
+                law. It is free, and your score appears as soon as you finish.
               </p>
               <button
                 onClick={start}
