@@ -1,30 +1,15 @@
-import { useEffect, useState } from "react";
 import Section from "./Section";
 import SectionHeading from "./SectionHeading";
 import { Reveal } from "./primitives";
 
-const DEADLINE = new Date("2027-05-13T00:00:00");
-const WEEK = 604800000;
-const DAY = 86400000;
+const ITEMS = [
+  { stat: "Rs 250 crore", label: "maximum fine for failing to protect personal data" },
+  { stat: "Rs 50 crore", label: "maximum for most other failures, such as consent" },
+  { stat: "72 hours", label: "to report a breach to the Data Protection Board" },
+  { stat: "Any size", label: "of company is covered; one complaint can start an inquiry" },
+];
 
 export default function WhyMatters() {
-  const [ms, setMs] = useState(() => DEADLINE.getTime() - Date.now());
-
-  useEffect(() => {
-    const id = setInterval(() => setMs(DEADLINE.getTime() - Date.now()), 30000);
-    return () => clearInterval(id);
-  }, []);
-
-  const weeks = Math.max(0, Math.floor(ms / WEEK));
-  const days = Math.max(0, Math.floor((ms % WEEK) / DAY));
-
-  const items = [
-    { pre: "Up to", stat: "Rs 250 crore", label: "fine for a single breach" },
-    { pre: "", stat: "7", label: "duties every company must run" },
-    { pre: "", stat: "72 hours", label: "to report a breach" },
-    { pre: "", stat: String(weeks), label: `weeks, ${days} days to 13 May 2027` },
-  ];
-
   return (
     <Section tone>
       <SectionHeading
@@ -33,14 +18,11 @@ export default function WhyMatters() {
         intro="India's Digital Personal Data Protection Act (DPDP) sets how companies collect, use and protect customer data."
       />
 
-      <Reveal className="mt-6 grid grid-cols-2 gap-x-6 gap-y-6 rounded-xl border border-white/10 bg-white/[0.03] px-6 py-6 lg:grid-cols-4 lg:gap-x-8">
-        {items.map((c) => (
-          <div key={c.label}>
-            {c.pre && <p className="text-[16px] text-slate-400">{c.pre}</p>}
-            <div className="text-[30px] font-bold leading-none tracking-tight text-white text-pretty">
-              {c.stat}
-            </div>
-            <p className="mt-2 text-[16px] leading-snug text-slate-300 text-pretty">{c.label}</p>
+      <Reveal className="mt-6 grid grid-cols-2 gap-x-6 gap-y-6 rounded-xl bg-white/[0.03] px-5 py-6 sm:px-6 lg:grid-cols-4 lg:gap-x-8">
+        {ITEMS.map((c) => (
+          <div key={c.stat} className="flex flex-col">
+            <div className="text-[24px] sm:text-[30px] font-bold leading-none tracking-tight text-white">{c.stat}</div>
+            <p className="mt-3 max-w-[26ch] text-[16px] leading-snug text-slate-300 text-pretty">{c.label}</p>
           </div>
         ))}
       </Reveal>
