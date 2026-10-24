@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Loader2 } from "lucide-react";
-import { base44 } from "@/api/base44Client";
+import { submitLead } from "@/lib/submitLead";
 import { cn } from "@/lib/utils";
 import { workEmailError } from "@/lib/workEmail";
 
@@ -71,7 +71,7 @@ export default function LeadForm({
     try {
       const payload = { intent, source_page: sourcePage, ...form, ...extra };
       if (score != null) payload.readiness_score = score;
-      await base44.functions.invoke("captureLead", payload);
+      await submitLead(payload);
       setDone(true);
       onDone?.();
     } catch {
