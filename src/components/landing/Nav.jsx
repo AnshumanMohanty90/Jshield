@@ -22,6 +22,14 @@ const PRODUCT_GROUPS = [
       { label: "Security", desc: "How we protect your data", to: "/security" },
     ],
   },
+  {
+    title: "Frameworks",
+    links: [
+      { label: "DPDP Act", desc: "India's data protection law", to: "/dpdp-act" },
+      { label: "GDPR", desc: "For data from the EU and UK", to: "/gdpr" },
+      { label: "SOC 2", desc: "Controls and audit evidence", to: "/soc-2" },
+    ],
+  },
 ];
 
 const NAV_LINKS = [
@@ -169,9 +177,9 @@ export default function Nav() {
               {menuOpen && (
                 <div
                   onKeyDown={onMenuPanelKey}
-                  className="absolute left-0 top-full w-[600px] bg-slate-950/95 shadow-xl backdrop-blur-xl"
+                  className="absolute left-0 top-full w-[860px] bg-slate-950/95 shadow-xl backdrop-blur-xl"
                 >
-                  <div className="grid grid-cols-2 gap-x-10 px-6 pb-6 pt-4">
+                  <div className="grid grid-cols-3 gap-x-10 px-6 pb-6 pt-4">
                     {PRODUCT_GROUPS.map((g) => (
                       <div key={g.title}>
                         <p className="text-[16px] font-semibold text-indigo-400">{g.title}</p>

@@ -7,6 +7,8 @@ const COLS = [
     links: [
       ["Solution overview", "/#solution"],
       ["DPDP Act", "/dpdp-act"],
+      ["GDPR", "/gdpr"],
+      ["SOC 2", "/soc-2"],
       ["Partner programme", "/partners"],
       ["Readiness assessment", "/assessment"],
     ],

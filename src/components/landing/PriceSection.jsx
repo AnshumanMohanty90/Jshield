@@ -5,7 +5,7 @@ import { primaryCtaClass, secondaryCtaClass } from "./Buttons";
 
 export default function PriceSection() {
   return (
-    <Section tone>
+    <Section>
       <Reveal className="grid gap-6 lg:grid-cols-2 lg:items-center">
         <div>
           <p className="text-[16px] font-semibold text-indigo-400">Price</p>

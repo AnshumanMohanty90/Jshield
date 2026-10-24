@@ -4,7 +4,7 @@ import { Reveal } from "./primitives";
 
 export default function BetterWithJago() {
   return (
-    <Section>
+    <Section tone>
       <SectionHeading
         label="Better with Jago"
         title="Compliance built in from the start."

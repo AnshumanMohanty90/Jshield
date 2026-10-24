@@ -74,7 +74,7 @@ export default function Industries() {
   const ind = INDUSTRIES.find((i) => i.key === active);
 
   return (
-    <Section>
+    <Section tone>
       <SectionHeading
         label="Built for your sector"
         title="Set up for your sector."

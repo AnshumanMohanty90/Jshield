@@ -13,7 +13,7 @@ const ITEMS = [
 
 export default function Trust() {
   return (
-    <Section tone>
+    <Section>
       <SectionHeading label="Trust" title="We hold your data to the same rules we help you meet." />
       <Accordion items={ITEMS} />
       <Reveal delay={0.1} className="mt-6">
