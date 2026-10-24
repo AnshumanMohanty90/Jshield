@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider } from '@/lib/AuthContext';
@@ -42,15 +42,28 @@ const PageLoader = () => (
   </div>
 );
 
+// Self-hosted build: the product console stays on Base44 at VITE_APP_URL (for example
+// https://app.jshield.ai). Sign-in and console paths on this site send visitors there.
+const APP_URL = import.meta.env.VITE_APP_URL;
+
+const ExternalRedirect = () => {
+  useEffect(() => {
+    window.location.replace(APP_URL + window.location.pathname + window.location.search);
+  }, []);
+  return <PageLoader />;
+};
+
+const appRoute = (element) => (APP_URL ? <ExternalRedirect /> : element);
+
 // Public pages render immediately; no page above the fold waits on the login or app-settings check.
 const AuthenticatedApp = () => {
   return (
     <Suspense fallback={<PageLoader />}>
     <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/forgot-password" element={<ForgotPassword />} />
-      <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/login" element={appRoute(<Login />)} />
+      <Route path="/register" element={appRoute(<Register />)} />
+      <Route path="/forgot-password" element={appRoute(<ForgotPassword />)} />
+      <Route path="/reset-password" element={appRoute(<ResetPassword />)} />
       <Route path="/" element={<Landing />} />
       <Route path="/pricing" element={<PricingPage />} />
       <Route path="/security" element={<SecurityPage />} />
@@ -63,6 +76,11 @@ const AuthenticatedApp = () => {
       <Route path="/terms" element={<LegalPage title="Terms" />} />
       <Route path="/dpdp-statement" element={<LegalPage title="DPDP Statement" />} />
       <Route path="/sub-processors" element={<LegalPage title="Sub-processors" />} />
+      {APP_URL ? (
+        ["/dashboard", "/data-discovery", "/consents", "/cookies", "/vendors", "/breaches", "/ropa", "/grievances", "/rights", "/dpia", "/security-safeguards"].map((p) => (
+          <Route key={p} path={p} element={<ExternalRedirect />} />
+        ))
+      ) : (
       <Route element={<ProtectedRoute unauthenticatedElement={<Navigate to="/login" replace />} />}>
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
@@ -78,6 +96,7 @@ const AuthenticatedApp = () => {
           <Route path="/security-safeguards" element={<SecuritySafeguards />} />
         </Route>
       </Route>
+      )}
       <Route path="*" element={<PageNotFound />} />
     </Routes>
     </Suspense>
@@ -85,10 +104,13 @@ const AuthenticatedApp = () => {
 };
 
 
+// Without Base44 login on the self-hosted site, skip the auth provider entirely.
+const AuthShell = APP_URL ? Fragment : AuthProvider;
+
 function App() {
 
   return (
-    <AuthProvider>
+    <AuthShell>
       <QueryClientProvider client={queryClientInstance}>
         <Router>
           <ScrollToTop />
@@ -96,7 +118,7 @@ function App() {
         </Router>
         <Toaster />
       </QueryClientProvider>
-    </AuthProvider>
+    </AuthShell>
   )
 }
 
