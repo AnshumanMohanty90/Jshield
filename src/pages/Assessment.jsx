@@ -124,7 +124,7 @@ export default function Assessment() {
               >
                 Start the assessment
               </button>
-              <p className="mt-4 text-[15px] text-slate-300">About 5 minutes, score on screen</p>
+              <p className="mt-4 text-[15px] text-slate-300">About 4 minutes, score on screen</p>
             </div>
           </motion.section>
         )}

@@ -17,7 +17,7 @@ const PRODUCT_GROUPS = [
   {
     title: "Get started",
     links: [
-      { label: "Readiness check", desc: "Your score in about 5 minutes", to: "/assessment" },
+      { label: "Readiness check", desc: "Your score in about 4 minutes", to: "/assessment" },
       { label: "Free trial", desc: "10 days, every module", to: "/trial" },
       { label: "Security", desc: "How we protect your data", to: "/security" },
     ],
