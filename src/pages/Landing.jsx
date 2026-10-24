@@ -4,6 +4,7 @@ import WhyMatters from "@/components/landing/WhyMatters";
 import ModuleShowcase from "@/components/landing/ModuleShowcase";
 import HowItWorks from "@/components/landing/HowItWorks";
 import Industries from "@/components/landing/Industries";
+import Frameworks from "@/components/landing/Frameworks";
 import Trust from "@/components/landing/Trust";
 import BetterWithJago from "@/components/landing/BetterWithJago";
 import PriceSection from "@/components/landing/PriceSection";
@@ -18,6 +19,7 @@ export default function Landing() {
       <WhyMatters />
       <ModuleShowcase />
       <HowItWorks />
+      <Frameworks />
       <Industries />
       <Trust />
       <BetterWithJago />
