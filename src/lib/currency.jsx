@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 
-// Prices are set in Indian rupees. Visitors in India see rupees; everyone else sees US dollars,
-// converted at the day's rate (fallback rate used when the rate service cannot be reached).
+// Prices are set in Indian rupees. Visitors in India see rupees; everyone else sees US dollars.
+// India pricing is kept about 25% cheaper than a straight conversion (currency parity), so dollar
+// prices are the converted amount plus 25%. Plans can also carry a fixed dollar price point.
+const USD_UPLIFT = 1.25;
 const FALLBACK_INR_PER_USD = 95;
 const RATE_KEY = "jshield_fx_usd_inr";
 const CHOICE_KEY = "jshield_currency";
@@ -73,12 +75,14 @@ const usd = (n, decimals) =>
   n.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
 
 // amountInr: price in rupees. decimals: 0 for plan prices, 2 for per-unit prices.
-export function formatPrice(amountInr, currency, rate, decimals = 0) {
+// usdPrice: an optional fixed dollar price point for a plan (used instead of the formula).
+export function formatPrice(amountInr, currency, rate, decimals = 0, usdPrice) {
   if (currency === "INR") {
     return decimals ? `Rs ${amountInr.toFixed(decimals)}` : `Rs ${inrGroup(amountInr)}`;
   }
-  const value = amountInr / rate;
-  if (decimals) return `$${usd(value, decimals)}`;
+  if (usdPrice != null) return `$${usd(usdPrice, decimals)}`;
+  const value = (amountInr / rate) * USD_UPLIFT;
+  if (decimals) return `$${usd(Math.ceil(value * 100) / 100, decimals)}`;
   return `$${usd(Math.round(value), 0)}`;
 }
 
