@@ -70,6 +70,8 @@ export function useCurrency() {
   return { currency, rate, setCurrency };
 }
 
+// One decimal place, dropping a trailing ".0" (57.0 becomes 57).
+const trim1 = (n) => n.toFixed(1).replace(/\.0$/, "");
 const inrGroup = (n) => Math.round(n).toLocaleString("en-IN");
 const usd = (n, decimals) =>
   n.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
@@ -89,12 +91,12 @@ export function formatPrice(amountInr, currency, rate, decimals = 0, usdPrice) {
 // Large yearly amounts given in rupees, written the way each audience reads them.
 export function formatLarge(amountInr, currency, rate) {
   if (currency === "INR") {
-    if (amountInr >= 1e7) return `Rs ${(amountInr / 1e7).toFixed(1)} crore`;
-    if (amountInr >= 1e5) return `Rs ${(amountInr / 1e5).toFixed(1)} lakh`;
+    if (amountInr >= 1e7) return `Rs ${trim1(amountInr / 1e7)} crore`;
+    if (amountInr >= 1e5) return `Rs ${trim1(amountInr / 1e5)} lakh`;
     return `Rs ${inrGroup(amountInr)}`;
   }
   const v = amountInr / rate;
-  if (v >= 1e6) return `$${(v / 1e6).toFixed(1)} million`;
+  if (v >= 1e6) return `$${trim1(v / 1e6)} million`;
   return `$${usd(Math.round(v), 0)}`;
 }
 
