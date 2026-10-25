@@ -11,7 +11,7 @@ const PRODUCT_GROUPS = [
       { label: "Customer consent", desc: "Record and prove every permission", to: "/#solution" },
       { label: "Breach response", desc: "Report within the legal time limit", to: "/#solution" },
       { label: "Data record", desc: "One live list of the personal data you hold", to: "/#solution" },
-      { label: "How it works", desc: "Four steps to ready", to: "/how-we-help" },
+      { label: "How it works", desc: "Four steps to ready", to: "/#how-we-help" },
     ],
   },
   {

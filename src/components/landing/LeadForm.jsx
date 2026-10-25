@@ -196,8 +196,8 @@ export default function LeadForm({
       {formError && (
         <p ref={errorRef} tabIndex={-1} role="alert" className="text-sm text-rose-400 outline-none">
           {formError}{" "}
-          <a href="mailto:contact@jshield.com" className="whitespace-nowrap underline underline-offset-2">
-            contact@jshield.com
+          <a href="mailto:contact@jagoai.com" className="whitespace-nowrap underline underline-offset-2">
+            contact@jagoai.com
           </a>
           .
         </p>
