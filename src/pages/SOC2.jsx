@@ -74,7 +74,7 @@ export default function SOC2() {
         <div className="mt-8 grid gap-x-6 gap-y-6 grid-cols-2 lg:grid-cols-4">
           {FACTS.map((f) => (
             <div key={f.stat}>
-              <div className="text-[30px] font-bold leading-none tracking-tight text-white">{f.stat}</div>
+              <div className="text-[24px] sm:text-[30px] font-bold leading-tight tracking-tight text-white stat-figure">{f.stat}</div>
               <p className="mt-2 text-[16px] leading-snug text-slate-300 text-pretty">{f.label}</p>
             </div>
           ))}
