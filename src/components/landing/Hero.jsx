@@ -30,7 +30,7 @@ function Gauge() {
         </defs>
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-2xl font-bold text-white">{score}</span>
+        <span className="text-[24px] font-bold leading-tight text-white stat-figure">{score}</span>
         <span className="text-[12px] text-slate-400">Score</span>
       </div>
     </div>

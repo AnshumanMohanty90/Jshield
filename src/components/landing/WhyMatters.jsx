@@ -23,7 +23,7 @@ export default function WhyMatters() {
       <Reveal className="mt-6 grid grid-cols-2 gap-x-6 gap-y-6 rounded-xl bg-white/[0.03] px-5 py-6 sm:px-6 lg:grid-cols-4 lg:gap-x-8">
         {ITEMS.map((c) => (
           <div key={c.stat} className="flex flex-col">
-            <div className="text-[24px] sm:text-[30px] font-bold leading-none tracking-tight text-white">{c.stat}</div>
+            <div className="text-[24px] sm:text-[30px] font-bold leading-tight tracking-tight text-white stat-figure">{c.stat}</div>
             {c.inr && currency === "USD" && (
               <p className="mt-1 text-[14px] text-slate-400">About {formatLarge(c.inr, "USD", rate)}</p>
             )}

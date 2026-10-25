@@ -117,7 +117,7 @@ export default function ModuleShowcase() {
         </div>
         <div>
           <div className="text-xs font-semibold text-slate-400">{tab.mock.label}</div>
-          <div className="mt-2 text-4xl font-bold text-white">
+          <div className="mt-2 text-[24px] sm:text-[30px] font-bold leading-tight text-white stat-figure">
             <AnimatedNumber value={tab.mock.num} suffix={tab.mock.suffix} />
           </div>
           <p className="mt-1 text-sm text-slate-400">{tab.mock.trend}</p>
