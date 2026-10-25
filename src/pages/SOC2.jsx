@@ -75,7 +75,7 @@ export default function SOC2() {
           {FACTS.map((f) => (
             <div key={f.stat}>
               <div className="text-[24px] sm:text-[30px] font-bold leading-tight tracking-tight text-white stat-figure">{f.stat}</div>
-              <p className="mt-2 text-[16px] leading-snug text-slate-300 text-pretty">{f.label}</p>
+              <p className="mt-2 text-[16px] leading-snug text-slate-200 text-pretty">{f.label}</p>
             </div>
           ))}
         </div>
@@ -90,14 +90,14 @@ export default function SOC2() {
         <div className="mt-8 grid gap-x-8 gap-y-8 md:grid-cols-2">
           <div>
             <h3 className="text-white">Type I</h3>
-            <p className="mt-3 text-[18px] leading-[1.6] text-slate-300">
+            <p className="mt-3 text-[18px] leading-[1.6] text-slate-200">
               Tests whether controls are designed well, at a single point in time. Needs policies and settings as
               they stand on that date.
             </p>
           </div>
           <div>
             <h3 className="text-white">Type II</h3>
-            <p className="mt-3 text-[18px] leading-[1.6] text-slate-300">
+            <p className="mt-3 text-[18px] leading-[1.6] text-slate-200">
               Tests whether controls are designed well and worked throughout a period, usually 3 to 12 months.
               Needs time-stamped proof across the whole period.
             </p>

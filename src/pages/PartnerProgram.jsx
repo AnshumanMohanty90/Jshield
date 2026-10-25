@@ -83,7 +83,7 @@ export default function PartnerProgram() {
             desc: (
               <>
                 {p.desc}
-                <span className="mt-3 block text-slate-300">{p.earn}</span>
+                <span className="mt-3 block text-slate-200">{p.earn}</span>
               </>
             ),
           }))}
@@ -96,7 +96,7 @@ export default function PartnerProgram() {
           {ADVANTAGES.map((a) => (
             <div key={a.title}>
               <h3 className="text-white">{a.title}</h3>
-              <p className="mt-2 text-[18px] leading-[1.6] text-slate-300">{a.desc}</p>
+              <p className="mt-2 text-[18px] leading-[1.6] text-slate-200">{a.desc}</p>
             </div>
           ))}
         </div>
@@ -110,7 +110,7 @@ export default function PartnerProgram() {
       <Section id="apply" narrow>
         <Reveal>
           <h2 className="text-white text-balance">Apply to become a partner</h2>
-          <p className="mt-2 text-[18px] leading-[1.6] text-slate-300">Tell us about your practice.</p>
+          <p className="mt-2 text-[18px] leading-[1.6] text-slate-200">Tell us about your practice.</p>
           <div className="mt-8 rounded-2xl bg-white/[0.03] p-6 sm:p-8">
             <LeadForm
               intent="partner"

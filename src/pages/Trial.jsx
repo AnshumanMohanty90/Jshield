@@ -18,7 +18,7 @@ export default function Trial() {
 
       <Section tone narrow>
         <h2 className="text-white text-balance">Where should we activate your trial?</h2>
-        <p className="mt-2 text-[18px] leading-[1.6] text-slate-300">Use your work email. Personal addresses are not accepted.</p>
+        <p className="mt-2 text-[18px] leading-[1.6] text-slate-200">Use your work email. Personal addresses are not accepted.</p>
         <div className="mt-8">
           <LeadForm
             intent="trial"

@@ -71,7 +71,7 @@ export default function Contact() {
           <div className="lg:col-span-2">
             {CHANNELS.map((c) => (
               <div key={c.label} className="py-5 first:pt-0">
-                <div className="text-[16px] font-semibold text-slate-400">{c.label}</div>
+                <div className="text-[16px] font-semibold text-slate-300">{c.label}</div>
                 <div className="mt-1 text-[18px] leading-[1.6] text-slate-200">
                   {c.href ? (
                     <a

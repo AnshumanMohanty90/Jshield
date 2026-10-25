@@ -45,14 +45,14 @@ export default function Pricing() {
 
       <Section tone narrow>
         <Reveal>
-          <p className="text-[16px] font-semibold text-indigo-400">10-day free trial</p>
+          <p className="text-[16px] font-semibold text-indigo-300">10-day free trial</p>
           <div className="mt-4 flex flex-wrap items-baseline gap-x-3">
             <span className="text-5xl font-bold tracking-tight text-white">Custom pricing</span>
           </div>
-          <p className="mt-4 max-w-[68ch] text-[18px] leading-[1.6] text-slate-300">
+          <p className="mt-4 max-w-[68ch] text-[18px] leading-[1.6] text-slate-200">
             Priced on your company size and the systems that hold personal data.
           </p>
-          <p className="mt-2 text-[16px] leading-[1.6] text-slate-400">
+          <p className="mt-2 text-[16px] leading-[1.6] text-slate-300">
             {currency === "INR" ? "Quotes are in Indian rupees (INR). " : "Quotes are in US dollars (USD). "}
             <button
               type="button"
@@ -69,10 +69,10 @@ export default function Pricing() {
         </Reveal>
 
         <Reveal delay={80} className="mt-10">
-          <p className="text-[16px] font-semibold text-slate-400">What is included</p>
+          <p className="text-[16px] font-semibold text-slate-300">What is included</p>
           <ul className="mt-4 grid gap-x-8 sm:grid-cols-2">
             {INCLUDED.map((f) => (
-              <li key={f} className="row-hover py-3 text-[18px] leading-[1.6] text-slate-300">
+              <li key={f} className="row-hover py-3 text-[18px] leading-[1.6] text-slate-200">
                 {f}
               </li>
             ))}
@@ -82,7 +82,7 @@ export default function Pricing() {
         <Reveal delay={120} className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h2 className="text-white" style={{ fontSize: 20, fontWeight: 600 }}>Prefer it with Jago?</h2>
-            <p className="mt-2 text-[18px] leading-[1.6] text-slate-300">
+            <p className="mt-2 text-[18px] leading-[1.6] text-slate-200">
               Also available as part of any Jago plan.
             </p>
           </div>
@@ -107,7 +107,7 @@ export default function Pricing() {
                 >
                   {f.q}
                   <ChevronDown
-                    className={`h-4 w-4 flex-none text-slate-400 transition-transform duration-150 ${
+                    className={`h-4 w-4 flex-none text-slate-300 transition-transform duration-150 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
@@ -115,7 +115,7 @@ export default function Pricing() {
                 <div
                   className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] pb-4" : "grid-rows-[0fr]"}`}
                 >
-                  <div className="overflow-hidden text-[18px] leading-[1.6] text-slate-300">{f.a}</div>
+                  <div className="overflow-hidden text-[18px] leading-[1.6] text-slate-200">{f.a}</div>
                 </div>
               </div>
             );

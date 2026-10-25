@@ -82,7 +82,7 @@ export default function GDPR() {
         <div className="mt-8 grid gap-x-8 gap-y-8 md:grid-cols-2">
           <ul className="md:-mt-3">
             {APPLIES.map((t) => (
-              <li key={t} className="py-3 text-[18px] leading-[1.6] text-slate-300">
+              <li key={t} className="py-3 text-[18px] leading-[1.6] text-slate-200">
                 {t}
               </li>
             ))}
@@ -91,7 +91,7 @@ export default function GDPR() {
             {FACTS.map((f) => (
               <div key={f.stat}>
                 <div className="text-[24px] sm:text-[30px] font-bold leading-tight tracking-tight text-white stat-figure">{f.stat}</div>
-                <p className="mt-2 text-[16px] leading-snug text-slate-300 text-pretty">{f.label}</p>
+                <p className="mt-2 text-[16px] leading-snug text-slate-200 text-pretty">{f.label}</p>
               </div>
             ))}
           </div>

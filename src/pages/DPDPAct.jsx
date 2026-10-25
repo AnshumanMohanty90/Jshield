@@ -71,17 +71,17 @@ export default function DPDPAct() {
             <p className="text-[16px] font-semibold text-emerald-400">Covered by the law</p>
             <ul className="mt-4">
               {APPLIES.map((t) => (
-                <li key={t} className="py-3 text-[18px] leading-[1.6] text-slate-300">
+                <li key={t} className="py-3 text-[18px] leading-[1.6] text-slate-200">
                   {t}
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <p className="text-[16px] font-semibold text-slate-400">Outside its scope</p>
+            <p className="text-[16px] font-semibold text-slate-300">Outside its scope</p>
             <ul className="mt-4">
               {EXEMPT.map((t) => (
-                <li key={t} className="py-3 text-[18px] leading-[1.6] text-slate-300">
+                <li key={t} className="py-3 text-[18px] leading-[1.6] text-slate-200">
                   {t}
                 </li>
               ))}
@@ -122,15 +122,15 @@ export default function DPDPAct() {
         <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">
           <div>
             <div className="text-[24px] sm:text-[30px] font-bold leading-tight tracking-tight text-white stat-figure">Rs 250 crore</div>
-            {currency === "USD" && <p className="mt-1 text-[14px] text-slate-400">About {formatLarge(2.5e9, "USD", rate)}</p>}
-            <p className="mt-2 text-[18px] leading-[1.6] text-slate-300">
+            {currency === "USD" && <p className="mt-1 text-[14px] text-slate-300">About {formatLarge(2.5e9, "USD", rate)}</p>}
+            <p className="mt-2 text-[18px] leading-[1.6] text-slate-200">
               The maximum penalty for failing to protect personal data with adequate security safeguards.
             </p>
           </div>
           <div>
             <div className="text-[24px] sm:text-[30px] font-bold leading-tight tracking-tight text-white stat-figure">Rs 50 crore</div>
-            {currency === "USD" && <p className="mt-1 text-[14px] text-slate-400">About {formatLarge(5e8, "USD", rate)}</p>}
-            <p className="mt-2 text-[18px] leading-[1.6] text-slate-300">
+            {currency === "USD" && <p className="mt-1 text-[14px] text-slate-300">About {formatLarge(5e8, "USD", rate)}</p>}
+            <p className="mt-2 text-[18px] leading-[1.6] text-slate-200">
               The maximum for most other violations, from consent failures to neglected principal rights.
             </p>
           </div>

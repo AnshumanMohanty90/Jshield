@@ -164,7 +164,7 @@ export default function Assessment() {
             className="bg-slate-950 pb-10 pt-32 sm:pb-16 sm:pt-36"
           >
             <div className="mx-auto max-w-3xl px-5 sm:px-8">
-              <span className="text-[16px] font-semibold text-indigo-400">
+              <span className="text-[16px] font-semibold text-indigo-300">
                 Free DPDP readiness assessment
               </span>
               <h1 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
@@ -180,7 +180,7 @@ export default function Assessment() {
               >
                 Start the assessment
               </button>
-              <p className="mt-4 text-[16px] text-slate-300">About 4 minutes, score on screen</p>
+              <p className="mt-4 text-[16px] text-slate-200">About 4 minutes, score on screen</p>
             </div>
           </motion.section>
         )}
@@ -196,9 +196,9 @@ export default function Assessment() {
             className="bg-slate-950 pb-8 pt-[144px]"
           >
             <div className="mx-auto max-w-2xl px-5 sm:px-8">
-              <div className="flex items-center justify-between text-xs text-slate-400">
+              <div className="flex items-center justify-between text-xs text-slate-300">
                 <span>{counter}</span>
-                <button onClick={back} className="inline-flex min-h-[44px] items-center text-slate-400 hover:text-white">
+                <button onClick={back} className="inline-flex min-h-[44px] items-center text-slate-300 hover:text-white">
                   Back
                 </button>
               </div>
@@ -223,7 +223,7 @@ export default function Assessment() {
                       role="radio"
                       aria-checked={isSelected}
                       className={`flex min-h-[48px] w-full items-center gap-3 rounded-lg px-5 text-left text-[18px] transition ${
-                        isSelected ? "bg-indigo-500/20 text-white" : "text-slate-300 hover:bg-white/5"
+                        isSelected ? "bg-indigo-500/20 text-white" : "text-slate-200 hover:bg-white/5"
                       }`}
                     >
                       <span
@@ -251,22 +251,22 @@ export default function Assessment() {
             className="bg-slate-950 pb-16 pt-[144px]"
           >
             <div className="mx-auto max-w-3xl px-5 sm:px-8">
-              <span className="text-[16px] font-semibold text-indigo-400">Your score</span>
+              <span className="text-[16px] font-semibold text-indigo-300">Your score</span>
               <div className="mt-3 flex items-end gap-3">
                 <span className={`text-6xl font-bold tracking-tight ${result.band.tone}`}>{result.score}</span>
-                <span className="mb-2 text-sm text-slate-400">/ 100</span>
+                <span className="mb-2 text-sm text-slate-300">/ 100</span>
               </div>
               <p className="mt-3 text-[20px] font-semibold text-white">{result.band.name}</p>
-              <p className="mt-2 max-w-[68ch] text-[18px] leading-[1.6] text-slate-300 text-pretty">
+              <p className="mt-2 max-w-[68ch] text-[18px] leading-[1.6] text-slate-200 text-pretty">
                 {result.capReason
                   ? `Your answers score ${result.score}, but a critical control is missing or partly in place, so your band stays ${result.band.name} until it is fixed.`
                   : result.band.desc}
               </p>
 
-              <p className="mt-2 max-w-[68ch] text-[16px] leading-[1.6] text-slate-400 text-pretty">
+              <p className="mt-2 max-w-[68ch] text-[16px] leading-[1.6] text-slate-300 text-pretty">
                 Answers are self-reported. An inquiry or audit will ask for evidence of each one.
               </p>
-              <p className="mt-1 text-[16px] text-slate-400">Not sure is counted as a gap.</p>
+              <p className="mt-1 text-[16px] text-slate-300">Not sure is counted as a gap.</p>
 
               {result.capReason && (
                 <p className="mt-4 rounded-lg border border-amber-400/30 bg-amber-500/10 px-4 py-3 text-sm leading-relaxed text-amber-200">
@@ -279,7 +279,7 @@ export default function Assessment() {
                   <div key={a.id}>
                     <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                       <span className="text-[18px] font-medium text-slate-100">{a.name}</span>
-                      <span className="text-sm text-slate-400">
+                      <span className="text-sm text-slate-300">
                         <span className="font-semibold text-slate-200">{a.score} of 100</span>, penalty
                         up to Rs {a.penalty} crore
                       </span>
@@ -305,7 +305,7 @@ export default function Assessment() {
                         <p className="text-[18px] font-medium leading-snug text-slate-100">
                           {i + 1}. {g.q}
                         </p>
-                        <p className="mt-1.5 text-[16px] leading-[1.6] text-slate-300">{g.fix}</p>
+                        <p className="mt-1.5 text-[16px] leading-[1.6] text-slate-200">{g.fix}</p>
                         <p className="mt-1 text-sm text-rose-300">Penalty up to Rs {g.penalty} crore</p>
                       </li>
                     ))}
@@ -313,10 +313,10 @@ export default function Assessment() {
                 </div>
               )}
 
-              <p className="mt-8 text-[16px] text-slate-300">
+              <p className="mt-8 text-[16px] text-slate-200">
                 {weeks} weeks, {days} days until 13 May 2027, when the rules apply in full.
               </p>
-              <p className="mt-3 text-sm text-slate-400">Indicative score, not legal advice.</p>
+              <p className="mt-3 text-sm text-slate-300">Indicative score, not legal advice.</p>
 
               <div className="mt-6">
                 <button
@@ -328,7 +328,7 @@ export default function Assessment() {
                   How we score
                 </button>
                 {showHow && (
-                  <div className="mt-1 space-y-4 rounded-xl px-5 py-5 text-sm leading-[1.7] text-slate-300 ring-1 ring-white/10">
+                  <div className="mt-1 space-y-4 rounded-xl px-5 py-5 text-sm leading-[1.7] text-slate-200 ring-1 ring-white/10">
                     <p>
                       We weight each duty area by the penalty it carries. Your score is the weighted
                       average of your answers. Critical questions cap your band: Not yet or Not
