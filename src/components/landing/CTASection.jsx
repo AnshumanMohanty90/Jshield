@@ -18,7 +18,7 @@ export default function CTASection({ tone = false }) {
   };
 
   return (
-    <Section tone>
+    <Section id="final-cta" tone>
       <Reveal>
         <h2 className="text-white text-balance">See where you stand today.</h2>
         <p className="mt-4 max-w-[68ch] text-[18px] leading-[1.6] text-slate-300 text-pretty">

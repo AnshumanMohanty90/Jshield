@@ -8,9 +8,9 @@ const PRODUCT_GROUPS = [
   {
     title: "What JShield does",
     links: [
-      { label: "Customer consent", desc: "Record and prove every permission", to: "/#solution" },
-      { label: "Breach response", desc: "Report within the legal time limit", to: "/#solution" },
-      { label: "Data record", desc: "One live list of the personal data you hold", to: "/#solution" },
+      { label: "Customer consent", desc: "Record and prove every permission", to: "/#solution-consent" },
+      { label: "Breach response", desc: "Report within the legal time limit", to: "/#solution-breach" },
+      { label: "Data record", desc: "One live list of the personal data you hold", to: "/#solution-record" },
       { label: "How it works", desc: "Four steps to ready", to: "/#how-we-help" },
     ],
   },

@@ -1,4 +1,5 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Section from "./Section";
 import SectionHeading from "./SectionHeading";
 import TabSwitcher from "./TabSwitcher";
@@ -76,6 +77,18 @@ export default function ModuleShowcase() {
   const [active, setActive] = useState("consent");
   const handleTabChange = useCallback((key) => setActive(key), []);
   const tab = TABS.find((t) => t.key === active);
+  const { hash } = useLocation();
+  const [deep, setDeep] = useState(false);
+
+  // Menu links such as /#solution-breach open the matching tab and bring the section into view.
+  useEffect(() => {
+    const m = /^#solution-(consent|breach|record)$/.exec(hash);
+    if (!m) return;
+    setActive(m[1]);
+    setDeep(true);
+    const t = setTimeout(() => document.getElementById("solution")?.scrollIntoView({ behavior: "smooth" }), 60);
+    return () => clearTimeout(t);
+  }, [hash]);
 
   return (
     <Section id="solution">
@@ -86,7 +99,7 @@ export default function ModuleShowcase() {
         items={TAB_ITEMS}
         activeKey={active}
         onChange={handleTabChange}
-        autoMs={6000}
+        autoMs={deep ? 0 : 6000}
         ariaLabel="What JShield does"
       />
 

@@ -1,5 +1,6 @@
 import Nav from "./Nav";
 import Footer from "./Footer";
+import StickyCta from "./StickyCta";
 
 export default function LandingLayout({ children }) {
   return (
@@ -13,6 +14,7 @@ export default function LandingLayout({ children }) {
       <Nav />
       <main id="main-content">{children}</main>
       <Footer />
+      <StickyCta />
     </div>
   );
 }
