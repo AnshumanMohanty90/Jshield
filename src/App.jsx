@@ -76,10 +76,11 @@ const AuthenticatedApp = () => {
       <Route path="/gdpr" element={<GDPR />} />
       <Route path="/soc-2" element={<SOC2 />} />
       <Route path="/partners" element={<PartnerProgram />} />
-      <Route path="/privacy" element={<LegalPage title="Privacy Policy" />} />
-      <Route path="/terms" element={<LegalPage title="Terms" />} />
-      <Route path="/dpdp-statement" element={<LegalPage title="DPDP Statement" />} />
-      <Route path="/sub-processors" element={<LegalPage title="Sub-processors" />} />
+      <Route path="/privacy" element={<LegalPage doc="privacy" />} />
+      <Route path="/terms" element={<LegalPage doc="terms" />} />
+      <Route path="/refund-policy" element={<LegalPage doc="refund" />} />
+      <Route path="/dpdp-statement" element={<LegalPage doc="dpdp" />} />
+      <Route path="/sub-processors" element={<LegalPage doc="subprocessors" />} />
       {APP_URL ? (
         ["/dashboard", "/data-discovery", "/consents", "/cookies", "/vendors", "/breaches", "/ropa", "/grievances", "/rights", "/dpia", "/security-safeguards"].map((p) => (
           <Route key={p} path={p} element={<ExternalRedirect />} />

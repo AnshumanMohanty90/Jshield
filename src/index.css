@@ -118,7 +118,7 @@ select:focus-visible,
 @layer base {
   /* Public site type scale: H1 56/36, H2 34/26, H3 20 */
   .public-page h1 {
-    font-size: 36px;
+    font-size: 32px;
     line-height: 1.1;
     letter-spacing: -0.01em;
   }
@@ -134,6 +134,11 @@ select:focus-visible,
     font-weight: 600;
   }
   @media (min-width: 640px) {
+    .public-page h1 {
+      font-size: 40px;
+    }
+  }
+  @media (min-width: 1280px) {
     .public-page h1 {
       font-size: 48px;
     }
@@ -192,4 +197,9 @@ select:focus-visible,
 }
 @media (prefers-reduced-motion: reduce) {
   .deadline-tick { animation: none; }
+}
+
+@layer base {
+  .public-page p { text-wrap: pretty; }
+  .public-page li { text-wrap: balance; }
 }
