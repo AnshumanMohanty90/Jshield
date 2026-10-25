@@ -22,13 +22,13 @@ function Linked({ text }) {
 
 function Block({ item }) {
   if (typeof item === "string") {
-    return <p className="max-w-[72ch] text-[16px] leading-[1.7] text-slate-300 text-pretty"><Linked text={item} /></p>;
+    return <p className="max-w-[72ch] text-[16px] leading-[1.7] text-slate-200 text-pretty"><Linked text={item} /></p>;
   }
   if (item.h) {
     return <h3 className="pt-2 text-[18px] font-semibold text-white">{item.h}</h3>;
   }
   return (
-    <ul className="max-w-[72ch] list-disc space-y-2 pl-5 text-[16px] leading-[1.7] text-slate-300 marker:text-indigo-400">
+    <ul className="max-w-[72ch] list-disc space-y-2 pl-5 text-[16px] leading-[1.7] text-slate-200 marker:text-indigo-300">
       {item.list.map((li) => (
         <li key={li} className="text-pretty"><Linked text={li} /></li>
       ))}
