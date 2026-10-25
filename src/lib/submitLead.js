@@ -4,7 +4,7 @@ const LEAD_ENDPOINT = import.meta.env.VITE_LEAD_ENDPOINT;
 
 export async function submitLead(payload) {
   if (LEAD_ENDPOINT) {
-    const body = { ...payload, site: "jshield", submission_id: crypto.randomUUID() };
+    const body = { submission_id: crypto.randomUUID(), ...payload, site: "jshield" };
     // text/plain keeps this a simple request, so the browser sends it without a CORS preflight.
     const res = await fetch(LEAD_ENDPOINT, {
       method: "POST",

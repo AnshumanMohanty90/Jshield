@@ -1,48 +1,28 @@
-import { useLocation } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-import usePageTitle from '@/hooks/usePageTitle';
+import { Link } from "react-router-dom";
+import LandingLayout from "@/components/landing/LandingLayout";
+import usePageTitle from "@/hooks/usePageTitle";
 
-export default function PageNotFound({}) {
-    const location = useLocation();
-    const pageName = location.pathname.substring(1);
-    usePageTitle('Page not found | JShield');
-
-    const { data: authData, isFetched } = useQuery({
-        queryKey: ['user'],
-        queryFn: async () => {
-            if (import.meta.env.VITE_APP_URL) return { user: null, isAuthenticated: false };
-            try {
-                const { base44 } = await import('@/api/base44Client');
-                const user = await base44.auth.me();
-                return { user, isAuthenticated: true };
-            } catch (error) {
-                return { user: null, isAuthenticated: false };
-            }
-        }
-    });
-
-    return (
-        <div className="min-h-screen bg-slate-950 px-5 py-24">
-            <div className="mx-auto max-w-md text-center">
-                <h1 className="text-6xl font-light text-slate-300">404</h1>
-                <h2 className="mt-4 text-2xl font-medium text-white">Page not found</h2>
-                <p className="mt-3 text-slate-400 leading-relaxed text-pretty">
-                    The page "{pageName}" could not be found in this application.
-                </p>
-
-                {isFetched && authData.isAuthenticated && authData.user?.role === 'admin' && (
-                    <p className="mt-6 text-sm text-slate-500 leading-relaxed">
-                        Admin note: this could mean the page has not been implemented yet.
-                    </p>
-                )}
-
-                <a
-                    href="/"
-                    className="mt-8 inline-flex min-h-[44px] items-center justify-center rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3 text-sm font-semibold text-white"
-                >
-                    Go home
-                </a>
-            </div>
+export default function PageNotFound() {
+  usePageTitle("Page not found | JShield");
+  return (
+    <LandingLayout>
+      <section className="px-5 py-24 sm:py-32">
+        <div className="mx-auto max-w-xl text-center">
+          <p className="text-[16px] font-semibold text-indigo-300">Page not found</p>
+          <h1 className="mt-3 font-bold tracking-tight text-white text-balance">We could not find that page</h1>
+          <p className="mt-4 text-[18px] leading-[1.6] text-slate-300 text-pretty">
+            The link may be old or mistyped. Start from the home page, or see how JShield helps with the DPDP Act and GDPR.
+          </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link to="/" className="inline-flex min-h-[44px] items-center justify-center rounded-xl bg-gradient-to-r from-indigo-500 to-sky-500 px-6 py-3 text-sm font-semibold text-white">
+              Go to the home page
+            </Link>
+            <Link to="/contact" className="inline-flex min-h-[44px] items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold text-slate-200 ring-1 ring-white/15 hover:bg-white/5">
+              Contact us
+            </Link>
+          </div>
         </div>
-    )
+      </section>
+    </LandingLayout>
+  );
 }
