@@ -203,3 +203,10 @@ select:focus-visible,
   .public-page p { text-wrap: pretty; }
   .public-page li { text-wrap: balance; }
 }
+
+@media (prefers-reduced-motion: reduce) { .sticky-cta { transition: none; } }
+
+@media (max-width: 767px) {
+  html.sticky-on { scroll-padding-bottom: 96px; }
+  html.sticky-on body { padding-bottom: 76px; }
+}
