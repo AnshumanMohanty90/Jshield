@@ -6,6 +6,7 @@ import Accordion from "@/components/landing/Accordion";
 import Stepper from "@/components/landing/Stepper";
 import CTASection from "@/components/landing/CTASection";
 import usePageTitle from "@/hooks/usePageTitle";
+import { useCurrency, formatLarge } from "@/lib/currency";
 
 const APPLIES = [
   "Customer, employee or patient records held in any computer, application or website",
@@ -50,6 +51,7 @@ const DATES = [
 ];
 
 export default function DPDPAct() {
+  const { currency, rate } = useCurrency();
   usePageTitle("DPDP Act explained | JShield", "What India's Digital Personal Data Protection Act asks of companies that handle the personal data of people in India, and how JShield helps you meet it.");
   return (
     <LandingLayout>
@@ -120,12 +122,14 @@ export default function DPDPAct() {
         <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">
           <div>
             <div className="text-4xl font-bold tracking-tight text-white">Rs 250 crore</div>
+            {currency === "USD" && <p className="mt-1 text-[14px] text-slate-400">About {formatLarge(2.5e9, "USD", rate)}</p>}
             <p className="mt-2 text-[18px] leading-[1.6] text-slate-300">
               The maximum penalty for failing to protect personal data with adequate security safeguards.
             </p>
           </div>
           <div>
             <div className="text-4xl font-bold tracking-tight text-white">Rs 50 crore</div>
+            {currency === "USD" && <p className="mt-1 text-[14px] text-slate-400">About {formatLarge(5e8, "USD", rate)}</p>}
             <p className="mt-2 text-[18px] leading-[1.6] text-slate-300">
               The maximum for most other violations, from consent failures to neglected principal rights.
             </p>

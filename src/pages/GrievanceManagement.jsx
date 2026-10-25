@@ -30,7 +30,7 @@ export default function GrievanceManagement() {
       formFields={[
         { key: "ticket_id", label: "Ticket ID", placeholder: "e.g. GR-1042" },
         { key: "principal_name", label: "Data Principal Name", placeholder: "Full name" },
-        { key: "principal_email", label: "Principal Email", placeholder: "email@example.com" },
+        { key: "principal_email", label: "Principal Email", placeholder: "" },
         { key: "grievance_type", label: "Grievance Type", type: "select", options: TYPES },
         { key: "description", label: "Description", type: "textarea" },
         { key: "priority", label: "Priority", type: "select", options: PRIORITIES, default: "Medium" },

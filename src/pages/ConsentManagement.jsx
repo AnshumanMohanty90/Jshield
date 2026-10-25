@@ -77,7 +77,7 @@ export default function ConsentManagement() {
           ]}
           formFields={[
             { key: "principal_name", label: "Data Principal Name", placeholder: "Full name" },
-            { key: "principal_email", label: "Principal Email", placeholder: "email@example.com" },
+            { key: "principal_email", label: "Principal Email", placeholder: "" },
             { key: "purpose", label: "Purpose", placeholder: "e.g. Onboarding Notice" },
             { key: "status", label: "Status", type: "select", options: CONSENT_STATUSES, default: "Granted" },
             { key: "channel", label: "Collection Channel", type: "select", options: CHANNELS },

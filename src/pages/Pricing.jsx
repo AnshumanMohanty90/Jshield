@@ -7,6 +7,7 @@ import { Reveal } from "@/components/landing/primitives";
 import { CtaPrimary, CtaSecondary } from "@/components/landing/Buttons";
 import { ChevronDown } from "lucide-react";
 import usePageTitle from "@/hooks/usePageTitle";
+import { useCurrency, setCurrency } from "@/lib/currency";
 
 const INCLUDED = [
   "Every JShield module",
@@ -32,6 +33,7 @@ const FAQ = [
 export default function Pricing() {
   usePageTitle("Pricing | JShield", "JShield plans for growing and large companies, with a free trial to see your own data protection gaps first.");
   const [open, setOpen] = useState(0);
+  const { currency } = useCurrency();
 
   return (
     <LandingLayout>
@@ -49,6 +51,16 @@ export default function Pricing() {
           </div>
           <p className="mt-4 max-w-[68ch] text-[18px] leading-[1.6] text-slate-300">
             Priced on your company size and the systems that hold personal data.
+          </p>
+          <p className="mt-2 text-[16px] leading-[1.6] text-slate-400">
+            {currency === "INR" ? "Quotes are in Indian rupees (INR). " : "Quotes are in US dollars (USD). "}
+            <button
+              type="button"
+              onClick={() => setCurrency(currency === "INR" ? "USD" : "INR")}
+              className="min-h-[44px] font-semibold text-indigo-300 underline underline-offset-4"
+            >
+              {currency === "INR" ? "Show in US dollars" : "Show in Indian rupees"}
+            </button>
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <CtaPrimary to="/contact?intent=pricing">Get pricing</CtaPrimary>

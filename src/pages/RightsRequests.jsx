@@ -27,7 +27,7 @@ export default function RightsRequests() {
       ]}
       formFields={[
         { key: "principal_name", label: "Data Principal Name", placeholder: "Full name" },
-        { key: "principal_email", label: "Principal Email", placeholder: "email@example.com" },
+        { key: "principal_email", label: "Principal Email", placeholder: "" },
         { key: "request_type", label: "Request Type", type: "select", options: TYPES },
         { key: "description", label: "Request Details", type: "textarea" },
         { key: "status", label: "Status", type: "select", options: STATUSES, default: "Received" },

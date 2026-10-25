@@ -6,7 +6,7 @@ import LeadForm, { COMPANY_SIZES } from "@/components/landing/LeadForm";
 import usePageTitle from "@/hooks/usePageTitle";
 
 const CHANNELS = [
-  { label: "Email", value: "contact@jshield.com", href: "mailto:contact@jshield.com" },
+  { label: "Email", value: "contact@jagoai.com", href: "mailto:contact@jagoai.com" },
   { label: "Office", value: "Bengaluru, India" },
 ];
 
@@ -62,7 +62,7 @@ export default function Contact() {
         subtitle={
           isPricing
             ? "Tell us your company size and where personal data sits today. We will send you a quote."
-            : "Write to us at contact@jshield.com or use the form."
+            : "Write to us at contact@jagoai.com or use the form."
         }
       />
 
