@@ -10,7 +10,7 @@ export default function PageNotFound() {
         <div className="mx-auto max-w-xl text-center">
           <p className="text-[16px] font-semibold text-indigo-300">Page not found</p>
           <h1 className="mt-3 font-bold tracking-tight text-white text-balance">We could not find that page</h1>
-          <p className="mt-4 text-[18px] leading-[1.6] text-slate-300 text-pretty">
+          <p className="mt-4 text-[18px] leading-[1.6] text-slate-200 text-pretty">
             The link may be old or mistyped. Start from the home page, or see how JShield helps with the DPDP Act and GDPR.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
