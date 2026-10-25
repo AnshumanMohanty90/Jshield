@@ -210,3 +210,9 @@ select:focus-visible,
   html.sticky-on { scroll-padding-bottom: 96px; }
   html.sticky-on body { padding-bottom: 76px; }
 }
+
+/* Numbers: lining, equal-width figures so stats line up and count-ups never shift */
+body { font-variant-numeric: lining-nums; }
+.stat-figure { font-variant-numeric: lining-nums proportional-nums; }
+.stat-figure { white-space: nowrap; }
+@media (max-width: 420px) { .stat-figure { font-size: 22px !important; } }
