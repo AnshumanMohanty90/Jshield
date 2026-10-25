@@ -50,7 +50,7 @@ const DATES = [
 ];
 
 export default function DPDPAct() {
-  usePageTitle("DPDP Act explained | JShield");
+  usePageTitle("DPDP Act explained | JShield", "What India's Digital Personal Data Protection Act asks of companies that handle the personal data of people in India, and how JShield helps you meet it.");
   return (
     <LandingLayout>
       <PageHero

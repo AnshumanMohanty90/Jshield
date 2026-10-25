@@ -12,7 +12,7 @@ import CTASection from "@/components/landing/CTASection";
 import usePageTitle from "@/hooks/usePageTitle";
 
 export default function Landing() {
-  usePageTitle("JShield | Get ready for India's data protection law");
+  usePageTitle("JShield | Data protection compliance, from the DPDP Act to GDPR", "JShield helps companies meet the DPDP Act, GDPR and SOC 2: record consent, keep a live record of personal data and report breaches on time, with proof ready for any audit.");
   return (
     <LandingLayout>
       <Hero />

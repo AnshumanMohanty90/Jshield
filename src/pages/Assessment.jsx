@@ -40,7 +40,7 @@ function useCountdown() {
 }
 
 export default function Assessment() {
-  usePageTitle("Readiness assessment | JShield");
+  usePageTitle("Readiness assessment | JShield", "Answer a short set of questions to see how ready your company is for data protection laws such as the DPDP Act and GDPR.");
   // Answer picked inline on the home page: open at the first question with it saved for Q20.
   const preselect = (() => {
     try {

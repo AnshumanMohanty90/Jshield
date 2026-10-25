@@ -6,7 +6,7 @@ import LeadForm, { COMPANY_SIZES } from "@/components/landing/LeadForm";
 import usePageTitle from "@/hooks/usePageTitle";
 
 export default function Trial() {
-  usePageTitle("Free trial | JShield");
+  usePageTitle("Free trial | JShield", "Start a free JShield trial and see your consent, data mapping and breach reporting gaps in your own data.");
 
   return (
     <LandingLayout>

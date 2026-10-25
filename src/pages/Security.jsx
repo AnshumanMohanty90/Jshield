@@ -8,7 +8,7 @@ import usePageTitle from "@/hooks/usePageTitle";
 const PILLARS = [
   { title: "Encryption everywhere", desc: "Data is encrypted in transit with TLS 1.3 and at rest with AES-256." },
   { title: "Access controls", desc: "You decide who can see and change each record. Every action is logged." },
-  { title: "Data residency", desc: "Your data is stored in India." },
+  { title: "Data residency", desc: "Your data is stored in our India data centre region." },
   { title: "Continuous monitoring", desc: "Alerts when a breach is suspected, a deadline is close or a setting changes." },
   { title: "Strong authentication", desc: "Single sign-on, two-step login and session controls." },
   { title: "Audit-ready exports", desc: "Logs that cannot be changed later, with one-click export of your data record, consent and breach records." },
@@ -19,7 +19,7 @@ const STANDARDS = [
 ];
 
 export default function Security() {
-  usePageTitle("Security | JShield");
+  usePageTitle("Security | JShield", "How JShield protects your data: encryption, access control, data residency and audit logs.");
   return (
     <LandingLayout>
       <PageHero
@@ -29,6 +29,7 @@ export default function Security() {
       />
 
       <Section tone>
+        <h2 className="sr-only">How we protect it</h2>
         <Accordion items={PILLARS} />
       </Section>
 

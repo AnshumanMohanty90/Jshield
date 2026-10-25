@@ -30,7 +30,7 @@ const FAQ = [
 ];
 
 export default function Pricing() {
-  usePageTitle("Pricing | JShield");
+  usePageTitle("Pricing | JShield", "JShield plans for growing and large companies, with a free trial to see your own data protection gaps first.");
   const [open, setOpen] = useState(0);
 
   return (
@@ -69,7 +69,7 @@ export default function Pricing() {
 
         <Reveal delay={120} className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h3 className="text-white">Prefer it with Jago?</h3>
+            <h2 className="text-white" style={{ fontSize: 20, fontWeight: 600 }}>Prefer it with Jago?</h2>
             <p className="mt-2 text-[18px] leading-[1.6] text-slate-300">
               Also available as part of any Jago plan.
             </p>

@@ -12,7 +12,7 @@ const CHANNELS = [
 
 export default function Contact() {
   const isPricing = new URLSearchParams(window.location.search).get("intent") === "pricing";
-  usePageTitle(isPricing ? "Get pricing | JShield" : "Contact | JShield");
+  usePageTitle(isPricing ? "Get pricing | JShield" : "Contact | JShield", isPricing ? "Tell us about your company and get JShield pricing for your team size and data." : "Write to the JShield team about data protection compliance, partnerships or support.");
 
   const fields = isPricing
     ? [
@@ -29,6 +29,7 @@ export default function Contact() {
         {
           name: "message",
           label: "Where does customer data sit today?",
+          requiredMessage: "Please tell us where your customer data sits today.",
           type: "textarea",
           rows: 4,
         },
@@ -47,6 +48,7 @@ export default function Contact() {
         {
           name: "message",
           label: "What do you need help with?",
+          requiredMessage: "Please tell us what you need help with.",
           type: "textarea",
           rows: 4,
         },

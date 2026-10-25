@@ -63,13 +63,13 @@ const STEPS = [
 ];
 
 export default function PartnerProgram() {
-  usePageTitle("Partner programme | JShield");
+  usePageTitle("Partner programme | JShield", "Partner with JShield to bring data protection compliance to your clients, with training, sales support and shared revenue.");
   return (
     <LandingLayout>
       <PageHero
         eyebrow="Partner programme"
         title="Build a compliance practice with JShield"
-        subtitle="Help Indian companies meet the data law and build a steady services revenue line alongside ours. Five partner tracks, each with a clear way to earn."
+        subtitle="Help companies meet data protection laws and build a steady services revenue line alongside ours. Five partner tracks, each with a clear way to earn."
       />
 
       <Section tone>
@@ -126,8 +126,8 @@ export default function PartnerProgram() {
                   options: PARTNER_TYPES.map((p) => p.title),
                   placeholder: "Select a partner type",
                 },
-                { name: "city", label: "City" },
-                { name: "clients_served", label: "Number of clients you serve" },
+                { name: "city", label: "City (optional)", required: false },
+                { name: "clients_served", label: "Number of clients you serve", requiredMessage: "Please tell us how many clients you serve." },
               ]}
               submitLabel="Apply to become a partner"
               thankYou="Thank you. Our partnerships team will be in touch."

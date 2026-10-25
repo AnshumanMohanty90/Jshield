@@ -15,7 +15,7 @@ const FACTS = [
 ];
 
 const APPLIES = [
-  "Indian companies with customers, users or employees in the EU or UK",
+  "Companies outside Europe with customers, users or employees in the EU or UK",
   "SaaS and service firms that process data for EU clients under a contract",
   "Teams already working on the DPDP Act that now get GDPR questions from EU buyers",
 ];
@@ -65,13 +65,13 @@ const FAQ = [
 ];
 
 export default function GDPR() {
-  usePageTitle("GDPR for Indian companies | JShield");
+  usePageTitle("GDPR compliance | JShield", "Meet GDPR with JShield: lawful basis and consent records, data subject requests, breach reporting within 72 hours and a live record of processing.");
   return (
     <LandingLayout>
       <PageHero
         eyebrow="GDPR, explained"
         title="GDPR, run as everyday work."
-        subtitle="If you serve customers or hold employee data from the EU or UK, GDPR applies to you as well as India's law. JShield turns each GDPR duty into an owned task with a deadline and keeps the proof."
+        subtitle="If you serve customers or hold employee data from the EU or UK, GDPR applies to you alongside any other data protection law you follow, such as India's DPDP Act. JShield turns each GDPR duty into an owned task with a deadline and keeps the proof."
       />
 
       <Section tone>

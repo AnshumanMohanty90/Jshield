@@ -57,7 +57,7 @@ const STEPS = [
 ];
 
 export default function SOC2() {
-  usePageTitle("SOC 2 readiness | JShield");
+  usePageTitle("SOC 2 readiness | JShield", "Prepare for a SOC 2 audit with JShield: map controls, collect evidence as you work and show auditors a clear record.");
   return (
     <LandingLayout>
       <PageHero
