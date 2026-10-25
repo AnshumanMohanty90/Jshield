@@ -31,7 +31,7 @@ function Gauge() {
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className="text-2xl font-bold text-white">{score}</span>
-        <span className="text-[12px] uppercase tracking-widest text-slate-400">Score</span>
+        <span className="text-[12px] text-slate-400">Score</span>
       </div>
     </div>
   );
@@ -55,10 +55,10 @@ export default function Hero() {
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
             <span className="text-[16px] font-semibold text-indigo-400">
-              DPDP Act compliance for Indian companies
+              DPDP Act compliance, with GDPR and SOC 2
             </span>
             <h1 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
-              Get ready for India's data protection law in 30 days.
+              Get ready for the DPDP Act in 30 days.
             </h1>
             <p className="mt-3 max-w-[68ch] text-[18px] leading-[1.6] text-slate-200 text-pretty">
               Record customer consent, find the personal data you hold and report breaches on time. Every step is
@@ -78,7 +78,7 @@ export default function Hero() {
                 <span className="h-2.5 w-2.5 rounded-full bg-rose-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-amber-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
-                <span className="ml-3 text-[12px] text-slate-400">jshield.app/dashboard</span>
+                <span className="ml-3 text-[12px] text-slate-400">app.jshield.ai</span>
               </div>
               <div className="grid grid-cols-3 overflow-hidden rounded-xl bg-slate-950/60">
                 <div className="col-span-1 border-r border-white/5">
@@ -96,7 +96,7 @@ export default function Hero() {
                 <div className="col-span-2">
                   <div className="flex items-center justify-between px-4 py-3">
                     <div>
-                      <div className="text-[12px] uppercase tracking-widest text-slate-400">Readiness</div>
+                      <div className="text-[12px] text-slate-400">Readiness</div>
                       <div className="text-sm font-semibold text-white">Healthy</div>
                     </div>
                     <Gauge />

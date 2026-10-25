@@ -177,9 +177,9 @@ export default function Nav() {
               {menuOpen && (
                 <div
                   onKeyDown={onMenuPanelKey}
-                  className="absolute left-0 top-full w-[860px] bg-slate-950/95 shadow-xl backdrop-blur-xl"
+                  className="absolute left-0 top-full w-[min(860px,calc(100vw-280px))] bg-slate-950/95 shadow-xl backdrop-blur-xl"
                 >
-                  <div className="grid grid-cols-3 gap-x-10 px-6 pb-6 pt-4">
+                  <div className="grid grid-cols-3 gap-x-6 xl:gap-x-10 px-6 pb-6 pt-4">
                     {PRODUCT_GROUPS.map((g) => (
                       <div key={g.title}>
                         <p className="text-[16px] font-semibold text-indigo-400">{g.title}</p>

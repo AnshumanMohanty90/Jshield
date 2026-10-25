@@ -103,7 +103,7 @@ export default function ModuleShowcase() {
           </ul>
         </div>
         <div>
-          <div className="text-xs font-semibold uppercase tracking-widest text-slate-400">{tab.mock.label}</div>
+          <div className="text-xs font-semibold text-slate-400">{tab.mock.label}</div>
           <div className="mt-2 text-4xl font-bold text-white">
             <AnimatedNumber value={tab.mock.num} suffix={tab.mock.suffix} />
           </div>

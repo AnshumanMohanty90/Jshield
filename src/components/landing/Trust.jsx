@@ -5,7 +5,7 @@ import Accordion from "./Accordion";
 import { Reveal } from "./primitives";
 
 const ITEMS = [
-  { title: "Stored in India", desc: "Your data is stored in India." },
+  { title: "Data residency", desc: "Your data is stored in our India data centre region." },
   { title: "Encrypted", desc: "Encrypted in transit and at rest." },
   { title: "Logged", desc: "Every action is recorded and cannot be changed later." },
   { title: "Certification", desc: "ISO 27001 and SOC 2 certification under way." },

@@ -29,6 +29,7 @@ const COLS = [
       ["Terms", "/terms"],
       ["DPDP Statement", "/dpdp-statement"],
       ["Sub-processors", "/sub-processors"],
+      ["Refund Policy", "/refund-policy"],
     ],
   },
 ];
@@ -43,7 +44,7 @@ export default function Footer() {
               <BrandLockup className="h-12 w-12" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
-              JShield helps Indian companies meet India's new data protection law, from finding personal data to
+              JShield helps companies meet data protection laws, from finding personal data to
               reporting breaches.
             </p>
             <a
@@ -73,7 +74,7 @@ export default function Footer() {
         </div>
         <div className="mt-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <p className="text-[16px] text-slate-300">
-            © 2026 Jago AI, JShield is part of{" "}
+            © 2026 Jago AI Technologies Private Limited. JShield is part of{" "}
             <a
               href="https://jagotech.ai"
               target="_blank"
@@ -81,8 +82,8 @@ export default function Footer() {
               className="inline-flex min-h-[44px] md:min-h-6 items-baseline underline-offset-2 transition-colors hover:text-white hover:underline"
             >
               Jago AI
-            </a>{" "}
-            , Built for data protection teams in India
+            </a>
+            . Built for data protection teams.
           </p>
         </div>
       </div>

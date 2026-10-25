@@ -19,7 +19,12 @@ const AUTOCOMPLETE = {
 function validate(field, value) {
   const v = String(value ?? "").trim();
   if (field.name === "work_email") return workEmailError(v);
-  if (field.required !== false && !v) return "Please fill in this field.";
+  if (field.required !== false && !v) {
+    if (field.requiredMessage) return field.requiredMessage;
+    if (/\?\s*$/.test(field.label)) return field.type === "select" ? "Please choose an answer." : "Please answer this question.";
+    const what = field.label.replace(/\s*\(optional\)$/i, "").toLowerCase();
+    return field.type === "select" ? `Please choose your ${what}.` : `Please enter your ${what}.`;
+  }
   return "";
 }
 
@@ -41,6 +46,8 @@ export default function LeadForm({
   // Honeypot: real visitors never see or fill this field.
   const [honeypot, setHoneypot] = useState("");
   const inputRefs = useRef({});
+  const submissionId = useRef("");
+  const errorRef = useRef(null);
 
   const set = (name, value) => {
     setForm((f) => ({ ...f, [name]: value }));
@@ -69,15 +76,17 @@ export default function LeadForm({
     }
     setSubmitting(true);
     try {
-      const payload = { intent, source_page: sourcePage, ...form, ...extra };
+      const clean = Object.fromEntries(Object.entries(form).map(([k, v]) => [k, typeof v === "string" ? v.trim() : v]));
+      if (clean.work_email) clean.work_email = clean.work_email.toLowerCase();
+      if (!submissionId.current) submissionId.current = crypto.randomUUID();
+      const payload = { intent, source_page: sourcePage, submission_id: submissionId.current, ...clean, ...extra };
       if (score != null) payload.readiness_score = score;
       await submitLead(payload);
       setDone(true);
       onDone?.();
     } catch {
-      setFormError(
-        "We could not send this. Your details are still here; please try again or write to contact@jshield.com."
-      );
+      setFormError("We could not send this. Your details are still here. Please try again or write to");
+      window.setTimeout(() => errorRef.current?.focus(), 0);
     } finally {
       setSubmitting(false);
     }
@@ -106,6 +115,7 @@ export default function LeadForm({
           "aria-describedby": error ? errorId : undefined,
           autoComplete: AUTOCOMPLETE[f.name],
           required: f.required !== false,
+          maxLength: f.type === "textarea" ? 2000 : 160,
           ref: (el) => (inputRefs.current[f.name] = el),
         };
         return (
@@ -147,7 +157,7 @@ export default function LeadForm({
               />
             )}
             {error ? (
-              <p id={errorId} className="text-xs text-rose-400">
+              <p id={errorId} role="alert" className="text-sm text-rose-400">
                 {error}
               </p>
             ) : (
@@ -184,8 +194,12 @@ export default function LeadForm({
         )}
       </button>
       {formError && (
-        <p role="alert" className="text-xs text-rose-400">
-          {formError}
+        <p ref={errorRef} tabIndex={-1} role="alert" className="text-sm text-rose-400 outline-none">
+          {formError}{" "}
+          <a href="mailto:contact@jshield.com" className="whitespace-nowrap underline underline-offset-2">
+            contact@jshield.com
+          </a>
+          .
         </p>
       )}
       <p className="text-center text-xs text-slate-400">We do not share your details.</p>

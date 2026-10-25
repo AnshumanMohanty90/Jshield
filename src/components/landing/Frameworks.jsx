@@ -38,7 +38,7 @@ export default function Frameworks() {
       <Reveal className="mt-8 grid gap-x-10 gap-y-8 md:grid-cols-3">
         {FRAMEWORKS.map((f) => (
           <Link key={f.name} to={f.to} className="row-hover group -mx-3 block rounded-lg px-3 py-3">
-            <p className="text-[14px] font-medium uppercase tracking-wider text-slate-400">{f.where}</p>
+            <p className="text-[14px] font-medium text-slate-400">{f.where}</p>
             <h3 className="mt-2 text-white">{f.name}</h3>
             <p className="mt-2 text-[18px] leading-[1.6] text-slate-300 text-pretty">{f.desc}</p>
             <span className="mt-3 inline-flex min-h-[44px] items-center font-semibold text-indigo-300 group-hover:text-white">
