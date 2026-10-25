@@ -19,7 +19,7 @@ export default function Accordion({ items, className = "mt-6" }) {
             >
               <h3 className="text-white">{it.title}</h3>
               <ChevronDown
-                className={`h-4 w-4 flex-none text-slate-400 transition-transform duration-150 ${
+                className={`h-4 w-4 flex-none text-slate-300 transition-transform duration-150 ${
                   isOpen ? "rotate-180" : ""
                 }`}
               />
@@ -28,7 +28,7 @@ export default function Accordion({ items, className = "mt-6" }) {
               className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
             >
               <div className="overflow-hidden">
-                <p className="pb-4 text-[18px] leading-[1.6] text-slate-300">{it.desc}</p>
+                <p className="pb-4 text-[18px] leading-[1.6] text-slate-200">{it.desc}</p>
               </div>
             </div>
           </div>

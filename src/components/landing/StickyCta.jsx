@@ -69,7 +69,7 @@ export default function StickyCta() {
           }}
           tabIndex={show ? 0 : -1}
           aria-label="Hide this bar"
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-slate-300 hover:text-white"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg text-slate-200 hover:text-white"
         >
           <X aria-hidden="true" className="h-5 w-5" />
         </button>

@@ -14,7 +14,7 @@ export default function BrandLockup({ className = "h-11 w-11", dark = true }) {
         </span>
         <span
           className={`mt-1 text-[12px] font-semibold uppercase tracking-[0.25em] ${
-            dark ? "text-slate-400" : "text-muted-foreground"
+            dark ? "text-slate-300" : "text-muted-foreground"
           }`}
         >
           by Jago

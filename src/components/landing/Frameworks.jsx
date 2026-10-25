@@ -63,7 +63,7 @@ export default function Frameworks() {
           const a = answers[f.name];
           return (
             <div key={f.name} className="-mx-3 rounded-lg px-3 py-2">
-              <p className="text-[14px] font-medium text-slate-400">{f.where}</p>
+              <p className="text-[14px] font-medium text-slate-300">{f.where}</p>
               <h3 className="mt-2 text-white">{f.name}</h3>
               <p className="mt-3 text-[16px] font-semibold leading-snug text-slate-200 text-pretty">{f.q}</p>
               <div role="group" aria-label={f.q} className="mt-3 flex gap-2">
@@ -77,7 +77,7 @@ export default function Frameworks() {
                     aria-pressed={a === v}
                     onClick={() => set(f.name, v)}
                     className={`min-h-[44px] min-w-[72px] rounded-lg border px-4 text-[16px] font-semibold transition-colors ${
-                      a === v ? "border-indigo-400 bg-indigo-500/20 text-white" : "border-white/15 text-slate-300 hover:text-white"
+                      a === v ? "border-[1.5px] border-indigo-300 bg-indigo-500/30 text-white" : "border-white/40 text-slate-100 hover:border-indigo-300 hover:bg-indigo-500/[0.12]"
                     }`}
                   >
                     {label}
@@ -85,12 +85,12 @@ export default function Frameworks() {
                 ))}
               </div>
               <p
-                className={`mt-3 min-h-[24px] text-[16px] font-semibold ${a === true ? "text-emerald-300" : "text-slate-400"}`}
+                className={`mt-3 min-h-[24px] text-[16px] font-semibold ${a === true ? "text-emerald-300" : "text-slate-300"}`}
                 aria-live="polite"
               >
                 {a === true ? f.yes : a === false ? f.no : ""}
               </p>
-              <p className="mt-1 text-[16px] leading-[1.6] text-slate-300 text-pretty">{f.desc}</p>
+              <p className="mt-1 text-[16px] leading-[1.6] text-slate-200 text-pretty">{f.desc}</p>
               <Link to={f.to} className="mt-2 inline-flex min-h-[44px] items-center font-semibold text-indigo-300 hover:text-white">
                 {f.cta}
               </Link>
@@ -102,7 +102,7 @@ export default function Frameworks() {
         <div className="mt-6 flex flex-col gap-4 rounded-xl bg-white/[0.03] px-5 py-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[18px] leading-[1.6] text-slate-200 text-pretty">
             {summary}
-            <span className="mt-1 block text-[14px] text-slate-400">Indicative only, not legal advice.</span>
+            <span className="mt-1 block text-[14px] text-slate-300">Indicative only, not legal advice.</span>
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-none">
             {applies.includes("DPDP Act") ? (

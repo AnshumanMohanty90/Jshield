@@ -25,9 +25,9 @@ export default function WhyMatters() {
           <div key={c.stat} className="flex flex-col">
             <div className="text-[24px] sm:text-[30px] font-bold leading-tight tracking-tight text-white stat-figure">{c.stat}</div>
             {c.inr && currency === "USD" && (
-              <p className="mt-1 text-[14px] text-slate-400">About {formatLarge(c.inr, "USD", rate)}</p>
+              <p className="mt-1 text-[14px] text-slate-300">About {formatLarge(c.inr, "USD", rate)}</p>
             )}
-            <p className="mt-3 max-w-[26ch] text-[16px] leading-snug text-slate-300 text-pretty">{c.label}</p>
+            <p className="mt-3 max-w-[26ch] text-[16px] leading-snug text-slate-200 text-pretty">{c.label}</p>
           </div>
         ))}
       </Reveal>

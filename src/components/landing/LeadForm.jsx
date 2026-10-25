@@ -7,7 +7,7 @@ import { workEmailError } from "@/lib/workEmail";
 export const COMPANY_SIZES = ["1 to 50", "51 to 200", "201 to 500", "501 to 1,000", "Over 1,000"];
 
 const INPUT_CLASS =
-  "h-11 w-full rounded-lg border border-white/10 bg-slate-900 px-3 text-sm text-slate-100 placeholder:text-slate-400 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20";
+  "h-11 w-full rounded-lg border border-white/10 bg-slate-900 px-3 text-sm text-slate-100 placeholder:text-slate-300 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20";
 
 const AUTOCOMPLETE = {
   name: "name",
@@ -120,7 +120,7 @@ export default function LeadForm({
         };
         return (
           <div key={f.name} className="space-y-1.5">
-            <label htmlFor={inputId} className="text-sm font-medium text-slate-300">
+            <label htmlFor={inputId} className="text-sm font-medium text-slate-200">
               {f.label}
             </label>
             {f.type === "select" ? (
@@ -162,7 +162,7 @@ export default function LeadForm({
               </p>
             ) : (
               f.name === "work_email" &&
-              f.hint && <p className="text-xs text-slate-400">{f.hint}</p>
+              f.hint && <p className="text-xs text-slate-300">{f.hint}</p>
             )}
           </div>
         );
@@ -202,7 +202,7 @@ export default function LeadForm({
           .
         </p>
       )}
-      <p className="text-center text-xs text-slate-400">We do not share your details.</p>
+      <p className="text-center text-xs text-slate-300">We do not share your details.</p>
     </form>
   );
 }

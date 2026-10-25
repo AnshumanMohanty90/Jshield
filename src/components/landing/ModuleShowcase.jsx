@@ -106,23 +106,23 @@ export default function ModuleShowcase() {
       <div id="modules-panel" role="tabpanel" className="mt-6 grid gap-8 lg:grid-cols-2 lg:gap-10">
         <div>
           <h3 className="text-white">{tab.title}</h3>
-          <p className="mt-2 text-[18px] leading-[1.6] text-slate-300 text-pretty">{tab.blurb}</p>
+          <p className="mt-2 text-[18px] leading-[1.6] text-slate-200 text-pretty">{tab.blurb}</p>
           <ul className="mt-6">
             {tab.points.map((p) => (
-              <li key={p} className="row-hover py-3 text-[18px] leading-[1.6] text-slate-300">
+              <li key={p} className="row-hover py-3 text-[18px] leading-[1.6] text-slate-200">
                 {p}
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <div className="text-xs font-semibold text-slate-400">{tab.mock.label}</div>
+          <div className="text-xs font-semibold text-slate-300">{tab.mock.label}</div>
           <div className="mt-2 text-[24px] sm:text-[30px] font-bold leading-tight text-white stat-figure">
             <AnimatedNumber value={tab.mock.num} suffix={tab.mock.suffix} />
           </div>
-          <p className="mt-1 text-sm text-slate-400">{tab.mock.trend}</p>
+          <p className="mt-1 text-sm text-slate-300">{tab.mock.trend}</p>
           <GrowBars bars={tab.mock.bars} />
-          <p className="mt-3 text-xs text-slate-400">Sample data</p>
+          <p className="mt-3 text-xs text-slate-300">Sample data</p>
         </div>
       </div>
     </Section>

@@ -36,7 +36,7 @@ const COLS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900/30 text-slate-400">
+    <footer className="bg-slate-900/30 text-slate-300">
       <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-16">
         <div className="grid gap-8 md:grid-cols-5">
           <div className="md:col-span-2">
@@ -49,14 +49,14 @@ export default function Footer() {
             </p>
             <a
               href="mailto:contact@jagoai.com"
-              className="mt-3 inline-flex min-h-[44px] md:min-h-6 items-center text-sm text-slate-300 underline-offset-2 transition-colors hover:text-white hover:underline"
+              className="mt-3 inline-flex min-h-[44px] md:min-h-6 items-center text-sm text-slate-200 underline-offset-2 transition-colors hover:text-white hover:underline"
             >
               contact@jagoai.com
             </a>
           </div>
           {COLS.map((c) => (
             <div key={c.title}>
-              <div className="text-[16px] font-semibold text-indigo-400">{c.title}</div>
+              <div className="text-[16px] font-semibold text-indigo-300">{c.title}</div>
               <ul className="mt-4 space-y-2.5">
                 {c.links.map(([label, to]) => (
                   <li key={label}>
@@ -73,7 +73,7 @@ export default function Footer() {
           ))}
         </div>
         <div className="mt-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-          <p className="text-[16px] text-slate-300">
+          <p className="text-[16px] text-slate-200">
             © 2026 Jago AI Technologies Private Limited. JShield is part of{" "}
             <a
               href="https://jagotech.ai"

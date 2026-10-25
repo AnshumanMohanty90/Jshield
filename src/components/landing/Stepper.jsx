@@ -42,14 +42,14 @@ export default function Stepper({ steps, ariaLabel = "Steps", className = "mt-6"
                     ? "border-indigo-400 bg-indigo-500 text-white"
                     : i < active
                       ? "border-indigo-400/60 bg-slate-950 text-indigo-300"
-                      : "border-white/15 bg-slate-950 text-slate-400"
+                      : "border-white/15 bg-slate-950 text-slate-300"
                 }`}
               >
                 {i + 1}
               </span>
               <span
                 className={`min-w-0 text-center text-xs leading-snug sm:text-sm ${
-                  isActive ? "text-white" : "text-slate-400"
+                  isActive ? "text-white" : "text-slate-300"
                 }`}
               >
                 {s.title}
@@ -60,7 +60,7 @@ export default function Stepper({ steps, ariaLabel = "Steps", className = "mt-6"
       </div>
       <div role="tabpanel" className="mt-6">
         <h3 className="text-white">{steps[active].title}</h3>
-        <p className="mt-2 max-w-[68ch] text-[18px] leading-[1.6] text-slate-300">{steps[active].desc}</p>
+        <p className="mt-2 max-w-[68ch] text-[18px] leading-[1.6] text-slate-200">{steps[active].desc}</p>
       </div>
     </div>
   );

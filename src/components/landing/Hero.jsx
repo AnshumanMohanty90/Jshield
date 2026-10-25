@@ -31,7 +31,7 @@ function Gauge() {
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className="text-[24px] font-bold leading-tight text-white stat-figure">{score}</span>
-        <span className="text-[12px] text-slate-400">Score</span>
+        <span className="text-[12px] text-slate-300">Score</span>
       </div>
     </div>
   );
@@ -54,7 +54,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <span className="text-[16px] font-semibold text-indigo-400">
+            <span className="text-[16px] font-semibold text-indigo-300">
               DPDP Act compliance, with GDPR and SOC 2
             </span>
             <h1 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
@@ -69,7 +69,7 @@ export default function Hero() {
               <CtaSecondary to="/trial">Start free trial</CtaSecondary>
             </div>
             <p className="mt-4 text-[16px] font-semibold text-white">Free readiness check, about 4 minutes, score at the end.</p>
-            <p className="mt-2 text-sm text-slate-400">Mapped to every duty in the DPDP Act and the DPDP Rules 2025, with GDPR and SOC 2 on the same controls</p>
+            <p className="mt-2 text-sm text-slate-300">Mapped to every duty in the DPDP Act and the DPDP Rules 2025, with GDPR and SOC 2 on the same controls</p>
           </div>
 
           <div className="relative">
@@ -78,7 +78,7 @@ export default function Hero() {
                 <span className="h-2.5 w-2.5 rounded-full bg-rose-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-amber-400/70" />
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/70" />
-                <span className="ml-3 text-[12px] text-slate-400">app.jshield.ai</span>
+                <span className="ml-3 text-[12px] text-slate-300">app.jshield.ai</span>
               </div>
               <div className="grid grid-cols-3 overflow-hidden rounded-xl bg-slate-950/60">
                 <div className="col-span-1 border-r border-white/5">
@@ -86,7 +86,7 @@ export default function Hero() {
                     <div
                       key={x}
                       className={`flex items-center gap-2 px-3 py-2 text-[12px] ${
-                        i === 0 ? "bg-indigo-500/20 text-white" : "text-slate-400"
+                        i === 0 ? "bg-indigo-500/20 text-white" : "text-slate-300"
                       }`}
                     >
                       <span className="h-1.5 w-1.5 rounded-sm bg-indigo-400/60" /> {x}
@@ -96,7 +96,7 @@ export default function Hero() {
                 <div className="col-span-2">
                   <div className="flex items-center justify-between px-4 py-3">
                     <div>
-                      <div className="text-[12px] text-slate-400">Readiness</div>
+                      <div className="text-[12px] text-slate-300">Readiness</div>
                       <div className="text-sm font-semibold text-white">Healthy</div>
                     </div>
                     <Gauge />
@@ -105,7 +105,7 @@ export default function Hero() {
                     {STATUS_ROWS.map((r) => {
                       const Icon = r.icon;
                       return (
-                        <div key={r.label} className="flex items-center gap-2.5 px-4 py-2.5 text-[12px] text-slate-300">
+                        <div key={r.label} className="flex items-center gap-2.5 px-4 py-2.5 text-[12px] text-slate-200">
                           <Icon className="h-3.5 w-3.5 text-indigo-300" />
                           <span>{r.label}</span>
                           <span className={`ml-auto h-1.5 w-1.5 rounded-full ${r.tone}`} />
@@ -115,10 +115,10 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
-              <p className="px-3 pb-2 pt-1 text-[12px] text-slate-400">Sample data</p>
+              <p className="px-3 pb-2 pt-1 text-[12px] text-slate-300">Sample data</p>
             </div>
             <div className="absolute -bottom-4 -right-4 hidden rounded-xl bg-slate-900 px-4 py-3 shadow-xl ring-1 ring-white/10 sm:block">
-              <div className="text-xs text-slate-300">71h left in the breach reporting window</div>
+              <div className="text-xs text-slate-200">71h left in the breach reporting window</div>
             </div>
           </div>
         </div>

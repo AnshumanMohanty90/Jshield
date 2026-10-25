@@ -25,7 +25,7 @@ function Unit({ value, label, width = "w-9" }) {
           {value}
         </span>
       </span>
-      <span className="text-[12px] text-slate-400">{label}</span>
+      <span className="text-[12px] text-slate-300">{label}</span>
     </span>
   );
 }

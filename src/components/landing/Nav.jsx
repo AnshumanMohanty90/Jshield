@@ -145,7 +145,7 @@ export default function Nav() {
   }, [drawerOpen]);
 
   const linkClass =
-    "inline-flex min-h-[44px] items-center px-3 text-sm font-medium text-slate-300 transition-colors hover:text-white";
+    "inline-flex min-h-[44px] items-center px-3 text-sm font-medium text-slate-200 transition-colors hover:text-white";
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -182,7 +182,7 @@ export default function Nav() {
                   <div className="grid grid-cols-3 gap-x-6 xl:gap-x-10 px-6 pb-6 pt-4">
                     {PRODUCT_GROUPS.map((g) => (
                       <div key={g.title}>
-                        <p className="text-[16px] font-semibold text-indigo-400">{g.title}</p>
+                        <p className="text-[16px] font-semibold text-indigo-300">{g.title}</p>
                         <div className="mt-1">
                           {g.links.map((l, i) => (
                             <Link
@@ -193,7 +193,7 @@ export default function Nav() {
                               className="block rounded-lg px-3 py-2.5 transition-colors hover:bg-white/5"
                             >
                               <span className="block text-sm font-medium text-slate-100">{l.label}</span>
-                              <span className="mt-0.5 block text-xs leading-relaxed text-slate-400">{l.desc}</span>
+                              <span className="mt-0.5 block text-xs leading-relaxed text-slate-300">{l.desc}</span>
                             </Link>
                           ))}
                         </div>
@@ -251,7 +251,7 @@ export default function Nav() {
               <button
                 type="button"
                 onClick={() => setDrawerOpen(false)}
-                className="inline-flex min-h-[44px] items-center px-3 text-sm font-medium text-slate-300 hover:text-white"
+                className="inline-flex min-h-[44px] items-center px-3 text-sm font-medium text-slate-200 hover:text-white"
               >
                 Close
               </button>
@@ -269,7 +269,7 @@ export default function Nav() {
                 <div className="pb-2 pl-4">
                   {PRODUCT_GROUPS.map((g) => (
                     <div key={g.title} className="border-t border-white/10 py-2">
-                      <p className="px-3 py-1.5 text-[16px] font-semibold text-indigo-400">
+                      <p className="px-3 py-1.5 text-[16px] font-semibold text-indigo-300">
                         {g.title}
                       </p>
                       {g.links.map((l) => (
@@ -277,7 +277,7 @@ export default function Nav() {
                           key={l.label}
                           to={l.to}
                           onClick={() => setDrawerOpen(false)}
-                          className="flex min-h-[44px] items-center px-3 text-sm text-slate-300 hover:text-white"
+                          className="flex min-h-[44px] items-center px-3 text-sm text-slate-200 hover:text-white"
                         >
                           {l.label}
                         </Link>

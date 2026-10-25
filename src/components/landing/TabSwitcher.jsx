@@ -57,7 +57,7 @@ export default function TabSwitcher({ id, items, activeKey, onChange, autoMs = 0
             tabIndex={active ? 0 : -1}
             onClick={() => select(it.key, true)}
             className={`relative min-h-[44px] px-3 pb-3 pt-2 text-sm font-medium transition-colors duration-150 ${
-              active ? "text-white" : "text-slate-400 hover:text-slate-200"
+              active ? "text-white" : "text-slate-300 hover:text-slate-200"
             }`}
           >
             {it.label}
