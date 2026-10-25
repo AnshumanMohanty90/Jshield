@@ -193,7 +193,7 @@ export const LEGAL = {
        "Entity: Jago AI Technologies Private Limited (CIN: U58201KA2026PTC216473)",
        "Product: JShield",
        "Address: 64, 4th Floor, Parimala Towers, MES Road, Yeshwanthpur Industrial Area, Phase 1, Yeshwanthpur, Bengaluru, Karnataka 560022, India",
-       "Email: administrator@jago-tech.ai, grievance@jago-tech.ai",
+       "Email: administrator@jagoai.com, grievance@jagoai.com",
        "Phone: +91 98805 66044 / +91 82176 42460"
       ]
      },
@@ -379,7 +379,7 @@ export const LEGAL = {
       "list": [
        "Jago AI Technologies Private Limited",
        "Address: 64, 4th Floor, Parimala Towers, MES Road, Yeshwanthpur Industrial Area, Phase 1, Yeshwanthpur, Bengaluru, Karnataka 560022, India",
-       "Email: administrator@jago-tech.ai",
+       "Email: administrator@jagoai.com",
        "Phone: +91 98805 66044 / +91 82176 42460"
       ]
      },
@@ -420,7 +420,7 @@ export const LEGAL = {
    [
     "2. Cancelling a subscription",
     [
-     "You can cancel at any time in the product (Settings, Billing, Cancel subscription) or by writing to administrator@jago-tech.ai.",
+     "You can cancel at any time in the product (Settings, Billing, Cancel subscription) or by writing to administrator@jagoai.com.",
      {
       "list": [
        "Monthly plans: if you are unhappy in your first month, contact us and we will try to fix the issue. If you still cancel, your subscription stays active until the end of the current billing cycle and you are not charged for the next month.",
@@ -451,7 +451,7 @@ export const LEGAL = {
    [
     "4. Raising a billing dispute",
     [
-     "Please contact us before raising a chargeback; it is usually faster for both sides. Write to administrator@jago-tech.ai with the subject “Billing dispute, [tenant name], [order or invoice number]”, and include your tenant name and registered email, the order or transaction reference, the amount, date and currency, why you think the charge is wrong, and any supporting documents.",
+     "Please contact us before raising a chargeback; it is usually faster for both sides. Write to administrator@jagoai.com with the subject “Billing dispute, [tenant name], [order or invoice number]”, and include your tenant name and registered email, the order or transaction reference, the amount, date and currency, why you think the charge is wrong, and any supporting documents.",
      {
       "list": [
        "Acknowledgement: within two (2) business days.",
@@ -479,9 +479,9 @@ export const LEGAL = {
     [
      {
       "list": [
-       "Grievance Officer (general): grievance@jago-tech.ai",
-       "Nodal Officer (payment disputes): nodal@jago-tech.ai",
-       "General administration: administrator@jago-tech.ai",
+       "Grievance Officer (general): grievance@jagoai.com",
+       "Nodal Officer (payment disputes): nodal@jagoai.com",
+       "General administration: administrator@jagoai.com",
        "Phone: +91 98805 66044 / +91 82176 42460",
        "Address: 64, 4th Floor, Parimala Towers, MES Road, Yeshwanthpur Industrial Area, Phase 1, Yeshwanthpur, Bengaluru, Karnataka 560022, India",
        "Working hours: Monday to Friday, 10:00 to 18:00 IST, excluding public holidays"
@@ -519,7 +519,7 @@ export const EXTRA = {
       ["3. Purpose and retention", ["We process personal data only for the purposes stated in our Privacy Policy. On termination of a subscription, or on a valid erasure request, we securely delete, purge or fully anonymise the corresponding personal data within ninety (90) days, except where the law requires us to keep it."]],
       ["4. Security safeguards", ["We protect personal data with encryption in transit, role-based access control, tenant isolation, short-lived sign-in tokens and audit logging, on infrastructure hosted in India (AWS Mumbai)."]],
       ["5. Your rights", ["You can ask to access, correct or erase your personal data, withdraw consent, nominate a person to exercise your rights, and raise a grievance. If your data is held for your organisation, please send requests to its administrator; we will help them respond."]],
-      ["6. Grievance Officer", [{"list": ["Email: grievance@jago-tech.ai", "Address: 64, 4th Floor, Parimala Towers, MES Road, Yeshwanthpur Industrial Area, Phase 1, Yeshwanthpur, Bengaluru, Karnataka 560022, India", "Phone: +91 98805 66044 / +91 82176 42460"]}, "Complaints are acknowledged and addressed within the timelines set by the DPDP Act and related rules."]],
+      ["6. Grievance Officer", [{"list": ["Email: grievance@jagoai.com", "Address: 64, 4th Floor, Parimala Towers, MES Road, Yeshwanthpur Industrial Area, Phase 1, Yeshwanthpur, Bengaluru, Karnataka 560022, India", "Phone: +91 98805 66044 / +91 82176 42460"]}, "Complaints are acknowledged and addressed within the timelines set by the DPDP Act and related rules."]],
     ],
   },
   subprocessors: {
@@ -534,7 +534,7 @@ export const EXTRA = {
         "Email, SMS and WhatsApp messaging providers: transactional messages and, where permitted, marketing messages.",
         "Data-connector providers that you choose to connect to your workspace.",
       ]}]],
-      ["Changes", ["We update this page when we add or replace a sub-processor. For questions, write to administrator@jago-tech.ai."]],
+      ["Changes", ["We update this page when we add or replace a sub-processor. For questions, write to administrator@jagoai.com."]],
     ],
   },
 };
