@@ -11,6 +11,18 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      /* When a browser blocks site data, reading localStorage or sessionStorage throws and the app would not start. Fall back to in-memory storage. */
+      (function () {
+        ["localStorage", "sessionStorage"].forEach(function (k) {
+          try { var s = window[k]; s.getItem("x"); } catch (e) {
+            var m = {};
+            var mem = { getItem: function (a) { return Object.prototype.hasOwnProperty.call(m, a) ? m[a] : null; }, setItem: function (a, b) { m[a] = String(b); }, removeItem: function (a) { delete m[a]; }, clear: function () { m = {}; }, key: function (i) { return Object.keys(m)[i] || null; }, get length() { return Object.keys(m).length; } };
+            try { Object.defineProperty(window, k, { value: mem, configurable: true }); } catch (e2) {}
+          }
+        });
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
