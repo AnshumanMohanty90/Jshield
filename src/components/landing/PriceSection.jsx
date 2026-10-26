@@ -1,17 +1,17 @@
-import { Link } from "react-router-dom";
 import Section from "./Section";
 import { Reveal } from "./primitives";
-import { primaryCtaClass, secondaryCtaClass } from "./Buttons";
+import { useCurrency, formatPrice } from "@/lib/currency";
 
 export default function PriceSection() {
+  const { currency, rate } = useCurrency();
   return (
     <Section>
       <Reveal className="grid gap-6 lg:grid-cols-2 lg:items-center">
         <div>
           <p className="text-[16px] font-semibold text-indigo-300">Price</p>
-          <h2 className="mt-3 text-white text-balance">Pricing built around your data.</h2>
+          <h2 className="mt-3 text-white text-balance">DPDP plans from {formatPrice(19999, currency, rate, 0, 269)} a month.</h2>
           <p className="mt-4 max-w-[68ch] text-[18px] leading-[1.6] text-slate-200 text-pretty">
-            Priced on the size of your company and the systems that hold personal data. Free for the first 10 days.
+            A fixed price for up to 5 systems that hold personal data, and a quote when you also need GDPR and SOC 2. Free for the first 10 days.
           </p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
