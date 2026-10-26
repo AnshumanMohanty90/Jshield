@@ -23,12 +23,13 @@ export default function TabSwitcher({ id, items, activeKey, onChange, autoMs = 0
   };
 
   const onKeyDown = (e) => {
-    let dir = 0;
-    if (e.key === "ArrowRight") dir = 1;
-    else if (e.key === "ArrowLeft") dir = -1;
+    let next;
+    if (e.key === "ArrowRight") next = (activeIndex + 1) % items.length;
+    else if (e.key === "ArrowLeft") next = (activeIndex - 1 + items.length) % items.length;
+    else if (e.key === "Home") next = 0;
+    else if (e.key === "End") next = items.length - 1;
     else return;
     e.preventDefault();
-    const next = (activeIndex + dir + items.length) % items.length;
     select(items[next].key, true);
     document.getElementById(`${id}-tab-${next}`)?.focus();
   };
