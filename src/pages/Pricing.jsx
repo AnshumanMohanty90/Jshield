@@ -19,7 +19,7 @@ const PLANS = [
     priceUsd: 269,
     monthlyInr: 24999,
     monthlyUsd: 329,
-    desc: "Every DPDP module for one company with up to 5 systems that hold personal data.",
+    desc: "All DPDP modules for up to 5 systems that hold personal data.",
     cta: "Start free trial",
     to: "/trial",
     primary: true,
@@ -27,14 +27,14 @@ const PLANS = [
   {
     name: "Growth",
     price: "Custom pricing",
-    desc: "DPDP, GDPR and SOC 2 on one set of controls, for more systems and group companies.",
+    desc: "DPDP, GDPR and SOC 2 together, for more systems and group companies.",
     cta: "Get pricing",
     to: "/contact?intent=pricing&plan=Growth",
   },
   {
     name: "With Jago",
     price: "Custom pricing",
-    desc: "JShield as an add-on to any Jago plan, so consent and access rules apply to every Jago answer.",
+    desc: "JShield added to any Jago plan.",
     cta: "Get pricing",
     to: "/contact?intent=pricing&plan=Jago",
   },
@@ -43,11 +43,11 @@ const PLANS = [
 const INCLUDED = [
   "Every DPDP module",
   "No per-user charges",
-  "Proof that cannot be changed later for every consent",
-  "Data record: what personal data you hold and why",
-  "Breach tracking and reports to the regulator, inside the legal window",
-  "Vendor contracts and risk scores",
-  "Customer requests to see or delete their data, handled on deadline",
+  "Tamper-proof consent records",
+  "A record of the personal data you hold",
+  "Breach reports within the legal deadline",
+  "Vendor risk scores",
+  "Customer data requests handled on time",
   "Audit-ready exports",
   "Email support",
 ];
@@ -58,24 +58,24 @@ const FAQ_GROUPS = [
     label: "Pricing and usage",
     faqs: [
       {
-        q: "What counts as a system that holds personal data?",
-        a: "Any place you keep customer or employee details, such as your CRM, HR system, finance system, website forms or a shared drive. Each one you connect to JShield counts as one system.",
+        q: "What counts as a system?",
+        a: "Any place holding customer or employee data, such as a CRM, HR system or shared drive. Each one you connect counts once.",
       },
       {
-        q: "Do you charge per user, per consent or per request?",
-        a: "No. There are no per-user charges, and consents, customer requests and breach records are not counted or charged.",
+        q: "Do you charge per user or per consent?",
+        a: "No. Users, consents, requests and breach records are not charged.",
       },
       {
         q: "What if we have more than five systems?",
-        a: "Move to Growth. We quote on your company size and the systems that hold personal data.",
+        a: "Move to Growth and we send you a quote.",
       },
       {
-        q: "Can we pay monthly, and is GST extra?",
-        a: "Yes. DPDP Starter shows the yearly price and the higher month-to-month price. Rupee prices do not include GST. Customers in India pay in rupees and everyone else pays in US dollars.",
+        q: "Can we pay monthly?",
+        a: "Yes. Monthly billing costs about 25% more than yearly. GST is extra on rupee prices.",
       },
       {
         q: "Is JShield included with Jago?",
-        a: "JShield is an add-on to any Jago plan. With Jago, the consent and access rules you set in JShield apply to every answer Jago gives.",
+        a: "It is an add-on to any Jago plan. JShield then checks every Jago answer against your rules.",
       },
     ],
   },
@@ -84,24 +84,24 @@ const FAQ_GROUPS = [
     label: "Trial and scope",
     faqs: [
       {
-        q: "Is JShield aligned with the DPDP Act 2023?",
-        a: "Yes. Every module maps to a duty in the DPDP Act and the DPDP Rules 2025, from consent to breach reporting and customer requests to see or delete their data.",
+        q: "Does JShield cover the DPDP Act?",
+        a: "Yes. Each module covers a duty under the DPDP Act and the DPDP Rules 2025.",
       },
       {
         q: "Does DPDP Starter cover GDPR and SOC 2?",
-        a: "DPDP Starter covers the DPDP Act. GDPR and SOC 2 come with Growth and run on the same controls, so shared work is done once.",
+        a: "No. They come with Growth, and work done for DPDP carries over.",
       },
       {
-        q: "What is included in the trial?",
-        a: "Everything. The full platform, every JShield module and every feature, with no limits, for ten days. No credit card is needed and there is nothing to pay during the trial.",
+        q: "What is in the trial?",
+        a: "The full platform for ten days. No credit card needed.",
       },
       {
-        q: "What happens after the ten-day trial?",
-        a: "Choose DPDP Starter at the listed price, or ask us for a Growth quote based on your company size and systems.",
+        q: "What happens after the trial?",
+        a: "Pick DPDP Starter, or ask us for a Growth quote.",
       },
       {
         q: "Can we export records for audits?",
-        a: "Yes. Your data record, consent records and breach logs export as audit-ready documents in a single click.",
+        a: "Yes. Consent, breach and data records export in one click.",
       },
     ],
   },
@@ -110,24 +110,24 @@ const FAQ_GROUPS = [
     label: "Security and data",
     faqs: [
       {
-        q: "How does JShield keep our data safe?",
-        a: "Every agent gets only the access its task needs: read-only connections wherever the task allows, every connection verified, no default passwords or keys, and keys shown once and then stored so no one can read them back.",
+        q: "How is our data kept safe?",
+        a: "Each AI agent, the software that does tasks for you, gets only the access it needs. Every connection is checked, and access keys are shown only once.",
       },
       {
-        q: "Can an AI agent take a sensitive action on its own?",
-        a: "No. A different person who is authorised to do so approves that one action, once and for a limited time. An agent can never approve itself.",
+        q: "Can an agent take a sensitive action alone?",
+        a: "No. A second authorised person approves it. An agent cannot approve itself.",
       },
       {
-        q: "Is there a record of what agents do?",
-        a: "Yes. Every action is recorded with when it happened, who asked, what the agent did and who approved it. The record cannot be erased, even after an agent is retired.",
+        q: "Is there a record of agent actions?",
+        a: "Yes. It shows who asked, what was done and who approved it. It cannot be erased.",
       },
       {
         q: "Is our data used to train AI?",
-        a: "No. Your data is processed only to deliver results to your company and is not used to train shared or general AI models without your written consent. It is hosted primarily in India (Mumbai).",
+        a: "No, not without your written consent. It is hosted mainly in India (Mumbai).",
       },
       {
-        q: "Can we see the status of each security control?",
-        a: "Yes. Ask us for our security and compliance profile. It states each control plainly: in place, partly in place with the gap named, or planned with a date.",
+        q: "Can we see your security status?",
+        a: "Yes. Ask for our security profile. It shows each control as in place, partial or planned.",
       },
     ],
   },
@@ -164,7 +164,7 @@ export default function Pricing() {
       ? {
           ...p,
           price: `${formatPrice(p.priceInr, currency, rate, 0, p.priceUsd)} a month`,
-          priceNote: `Billed yearly, or ${formatPrice(p.monthlyInr, currency, rate, 0, p.monthlyUsd)} a month if you pay monthly.`,
+          priceNote: `Billed yearly. ${formatPrice(p.monthlyInr, currency, rate, 0, p.monthlyUsd)} a month if billed monthly.`,
         }
       : p
   );
@@ -178,8 +178,8 @@ export default function Pricing() {
     <LandingLayout>
       <PageHero
         eyebrow="Pricing"
-        title="A free trial, then a plan that fits your company."
-        subtitle="The full platform free for ten days. Then a fixed monthly price for DPDP, or a quote when you also need GDPR and SOC 2."
+        title="Pricing for DPDP, GDPR and SOC 2."
+        subtitle="Free for ten days. Then a fixed monthly price for DPDP, or a quote for GDPR and SOC 2."
       />
 
       <Section tone>
