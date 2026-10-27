@@ -8,10 +8,10 @@ const PRODUCT_GROUPS = [
   {
     title: "What JShield does",
     links: [
-      { label: "Customer consent", desc: "Record and prove every permission", to: "/#solution-consent" },
+      { label: "Customer consent", desc: "Record and prove each customer permission", to: "/#solution-consent" },
       { label: "Breach response", desc: "Report within the legal time limit", to: "/#solution-breach" },
       { label: "Data record", desc: "One live list of the personal data you hold", to: "/#solution-record" },
-      { label: "How it works", desc: "Four steps to ready", to: "/#how-we-help" },
+      { label: "How it works", desc: "Four steps to get ready", to: "/#how-we-help" },
     ],
   },
   {
@@ -217,9 +217,6 @@ export default function Nav() {
           </div>
 
           <div className="hidden items-center gap-2 lg:flex">
-            <Link to="/login" className={linkClass}>
-              Sign in
-            </Link>
             <Link
               to="/assessment"
               className="inline-flex min-h-[44px] items-center rounded-lg bg-gradient-to-r from-indigo-500 to-sky-500 px-4 text-sm font-semibold text-white transition hover:opacity-90"
@@ -309,13 +306,6 @@ export default function Nav() {
                   </Link>
                 )
               )}
-              <Link
-                to="/login"
-                onClick={() => setDrawerOpen(false)}
-                className="flex min-h-[44px] items-center border-t border-white/10 px-3 text-sm font-medium text-slate-100"
-              >
-                Sign in
-              </Link>
             </div>
             <div className="border-t border-white/10 p-5">
               <Link

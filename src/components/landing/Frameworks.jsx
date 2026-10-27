@@ -9,7 +9,7 @@ const FRAMEWORKS = [
   {
     name: "DPDP Act",
     where: "India",
-    desc: "Notices, consent records, customer requests and breach reporting under India's data law.",
+    desc: "Notices, consent records, customer requests and breach reports under India's law.",
     to: "/dpdp-act",
     cta: "Read the DPDP Act guide",
     q: "Do you handle personal data in digital form in India, or of people in India?",
@@ -19,9 +19,9 @@ const FRAMEWORKS = [
   {
     name: "GDPR",
     where: "EU and UK",
-    desc: "Record of processing, impact assessments, rights requests, breaches and data transfers.",
+    desc: "Data records, risk reviews, customer requests, breaches and transfers out of Europe.",
     to: "/gdpr",
-    cta: "See how JShield runs GDPR",
+    cta: "Read the GDPR guide",
     q: "Are you based in the EU or UK, or do you sell to or track people there?",
     yes: "Likely applies to you",
     no: "Probably not required. Check with your adviser.",
@@ -29,9 +29,9 @@ const FRAMEWORKS = [
   {
     name: "SOC 2",
     where: "Security assurance",
-    desc: "Controls mapped to the Trust Services Criteria, with evidence collected through the audit period.",
+    desc: "Security controls mapped to SOC 2, with evidence collected as you work.",
     to: "/soc-2",
-    cta: "See how JShield runs SOC 2",
+    cta: "Read the SOC 2 guide",
     q: "Do business customers ask for proof of your security before they buy?",
     yes: "Your buyers expect it",
     no: "Optional for now",
@@ -49,14 +49,14 @@ export default function Frameworks() {
     ? `${laws.join(" and ")} ${laws.length > 1 ? "likely apply" : "likely applies"} to you${soc2 ? ", and your buyers expect SOC 2" : ""}. JShield runs ${applies.length > 1 ? "them" : "it"} from one record.`
     : soc2
       ? "Your buyers expect SOC 2. JShield collects its evidence as you work."
-      : "None of the three looks required on these answers. If that changes, JShield is ready.";
+      : "On these answers, none of the three looks required. JShield covers all three if that changes.";
 
   return (
     <Section id="frameworks">
       <SectionHeading
-        label="Which laws apply to you"
-        title="Run the DPDP Act, GDPR and SOC 2 from one place."
-        intro="Answer three questions to see which your company needs. JShield tracks each shared control once, for every framework."
+        label="Which rules apply to you"
+        title="One record covers the DPDP Act, GDPR and SOC 2."
+        intro="Answer three questions to see which apply to you. A control shared by all three is tracked once."
       />
       <Reveal className="mt-6 grid gap-x-10 gap-y-8 md:grid-cols-3">
         {FRAMEWORKS.map((f) => {

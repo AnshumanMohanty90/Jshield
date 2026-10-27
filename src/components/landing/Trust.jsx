@@ -5,16 +5,16 @@ import Accordion from "./Accordion";
 import { Reveal } from "./primitives";
 
 const ITEMS = [
-  { title: "Data residency", desc: "Your data is stored in our India data centre region." },
-  { title: "Encrypted", desc: "Encrypted in transit and at rest." },
-  { title: "Logged", desc: "Every action is recorded and cannot be changed later." },
-  { title: "Certification", desc: "ISO 27001 and SOC 2 certification under way." },
+  { title: "Data stored in India", desc: "Your data is stored in our India data centre region." },
+  { title: "Encryption", desc: "Data is encrypted in transit and at rest." },
+  { title: "Activity log", desc: "Every action is recorded and cannot be changed later." },
+  { title: "Certification", desc: "ISO 27001 certification and a SOC 2 audit are under way." },
 ];
 
 export default function Trust() {
   return (
     <Section>
-      <SectionHeading label="Trust" title="We hold your data to the same rules we help you meet." />
+      <SectionHeading label="Security" title="Your data in JShield is protected by the controls below." />
       <Accordion items={ITEMS} />
       <Reveal delay={0.1} className="mt-6">
         <Link

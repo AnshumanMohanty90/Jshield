@@ -7,8 +7,8 @@ export default function BetterWithJago() {
     <Section tone>
       <SectionHeading
         label="Better with Jago"
-        title="Compliance built in from the start."
-        intro="When your teams use Jago to ask questions or update records, consent and access rules already apply, so there is no separate compliance project."
+        title="If your teams use Jago AI, the same rules apply inside it."
+        intro="When people use Jago to ask questions or update records, consent and access rules already apply."
       />
       <Reveal delay={0.1} className="mt-6">
         <a

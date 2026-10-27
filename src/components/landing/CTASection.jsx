@@ -20,9 +20,9 @@ export default function CTASection({ tone = false }) {
   return (
     <Section id="final-cta" tone>
       <Reveal>
-        <h2 className="text-white text-balance">See where you stand today.</h2>
+        <h2 className="text-white text-balance">Check your readiness in about 4 minutes.</h2>
         <p className="mt-4 max-w-[68ch] text-[18px] leading-[1.6] text-slate-200 text-pretty">
-          Answer the questions and see your readiness score in about 4 minutes.
+          Start with the question below. Your score appears at the end.
         </p>
 
         <div className="mt-8 max-w-2xl">

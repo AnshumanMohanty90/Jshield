@@ -5,9 +5,9 @@ import { useCurrency, formatLarge } from "@/lib/currency";
 
 const ITEMS = [
   { stat: "Rs 250 crore", inr: 2.5e9, label: "maximum fine for failing to protect personal data" },
-  { stat: "Rs 50 crore", inr: 5e8, label: "maximum for most other failures, such as consent" },
-  { stat: "72 hours", label: "to report a breach to the Data Protection Board" },
-  { stat: "Any size", label: "of company is covered; one complaint can start an inquiry" },
+  { stat: "Rs 200 crore", inr: 2e9, label: "maximum fine for not reporting a breach or breaking the rules on children's data" },
+  { stat: "Rs 50 crore", inr: 5e8, label: "maximum fine for most other failures, such as consent" },
+  { stat: "72 hours", label: "to send the Data Protection Board a full breach report" },
 ];
 
 export default function WhyMatters() {
@@ -16,8 +16,8 @@ export default function WhyMatters() {
     <Section tone>
       <SectionHeading
         label="Why it matters now"
-        title="From 13 May 2027, the law asks for proof."
-        intro="India's Digital Personal Data Protection Act (DPDP) sets how companies collect, use and protect customer data."
+        title="From 13 May 2027, you must be able to prove compliance."
+        intro="India's Digital Personal Data Protection Act (DPDP) sets how companies collect, use and protect personal data."
       />
 
       <Reveal className="mt-6 grid grid-cols-2 gap-x-6 gap-y-6 rounded-xl bg-white/[0.03] px-5 py-6 sm:px-6 lg:grid-cols-4 lg:gap-x-8">

@@ -61,15 +61,15 @@ export default function Hero() {
               Get ready for the DPDP Act in 30 days.
             </h1>
             <p className="mt-3 max-w-[68ch] text-[18px] leading-[1.6] text-slate-200 text-pretty">
-              Record customer consent, find the personal data you hold and report breaches on time. Every step is
-              logged, so you have proof for any audit.
+              Record customer consent, find the personal data you hold and report breaches on time, with proof for any
+              audit.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <CtaPrimary to="/assessment">Check your readiness</CtaPrimary>
               <CtaSecondary to="/trial">Start free trial</CtaSecondary>
             </div>
-            <p className="mt-4 text-[16px] font-semibold text-white">Free readiness check, about 4 minutes, score at the end.</p>
-            <p className="mt-2 text-sm text-slate-300">Mapped to every duty in the DPDP Act and the DPDP Rules 2025, with GDPR and SOC 2 on the same controls</p>
+            <p className="mt-4 text-[16px] font-semibold text-white">Free readiness check. It takes about 4 minutes and shows your score at the end.</p>
+            <p className="mt-2 text-sm text-slate-300">Covers the main duties in the DPDP Act and DPDP Rules 2025. Controls shared with GDPR and SOC 2 are tracked once.</p>
           </div>
 
           <div className="relative">
@@ -118,7 +118,7 @@ export default function Hero() {
               <p className="px-3 pb-2 pt-1 text-[12px] text-slate-300">Sample data</p>
             </div>
             <div className="absolute -bottom-4 -right-4 hidden rounded-xl bg-slate-900 px-4 py-3 shadow-xl ring-1 ring-white/10 sm:block">
-              <div className="text-xs text-slate-200">71h left in the breach reporting window</div>
+              <div className="text-xs text-slate-200">71 hours left to report a breach</div>
             </div>
           </div>
         </div>

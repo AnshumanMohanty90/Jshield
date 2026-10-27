@@ -5,7 +5,7 @@ const COLS = [
   {
     title: "Solution",
     links: [
-      ["Solution overview", "/#solution"],
+      ["What JShield does", "/#solution"],
       ["DPDP Act", "/dpdp-act"],
       ["GDPR", "/gdpr"],
       ["SOC 2", "/soc-2"],
@@ -19,7 +19,6 @@ const COLS = [
       ["Pricing", "/pricing"],
       ["Security", "/security"],
       ["Contact", "/contact"],
-      ["Console", "/dashboard"],
     ],
   },
   {

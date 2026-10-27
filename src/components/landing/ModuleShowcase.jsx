@@ -16,7 +16,7 @@ const TABS = [
     ),
     points: [
       "One list of reasons you collect data, used everywhere",
-      "Proof that cannot be changed later",
+      "Consent proof that cannot be edited later",
       "Permission removed in one click, with the history kept",
       "Works on websites, apps and offline forms",
     ],
@@ -31,12 +31,12 @@ const TABS = [
       </>
     ),
     points: [
-      "Report an incident and route it by how serious it is",
+      "Log an incident and route it by how serious it is",
       "Affected records and root cause tracked in one place",
-      "Regulator and customer notices prepared inside the legal window",
+      "Notices to the Board and customers drafted within the time limit",
       "Every step recorded, from detection to closure",
     ],
-    mock: { num: 71, suffix: "h", label: "left to report the breach", trend: "On track", bars: [30, 45, 60, 72, 55, 40, 35] },
+    mock: { num: 71, suffix: " hours", label: "Time left to report the breach", trend: "On track", bars: [30, 45, 60, 72, 55, 40, 35] },
   },
   {
     key: "record",
@@ -50,9 +50,9 @@ const TABS = [
       "One live list of the personal data you hold and why",
       "How long you keep each record, and the reason you hold it",
       "Who you share it with, inside and outside India",
-      "Exports ready for any auditor request",
+      "Exports ready when an auditor asks",
     ],
-    mock: { num: 47, suffix: "", label: "records kept", trend: "3 due for review", bars: [40, 52, 48, 60, 64, 58, 66] },
+    mock: { num: 47, suffix: "", label: "Records kept", trend: "3 due for review", bars: [40, 52, 48, 60, 64, 58, 66] },
   },
 ];
 
@@ -92,7 +92,7 @@ export default function ModuleShowcase() {
 
   return (
     <Section id="solution">
-      <SectionHeading label="What JShield does" title="The three jobs that matter most under the law." />
+      <SectionHeading label="What JShield does" title="JShield handles three core jobs under the law." />
 
       <TabSwitcher
         id="modules"

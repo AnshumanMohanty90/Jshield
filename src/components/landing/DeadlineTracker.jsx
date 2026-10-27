@@ -69,7 +69,7 @@ export default function DeadlineTracker() {
           to="/assessment"
           className="hidden min-h-[36px] items-center rounded-lg px-3 text-[14px] font-semibold text-amber-300 transition-colors hover:bg-white/5 hover:text-amber-200 lg:inline-flex"
         >
-          Check where you stand
+          Check your readiness
         </Link>
       </div>
     </div>
