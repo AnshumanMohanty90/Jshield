@@ -11,55 +11,55 @@ import usePageTitle from "@/hooks/usePageTitle";
 
 const PARTNER_TYPES = [
   {
-    title: "Consulting Partners",
-    desc: "Privacy, risk and compliance advisors guiding enterprises from assessment to operational implementation.",
+    title: "Consulting partners",
+    desc: "Privacy, risk and compliance advisers who take clients from first assessment to working controls.",
     earn: "Referral commission on every client introduced",
   },
   {
-    title: "Technology Partners",
-    desc: "Product teams embedding JShield's consent, breach and audit capabilities into their own platforms.",
+    title: "Technology partners",
+    desc: "Product teams who build JShield's consent, breach and audit features into their own platforms.",
     earn: "Revenue share on co-sold and integrated deals",
   },
   {
-    title: "System Integrators",
-    desc: "Implementation teams connecting JShield to enterprise estates such as CRM, HRMS and core systems.",
+    title: "System integrators",
+    desc: "Implementation teams who connect JShield to client systems such as CRM, HR and core platforms.",
     earn: "Reseller margin plus your own implementation fees",
   },
   {
-    title: "Law Firms and Advisory",
-    desc: "Legal and regulatory advisors who need audit-ready evidence packs behind their client opinions.",
+    title: "Law and advisory firms",
+    desc: "Legal and regulatory advisers who need audit-ready evidence behind their client opinions.",
     earn: "Referral fee for every client introduction",
   },
   {
-    title: "Resellers and Distributors",
-    desc: "Regional and vertical specialists taking DPDP readiness to companies in their region or sector.",
-    earn: "Wholesale pricing with volume-based discount tiers",
+    title: "Resellers and distributors",
+    desc: "Regional and sector specialists who sell DPDP readiness to companies in their market.",
+    earn: "Wholesale pricing with volume discounts",
   },
 ];
 
 const ADVANTAGES = [
   {
-    title: "Durable services revenue",
-    desc: "Build recurring income from support, training and advisory work wrapped around every JShield deployment.",
+    title: "Services income",
+    desc: "Earn recurring income from support, training and advice around each JShield roll-out.",
   },
   {
-    title: "A complete platform to stand behind",
-    desc: "Every JShield module is connected, so you can cover every duty in the law with one product.",
+    title: "One complete product",
+    desc: "All JShield modules are connected, so one product covers the main DPDP duties.",
   },
   {
-    title: "Dedicated partner enablement",
-    desc: "Technical training, co-selling support, marketing collateral and a partner success manager assigned to you.",
+    title: "Training and sales support",
+    desc: "Technical training, joint selling, marketing material and a named partner manager.",
   },
   {
-    title: "Simple commercials",
-    desc: "One clear price keeps the client's entry barrier low, while your revenue comes from implementation, training and advisory.",
+    title: "Simple pricing for clients",
+    desc: "One clear price makes it easy for clients to start. You earn from implementation, training and advice.",
   },
 ];
 
 const STEPS = [
-  { title: "Apply", desc: "Send your practice details through the form below and tell us how you work with clients." },
+  { title: "Apply", desc: "Send your practice details and how you work with clients through the form below." },
   { title: "Get reviewed", desc: "Our partnerships team reviews every application." },
-  { title: "Start earning", desc: "Complete onboarding, then run your first co-sold engagement with our support behind you." },
+  { title: "Start earning", desc: "Finish onboarding, then run your first joint deal with our support." },
 ];
 
 export default function PartnerProgram() {
@@ -68,14 +68,14 @@ export default function PartnerProgram() {
     <LandingLayout>
       <PageHero
         eyebrow="Partner programme"
-        title="Build a compliance practice with JShield"
-        subtitle="Help companies meet data protection laws and build a steady services revenue line alongside ours. Five partner tracks, each with a clear way to earn."
+        title="Earn by bringing JShield to your clients."
+        subtitle="Help companies meet data protection laws, and earn from referrals, resale and your own services."
       />
 
       <Section tone>
         <SectionHeading
-          title="Who we partner with"
-          intro="Five partnership tracks, each with a clear commercial model."
+          title="Five partner tracks, each with its own way to earn."
+          intro="Pick the track that fits how you work with clients."
         />
         <Accordion
           items={PARTNER_TYPES.map((p) => ({
@@ -91,7 +91,7 @@ export default function PartnerProgram() {
       </Section>
 
       <Section>
-        <SectionHeading title="Why partners choose JShield" intro="How partners earn with JShield." />
+        <SectionHeading title="Partners earn from JShield and from their own services." intro="Four reasons partners work with us." />
         <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">
           {ADVANTAGES.map((a) => (
             <div key={a.title}>
@@ -103,13 +103,13 @@ export default function PartnerProgram() {
       </Section>
 
       <Section tone>
-        <SectionHeading title="How it works" intro="From application to first engagement in three steps." />
-        <Stepper steps={STEPS} ariaLabel="How it works" />
+        <SectionHeading title="Joining takes three steps." intro="From application to your first client deal." />
+        <Stepper steps={STEPS} ariaLabel="How joining works" />
       </Section>
 
       <Section id="apply" narrow>
         <Reveal>
-          <h2 className="text-white text-balance">Apply to become a partner</h2>
+          <h2 className="text-white text-balance">Apply to join the partner programme.</h2>
           <p className="mt-2 text-[18px] leading-[1.6] text-slate-200">Tell us about your practice.</p>
           <div className="mt-8 rounded-2xl bg-white/[0.03] p-6 sm:p-8">
             <LeadForm

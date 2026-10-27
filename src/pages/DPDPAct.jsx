@@ -17,37 +17,38 @@ const APPLIES = [
 const EXEMPT = [
   "Information a person has chosen to make public themselves",
   "Purely personal or household use of data",
-  "Processing needed to enforce a legal right or comply with a court order",
-  "Defined government functions such as national security, under prescribed safeguards",
+  "Use of data needed to enforce a legal right or follow a court order",
+  "Set government functions, such as national security, under safeguards in the rules",
 ];
 
 const ROLES = [
-  { title: "Data Principal", desc: "The individual the data belongs to. The Act restores their say over how it is used." },
-  { title: "Data Fiduciary", desc: "Your organisation. It decides why and how personal data is processed, and answers for it." },
-  { title: "Significant Data Fiduciary", desc: "A fiduciary notified as significant. It carries additional duties such as impact assessments and audits." },
-  { title: "Data Processor", desc: "Vendors and platforms that process data on your instructions. You remain accountable for them." },
-  { title: "Consent Manager", desc: "A single accountable interface through which principals review and manage the consents they have given." },
+  { title: "Data Principal", desc: "The person the data is about, such as a customer, patient or employee." },
+  { title: "Data Fiduciary", desc: "Your company. You decide why and how personal data is used, and you answer for it." },
+  { title: "Significant Data Fiduciary", desc: "A company the government names as significant. It has extra duties, such as risk assessments and audits." },
+  { title: "Data Processor", desc: "A vendor that handles data on your instructions. You stay responsible for it." },
+  { title: "Consent Manager", desc: "A single service where people review and manage the consents they have given." },
   { title: "Data Protection Board", desc: "The regulator. It hears complaints, runs inquiries and sets penalties." },
 ];
 
 const OBLIGATIONS = [
-  { title: "Notice", desc: "Tell people what you collect, why, and how to exercise their rights before you collect." },
-  { title: "Consent", desc: "Take a clear, specific and informed yes. No pre-ticked boxes, no bundled purposes." },
-  { title: "Purpose limitation", desc: "Data collected for one purpose cannot quietly become data used for another." },
+  { title: "Notice", desc: "Before you collect, tell people what you collect, why, and how to use their rights." },
+  { title: "Consent", desc: "Get a clear yes for each purpose after showing the notice. Pre-ticked boxes do not count." },
+  { title: "Purpose limits", desc: "Use data only for the purpose you collected it for." },
   { title: "Accuracy", desc: "Keep records correct and complete enough for the purpose they serve." },
-  { title: "Retention and erasure", desc: "Erase personal data once the purpose is served and consent is withdrawn or expires." },
-  { title: "Security safeguards", desc: "Protect data with reasonable technical and operational controls, including for children." },
-  { title: "Breach notification", desc: "Inform affected principals and report to the Board without delay when data is compromised." },
-  { title: "Customer requests", desc: "Answer requests to see, correct or delete their data, and resolve complaints, within the set deadlines." },
-  { title: "Children's data", desc: "Process a child's data only with verifiable parental consent, and never track or target them." },
-  { title: "Grievance redressal", desc: "Publish a grievance officer and respond to principals within the prescribed timelines." },
+  { title: "Deletion", desc: "Erase personal data when consent is withdrawn or the purpose is served, unless a law requires you to keep it." },
+  { title: "Security safeguards", desc: "Protect data with reasonable technical and operational controls." },
+  { title: "Breach reporting", desc: "Tell affected people and the Board without delay, then send the Board a full report within 72 hours." },
+  { title: "Customer requests", desc: "Answer requests to see, correct or delete data within the set deadlines." },
+  { title: "Children's data", desc: "Use a child's data only with verified parental consent. Do not track or target children." },
+  { title: "Complaints", desc: "Publish a grievance officer and reply to complaints within the set timelines." },
 ];
 
 const DATES = [
-  { title: "2017", desc: "The Supreme Court holds privacy to be a fundamental right, setting the constitutional foundation." },
-  { title: "August 2023", desc: "The DPDP Act receives Presidential assent as India's first dedicated digital personal data law." },
-  { title: "November 2025", desc: "The DPDP Rules are notified. The compliance clock starts on a staggered commencement schedule." },
-  { title: "13 MAY 2027", desc: "The main duties apply in full." },
+  { title: "2017", desc: "The Supreme Court holds that privacy is a fundamental right." },
+  { title: "August 2023", desc: "The DPDP Act becomes law, India's first law for digital personal data." },
+  { title: "November 2025", desc: "The DPDP Rules are notified, and duties start in stages." },
+  { title: "13 November 2026", desc: "Consent Managers can apply to register with the Board." },
+  { title: "13 May 2027", desc: "The main duties apply in full." },
 ];
 
 export default function DPDPAct() {
@@ -57,14 +58,14 @@ export default function DPDPAct() {
     <LandingLayout>
       <PageHero
         eyebrow="The DPDP Act, explained"
-        title="What the law asks of you, in plain words."
-        subtitle="The DPDP Act is India's law for personal data. It says what a company may collect, what it must do in return and what it costs to get it wrong. Here is the whole of it, without the legal language."
+        title="What the DPDP Act asks of your company."
+        subtitle="India's personal data law in plain words: who it covers, what it asks and what failing costs."
       />
 
       <Section tone>
         <SectionHeading
-          title="Does it apply to you?"
-          intro="Almost certainly. If your company keeps customer or employee details in any digital form, the law covers it. There is no small business exemption, and enforcement begins with a single complaint."
+          title="The law covers almost every company that holds personal data digitally."
+          intro="If you keep customer or employee details in any digital form, the law covers you. There is no small business exemption, and one complaint can start an inquiry."
         />
         <div className="mt-8 grid gap-x-8 gap-y-10 md:grid-cols-2">
           <div>
@@ -78,7 +79,7 @@ export default function DPDPAct() {
             </ul>
           </div>
           <div>
-            <p className="text-[16px] font-semibold text-slate-300">Outside its scope</p>
+            <p className="text-[16px] font-semibold text-slate-300">Outside the law or exempt from most duties</p>
             <ul className="mt-4">
               {EXEMPT.map((t) => (
                 <li key={t} className="py-3 text-[18px] leading-[1.6] text-slate-200">
@@ -92,46 +93,53 @@ export default function DPDPAct() {
 
       <Section>
         <SectionHeading
-          title="Who is who under the Act"
-          intro="Six roles carry the whole law. Every duty maps to one of them, and you will meet each term below before it is used."
+          title="Six roles in the Act decide who does what."
+          intro="Your company is usually the Data Fiduciary. The terms below are used across the law."
         />
         <Accordion items={ROLES} />
       </Section>
 
       <Section tone>
         <SectionHeading
-          title="What the Act expects of you"
-          intro="Each duty in the law is a promise to the people whose data you hold."
+          title="The Act gives your company ten duties."
+          intro="Each duty is something you owe the people whose data you hold. JShield tracks each one with an owner and proof."
         />
         <Accordion items={OBLIGATIONS} />
       </Section>
 
       <Section>
         <SectionHeading
-          title="The timeline that matters"
-          intro="These dates follow the official schedule set by the government. The biggest one is 13 May 2027, when the rules apply in full."
+          title="The main duties apply in full from 13 May 2027."
+          intro="These dates follow the government's official schedule."
         />
-        <Stepper steps={DATES} ariaLabel="The timeline that matters" />
+        <Stepper steps={DATES} ariaLabel="DPDP Act timeline" />
       </Section>
 
       <Section tone>
         <SectionHeading
-          title="What non-compliance costs"
-          intro="The Data Protection Board, India's data regulator, handles enforcement. Penalties depend on the breach and are set after an inquiry."
+          title="Penalties under the Act go up to Rs 250 crore."
+          intro="The Data Protection Board, India's data regulator, sets each penalty after an inquiry, based on the failure."
         />
-        <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-2">
+        <div className="mt-8 grid gap-x-8 gap-y-8 sm:grid-cols-3">
           <div>
             <div className="text-[24px] sm:text-[30px] font-bold leading-tight tracking-tight text-white stat-figure">Rs 250 crore</div>
             {currency === "USD" && <p className="mt-1 text-[14px] text-slate-300">About {formatLarge(2.5e9, "USD", rate)}</p>}
             <p className="mt-2 text-[18px] leading-[1.6] text-slate-200">
-              The maximum penalty for failing to protect personal data with adequate security safeguards.
+              Maximum penalty for failing to keep personal data secure with adequate safeguards.
+            </p>
+          </div>
+          <div>
+            <div className="text-[24px] sm:text-[30px] font-bold leading-tight tracking-tight text-white stat-figure">Rs 200 crore</div>
+            {currency === "USD" && <p className="mt-1 text-[14px] text-slate-300">About {formatLarge(2e9, "USD", rate)}</p>}
+            <p className="mt-2 text-[18px] leading-[1.6] text-slate-200">
+              Maximum for not reporting a breach, or breaking the rules on children's data.
             </p>
           </div>
           <div>
             <div className="text-[24px] sm:text-[30px] font-bold leading-tight tracking-tight text-white stat-figure">Rs 50 crore</div>
             {currency === "USD" && <p className="mt-1 text-[14px] text-slate-300">About {formatLarge(5e8, "USD", rate)}</p>}
             <p className="mt-2 text-[18px] leading-[1.6] text-slate-200">
-              The maximum for most other violations, from consent failures to neglected principal rights.
+              Maximum for most other failures, such as consent gaps or ignored customer requests.
             </p>
           </div>
         </div>

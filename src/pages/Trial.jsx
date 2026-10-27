@@ -12,12 +12,12 @@ export default function Trial() {
     <LandingLayout>
       <PageHero
         eyebrow="Free 10-day trial"
-        title="Start your free trial."
-        subtitle="Activate a 10-day trial with every JShield module. No payment details needed."
+        title="Try every JShield module free for 10 days."
+        subtitle="No payment details needed. We email your login details once the trial is set up."
       />
 
       <Section tone narrow>
-        <h2 className="text-white text-balance">Where should we activate your trial?</h2>
+        <h2 className="text-white text-balance">Tell us about your company to set up the trial.</h2>
         <p className="mt-2 text-[18px] leading-[1.6] text-slate-200">Use your work email. Personal addresses are not accepted.</p>
         <div className="mt-8">
           <LeadForm

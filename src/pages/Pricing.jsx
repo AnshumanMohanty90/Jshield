@@ -27,14 +27,14 @@ const PLANS = [
   {
     name: "Growth",
     price: "Custom pricing",
-    desc: "DPDP, GDPR and SOC 2 together, for more systems and group companies.",
+    desc: "DPDP, GDPR and SOC 2 for more systems and group companies.",
     cta: "Get pricing",
     to: "/contact?intent=pricing&plan=Growth",
   },
   {
     name: "With Jago",
     price: "Custom pricing",
-    desc: "JShield added to any Jago plan.",
+    desc: "JShield as an add-on to any Jago plan.",
     cta: "Get pricing",
     to: "/contact?intent=pricing&plan=Jago",
   },
@@ -43,12 +43,12 @@ const PLANS = [
 const INCLUDED = [
   "Every DPDP module",
   "No per-user charges",
-  "Tamper-proof consent records",
+  "Consent records that cannot be altered",
   "A record of the personal data you hold",
-  "Breach reports within the legal deadline",
+  "Breach reports drafted against the legal deadline",
   "Vendor risk scores",
-  "Customer data requests handled on time",
-  "Audit-ready exports",
+  "Customer data requests tracked against their deadlines",
+  "Exports ready for audits",
   "Email support",
 ];
 
@@ -59,7 +59,7 @@ const FAQ_GROUPS = [
     faqs: [
       {
         q: "What counts as a system?",
-        a: "Any place holding customer or employee data, such as a CRM, HR system or shared drive. Each one you connect counts once.",
+        a: "Any place that holds customer or employee data, such as a CRM, HR system or shared drive. Each counts once.",
       },
       {
         q: "Do you charge per user or per consent?",
@@ -67,7 +67,7 @@ const FAQ_GROUPS = [
       },
       {
         q: "What if we have more than five systems?",
-        a: "Move to Growth and we send you a quote.",
+        a: "Move to Growth, and we will send you a quote.",
       },
       {
         q: "Can we pay monthly?",
@@ -89,15 +89,15 @@ const FAQ_GROUPS = [
       },
       {
         q: "Does DPDP Starter cover GDPR and SOC 2?",
-        a: "No. They come with Growth, and work done for DPDP carries over.",
+        a: "No. They come with Growth, and your DPDP work carries over.",
       },
       {
         q: "What is in the trial?",
-        a: "The full platform for ten days. No credit card needed.",
+        a: "The full platform for 10 days. No payment details needed.",
       },
       {
         q: "What happens after the trial?",
-        a: "Pick DPDP Starter, or ask us for a Growth quote.",
+        a: "Choose DPDP Starter, or ask us for a Growth quote.",
       },
       {
         q: "Can we export records for audits?",
@@ -111,7 +111,7 @@ const FAQ_GROUPS = [
     faqs: [
       {
         q: "How is our data kept safe?",
-        a: "Each AI agent, the software that does tasks for you, gets only the access it needs. Every connection is checked, and access keys are shown only once.",
+        a: "Each AI agent (software that does tasks for you) gets only the access it needs. Every connection is checked, and access keys are shown only once.",
       },
       {
         q: "Can an agent take a sensitive action alone?",
@@ -119,7 +119,7 @@ const FAQ_GROUPS = [
       },
       {
         q: "Is there a record of agent actions?",
-        a: "Yes. It shows who asked, what was done and who approved it. It cannot be erased.",
+        a: "Yes. It shows who asked, what was done and who approved it, and it cannot be erased.",
       },
       {
         q: "Is our data used to train AI?",
@@ -155,7 +155,7 @@ function PlanColumn({ plan: p }) {
 }
 
 export default function Pricing() {
-  usePageTitle("Pricing | JShield", "JShield pricing: DPDP Starter at a fixed monthly price, Growth for DPDP, GDPR and SOC 2, and a ten-day free trial.");
+  usePageTitle("Pricing | JShield", "JShield pricing: DPDP Starter at a fixed monthly price, Growth for DPDP, GDPR and SOC 2, and a 10-day free trial.");
   const [group, setGroup] = useState(FAQ_GROUPS[0].key);
   const [open, setOpen] = useState(0);
   const { currency, rate } = useCurrency();
@@ -178,13 +178,13 @@ export default function Pricing() {
     <LandingLayout>
       <PageHero
         eyebrow="Pricing"
-        title="Pricing for DPDP, GDPR and SOC 2."
-        subtitle="Free for ten days. Then a fixed monthly price for DPDP, or a quote for GDPR and SOC 2."
+        title="Start free, then pay a fixed monthly price for DPDP."
+        subtitle="Try every module free for 10 days. GDPR, SOC 2 and larger set-ups are quoted."
       />
 
       <Section tone>
         <Reveal>
-          <h2 className="text-white text-balance">Plans</h2>
+          <h2 className="text-white text-balance">Choose a plan by the laws and systems you need.</h2>
           <CurrencyToggle className="mt-3" />
           <div className="mt-6 grid gap-6 md:grid-cols-3 md:gap-y-0">
             {plans.map((p) => (
@@ -193,7 +193,7 @@ export default function Pricing() {
           </div>
           <div className="mt-6 flex flex-col gap-2">
             {currency === "INR" && <p className="text-[16px] leading-[1.6] text-slate-200">Rupee prices do not include GST.</p>}
-            <p className="text-[16px] leading-[1.6] text-slate-200">Every plan starts with a ten-day free trial. No credit card needed.</p>
+            <p className="text-[16px] leading-[1.6] text-slate-200">Every plan starts with a 10-day free trial. No payment details needed.</p>
           </div>
         </Reveal>
 
@@ -210,7 +210,7 @@ export default function Pricing() {
       </Section>
 
       <Section narrow>
-        <h2 className="text-white text-balance">Frequently asked questions</h2>
+        <h2 className="text-white text-balance">Answers to common questions on price, trial and security.</h2>
         <TabSwitcher
           id="pricing-faq"
           ariaLabel="Question groups"

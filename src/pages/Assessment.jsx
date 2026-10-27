@@ -168,11 +168,11 @@ export default function Assessment() {
                 Free DPDP readiness assessment
               </span>
               <h1 className="mt-3 font-bold leading-[1.1] tracking-tight text-white text-balance">
-                Find out where you stand on DPDP.
+                See how ready your company is for the DPDP Act.
               </h1>
               <p className="mt-4 max-w-[68ch] text-[18px] leading-[1.6] text-slate-200 text-pretty">
-                Answer a few questions about your company, then questions across every duty in the
-                law. It is free, and your score appears as soon as you finish.
+                Answer four questions about your company, then short questions on each duty. Your score
+                appears when you finish.
               </p>
               <button
                 onClick={start}
@@ -180,7 +180,7 @@ export default function Assessment() {
               >
                 Start the assessment
               </button>
-              <p className="mt-4 text-[16px] text-slate-200">About 4 minutes, score on screen</p>
+              <p className="mt-4 text-[16px] text-slate-200">Free. It takes about 4 minutes, and your score shows on screen.</p>
             </div>
           </motion.section>
         )}
@@ -252,21 +252,20 @@ export default function Assessment() {
           >
             <div className="mx-auto max-w-3xl px-5 sm:px-8">
               <span className="text-[16px] font-semibold text-indigo-300">Your score</span>
-              <div className="mt-3 flex items-end gap-3">
-                <span className={`text-6xl font-bold tracking-tight ${result.band.tone}`}>{result.score}</span>
-                <span className="mb-2 text-sm text-slate-300">/ 100</span>
-              </div>
+              <p className={`mt-3 text-[24px] sm:text-[30px] font-bold leading-tight stat-figure ${result.band.tone}`}>
+                {result.score} out of 100
+              </p>
               <p className="mt-3 text-[20px] font-semibold text-white">{result.band.name}</p>
               <p className="mt-2 max-w-[68ch] text-[18px] leading-[1.6] text-slate-200 text-pretty">
                 {result.capReason
-                  ? `Your answers score ${result.score}, but a critical control is missing or partly in place, so your band stays ${result.band.name} until it is fixed.`
+                  ? `Your answers score ${result.score}, but a critical control is missing or only partly in place, so your band stays at ${result.band.name} until it is fixed.`
                   : result.band.desc}
               </p>
 
               <p className="mt-2 max-w-[68ch] text-[16px] leading-[1.6] text-slate-300 text-pretty">
                 Answers are self-reported. An inquiry or audit will ask for evidence of each one.
               </p>
-              <p className="mt-1 text-[16px] text-slate-300">Not sure is counted as a gap.</p>
+              <p className="mt-1 text-[16px] text-slate-300">An answer of Not sure counts as a gap.</p>
 
               {result.capReason && (
                 <p className="mt-4 rounded-lg border border-amber-400/30 bg-amber-500/10 px-4 py-3 text-sm leading-relaxed text-amber-200">
@@ -279,9 +278,8 @@ export default function Assessment() {
                   <div key={a.id}>
                     <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                       <span className="text-[18px] font-medium text-slate-100">{a.name}</span>
-                      <span className="text-sm text-slate-300">
-                        <span className="font-semibold text-slate-200">{a.score} of 100</span>, penalty
-                        up to Rs {a.penalty} crore
+                      <span className="text-[16px] text-slate-200">
+                        {a.score} of 100, penalty up to Rs {a.penalty} crore
                       </span>
                     </div>
                     <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
@@ -297,7 +295,7 @@ export default function Assessment() {
               {result.gaps.length > 0 && (
                 <div className="mt-10 border-t border-white/10 pt-8">
                   <h3 className="text-white">
-                    {result.gaps.length < 3 ? "Your gaps." : "Your top three gaps."}
+                    {result.gaps.length < 3 ? "Fix these gaps first." : "Fix these three gaps first."}
                   </h3>
                   <ol className="mt-4 space-y-4">
                     {result.gaps.map((g, i) => (

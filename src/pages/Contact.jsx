@@ -58,11 +58,11 @@ export default function Contact() {
     <LandingLayout>
       <PageHero
         eyebrow={isPricing ? "Pricing" : "Contact"}
-        title={isPricing ? "Get JShield pricing for your company." : "Questions about JShield?"}
+        title={isPricing ? "Get JShield pricing for your company." : "Write to the JShield team."}
         subtitle={
           isPricing
             ? "Tell us your company size and where personal data sits today. We will send you a quote."
-            : "Write to us at contact@jagoai.com or use the form."
+            : "Email contact@jagoai.com or use the form below."
         }
       />
 
@@ -93,7 +93,7 @@ export default function Contact() {
               intent={isPricing ? "pricing" : "contact"}
               sourcePage={isPricing ? "/contact?intent=pricing" : "/contact"}
               fields={fields}
-              submitLabel={isPricing ? "Get my quote" : "Send"}
+              submitLabel={isPricing ? "Get my quote" : "Send my message"}
               thankYou={
                 isPricing
                   ? "Thank you. We will email your quote to you."

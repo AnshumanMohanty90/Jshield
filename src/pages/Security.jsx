@@ -6,16 +6,16 @@ import CTASection from "@/components/landing/CTASection";
 import usePageTitle from "@/hooks/usePageTitle";
 
 const PILLARS = [
-  { title: "Encryption everywhere", desc: "Data is encrypted in transit with TLS 1.3 and at rest with AES-256." },
-  { title: "Access controls", desc: "You decide who can see and change each record. Every action is logged." },
-  { title: "Data residency", desc: "Your data is stored in our India data centre region." },
-  { title: "Continuous monitoring", desc: "Alerts when a breach is suspected, a deadline is close or a setting changes." },
-  { title: "Strong authentication", desc: "Single sign-on, two-step login and session controls." },
-  { title: "Audit-ready exports", desc: "Logs that cannot be changed later, with one-click export of your data record, consent and breach records." },
+  { title: "Encryption", desc: "Data is encrypted in transit with TLS 1.3 and at rest with AES-256." },
+  { title: "Access control", desc: "You decide who can see and change each record. Every action is logged." },
+  { title: "Data stored in India", desc: "Your data is stored in our India data centre region." },
+  { title: "Monitoring", desc: "Alerts when a breach is suspected, a deadline is close or a setting changes." },
+  { title: "Login security", desc: "Single sign-on, two-step login and session controls." },
+  { title: "Exports for audits", desc: "Logs that cannot be changed later, and one-click export of your data, consent and breach records." },
 ];
 
 const STANDARDS = [
-  "ISO 27001 and SOC 2 (two global security standards): certification under way",
+  "Both are widely used security standards.",
 ];
 
 export default function Security() {
@@ -24,17 +24,17 @@ export default function Security() {
     <LandingLayout>
       <PageHero
         eyebrow="Security"
-        title="How we protect your data"
-        subtitle="We hold your data to the same rules we help you meet."
+        title="JShield protects your data with six controls."
+        subtitle="Your data in JShield is protected by the controls below."
       />
 
       <Section tone>
-        <h2 className="sr-only">How we protect it</h2>
+        <h2 className="sr-only">What each control does</h2>
         <Accordion items={PILLARS} />
       </Section>
 
       <Section narrow>
-        <h2 className="text-white text-balance">Standards</h2>
+        <h2 className="text-white text-balance">ISO 27001 certification and a SOC 2 audit are under way.</h2>
         {STANDARDS.map((b) => (
           <p key={b} className="mt-4 max-w-[68ch] text-[18px] leading-[1.6] text-slate-200 text-pretty">
             {b}
