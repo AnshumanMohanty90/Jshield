@@ -34,7 +34,7 @@ export const PROFILE = [
   },
   {
     id: "P4",
-    q: "Do you process data of children under 18, or of persons with disabilities through a guardian?",
+    q: "Do you use data of children under 18, or of persons with disabilities who have a guardian?",
     options: ["Yes", "No", "Not sure"],
   },
 ];
@@ -137,11 +137,11 @@ export const AREAS = [
     questions: [
       {
         id: "Q12",
-        q: "Do you verify consent from a parent or lawful guardian before processing their data?",
+        q: "Before using a child's data, or data of a person with a guardian, do you get verified consent from the parent or lawful guardian?",
         critical: true,
-        capNone: "Capped because their data is processed without verified consent from a parent or lawful guardian. Penalty up to Rs 200 crore.",
+        capNone: "Capped because data of children or persons with a guardian is used without verified consent from a parent or lawful guardian. Penalty up to Rs 200 crore.",
         capPart: "Capped because consent from a parent or lawful guardian is only partly verified. Penalty up to Rs 200 crore.",
-        fix: "Verify consent from a parent or lawful guardian before processing their data.",
+        fix: "Get verified consent from a parent or lawful guardian before using the data.",
       },
       {
         id: "Q13",
@@ -229,7 +229,7 @@ export const AREAS = [
       },
       {
         id: "Q23",
-        q: "Do you run a yearly data protection impact assessment and an independent audit?",
+        q: "Do you run a yearly data protection impact assessment (a risk review of your data use) and an independent audit?",
         sdf: true,
         penalty: 150,
         fix: "Run a yearly data protection impact assessment and an independent audit.",
@@ -311,7 +311,7 @@ export function buildQuiz(profile) {
 export const BANDS = [
   { min: 90, name: "Strong", tone: "text-emerald-400", desc: "Most duties are in place and provable. Close what is left before 13 May 2027." },
   { min: 75, name: "Ready", tone: "text-sky-400", desc: "You are close. Close the remaining gaps before the deadline." },
-  { min: 55, name: "Progressing", tone: "text-indigo-300", desc: "Halfway there. Work through the top gaps below first." },
+  { min: 55, name: "Progressing", tone: "text-indigo-300", desc: "You are about halfway. Start with the top gaps below." },
   { min: 30, name: "Developing", tone: "text-amber-400", desc: "Core duties are missing. Start with the critical items below." },
   { min: 0, name: "Exposed", tone: "text-rose-400", desc: "Most duties are not in place. Start a trial to build your first controls." },
 ];
