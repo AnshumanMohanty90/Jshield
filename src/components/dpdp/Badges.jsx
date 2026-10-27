@@ -67,7 +67,7 @@ export function RiskBadge({ level, score }) {
         {level}
       </span>
       {typeof score === "number" && (
-        <span className="text-xs font-mono text-slate-400">{score}</span>
+        <span className="text-xs font-medium tabular-nums text-slate-400">{score}</span>
       )}
     </span>
   );
